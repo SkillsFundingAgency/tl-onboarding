@@ -285,6 +285,27 @@
           "description": "Sitewide",
           "label": "Subject Form ID",
           "value": "360019751459"
+        },
+        {
+          "identifier": "tl_calendar_data_source",
+          "type": "text",
+          "description": "Google Sheets document ID",
+          "label": "Calendar data source",
+          "value": "1BDhR3WFnRfvqdj_DgBFXyH0SOHkUR9t-7snW8HwplJU"
+        },
+        {
+          "identifier": "tl_calendar_api_key",
+          "type": "text",
+          "description": "Google Sheets API key",
+          "label": "Calendar data authentication",
+          "value": "AIzaSyCHxvz9up0ndkjmbWOHQKcXJsjLoORe9dc"
+        },
+        {
+          "identifier": "tl_calendar_title",
+          "type": "text",
+          "description": "Calendar",
+          "label": "Title",
+          "value": "Calendar"
         }
       ]
     }
