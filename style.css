@@ -5569,7 +5569,7 @@ ul.govuk-radios label .gem-radios__input {
     margin: 0; }
 
 .tl-community-table-post--pinned {
-  background-image: url($assets-pin-png);
+  background-image: url($assets-pin-svg);
   background-repeat: no-repeat;
   background-position: 95% 20px;
   background-size: 15px; }
