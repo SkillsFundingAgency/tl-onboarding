@@ -114,12 +114,13 @@
                 <table class="govuk-table">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header tl-community--table__header">Question</th>
+                            <th scope="col" class="govuk-table__header tl-community--table__header">Pinned discussions</th>
                             <th scope="col" class="govuk-table__header tl-community--table__header">Replies</th>
                         </tr>
 
                         {{#each posts}}
                         {{#if pinned}}
+
                         <tr class="govuk-table__row tl-community--table__row ">
                             <th scope="row" class="govuk-table__cell">
                                 <a href="{{url}}" id="tl-community-home--post" class="govuk-link tl-community-table-post--link">{{title}}</a>
@@ -134,13 +135,26 @@
                             <td class="govuk-table__cell">{{comment_count}}</td>
 
                         </tr>
+                        {{else}}
+                        <tr class="govuk-table__row tl-community--table__row ">
+                            <th scope="row" class="govuk-table__cell">
+                                <span class="govuk-caption-m">There are no pinned questions</span>
+                            </th>
+                            <td class="govuk-table__cell">{{comment_count}}</td>
+
+                        </tr>
                         {{/if}}
                         {{/each}}
                     </thead>
+
+
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header tl-community--table__header">Discussion</th>
+                            <th scope="col" class="govuk-table__header tl-community--table__header">Replies</th>
+                        </tr>
+                    </thead>
                     <tbody class="govuk-table__body">
-
-
-
                         {{#each posts}}
                         {{#if pinned}}
                         {{else}}
