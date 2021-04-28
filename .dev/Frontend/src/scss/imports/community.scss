@@ -67,6 +67,12 @@
             margin: 0;
         }
     }
+
+    &--pinned {
+        background-image: govuk-image-url("pin.png");
+        background-repeat: no-repeat;
+        background-position: 2px 50%;
+    }
 }
 
 

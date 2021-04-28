@@ -126,7 +126,7 @@
                         {{/if}}
 
                         <tr class="govuk-table__row tl-community--table__row ">
-                            <th scope="row" class="govuk-table__cell">
+                            <th scope="row" class="govuk-table__cell tl-community-table-post--pinned">
                                 <a href="{{url}}" id="tl-community-home--post" class="govuk-link tl-community-table-post--link">{{title}}</a>
                                 <script>
                                   $.getJSON('/api/v2/community/posts/{{id}}.json', function(title) {
