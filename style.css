@@ -5571,8 +5571,8 @@ ul.govuk-radios label .gem-radios__input {
 .tl-community-table-post--pinned {
   background-image: url($assets-pin-svg);
   background-repeat: no-repeat;
-  background-position: 95% 20px;
-  background-size: 15px; }
+  background-position: 95% 24px;
+  background-size: 18px; }
 
 .tl-community--comment--main--official {
   background: #f3f2f1;
