@@ -4676,6 +4676,9 @@
       -moz-box-ordinal-group: 3;
       box-ordinal-group: 3; } }
 
+.tl-section-break--blue {
+  border-bottom: 2px solid #1d70b8; }
+
 .tl-search {
   display: flex; }
   .tl-search input[type=search] {
