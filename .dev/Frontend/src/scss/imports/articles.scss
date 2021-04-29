@@ -18,6 +18,11 @@
         ul {
             @extend .govuk-list;
         }
+
+        a {
+            @extend .govuk-body-s;
+            @extend .govuk-link;
+        }
     }
 }
 
