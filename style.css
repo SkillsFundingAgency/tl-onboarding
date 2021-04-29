@@ -69,7 +69,7 @@
 .govuk-link--no-visited-state:focus {
   color: #0b0c0c; }
 
-.govuk-list, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
+.govuk-list, .tl-article--sidebar .related-articles ul, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
   font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -83,27 +83,27 @@
   padding-left: 0;
   list-style-type: none; }
   @media print {
-    .govuk-list, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
+    .govuk-list, .tl-article--sidebar .related-articles ul, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
       font-family: sans-serif; } }
   @media (min-width: 40.0625em) {
-    .govuk-list, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
+    .govuk-list, .tl-article--sidebar .related-articles ul, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
       font-size: 19px;
       font-size: 1.1875rem;
       line-height: 1.31579; } }
   @media print {
-    .govuk-list, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
+    .govuk-list, .tl-article--sidebar .related-articles ul, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
       font-size: 14pt;
       line-height: 1.15; } }
   @media print {
-    .govuk-list, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
+    .govuk-list, .tl-article--sidebar .related-articles ul, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
       color: #000000; } }
   @media (min-width: 40.0625em) {
-    .govuk-list, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
+    .govuk-list, .tl-article--sidebar .related-articles ul, .tl-article--content ul, .tl-article--content ol, .tl-community--post--content ul {
       margin-bottom: 20px; } }
-  .govuk-list .govuk-list, .tl-article--content ul .govuk-list, .tl-article--content ol .govuk-list, .tl-community--post--content ul .govuk-list, .govuk-list .tl-article--content ul, .tl-article--content .govuk-list ul, .tl-article--content ul ul, .tl-article--content ol ul, .govuk-list .tl-article--content ol, .tl-article--content .govuk-list ol, .tl-article--content ul ol, .tl-article--content ol ol, .tl-community--post--content ul .tl-article--content ol, .govuk-list .tl-community--post--content ul, .tl-community--post--content .govuk-list ul, .tl-community--post--content ul ul {
+  .govuk-list .govuk-list, .tl-article--sidebar .related-articles ul .govuk-list, .tl-article--content ul .govuk-list, .tl-article--content ol .govuk-list, .tl-community--post--content ul .govuk-list, .govuk-list .tl-article--sidebar .related-articles ul, .tl-article--sidebar .related-articles .govuk-list ul, .tl-article--sidebar .related-articles ul ul, .tl-article--content ul .tl-article--sidebar .related-articles ul, .tl-article--content ol .tl-article--sidebar .related-articles ul, .tl-article--sidebar .related-articles .tl-article--content ol ul, .tl-community--post--content ul .tl-article--sidebar .related-articles ul, .govuk-list .tl-article--content ul, .tl-article--content .govuk-list ul, .tl-article--content ul ul, .tl-article--content ol ul, .govuk-list .tl-article--content ol, .tl-article--content .govuk-list ol, .tl-article--sidebar .related-articles ul .tl-article--content ol, .tl-article--content .tl-article--sidebar .related-articles ul ol, .tl-article--content ul ol, .tl-article--content ol ol, .tl-community--post--content ul .tl-article--content ol, .govuk-list .tl-community--post--content ul, .tl-community--post--content .govuk-list ul, .tl-community--post--content ul ul {
     margin-top: 10px; }
 
-.govuk-list > li, .tl-article--content ul > li, .tl-article--content ol > li, .tl-community--post--content ul > li {
+.govuk-list > li, .tl-article--sidebar .related-articles ul > li, .tl-article--content ul > li, .tl-article--content ol > li, .tl-community--post--content ul > li {
   margin-bottom: 5px; }
 
 .govuk-list--bullet, .tl-article--content ul, .tl-community--post--content ul {
@@ -473,13 +473,18 @@
 .tl-community--post--content .tl-community--comment--actions + h2,
 .tl-community--post--content .tl-community--post--actions + h2,
 .govuk-list + .govuk-heading-l,
+.tl-article--sidebar .related-articles ul + .govuk-heading-l,
 .tl-article--content ul + .govuk-heading-l,
 .tl-article--content ol + .govuk-heading-l,
 .tl-community--post--content ul + .govuk-heading-l,
 .tl-article--content .govuk-list + h2,
+.tl-article--sidebar .related-articles .tl-article--content ul + h2,
+.tl-article--content .tl-article--sidebar .related-articles ul + h2,
 .tl-article--content ul + h2,
 .tl-article--content ol + h2,
 .tl-community--post--content .govuk-list + h2,
+.tl-article--sidebar .related-articles .tl-community--post--content ul + h2,
+.tl-community--post--content .tl-article--sidebar .related-articles ul + h2,
 .tl-article--content .tl-community--post--content ol + h2,
 .tl-community--post--content ul + h2 {
   padding-top: 15px; }
@@ -495,13 +500,18 @@
     .tl-community--post--content .tl-community--comment--actions + h2,
     .tl-community--post--content .tl-community--post--actions + h2,
     .govuk-list + .govuk-heading-l,
+    .tl-article--sidebar .related-articles ul + .govuk-heading-l,
     .tl-article--content ul + .govuk-heading-l,
     .tl-article--content ol + .govuk-heading-l,
     .tl-community--post--content ul + .govuk-heading-l,
     .tl-article--content .govuk-list + h2,
+    .tl-article--sidebar .related-articles .tl-article--content ul + h2,
+    .tl-article--content .tl-article--sidebar .related-articles ul + h2,
     .tl-article--content ul + h2,
     .tl-article--content ol + h2,
     .tl-community--post--content .govuk-list + h2,
+    .tl-article--sidebar .related-articles .tl-community--post--content ul + h2,
+    .tl-community--post--content .tl-article--sidebar .related-articles ul + h2,
     .tl-article--content .tl-community--post--content ol + h2,
     .tl-community--post--content ul + h2 {
       padding-top: 20px; } }
@@ -517,13 +527,18 @@
 .tl-community--post--content .tl-community--comment--actions + h3,
 .tl-community--post--content .tl-community--post--actions + h3,
 .govuk-list + .govuk-heading-m,
+.tl-article--sidebar .related-articles ul + .govuk-heading-m,
 .tl-article--content ul + .govuk-heading-m,
 .tl-article--content ol + .govuk-heading-m,
 .tl-community--post--content ul + .govuk-heading-m,
 .tl-article--content .govuk-list + h3,
+.tl-article--sidebar .related-articles .tl-article--content ul + h3,
+.tl-article--content .tl-article--sidebar .related-articles ul + h3,
 .tl-article--content ul + h3,
 .tl-article--content ol + h3,
 .tl-community--post--content .govuk-list + h3,
+.tl-article--sidebar .related-articles .tl-community--post--content ul + h3,
+.tl-community--post--content .tl-article--sidebar .related-articles ul + h3,
 .tl-article--content .tl-community--post--content ol + h3,
 .tl-community--post--content ul + h3,
 .govuk-body-m + .govuk-heading-s,
@@ -578,16 +593,23 @@
 .tl-dropdown .tl-community--comment--actions + label,
 .tl-dropdown .tl-community--post--actions + label,
 .govuk-list + .govuk-heading-s,
+.tl-article--sidebar .related-articles ul + .govuk-heading-s,
 .tl-article--content ul + .govuk-heading-s,
 .tl-article--content ol + .govuk-heading-s,
 .tl-community--post--content ul + .govuk-heading-s,
 .tl-article--content .govuk-list + h4,
+.tl-article--sidebar .related-articles .tl-article--content ul + h4,
+.tl-article--content .tl-article--sidebar .related-articles ul + h4,
 .tl-article--content ul + h4,
 .tl-article--content ol + h4,
 .tl-community--post--content .govuk-list + h4,
+.tl-article--sidebar .related-articles .tl-community--post--content ul + h4,
+.tl-community--post--content .tl-article--sidebar .related-articles ul + h4,
 .tl-article--content .tl-community--post--content ol + h4,
 .tl-community--post--content ul + h4,
 .tl-dropdown .govuk-list + label,
+.tl-article--sidebar .related-articles .tl-dropdown ul + label,
+.tl-dropdown .tl-article--sidebar .related-articles ul + label,
 .tl-article--content .tl-dropdown ul + label,
 .tl-dropdown .tl-article--content ul + label,
 .tl-article--content .tl-dropdown ol + label,
@@ -607,13 +629,18 @@
     .tl-community--post--content .tl-community--comment--actions + h3,
     .tl-community--post--content .tl-community--post--actions + h3,
     .govuk-list + .govuk-heading-m,
+    .tl-article--sidebar .related-articles ul + .govuk-heading-m,
     .tl-article--content ul + .govuk-heading-m,
     .tl-article--content ol + .govuk-heading-m,
     .tl-community--post--content ul + .govuk-heading-m,
     .tl-article--content .govuk-list + h3,
+    .tl-article--sidebar .related-articles .tl-article--content ul + h3,
+    .tl-article--content .tl-article--sidebar .related-articles ul + h3,
     .tl-article--content ul + h3,
     .tl-article--content ol + h3,
     .tl-community--post--content .govuk-list + h3,
+    .tl-article--sidebar .related-articles .tl-community--post--content ul + h3,
+    .tl-community--post--content .tl-article--sidebar .related-articles ul + h3,
     .tl-article--content .tl-community--post--content ol + h3,
     .tl-community--post--content ul + h3,
     .govuk-body-m + .govuk-heading-s,
@@ -668,16 +695,23 @@
     .tl-dropdown .tl-community--comment--actions + label,
     .tl-dropdown .tl-community--post--actions + label,
     .govuk-list + .govuk-heading-s,
+    .tl-article--sidebar .related-articles ul + .govuk-heading-s,
     .tl-article--content ul + .govuk-heading-s,
     .tl-article--content ol + .govuk-heading-s,
     .tl-community--post--content ul + .govuk-heading-s,
     .tl-article--content .govuk-list + h4,
+    .tl-article--sidebar .related-articles .tl-article--content ul + h4,
+    .tl-article--content .tl-article--sidebar .related-articles ul + h4,
     .tl-article--content ul + h4,
     .tl-article--content ol + h4,
     .tl-community--post--content .govuk-list + h4,
+    .tl-article--sidebar .related-articles .tl-community--post--content ul + h4,
+    .tl-community--post--content .tl-article--sidebar .related-articles ul + h4,
     .tl-article--content .tl-community--post--content ol + h4,
     .tl-community--post--content ul + h4,
     .tl-dropdown .govuk-list + label,
+    .tl-article--sidebar .related-articles .tl-dropdown ul + label,
+    .tl-dropdown .tl-article--sidebar .related-articles ul + label,
     .tl-article--content .tl-dropdown ul + label,
     .tl-dropdown .tl-article--content ul + label,
     .tl-article--content .tl-dropdown ol + label,
@@ -4940,6 +4974,9 @@
 
 .tl-article--content img {
   max-width: 100%; }
+
+.tl-article--sidebar .related-articles h2 {
+  display: none; }
 
 .tl-article--date {
   margin-top: 25px; }

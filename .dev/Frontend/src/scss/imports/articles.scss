@@ -9,6 +9,18 @@
     }
 }
 
+.tl-article--sidebar {
+    .related-articles {
+        h2 {
+            display: none;
+        }
+
+        ul {
+            @extend .govuk-list;
+        }
+    }
+}
+
 .tl-article--date {
     @include govuk-responsive-margin(7, "top");
 }
