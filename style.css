@@ -5297,6 +5297,12 @@
     border-bottom: 1px solid #ffffff; }
 
 /* Article content styling */
+.tl-article--content th {
+  border: none; }
+
+.tl-article--content td {
+  border: none; }
+
 .tl-article--content--casestudy h2 {
   margin-top: 25px; }
   @media (min-width: 40.0625em) {

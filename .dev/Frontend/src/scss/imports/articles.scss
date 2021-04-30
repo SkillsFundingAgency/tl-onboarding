@@ -214,10 +214,12 @@
     }
 
     th {
+        border: none;
         @extend .govuk-table__header;
     }
 
     td {
+        border: none;
         @extend .govuk-table__cell;
     }
 }
