@@ -88,7 +88,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <hr class="govuk-section-break govuk-section-break--visible">
-                <div class="tl-article--content govuk-!-margin-top-9">{{article.body}}</div>
+                <div class="tl-article--content tl-article--content--casestudy govuk-!-margin-top-9">{{article.body}}</div>
 
                 <section class="tl-attachments">
                     {{#each attachments}}
@@ -116,11 +116,15 @@
                 <div class="tl-article--sidebar govuk-!-margin-top-9">
                     <h2 class="govuk-heading-m">Related content</h2>
                     {{related_articles}}
-                    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                    <h2 class="govuk-heading-s">Category</h2>
-                    {{path_step}}
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                    <ul>
+                        {{#each article.path_steps}}
+                        <li title="{{name}}"><a href="{{url}}" target="{{target}}">{{name}}</a></li>
+                        {{/each}}
+                    </ul>
+
                 </div>
-                
+
             </div>
         </div>
 
@@ -145,18 +149,18 @@
             </div>
             <div class="govuk-grid-row">
                 <div id="commentform" class="govuk-grid-column-two-thirds govuk-!-margin-top-3">
-                        <form id="formoid" action="/api/v2/requests.json" title="articlefeedback" method="post" class="tl-article--vote--form">
-                            <div class="govuk-character-count">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label" for="Comment">Is there anything we could do to further improve this page? (optional)</label>
-                                    <textarea maxlength="500" class="govuk-textarea govuk-js-character-count" id="Comment" name="Comment" rows="5" aria-describedby="Comment-info"></textarea>
-                                </div>
-                                <div id="Comment-info" class="tl-article--vote--form--count" aria-live="polite">You have <span id="chars">500</span> characters remaining</div>
+                    <form id="formoid" action="/api/v2/requests.json" title="articlefeedback" method="post" class="tl-article--vote--form">
+                        <div class="govuk-character-count">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="Comment">Is there anything we could do to further improve this page? (optional)</label>
+                                <textarea maxlength="500" class="govuk-textarea govuk-js-character-count" id="Comment" name="Comment" rows="5" aria-describedby="Comment-info"></textarea>
                             </div>
-                            <div class="govuk-!-margin-top-3">
-                                <input class="govuk-button articlefeedbackbutton" type="submit" id="submitButton" name="submitButton" value="Submit">
-                            </div>
-                        </form>
+                            <div id="Comment-info" class="tl-article--vote--form--count" aria-live="polite">You have <span id="chars">500</span> characters remaining</div>
+                        </div>
+                        <div class="govuk-!-margin-top-3">
+                            <input class="govuk-button articlefeedbackbutton" type="submit" id="submitButton" name="submitButton" value="Submit">
+                        </div>
+                    </form>
 
                 </div>
             </div>

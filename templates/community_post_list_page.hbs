@@ -114,18 +114,21 @@
                 <table class="govuk-table">
                     <thead class="govuk-table__head">
 
-
-                        {{#each posts}}
-                        {{#if pinned}}
-
-                        {{#if @first}}
-                        <tr class="govuk-table__row">
+                        <tr class="govuk-table__row tl-community-table__header--pinned">
                             <th scope="col" class="govuk-table__header tl-community--table__header">Pinned discussion</th>
                             <th scope="col" class="govuk-table__header tl-community--table__header">Replies</th>
                         </tr>
-                        {{/if}}
 
-                        <tr class="govuk-table__row tl-community--table__row ">
+                        <script>
+                            $(document).ready(function () {
+                                if ($(".tl-community--table__row--pinned")[0]) {
+                                    $(".tl-community-table__header--pinned").show();
+                                }
+                            });
+                        </script>
+                        {{#each posts}}
+                        {{#if pinned}}
+                        <tr class="govuk-table__row tl-community--table__row tl-community--table__row--pinned ">
                             <th scope="row" class="govuk-table__cell tl-community-table-post--pinned">
                                 <a href="{{url}}" id="tl-community-home--post" class="govuk-link tl-community-table-post--link">{{title}}</a>
                                 <script>

@@ -14,15 +14,15 @@
         h2 {
             display: none;
         }
+    }
 
-        ul {
-            @extend .govuk-list;
-        }
+    ul {
+        @extend .govuk-list;
+    }
 
-        a {
-            @extend .govuk-body-s;
-            @extend .govuk-link;
-        }
+    a {
+        @extend .govuk-body-s;
+        @extend .govuk-link;
     }
 }
 
@@ -203,5 +203,22 @@
     ol {
         @extend .govuk-list;
         @extend .govuk-list--number;
+    }
+
+    .wysiwyg-indent1 {
+        @extend .govuk-inset-text;
+    }
+}
+
+.tl-article--content--casestudy {
+
+    h2 {
+        @extend .govuk-heading-m;
+        @include govuk-responsive-margin(7, "top");
+    }
+
+    h3 {
+        @extend .govuk-heading-s;
+        @include govuk-responsive-margin(7, "top");
     }
 }
