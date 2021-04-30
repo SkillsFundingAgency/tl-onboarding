@@ -3728,7 +3728,7 @@
     outline: 3px solid #ffdd00;
     background-color: #ffdd00; }
 
-.govuk-table {
+.govuk-table, .tl-article--content table {
   font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3742,29 +3742,30 @@
   border-spacing: 0;
   border-collapse: collapse; }
   @media print {
-    .govuk-table {
+    .govuk-table, .tl-article--content table {
       font-family: sans-serif; } }
   @media (min-width: 40.0625em) {
-    .govuk-table {
+    .govuk-table, .tl-article--content table {
       font-size: 19px;
       font-size: 1.1875rem;
       line-height: 1.31579; } }
   @media print {
-    .govuk-table {
+    .govuk-table, .tl-article--content table {
       font-size: 14pt;
       line-height: 1.15; } }
   @media print {
-    .govuk-table {
+    .govuk-table, .tl-article--content table {
       color: #000000; } }
   @media (min-width: 40.0625em) {
-    .govuk-table {
+    .govuk-table, .tl-article--content table {
       margin-bottom: 30px; } }
 
-.govuk-table__header {
+.govuk-table__header, .tl-article--content th {
   font-weight: 700; }
 
-.govuk-table__header,
-.govuk-table__cell {
+.govuk-table__header, .tl-article--content th,
+.govuk-table__cell,
+.tl-article--content td {
   padding: 10px 20px 10px 0;
   border-bottom: 1px solid #b1b4b6;
   text-align: left;
@@ -3790,8 +3791,9 @@
 .govuk-table__cell--numeric {
   text-align: right; }
 
-.govuk-table__header:last-child,
-.govuk-table__cell:last-child {
+.govuk-table__header:last-child, .tl-article--content th:last-child,
+.govuk-table__cell:last-child,
+.tl-article--content td:last-child {
   padding-right: 0; }
 
 .govuk-table__caption {
@@ -5688,7 +5690,7 @@ ul.govuk-radios label .gem-radios__input {
   .tl-hero--community--minimal .tl-search--error {
     text-align: left; }
 
-.tl-community--table__row .govuk-table__cell {
+.tl-community--table__row .govuk-table__cell, .tl-community--table__row .tl-article--content td, .tl-article--content .tl-community--table__row td {
   padding: 20px 20px 20px 0; }
 
 .tl-community--table__row:last-child th, .tl-community--table__row:last-child td {
