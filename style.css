@@ -5297,11 +5297,18 @@
     border-bottom: 1px solid #ffffff; }
 
 /* Article content styling */
+.tl-article--content table {
+  border: none !important; }
+
 .tl-article--content th {
-  border: none; }
+  border-left: none;
+  border-top: none;
+  border-right: none; }
 
 .tl-article--content td {
-  border: none; }
+  border-left: none;
+  border-top: none;
+  border-right: none; }
 
 .tl-article--content--casestudy h2 {
   margin-top: 25px; }

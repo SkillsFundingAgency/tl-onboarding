@@ -211,15 +211,20 @@
 
     table {
         @extend .govuk-table;
+        border: none !important;
     }
 
     th {
-        border: none;
+        border-left: none;
+        border-top: none;
+        border-right: none;
         @extend .govuk-table__header;
     }
 
     td {
-        border: none;
+        border-left: none;
+        border-top: none;
+        border-right: none;
         @extend .govuk-table__cell;
     }
 }
