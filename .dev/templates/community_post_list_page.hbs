@@ -127,7 +127,7 @@
                             });
                         </script>
                         {{#each posts}}
-                        {{#if featured}}
+                        {{#if pinned}}
                         <tr class="govuk-table__row tl-community--table__row tl-community--table__row--pinned ">
                             <th scope="row" class="govuk-table__cell tl-community-table-post--pinned">
                                 <a href="{{url}}" id="tl-community-home--post" class="govuk-link tl-community-table-post--link">{{title}}</a>
@@ -154,7 +154,7 @@
                     </thead>
                     <tbody class="govuk-table__body">
                         {{#each posts}}
-                        {{#if featured}}
+                        {{#if pinned}}
                         {{else}}
                         <tr class="govuk-table__row tl-community--table__row ">
                             <th scope="row" class="govuk-table__cell">
