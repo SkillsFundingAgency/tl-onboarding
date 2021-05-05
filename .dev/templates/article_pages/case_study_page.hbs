@@ -88,6 +88,18 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <hr class="govuk-section-break govuk-section-break--visible">
+
+                <script>
+                    function addAnchors() {
+                        $.each($('h2'), function (index, value) {
+                            $('#tl-article--contents').append('<li><a class="govuk-link" href="#anchor-' + index + '">' + $(this).html() + '</a></li>');
+                            $(this).html('<a name="anchor-' + index + '">' + $(this).html() + '</a>');
+                        });
+                    }
+                </script>
+                <ul class="govuk-list" id="tl-article--contents">
+
+                </ul>
                 <div class="tl-article--content tl-article--content--casestudy govuk-!-margin-top-9">{{article.body}}</div>
 
                 <section class="tl-attachments">
