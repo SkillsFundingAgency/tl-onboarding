@@ -91,7 +91,7 @@
 
                 <script>
                     $(document).ready(function () {
-                        $('.tl-article--content').each($('h2'), function (index, value) {
+                        $('.tl-article--content').find('h2').each(function (index, value) {
                             $('#tl-article--contents').append('<li><a class="govuk-link" href="#anchor-' + index + '">' + $(this).html() + '</a></li>');
                             $(this).html('<a name="anchor-' + index + '">' + $(this).html() + '</a>');
                         });
