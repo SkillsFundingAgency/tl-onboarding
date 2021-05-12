@@ -245,5 +245,6 @@
 
 .tl-article--backtotop {
     @extend .govuk-link;
-    position: sticky;
+    width: auto !important;
+    padding-top: 10px;
 }

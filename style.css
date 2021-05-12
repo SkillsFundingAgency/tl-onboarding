@@ -5326,7 +5326,8 @@
       margin-top: 40px; } }
 
 .tl-article--backtotop {
-  position: sticky; }
+  width: auto !important;
+  padding-top: 10px; }
 
 .tl-section--subscribe button {
   margin-top: 5px; }
