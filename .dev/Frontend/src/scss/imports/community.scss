@@ -22,8 +22,15 @@
 }
 
 .tl-community--table__row {
+    
     .govuk-table__cell {
         padding: 20px 20px 20px 0;
+    }
+
+    &:last-child {
+        th, td {
+            border-bottom: none;
+        }
     }
 }
 
@@ -59,6 +66,13 @@
         p {
             margin: 0;
         }
+    }
+
+    &--pinned {
+        background-image: govuk-image-url("pin.svg");
+        background-repeat: no-repeat;
+        background-position: 95% 24px;
+        background-size: 18px;
     }
 }
 
@@ -241,4 +255,8 @@
             }
         }
     }
+}
+
+.tl-community-table__header--pinned {
+    display: none;
 }
