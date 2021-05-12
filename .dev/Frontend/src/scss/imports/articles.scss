@@ -242,3 +242,8 @@
         @include govuk-responsive-margin(7, "top");
     }
 }
+
+.tl-article--backtoptop {
+    @extend .govuk-link;
+    position: sticky;
+}
