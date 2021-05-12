@@ -146,6 +146,11 @@
                     </ul>
 
                     <a href="#" class="tl-article--backtotop">Back to top</a>
+                    <script>
+                        $(document).ready(function () {
+                            $('.tl-article--backtotop').scrollToFixed({ bottom: 0, limit: $('.tl-article--vote').offset().top });
+                        });
+                    </script>
                 </div>
 
             </div>
