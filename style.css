@@ -5085,6 +5085,9 @@
 .tl-article--sidebar .related-articles h2 {
   display: none; }
 
+.tl-article--sidebar ul {
+  margin-bottom: 0; }
+
 .tl-article--date {
   margin-top: 25px; }
   @media (min-width: 40.0625em) {

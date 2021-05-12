@@ -18,6 +18,7 @@
 
     ul {
         @extend .govuk-list;
+        margin-bottom: 0;
     }
 
     a {

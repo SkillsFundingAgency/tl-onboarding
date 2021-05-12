@@ -57,6 +57,8 @@
             <div class="govuk-grid-column-two-thirds">
                 <span class="govuk-caption-xl">Case study</span>
                 <h1 class="govuk-heading-xl">{{article.title}}</h1>
+
+
             </div>
         </div>
         <div class="govuk-grid-row">
@@ -64,19 +66,19 @@
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                 <dl class="govuk-summary-list govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
+                        <dt class="govuk-summary-list__key govuk-body-s">
                             Published
                         </dt>
-                        <dd class="govuk-summary-list__value">
+                        <dd class="govuk-summary-list__value govuk-body-s">
                             {{date article.created_at format='medium'}}
                         </dd>
                     </div>
                     {{#is article.created_at article.edited_at}}{{else}}
                     <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
+                        <dt class="govuk-summary-list__key govuk-body-s">
                             Last updated
                         </dt>
-                        <dd class="govuk-summary-list__value">
+                        <dd class="govuk-summary-list__value govuk-body-s">
                             {{date article.edited_at format='medium'}}
                         </dd>
                     </div>
@@ -88,19 +90,28 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <hr class="govuk-section-break govuk-section-break--visible">
-
                 <script>
                     $(document).ready(function () {
                         $('.tl-article--content').find('h2').each(function (index, value) {
-                            $('#tl-article--contents').append('<li><a class="govuk-link" href="#anchor-' + index + '">' + $(this).html() + '</a></li>');
-                            $(this).html('<a name="anchor-' + index + '">' + $(this).html() + '</a>');
+                            if ($(this).text() == 'Overview') {
+                                $('#tl-article--contents').append('<li class="govuk-body-s">&#8212; ' + $(this).html() + '</li>');
+                            }
+
+                            else {
+                                $('#tl-article--contents').append('<li class="govuk-body-s">&#8212; <a class="govuk-link" href="#anchor-' + index + '">' + $(this).html() + '</a></li>');
+                                $(this).html('<a name="anchor-' + index + '">' + $(this).html() + '</a>');
+                            }
                         });
                     });
 
                 </script>
-                <ul class="govuk-list govuk-!-margin-top-9" id="tl-article--contents">
+                <h2 class="govuk-body-s govuk-!-margin-top-6">Contents</h2>
+                <ul class="govuk-list" id="tl-article--contents">
                 </ul>
-                <div class="tl-article--content tl-article--content--casestudy govuk-!-margin-top-9">{{article.body}}</div>
+
+                <div class="tl-article--content tl-article--content--casestudy govuk-!-margin-top-6">
+                    {{article.body}}
+                </div>
 
                 <section class="tl-attachments">
                     {{#each attachments}}
@@ -125,10 +136,9 @@
             </div>
             <div class="govuk-grid-column-one-third">
                 <hr class="govuk-section-break govuk-section-break--visible tl-section-break--blue">
-                <div class="tl-article--sidebar govuk-!-margin-top-9">
+                <div class="tl-article--sidebar govuk-!-margin-top-6">
                     <h2 class="govuk-heading-m">Related content</h2>
                     {{related_articles}}
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     <ul>
                         {{#each article.path_steps}}
                         <li title="{{name}}"><a href="{{url}}" target="{{target}}">{{name}}</a></li>
