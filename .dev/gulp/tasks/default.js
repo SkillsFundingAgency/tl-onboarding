@@ -31,6 +31,7 @@ gulp.task('js', () => {
 gulp.task('customjs', () => {
     return src([
         'Frontend/src/js/custom.js',
+        'Frontend/src/js/scrollfixed.js',
         'node_modules/moment/moment.js',
     ])
         .pipe(concat('custom.js'))

@@ -144,7 +144,14 @@
                         <li title="{{name}}"><a href="{{url}}" target="{{target}}">{{name}}</a></li>
                         {{/each}}
                     </ul>
+                    <hr class="govuk-section-break govuk-section-break--m">
 
+                    <a href="#main-content" class="tl-article--backtotop">Back to top</a>
+                    <script>
+                        $(document).ready(function () {
+                            $('.tl-article--backtotop').scrollToFixed({ limit: $('.tl-article--vote').offset().top });
+                        });
+                    </script>
                 </div>
 
             </div>
