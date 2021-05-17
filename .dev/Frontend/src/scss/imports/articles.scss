@@ -243,6 +243,11 @@
     }
 }
 
+.govuk-tabs__list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
 .tl-article--backtotop {
     @extend .govuk-link;
     width: auto !important;

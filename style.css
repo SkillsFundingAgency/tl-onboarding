@@ -5325,6 +5325,10 @@
     .tl-article--content--casestudy h3 {
       margin-top: 40px; } }
 
+.govuk-tabs__list {
+  list-style: none !important;
+  padding-left: 0 !important; }
+
 .tl-article--backtotop {
   width: auto !important;
   padding-top: 10px; }
