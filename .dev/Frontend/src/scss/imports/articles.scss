@@ -252,4 +252,7 @@
     @extend .govuk-link;
     width: auto !important;
     padding-top: 10px;
+    position: fixed;
+    bottom: 0;
+    display: none;
 }
