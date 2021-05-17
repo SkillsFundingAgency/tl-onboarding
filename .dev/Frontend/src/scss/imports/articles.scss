@@ -228,6 +228,14 @@
         border-right: none;
         @extend .govuk-table__cell;
     }
+
+    .govuk-details[open] >.govuk-details__text {
+        display: inline-block !important;
+    }
+
+    .govuk-details__text {
+        display: none;
+    }
 }
 
 .tl-article--content--casestudy {
@@ -256,3 +264,4 @@
     bottom: 0;
     display: none;
 }
+
