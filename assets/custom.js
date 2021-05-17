@@ -45,6 +45,12 @@ $(document).ready(function () {
     });
 });
 
+/* Make tabs and details work in articles */
+
+$(".govuk-tabs").attr("data-module", "govuk-tabs");
+$(".govuk-details").attr("data-module", "govuk-details");
+
+
 
 /* Follow/unfollow section subscription */
 $(document).ready(function () {
