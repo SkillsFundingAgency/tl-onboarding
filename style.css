@@ -5336,11 +5336,19 @@
   padding-left: 0 !important; }
 
 .tl-article--backtotop {
-  width: auto !important;
-  padding-top: 10px;
-  position: fixed;
-  bottom: 0;
-  display: none; }
+  position: fixed; }
+  @media (min-width: 40.0625em) {
+    .tl-article--backtotop {
+      width: auto !important;
+      padding-top: 10px;
+      bottom: 0;
+      display: none; } }
+  @media (max-width: 40.0525em) {
+    .tl-article--backtotop {
+      width: 100%;
+      background-color: white;
+      padding: 10px 0;
+      margin-bottom: 0 !important; } }
 
 .tl-section--subscribe button {
   margin-top: 5px; }

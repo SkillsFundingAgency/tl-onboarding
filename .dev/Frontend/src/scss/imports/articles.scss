@@ -258,10 +258,21 @@
 
 .tl-article--backtotop {
     @extend .govuk-link;
-    width: auto !important;
-    padding-top: 10px;
     position: fixed;
-    bottom: 0;
-    display: none;
+
+
+    @include govuk-media-query ($from: tablet) {
+        width: auto !important;
+        padding-top: 10px;
+        bottom: 0;
+        display: none;
+    }
+
+    @include govuk-media-query($until: tablet) {
+        width: 100%;
+        background-color: white;
+        padding: 10px 0;
+        margin-bottom: 0 !important;
+    }
 }
 
