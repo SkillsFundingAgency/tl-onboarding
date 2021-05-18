@@ -48,10 +48,7 @@ $(document).ready(function () {
 /* Make tabs and details work in articles */
 
 $(".govuk-tabs").attr("data-module", "govuk-tabs");
-$(".govuk-details").attr("data-module", "govuk-details");
-$(".govuk-details__summary, .govuk-details__summary *").click(function () {
-    $(this).parents(".govuk-details").prop('open', true)
-});
+
 
 
 
