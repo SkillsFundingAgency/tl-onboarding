@@ -276,3 +276,7 @@
     }
 }
 
+
+.tl-article--details__summary {
+    @extend .govuk-details__summary;
+}

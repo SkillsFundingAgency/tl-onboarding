@@ -49,9 +49,9 @@ $(document).ready(function () {
 
 $(".govuk-tabs").attr("data-module", "govuk-tabs");
 $(".govuk-details").attr("data-module", "govuk-details");
-$(".govuk-details__summary").click(
+$(".govuk-details__summary *").click(function () {
     $(this).parent(".govuk-details").prop('open', true)
-);
+});
 
 
 
