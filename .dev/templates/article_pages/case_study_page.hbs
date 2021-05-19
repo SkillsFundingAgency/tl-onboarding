@@ -113,13 +113,6 @@
                     {{article.body}}
                 </div>
 
-                <script>
-                    $(".govuk-details").attr("data-module", "govuk-details");
-                    $(".govuk-details__summary, .govuk-details__summary *").click(function () {
-                        $(this).parents(".govuk-details").prop('open', true)
-                    });
-                </script>
-
                 <section class="tl-attachments">
                     {{#each attachments}}
                     <div class="tl-attachment">

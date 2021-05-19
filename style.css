@@ -5300,6 +5300,9 @@
     border-bottom: 1px solid #ffffff; }
 
 /* Article content styling */
+.tl-article--content p {
+  overflow: hidden; }
+
 .tl-article--content table {
   border: none !important; }
 
@@ -5317,7 +5320,8 @@
   display: inline-block !important; }
 
 .tl-article--content .govuk-details__text {
-  display: none; }
+  display: none;
+  width: 100%; }
 
 .tl-article--content--casestudy h2 {
   margin-top: 25px; }

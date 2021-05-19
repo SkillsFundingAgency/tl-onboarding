@@ -190,6 +190,7 @@
 
     p {
         @extend .govuk-body;
+        overflow: hidden;
     }
 
     ul {
@@ -235,6 +236,7 @@
 
     .govuk-details__text {
         display: none;
+        width: 100%;
     }
 }
 
