@@ -1,3 +1,156 @@
+/* Feature panels */
+.feature-panels-header {
+    border-bottom: 1px solid #BFC1C3;
+    padding-bottom: 10px;
+}
+
+.feature-panels {
+    display: flex;
+    flex-direction: column;
+    margin: -10px 0 -10px;
+}
+
+.feature-panels__panel {
+    background: #F8F8F8;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    border-bottom: 5px solid #003A69;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.feature-panels__panel--dark {
+    background: #1D70B8;
+    border-bottom-color: #0E385C;
+}
+
+.feature-panels__panel--dark *:not(:focus, :focus span) {
+    color: #FFFFFF;
+}
+
+.feature-panels__panel--front-door {
+    background: #FFFFFF;
+    border-bottom-color: #626A6E;
+}
+
+.feature-panels__panel--pinned {
+    background: rgba(255, 221, 0, 0.2);
+    border-bottom-color: #807C66;
+}
+
+.feature-panels__panel--with-image {
+    border-bottom: none;
+}
+
+.feature-panels__panel__image {
+    background-position: 50%;
+    background-size: cover;
+    height: 50vw;
+}
+
+.feature-panels__panel__inner,
+.feature-panels__panel__link {
+    flex: auto;
+    padding: 20px 20px 0;
+    text-decoration: none;
+}
+
+.feature-panels__panel__link:focus {
+    background: #1D70B8;
+    outline: none;
+}
+
+.feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:focus {
+    box-shadow: 0px 5px #0E385C;
+}
+
+.feature-panels__panel__link .govuk-heading-s {
+    color: #1D70B8;
+}
+
+.feature-panels__panel__link:focus * {
+    color: #FFF;
+}
+
+.feature-panels__panel .govuk-list {
+    background: #FFF;
+    margin: 0;
+    padding: 20px 20px 0;
+}
+
+@media (min-width: 641px) {
+    .feature-panels {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -15px -20px;
+    }
+
+    .feature-panels:not(.feature-panels--small-margin) {
+        margin-bottom: -30px;
+    }
+
+    .feature-panels__panel {
+        box-sizing: border-box;
+        margin: 0 15px 20px;
+        width: calc(33.33% - 30px);
+    }
+
+    .feature-panels:not(.feature-panels--small-margin) .feature-panels__panel {
+        margin-bottom: 30px;
+    }
+
+    .feature-panels__panel--half {
+        width: calc(50% - 30px);
+    }
+
+    .feature-panels__panel--full {
+        width: calc(100% - 30px);
+    }
+
+    .feature-panels__panel--with-image {
+        flex-direction: row;
+    }
+
+    .feature-panels__panel__image {
+        flex-basis: calc(33.33% + 25px);
+        height: auto;
+        min-height: 173px;
+    }
+
+    .feature-panels__panel--with-image .feature-panels__panel__link {
+        flex-basis: calc(66.66% - 25px);
+        padding-left: 30px;
+    }
+
+    @supports (display: grid) {
+        .feature-panels--grid {
+            display: grid;
+            grid-auto-rows: 1fr;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .feature-panels--grid .feature-panels__panel {
+            width: auto;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .feature-panels__panel__link:hover {
+        background: #1D70B8;
+    }
+
+    .feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:hover {
+        box-shadow: 0px 5px #0E385C;
+    }
+
+    .feature-panels__panel__link:hover * {
+        color: #FFF;
+    }
+}
+
+
+
 /* FRONT DOOR CALENDAR */
 
 /* Front Door Calendar - plug-in styles */
@@ -201,156 +354,3 @@
 }
 
 
-
-
-
-/* Feature panels */
-.feature-panels-header {
-    border-bottom: 1px solid #BFC1C3;
-    padding-bottom: 10px;
-}
-
-.feature-panels {
-    display: flex;
-    flex-direction: column;
-    margin: -10px 0 -10px;
-}
-
-.feature-panels__panel {
-    background: #F8F8F8;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-    border-bottom: 5px solid #003A69;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-}
-
-.feature-panels__panel--dark {
-    background: #1D70B8;
-    border-bottom-color: #0E385C;
-}
-
-.feature-panels__panel--dark *:not(:focus, :focus span) {
-    color: #FFFFFF;
-}
-
-.feature-panels__panel--front-door {
-    background: #FFFFFF;
-    border-bottom-color: #626A6E;
-}
-
-.feature-panels__panel--pinned {
-    background: rgba(255, 221, 0, 0.2);
-    border-bottom-color: #807C66;
-}
-
-.feature-panels__panel--with-image {
-    border-bottom: none;
-}
-
-.feature-panels__panel__image {
-    background-position: 50%;
-    background-size: cover;
-    height: 50vw;
-}
-
-.feature-panels__panel__inner,
-.feature-panels__panel__link {
-    flex: auto;
-    padding: 20px 20px 0;
-    text-decoration: none;
-}
-
-.feature-panels__panel__link:focus {
-    background: #1D70B8;
-    outline: none;
-}
-
-.feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:focus {
-    box-shadow: 0px 5px #0E385C;
-}
-
-.feature-panels__panel__link .govuk-heading-s {
-    color: #1D70B8;
-}
-
-.feature-panels__panel__link:focus * {
-    color: #FFF;
-}
-
-.feature-panels__panel .govuk-list {
-    background: #FFF;
-    margin: 0;
-    padding: 20px 20px 0;
-}
-
-@media (min-width: 641px) {
-    .feature-panels {
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 0 -15px -20px;
-    }
-
-    .feature-panels:not(.feature-panels--small-margin) {
-        margin-bottom: -30px;
-    }
-
-    .feature-panels__panel {
-        box-sizing: border-box;
-        margin: 0 15px 20px;
-        width: calc(33.33% - 30px);
-    }
-
-    .feature-panels:not(.feature-panels--small-margin) .feature-panels__panel {
-        margin-bottom: 30px;
-    }
-
-    .feature-panels__panel--half {
-        width: calc(50% - 30px);
-    }
-
-    .feature-panels__panel--full {
-        width: calc(100% - 30px);
-    }
-
-    .feature-panels__panel--with-image {
-        flex-direction: row;
-    }
-
-    .feature-panels__panel__image {
-        flex-basis: calc(33.33% + 25px);
-        height: auto;
-        min-height: 173px;
-    }
-
-    .feature-panels__panel--with-image .feature-panels__panel__link {
-        flex-basis: calc(66.66% - 25px);
-        padding-left: 30px;
-    }
-
-    @supports (display: grid) {
-        .feature-panels--grid {
-            display: grid;
-            grid-auto-rows: 1fr;
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .feature-panels--grid .feature-panels__panel {
-            width: auto;
-        }
-    }
-}
-
-@media (min-width: 1024px) {
-    .feature-panels__panel__link:hover {
-        background: #1D70B8;
-    }
-
-    .feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:hover {
-        box-shadow: 0px 5px #0E385C;
-    }
-
-    .feature-panels__panel__link:hover * {
-        color: #FFF;
-    }
-}
