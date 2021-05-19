@@ -51,9 +51,8 @@ $(".govuk-tabs").attr("data-module", "govuk-tabs");
 
 $(".govuk-details").attr("data-module", "govuk-details");
 $(".govuk-details__summary").click(function () {
-    if (this.hasAttribute("open")) {
+    if (this.closest(".govuk-details").hasAttribute("open")) {
         $(this).closest(".govuk-details").removeAttr('open');
-
     }
     else {
         $(this).closest(".govuk-details").attr('open', true);
