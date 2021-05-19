@@ -1,18 +1,16 @@
+/* FRONT DOOR CALENDAR */
+
+/* Front Door Calendar - plug-in styles */
+
 .tavo-calendar {
-    text-align: center;
-    font-size: 13px;
+    margin-bottom: 30px;
+    user-select: none;
 }
 
-.tavo-calendar__info {
-    display: none;
-    text-align: left;
-    margin-bottom: 8px;
-    font-size: 12px;
-}
-
-.tavo-calendar__info span {
-    font-weight: bold;
-    background-color: #f1f1f1;
+@media (min-width: 641px) {
+    .tavo-calendar {
+        margin-bottom: 0;
+    }
 }
 
 .tavo-calendar__info:after {
@@ -24,136 +22,335 @@
 .tavo-calendar__header {
     display: flex;
     justify-content: space-between;
-    background-color: green;
-    color: white;
     align-items: center;
-    padding: 4px 8px;
+    text-transform: uppercase;
+    color: #1D70B8;
+    letter-spacing: 2px;
 }
 
-.tavo-calendar__nav {
-    float: left;
-    font-size: 1.125em;
-    font-weight: bold;
-    position: relative;
-    padding: 0;
-    cursor: pointer;
-    fill: white;
-}
-
-.tavo-calendar__nav_prev, .tavo-calendar__nav_next {
-    text-align: left;
-}
-
-.tavo-calendar__nav_prev svg, .tavo-calendar__nav_next svg {
+.tavo-calendar__nav_prev svg,
+.tavo-calendar__nav_next svg {
     width: 16px;
     height: 16px;
 }
 
-.tavo-calendar__code_lock {
-    opacity: 0.7;
-}
-
-.tavo-calendar__code_lock:hover {
-    opacity: 1;
-}
-
-.tavo-calendar__code_lock .tavo-calendar__days {
-    pointer-events: none;
-}
-
 .tavo-calendar__week-names {
     display: flex;
-    background-color: #F1F1F1;
-    font-size: 12px;
-    padding: 4px;
 }
 
 .tavo-calendar__days {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 5px;
-}
-
-.tavo-calendar__reset {
-    float: right;
-}
-
-.tavo-calendar__reset svg {
-    height: 16px;
-    width: 16px;
 }
 
 .tavo-calendar__weekday {
     flex: 1;
     text-align: center;
+    width: 14.28%;
 }
 
 .tavo-calendar__day {
-    flex: 1;
-    min-width: 14%;
-    max-width: 15%;
-    text-align: center;
-    cursor: pointer;
-}
-
-.tavo-calendar__day span {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: inline-block;
-    line-height: 26px;
-    font-size: 12px;
-}
-
-.tavo-calendar__day span:hover {
-    background-color: lightblue;
-}
-
-.tavo-calendar__day_highlight {
-    color: red !important;
-}
-
-.tavo-calendar__day_abs-today {
-    background-color: lightgoldenrodyellow;
-    border-radius: unset;
-}
-
-.tavo-calendar__day_today:hover span {
-    border-radius: 50%;
-}
-
-.tavo-calendar__day_off, .tavo-calendar__day_exp, .tavo-calendar__day_different-month, .tavo-calendar__day_lock {
-    cursor: default;
-    color: grey;
-    background-color: unset;
-}
-
-.tavo-calendar__day_off day, .tavo-calendar__day_off day:hover, .tavo-calendar__day_exp day, .tavo-calendar__day_exp day:hover, .tavo-calendar__day_different-month day, .tavo-calendar__day_different-month day:hover, .tavo-calendar__day_lock day, .tavo-calendar__day_lock day:hover {
-    background: unset;
-}
-
-.tavo-calendar__day_off span {
-    text-decoration: line-through;
-}
-
-.tavo-calendar__day_select span {
-    background-color: unset;
-}
-
-.tavo-calendar__day_select span {
-    background-color: lightblue;
-    border-radius: unset;
-}
-
-.tavo-calendar__day_select day:hover {
-    background-color: lightblue;
-}
-
-.tavo-calendar__day_range-select {
-    background-color: lightblue;
-}
-
-.tavo-calendar__day_select-lock {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
     pointer-events: none;
-    color: grey;
+    position: relative;
+    text-align: center;
+    width: 14.28%;
+}
+
+.tavo-calendar__day .tavo-calendar__day-inner {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin: 4px 0;
+    width: 40px;
+}
+
+.tavo-calendar__day_select {
+    pointer-events: all;
+}
+
+.tavo-calendar__day_select .tavo-calendar__day-inner {
+    color: #1D70B8;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tavo-calendar__day_different-month:not(.event-calendar__user-selected) {
+    opacity: 0.35;
+}
+
+/* Front Door Calendar - custom styles */
+
+[data-set-min-height] {
+    display: flow-root;
+}
+
+[data-flagged-dates],
+[data-flagged-dates-link],
+[data-calendar-state="loaded"],
+[data-calendar-state="error"],
+[data-event-pagination] {
+    display: none;
+}
+
+.event-wrapper--show {
+    display: block;
+}
+
+@media (min-width: 641px) {
+    .event-wrapper--show {
+        display: flex;
+    }
+}
+
+.event-flagged-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-description-wrapper {
+    align-items: flex-end;
+    display: flex;
+}
+
+.event-description-wrapper .event-description {
+    color: #505a5f;
+}
+
+.event-description-wrapper:not(.event-description-wrapper--expand) .event-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-description-wrapper--expand .event-description-toggle .event-description-toggle__more,
+.event-description-toggle .event-description-toggle__less {
+    display: none;
+}
+
+.event-description-toggle .event-description-toggle__more,
+.event-description-wrapper--expand .event-description-toggle .event-description-toggle__less {
+    display: inline;
+    white-space: nowrap;
+}
+
+.event-pagination {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.event-pagination__item {
+    display: inline;
+    list-style-type: none;
+    margin-right: 45px;
+}
+
+.event-pagination__item:last-child {
+    margin-right: 0;
+}
+
+.event-calendar__user-selected .tavo-calendar__day-inner {
+    background: #1D70B8;
+    color: #fff;
+    cursor: unset;
+    text-decoration: none;
+}
+
+.event-calendar__user-selected__close {
+    align-items: center;
+    background: #0E385C;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    height: 25px;
+    justify-content: center;
+    left: calc(50% + 5px);
+    position: absolute;
+    top: -10px;
+    width: 25px;
+}
+
+.event-calendar__user-selected .event-calendar__user-selected__close {
+    display: flex;
+}
+
+.event-calendar__displaying-date:not(.event-calendar__user-selected) .tavo-calendar__day-inner {
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 1px 1px #1D70B8;
+}
+
+@media (min-width: 641px) {
+    .event-list {
+        border-left: 1px solid #BFC1C3;
+        min-height: 100%;
+        padding-left: 30px;
+    }
+}
+
+.event-list__page {
+    display: none;
+}
+
+.event-list__page--current {
+    display: flex;
+}
+
+
+
+
+
+/* Feature panels */
+.feature-panels-header {
+    border-bottom: 1px solid #BFC1C3;
+    padding-bottom: 10px;
+}
+
+.feature-panels {
+    display: flex;
+    flex-direction: column;
+    margin: -10px 0 -10px;
+}
+
+.feature-panels__panel {
+    background: #F8F8F8;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    border-bottom: 5px solid #003A69;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.feature-panels__panel--dark {
+    background: #1D70B8;
+    border-bottom-color: #0E385C;
+}
+
+.feature-panels__panel--dark *:not(:focus, :focus span) {
+    color: #FFFFFF;
+}
+
+.feature-panels__panel--front-door {
+    background: #FFFFFF;
+    border-bottom-color: #626A6E;
+}
+
+.feature-panels__panel--pinned {
+    background: rgba(255, 221, 0, 0.2);
+    border-bottom-color: #807C66;
+}
+
+.feature-panels__panel--with-image {
+    border-bottom: none;
+}
+
+.feature-panels__panel__image {
+    background-position: 50%;
+    background-size: cover;
+    height: 50vw;
+}
+
+.feature-panels__panel__inner,
+.feature-panels__panel__link {
+    flex: auto;
+    padding: 20px 20px 0;
+    text-decoration: none;
+}
+
+.feature-panels__panel__link:focus {
+    background: #1D70B8;
+    outline: none;
+}
+
+.feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:focus {
+    box-shadow: 0px 5px #0E385C;
+}
+
+.feature-panels__panel__link .govuk-heading-s {
+    color: #1D70B8;
+}
+
+.feature-panels__panel__link:focus * {
+    color: #FFF;
+}
+
+.feature-panels__panel .govuk-list {
+    background: #FFF;
+    margin: 0;
+    padding: 20px 20px 0;
+}
+
+@media (min-width: 641px) {
+    .feature-panels {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -15px -20px;
+    }
+
+    .feature-panels:not(.feature-panels--small-margin) {
+        margin-bottom: -30px;
+    }
+
+    .feature-panels__panel {
+        box-sizing: border-box;
+        margin: 0 15px 20px;
+        width: calc(33.33% - 30px);
+    }
+
+    .feature-panels:not(.feature-panels--small-margin) .feature-panels__panel {
+        margin-bottom: 30px;
+    }
+
+    .feature-panels__panel--half {
+        width: calc(50% - 30px);
+    }
+
+    .feature-panels__panel--full {
+        width: calc(100% - 30px);
+    }
+
+    .feature-panels__panel--with-image {
+        flex-direction: row;
+    }
+
+    .feature-panels__panel__image {
+        flex-basis: calc(33.33% + 25px);
+        height: auto;
+        min-height: 173px;
+    }
+
+    .feature-panels__panel--with-image .feature-panels__panel__link {
+        flex-basis: calc(66.66% - 25px);
+        padding-left: 30px;
+    }
+
+    @supports (display: grid) {
+        .feature-panels--grid {
+            display: grid;
+            grid-auto-rows: 1fr;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .feature-panels--grid .feature-panels__panel {
+            width: auto;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .feature-panels__panel__link:hover {
+        background: #1D70B8;
+    }
+
+    .feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:hover {
+        box-shadow: 0px 5px #0E385C;
+    }
+
+    .feature-panels__panel__link:hover * {
+        color: #FFF;
+    }
 }
