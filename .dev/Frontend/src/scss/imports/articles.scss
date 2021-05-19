@@ -240,8 +240,8 @@
     }
 
     iframe {
+        max-width: 100%;
         @include govuk-media-query($until: tablet) {
-            max-width: 100%;
             height: auto;
             min-height: 220px;
         }

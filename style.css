@@ -5323,11 +5323,12 @@
   display: none;
   width: 100%; }
 
-@media (max-width: 40.0525em) {
-  .tl-article--content iframe {
-    max-width: 100%;
-    height: auto;
-    min-height: 220px; } }
+.tl-article--content iframe {
+  max-width: 100%; }
+  @media (max-width: 40.0525em) {
+    .tl-article--content iframe {
+      height: auto;
+      min-height: 220px; } }
 
 .tl-article--content--casestudy h2 {
   margin-top: 25px; }
