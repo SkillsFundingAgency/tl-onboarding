@@ -1,3 +1,11 @@
+.accordion-header {
+    align-items: baseline;
+    border-bottom: 1px solid #BFC1C3;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 /* Feature panels */
 .feature-panels-header {
     border-bottom: 1px solid #BFC1C3;
