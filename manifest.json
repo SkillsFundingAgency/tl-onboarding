@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Calendar ",
   "author": "Ash Anderton",
-  "version": "2.2.29",
+  "version": "2.2.30",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -286,27 +286,32 @@
           "label": "Subject Form ID",
           "value": "360019751459"
         },
+    },
+    {
+      "label": "Calendar",
+      "variables": [
         {
-          "identifier": "tl_calendar_data_source",
-          "type": "text",
-          "description": "Google Sheets document ID",
-          "label": "Calendar data source",
-          "value": "1BDhR3WFnRfvqdj_DgBFXyH0SOHkUR9t-7snW8HwplJU"
-        },
-        {
-          "identifier": "tl_calendar_api_key",
-          "type": "text",
-          "description": "Google Sheets API key",
-          "label": "Calendar data authentication",
-          "value": "AIzaSyCHxvz9up0ndkjmbWOHQKcXJsjLoORe9dc"
-        },
-        {
-          "identifier": "tl_calendar_title",
-          "type": "text",
-          "description": "Calendar",
-          "label": "Title",
-          "value": "Calendar"
-        }
+          {
+            "identifier": "tl_calendar_data_source",
+            "type": "text",
+            "description": "Google Sheets document ID",
+            "label": "Calendar data source",
+            "value": "1gFwl9wBdUaxnStWl9iCPVQLYL1OkRbT1sphl6YJg6MM"
+          },
+          {
+            "identifier": "tl_calendar_api_key",
+            "type": "text",
+            "description": "Google Sheets API key",
+            "label": "Calendar data authentication",
+            "value": "AIzaSyAaoqSxTT8x50q7HBlm4J9RsnxYKKkzj1s"
+          },
+          {
+            "identifier": "tl_calendar_title",
+            "type": "text",
+            "description": "Calendar",
+            "label": "Title",
+            "value": "Calendar"
+          }
       ]
     }
   ]
