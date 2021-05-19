@@ -291,7 +291,6 @@
     {
       "label": "Calendar",
       "variables": [
-        {
           {
             "identifier": "tl_calendar_data_source",
             "type": "text",
