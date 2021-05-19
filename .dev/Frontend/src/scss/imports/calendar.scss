@@ -6,6 +6,54 @@
 }
 
 
+/* Spinner */
+.spinner {
+    text-align: center;
+}
+
+.spinner__animation,
+.spinner__animation::after {
+    border-radius: 50%;
+    box-shadow: 0 4px 4px RGB((0 0 0), 0.25),inset 0 4px 4px RGB((0 0 0), 0.25);
+    height: 40px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 40px;
+}
+
+.spinner__animation::before {
+    animation: spin 0.75s infinite linear;
+    background: black;
+    bottom: 20px;
+    content: '';
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    transform-origin: 0% 100%;
+    width: 20px;
+}
+
+.spinner__animation::after {
+    background: white;
+    content: '';
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 20px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Feature panels */
 .feature-panels-header {
     border-bottom: 1px solid #BFC1C3;
