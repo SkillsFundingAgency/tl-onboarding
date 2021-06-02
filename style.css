@@ -5469,6 +5469,9 @@
 
 .tl-header--title {
   width: auto; }
+  .tl-header--title .tl-search input[type="search"] {
+    border: none;
+    padding-left: 10px; }
 
 .tl-form-group--error {
   padding-left: 15px;

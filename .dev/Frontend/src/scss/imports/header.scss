@@ -31,4 +31,11 @@
 
 .tl-header--title {
     width: auto;
+
+    .tl-search {
+        input[type="search"] {
+            border: none;
+            padding-left: 10px;
+        }
+    }
 }
