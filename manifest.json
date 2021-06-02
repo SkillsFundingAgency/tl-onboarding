@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Calendar ",
   "author": "Ash Anderton",
-  "version": "2.2.41",
+  "version": "2.2.42",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -48,6 +48,13 @@
     {
       "label": "brand_group_label",
       "variables": [
+        {
+          "identifier": "service_name",
+          "type": "text",
+          "description": "Name of the service",
+          "label": "Service Name",
+          "value": "Support with delivering T Levels"
+        },
         {
           "identifier": "logo",
           "type": "file",
