@@ -1,4 +1,10 @@
 .tl-phase-banner {
+    overflow: auto;
+
+    &--contet {
+        float: left;
+    }
+
     .govuk-tag {
         background-color: govuk-colour("pink");
 
@@ -16,12 +22,24 @@
         border-bottom: none;
     }
 
+    &--link {
+        @extend .govuk-link;
+        font-weight: bold;
+    }
+
     .govuk-phase-banner__text {
         vertical-align: middle;
     }
 
     &--right {
+        list-style: none;
         float: right;
+        margin: 3px 0;
+        padding: 0;
 
+        li {
+            float: left;
+            margin-left: 10px;
+        }
     }
 }
