@@ -5468,8 +5468,7 @@
     text-decoration: underline; }
 
 .tl-header--title {
-  width: 100%;
-  float: right;
+  width: auto;
   text-align: left;
   padding-left: 0; }
   @media (max-width: 40.0525em) {
