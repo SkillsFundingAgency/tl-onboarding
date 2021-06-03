@@ -50,7 +50,7 @@ $(document).ready(function () {
 
 var headersearchbox = $(".tl-header--search input[type=search]");
 
-function showerror(message) {
+function showheadererror(message) {
     $(".tl-header--search .tl-search--error").removeClass("tl-hidden");
     $(".tl-header--search .tl-form-group").addClass("tl-form-group--error");
     $(".tl-header--search .tl-search #query").addClass("tl-input--error");
@@ -62,7 +62,7 @@ $(document).ready(function () {
     $(".tl-header--search").submit(function () {
         if (!headersearchbox.val()) {
             event.preventDefault();
-            showerror("You must enter a search term");
+            showheadererror("You must enter a search term");
         }
     });
 });
