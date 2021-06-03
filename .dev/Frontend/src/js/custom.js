@@ -45,6 +45,28 @@ $(document).ready(function () {
     });
 });
 
+
+// Search header messaging
+
+var searchbox = $(".tl-header--search input[type=search]");
+
+function showerror(message) {
+    $(".tl-header--search .tl-search--error").removeClass("tl-hidden");
+    $(".tl-header--search .tl-form-group").addClass("tl-form-group--error");
+    $(".tl-header--search .tl-search #query").addClass("tl-input--error");
+    $(".tl-header--search .tl-error--message").text(message);
+    $(".tl-header--search .tl-input--error:visible:first").focus();
+}
+
+$(document).ready(function () {
+    $(".tl-header--search").submit(function () {
+        if (!searchbox.val()) {
+            event.preventDefault();
+            showerror("You must enter a search term");
+        }
+    });
+});
+
 /* Make tabs and details work in articles */
 
 $(".govuk-tabs").attr("data-module", "govuk-tabs");
