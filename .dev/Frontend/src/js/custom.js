@@ -48,7 +48,7 @@ $(document).ready(function () {
 
 // Search header messaging
 
-var searchbox = $(".tl-header--search input[type=search]");
+var headersearchbox = $(".tl-header--search input[type=search]");
 
 function showerror(message) {
     $(".tl-header--search .tl-search--error").removeClass("tl-hidden");
@@ -60,7 +60,7 @@ function showerror(message) {
 
 $(document).ready(function () {
     $(".tl-header--search").submit(function () {
-        if (!searchbox.val()) {
+        if (!headersearchbox.val()) {
             event.preventDefault();
             showerror("You must enter a search term");
         }
