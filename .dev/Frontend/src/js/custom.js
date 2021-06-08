@@ -457,9 +457,10 @@ function buildEventList(date, dayOnly) {
                 event.preventDefault();
                 toggleEventDescription(index)
             });
+            console.log(item.description);
+
             if (item.description != null || item.description.length() != 0) {
                 $('.event-description-toggle').removeClass("tl-js-hidden");
-                console.log(item.description);
             };
             if (dayOnly) {
                 $newDateItem.removeClass('feature-panels__panel--front-door');
