@@ -453,10 +453,12 @@ function buildEventList(date, dayOnly) {
             $('[data-date-date]', $newDateItem).text(moment(item.date).format('DD MMMM YYYY'));
             $('[data-date-title]', $newDateItem).text(item.title);
             $('[data-date-description]', $newDateItem).text(item.description);
-            $('[data-date-description-toggle]', $newDateItem).click(function (event) {
-                event.preventDefault();
-                toggleEventDescription(index)
-            });
+            if (item.description !== null || item.description.length() !== 0) {
+                $('[data-date-description-toggle]', $newDateItem).click(function (event) {
+                    event.preventDefault();
+                    toggleEventDescription(index)
+                });
+            }
             if (dayOnly) {
                 $newDateItem.removeClass('feature-panels__panel--front-door');
                 $newDateItem.addClass('feature-panels__panel--dark');
