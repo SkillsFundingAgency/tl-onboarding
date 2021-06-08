@@ -459,7 +459,7 @@ function buildEventList(date, dayOnly) {
             });
             console.log(item.description);
 
-            if (item.description != null || item.description.length() != 0) {
+            if (item.description !== "") {
                 $('.event-description-toggle').removeClass("tl-js-hidden");
             };
             if (dayOnly) {
