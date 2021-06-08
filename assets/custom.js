@@ -458,9 +458,9 @@ function buildEventList(date, dayOnly) {
                 toggleEventDescription(index)
             });
             console.log(item.description);
+            $('.event-description-toggle').removeClass("tl-js-hidden");
 
             if (item.description !== "") {
-                $('.event-description-toggle').removeClass("tl-js-hidden");
             };
             if (dayOnly) {
                 $newDateItem.removeClass('feature-panels__panel--front-door');
