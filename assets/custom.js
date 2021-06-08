@@ -458,10 +458,7 @@ function buildEventList(date, dayOnly) {
                 toggleEventDescription(index)
             });
             console.log(item.description);
-            $('.event-description-toggle').removeClass("tl-js-hidden");
-
-            if (item.description !== "") {
-            };
+            $('[data-date-description-toggle]', $newDateItem).removeClass("tl-js-hidden");
             if (dayOnly) {
                 $newDateItem.removeClass('feature-panels__panel--front-door');
                 $newDateItem.addClass('feature-panels__panel--dark');
