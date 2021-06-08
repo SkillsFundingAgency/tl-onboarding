@@ -666,13 +666,7 @@ function frontDoor(apiKey, dataSource) {
 }
 /* END front door functions */
 
-/* Custom calendar stuff */
 
-$(document).ready(function () {
-    $('.event-description:empty').each(function () {
-        $(this).parent('.event-description-wrapper').hide()
-    })
-});
 
 //! moment.js
 //! version : 2.27.0

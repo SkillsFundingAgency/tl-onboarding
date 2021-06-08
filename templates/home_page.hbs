@@ -96,6 +96,17 @@
 
             </div>
         </div>
+
+
+        <script>
+            /* Custom calendar stuff */
+
+            $(document).ready(function () {
+                $('.event-description:empty').each(function () {
+                    $(this).parent('.event-description-wrapper').hide()
+                })
+            });
+        </script>
         <hr class="govuk-section-break govuk-section-break--visible">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
