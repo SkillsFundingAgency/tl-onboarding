@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Calendar ",
   "author": "Ash Anderton",
-  "version": "2.2.63",
+  "version": "2.2.64",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -298,27 +298,27 @@
     {
       "label": "Calendar",
       "variables": [
-          {
-            "identifier": "tl_calendar_data_source",
-            "type": "text",
-            "description": "Google Sheets document ID",
-            "label": "Calendar data source",
-            "value": "1gFwl9wBdUaxnStWl9iCPVQLYL1OkRbT1sphl6YJg6MM"
-          },
-          {
-            "identifier": "tl_calendar_api_key",
-            "type": "text",
-            "description": "Google Sheets API key",
-            "label": "Calendar data authentication",
-            "value": "AIzaSyAaoqSxTT8x50q7HBlm4J9RsnxYKKkzj1s"
-          },
-          {
-            "identifier": "tl_calendar_title",
-            "type": "text",
-            "description": "Calendar",
-            "label": "Title",
-            "value": "Calendar"
-          }
+        {
+          "identifier": "tl_calendar_data_source",
+          "type": "text",
+          "description": "Google Sheets document ID",
+          "label": "Calendar data source",
+          "value": "1NhYHLtWHxP-NnLWG3_sx0y6WVPw4UevFjNCIEJphA8w"
+        },
+        {
+          "identifier": "tl_calendar_api_key",
+          "type": "text",
+          "description": "Google Sheets API key",
+          "label": "Calendar data authentication",
+          "value": "AIzaSyADwFWGoSl4lqRXcDEDb5mFZMiu37253XY"
+        },
+        {
+          "identifier": "tl_calendar_title",
+          "type": "text",
+          "description": "Calendar",
+          "label": "Title",
+          "value": "Calendar"
+        }
       ]
     }
   ]
