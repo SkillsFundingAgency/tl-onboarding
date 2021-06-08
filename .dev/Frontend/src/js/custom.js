@@ -666,3 +666,7 @@ function frontDoor(apiKey, dataSource) {
 }
 /* END front door functions */
 
+/* Custom calendar stuff */
+$('.event-description:empty').each(function () {
+    $(this).parent('.event-description-wrapper').hide()
+})
