@@ -1,20 +1,4 @@
-﻿<div class="govuk-width-container ">
-    <!-- Phase banner -->
-    <div class="govuk-phase-banner tl-phase-banner tl-phase-banner--home">
-        <p class="govuk-phase-banner__content">
-            <a href="{{settings.survey_link}}" id="tl-header--feedback-button">
-                <strong class="govuk-tag govuk-phase-banner__content__tag">
-                    Give feedback
-                </strong>
-            </a>
-            <span class="govuk-phase-banner__text">
-                This is a new service - <a class="govuk-link" href="{{settings.survey_link}}" id="tl-header--feedback-link">help us to improve it</a>
-            </span>
-        </p>
-    </div>
-</div>
-
-
+﻿
 <!-- Main content -->
 <main id="main-content" role="main">
     <!-- Search Hero -->
@@ -47,54 +31,6 @@
         </div>
     </div>
 
-    <!-- Calendar -->
-
-    <section id="tl-calendar">
-        <div class="accordion-header govuk-!-margin-bottom-6 govuk-!-margin-top-9">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">{{settings.tl_calendar_title}}</h2>
-            <a href="#" class="govuk-link" data-accordion-link="fe-fd-calendar"><span data-accordion-state>Hide</span> <span class="lower-case">{{settings.tl_calendar_title}}</span></a>
-        </div>
-        <div class="section-body" data-accordion-body="tl-calendar">
-            <div class="spinner" data-calendar-state="loading">
-                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Loading <span class="lower-case">{{settings.tl_calendar_title}}</span>&hellip;</p>
-                <div class="spinner__animation"></div>
-            </div>
-            <p class="govuk-body" data-calendar-state="error">{{settings.tl_calendar_title}} could not be loaded at this time. Please try again later.</p>
-            <div class="govuk-grid-row event-wrapper" data-calendar-state="loaded">
-                <div class="govuk-grid-column-one-third">
-                    <div id="events-calendar" data-set-min-height="events-calendar"></div>
-                </div>
-                <div class="govuk-grid-column-two-thirds">
-                    <div class="event-list">
-                        <p class="govuk-body" data-no-dates>There are no <span class="lower-case">{{settings.tl_calendar_title}}</span> to display.</p>
-                        <div data-dates data-set-min-height="calendar">
-                            <div class="feature-panels__panel feature-panels__panel--front-door feature-panels__panel--full" data-date-template>
-                                <div class="feature-panels__panel__inner">
-                                    <span class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1" data-date-date></span>
-                                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2" data-date-title></h3>
-                                    <div class="event-description-wrapper" data-date-description-wrapper>
-                                        <p class="govuk-body govuk-!-margin-right-4 event-description" data-date-description></p>
-                                        <a class="govuk-link govuk-!-margin-bottom-4 event-description-toggle" href="#" data-date-description-toggle>
-                                            <span class="event-description-toggle__more">Show more</span>
-                                            <span class="event-description-toggle__less">Show less</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="event-pagination govuk-!-margin-top-6" data-event-pagination>
-                            <li class="event-pagination__item">
-                                <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="previous" href="#"><svg class="govuk-!-margin-right-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 9L5 5L9 1" stroke="#1D70B8" /><path d="M5 9L1 5L5 1" stroke="#1D70B8" /></svg>Previous</a>
-                            </li>
-                            <li class="event-pagination__item">
-                                <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="next" href="#">Next<svg class="govuk-!-margin-left-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L0.999999 9" stroke="#1D70B8" /><path d="M5 1L9 5L5 9" stroke="#1D70B8" /></svg></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- Article Content -->

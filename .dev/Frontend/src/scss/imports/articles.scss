@@ -230,7 +230,7 @@
         @extend .govuk-table__cell;
     }
 
-    .govuk-details[open] > .govuk-details__text {
+    .govuk-details[open] >.govuk-details__text {
         display: inline-block !important;
     }
 
@@ -240,8 +240,8 @@
     }
 
     iframe {
+        max-width: 100%;
         @include govuk-media-query($until: tablet) {
-            max-width: 100%;
             height: auto;
             min-height: 220px;
         }
