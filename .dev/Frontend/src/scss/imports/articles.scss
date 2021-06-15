@@ -207,6 +207,10 @@
         @extend .govuk-list--number;
     }
 
+    blockquote {
+        @extend .govuk-inset-text;
+    }
+
     .wysiwyg-indent1 {
         @extend .govuk-inset-text;
     }
@@ -230,7 +234,7 @@
         @extend .govuk-table__cell;
     }
 
-    .govuk-details[open] >.govuk-details__text {
+    .govuk-details[open] > .govuk-details__text {
         display: inline-block !important;
     }
 
@@ -241,6 +245,7 @@
 
     iframe {
         max-width: 100%;
+
         @include govuk-media-query($until: tablet) {
             height: auto;
             min-height: 220px;
