@@ -168,8 +168,17 @@
             @extend .govuk-list--bullet;
         }
 
+        ol {
+            @extend .govuk-list;
+            @extend .govuk-list--number;
+        }
+
         a {
             @extend .govuk-link;
+        }
+
+        blockquote {
+            @extend .govuk-inset-text;
         }
     }
 
