@@ -19,14 +19,16 @@
                 {{/if}}
             <section>
                 {{#each sections}}
+                <h2 class="govuk-heading-m govuk-!-margin-top-9">{{name}}</h2>
                 {{#is name "Course structure and curriculum design"}}
-                <li>
-                    <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
-                </li>
+                <ul class="govuk-list">
+                    {{#each articles}}
+                    <li>
+                        <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
                 {{else}}
-
-                <h2 class="govuk-heading-m">{{name}}</h2>
-
                 <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default--{{id}}">
 
                     {{#each sections}}
@@ -40,9 +42,7 @@
                             </h2>
                         </div>
                         <div id="accordion-default-content-{{id}}" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-{{id}}">
-                            {{#if articles}}
                             <ul class="govuk-list">
-
                                 {{#each articles}}
                                 <li>
                                     <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
@@ -57,13 +57,6 @@
                                 </li>
                                 {{/if}}
                             </ul>
-                            {{else}}
-                            <ul class="govuk-list">
-                                <li>
-                                    <p class="govuk-body">There's nothing here at the moment</p>
-                                </li>
-                            </ul>
-                            {{/if}}
                         </div>
                     </div>
                     {{/each}}
@@ -71,6 +64,30 @@
                 </div>
                 {{/is}}
                 {{/each}}
+            <h2 class="govuk-heading-m govuk-!-margin-top-9">T Levels starting September 2023</h2>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Agriculture, Land Management and Production
+                </li>
+                <li>
+                    Animal Care and Management
+                </li>
+                <li>
+                    Catering
+                </li>
+                <li>
+                    Craft and Design
+                </li>
+                <li>
+                    Hair, Beauty and Aesthetics
+                </li>
+                <li>
+                    Legal Services
+                </li>
+                <li>
+                    Media, Broadcast and Production
+                </li>
+            </ul>
             </section>
             </div>
         </div>
