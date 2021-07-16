@@ -45,8 +45,20 @@
                             <ul class="govuk-list">
                                 {{#each articles}}
                                 <li>
-                                    <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
+                                    <a class="govuk-link tl-category--article" id="tl-article--{{id}}" href="{{url}}">{{title}}</a>
                                 </li>
+
+                                <script>
+                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                    $("#tl-article--{{id}}").attr("href", articlelabels.article.label_names);
+                                    $("#tl-article--{{id}}").attr("target", "_blank")
+                                }
+
+                            });
+
+                                </script>
                                 {{/each}}
 
                                 {{#if more_articles}}
