@@ -5439,7 +5439,7 @@
 
 /*Breadcrumbs*/
 /* Prevents sections from showing in breadcrumb on article page */
-#tl-breadcrumbs--article ol li:nth-child(3) {
+#tl-breadcrumbs--article ol li:nth-child(3), #tl-breadcrumbs--article ol li:nth-child(4) {
   display: none; }
 
 #tl-breadcrumbs--help ol li:nth-child(2), #tl-breadcrumbs--help ol li:nth-child(3) {
