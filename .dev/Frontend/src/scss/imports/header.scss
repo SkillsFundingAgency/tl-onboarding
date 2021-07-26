@@ -54,10 +54,6 @@
         }
     }
 
-    @include govuk-media-query ($until: tablet) {
-        width: 200px;
-    }
-
     @media(max-width: 420px) {
         .tl-search {
             display: none;
@@ -65,7 +61,7 @@
 
         &.active {
             .tl-search {
-                display: block;
+                display: flex;
             }
 
             max-width: 100%;
@@ -116,6 +112,6 @@
 
 
     &:hover {
-        background-color: lighten($govuk-text-colour, 7%);
+        background-color: govuk-colour("light-blue");
     }
 }

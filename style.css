@@ -5505,9 +5505,6 @@
     padding-left: 10px; }
   .tl-header--search .tl-search input[type=submit]:hover {
     background-color: #5694ca; }
-  @media (max-width: 40.0525em) {
-    .tl-header--search {
-      width: 200px; } }
   @media (max-width: 420px) {
     .tl-header--search .tl-search {
       display: none; }
@@ -5515,7 +5512,7 @@
       max-width: 100%;
       width: 100%; }
       .tl-header--search.active .tl-search {
-        display: block; } }
+        display: flex; } }
   .tl-header--search .tl-error--message {
     color: #ffdd00; }
 
@@ -5549,7 +5546,7 @@
     outline-offset: 0;
     z-index: 1; }
   .tl-header--search--toggle:hover {
-    background-color: #1c1f1f; }
+    background-color: #5694ca; }
 
 .tl-form-group--error {
   padding-left: 15px;
