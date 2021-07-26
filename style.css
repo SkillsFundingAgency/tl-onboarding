@@ -5505,6 +5505,40 @@
     padding-left: 10px; }
   .tl-header--search .tl-search input[type=submit]:hover {
     background-color: #5694ca; }
+  @media (max-width: 40.0525em) {
+    .tl-header--search {
+      width: 200px; } }
+  @media (max-width: 420px) {
+    .tl-header--search {
+      display: none; }
+      .tl-header--search .active {
+        display: block;
+        max-width: 100%;
+        width: 100%; } }
+  .tl-header--search--toggle {
+    width: 100px;
+    background-color: #1d70b8;
+    border: none;
+    cursor: pointer;
+    text-indent: -5000px;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    background-image: url($assets-searchicon-png);
+    background-repeat: no-repeat;
+    background-position: 2px 50%;
+    position: relative;
+    left: -2px;
+    display: none; }
+    @media (max-width: 420px) {
+      .tl-header--search--toggle {
+        display: block; } }
+    .tl-header--search--toggle:focus {
+      outline: 3px solid #ffdd00;
+      outline-offset: 0;
+      z-index: 1; }
+    .tl-header--search--toggle:hover {
+      background-color: #1c1f1f; }
   .tl-header--search .tl-error--message {
     color: #ffdd00; }
 
