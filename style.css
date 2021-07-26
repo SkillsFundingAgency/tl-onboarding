@@ -5511,10 +5511,10 @@
   @media (max-width: 420px) {
     .tl-header--search .tl-search {
       display: none; }
-    .tl-header--search .active {
+    .tl-header--search.active {
       max-width: 100%;
       width: 100%; }
-      .tl-header--search .active .tl-search {
+      .tl-header--search.active .tl-search {
         display: block; } }
   .tl-header--search--toggle {
     width: 100px;

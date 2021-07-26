@@ -63,7 +63,7 @@
             display: none;
         }
 
-        .active {
+        &.active {
             .tl-search {
                 display: block;
             }
