@@ -59,10 +59,14 @@
     }
 
     @media(max-width: 420px) {
-        display: none;
+        .tl-search {
+            display: none;
+        }
 
         .active {
-            display: block;
+            .tl-search {
+                display: block;
+            }
             max-width: 100%;
             width: 100%;
         }
@@ -105,11 +109,11 @@
     }
 }
 
-.tl-header--logo {
-    width: 100%;
-    padding-right: 0;
+    .tl-header--logo {
+        width: 100%;
+        padding-right: 0;
 
-    #tl-header--govuk {
-        margin-bottom: 10px;
+        #tl-header--govuk {
+            margin-bottom: 10px;
+        }
     }
-}
