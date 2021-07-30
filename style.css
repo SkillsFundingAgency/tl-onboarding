@@ -5505,6 +5505,14 @@
     padding-left: 10px; }
   .tl-header--search .tl-search input[type=submit]:hover {
     background-color: #5694ca; }
+  @media (max-width: 420px) {
+    .tl-header--search .tl-search {
+      display: none; }
+    .tl-header--search.active {
+      max-width: 100%;
+      width: 100%; }
+      .tl-header--search.active .tl-search {
+        display: flex; } }
   .tl-header--search .tl-error--message {
     color: #ffdd00; }
 
@@ -5513,6 +5521,35 @@
   padding-right: 0; }
   .tl-header--logo #tl-header--govuk {
     margin-bottom: 10px; }
+
+.tl-header--search--toggle {
+  display: none; }
+
+.js-enabled .tl-header--search--toggle {
+  width: 100px;
+  background-color: #1d70b8;
+  border: none;
+  cursor: pointer;
+  text-indent: -5000px;
+  overflow: hidden;
+  height: 30px;
+  width: 40px;
+  background-image: url($assets-searchicon-png);
+  background-repeat: no-repeat;
+  background-position: 2px 50%;
+  position: relative;
+  left: -2px;
+  display: none;
+  float: right; }
+  @media (max-width: 420px) {
+    .js-enabled .tl-header--search--toggle {
+      display: block; } }
+  .js-enabled .tl-header--search--toggle:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    z-index: 1; }
+  .js-enabled .tl-header--search--toggle:hover {
+    background-color: #5694ca; }
 
 .tl-form-group--error {
   padding-left: 15px;

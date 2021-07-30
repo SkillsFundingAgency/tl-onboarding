@@ -67,6 +67,19 @@ $(document).ready(function () {
     });
 });
 
+// Search header toggle
+
+$(".tl-header--search--toggle").click(function () {
+    $(".tl-header--search").toggleClass("active");
+
+    if ($(".tl-header--search").hasClass("active")) {
+        $(".tl-header--search--toggle").html("Hide search")
+    }
+    else {
+        $(".tl-header--search--toggle").html("Show search")
+    }
+});
+
 /* Make tabs and details work in articles */
 
 $(".govuk-tabs").attr("data-module", "govuk-tabs");
