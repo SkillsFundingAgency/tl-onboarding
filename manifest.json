@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - Ticketing ",
+  "name": "GDS Style - Course Info Page Update",
   "author": "Ash Anderton",
-  "version": "2.1.61",
+  "version": "2.3.06",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -48,6 +48,13 @@
     {
       "label": "brand_group_label",
       "variables": [
+        {
+          "identifier": "service_name",
+          "type": "text",
+          "description": "Name of the service",
+          "label": "Service Name",
+          "value": "Support with delivering T Levels"
+        },
         {
           "identifier": "logo",
           "type": "file",
@@ -285,6 +292,32 @@
           "description": "Sitewide",
           "label": "Subject Form ID",
           "value": "360019751459"
+        }
+      ]
+    },
+    {
+      "label": "Calendar",
+      "variables": [
+        {
+          "identifier": "tl_calendar_data_source",
+          "type": "text",
+          "description": "Google Sheets document ID",
+          "label": "Calendar data source",
+          "value": "1NhYHLtWHxP-NnLWG3_sx0y6WVPw4UevFjNCIEJphA8w"
+        },
+        {
+          "identifier": "tl_calendar_api_key",
+          "type": "text",
+          "description": "Google Sheets API key",
+          "label": "Calendar data authentication",
+          "value": "AIzaSyADwFWGoSl4lqRXcDEDb5mFZMiu37253XY"
+        },
+        {
+          "identifier": "tl_calendar_title",
+          "type": "text",
+          "description": "Calendar",
+          "label": "Title",
+          "value": "Calendar"
         }
       ]
     }

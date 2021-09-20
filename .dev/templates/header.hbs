@@ -1,4 +1,4 @@
-<!-- Google Tag Manager (noscript) -->
+﻿<!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4PZ3D4"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -24,14 +24,14 @@
                 <button class="gem-c-button govuk-button gem-c-button--secondary gem-c-button--inline" type="submit" data-module="track-click" data-accept-cookies="true" data-track-category="cookieBanner" data-track-action="Cookie banner accepted">Accept cookies</button>
             </div>
             <div class="gem-c-cookie-banner__button gem-c-cookie-banner__button-settings">
-                <a class="gem-c-button govuk-button gem-c-button--secondary gem-c-button--inline" role="button" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner settings clicked" href="/hc/en-gb/articles/360015340619/">Cookie settings</a>
+                <a class="gem-c-button govuk-button gem-c-button--secondary gem-c-button--inline" role="button" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner settings clicked" href="/hc/en-gb/articles/{{settings.article_id_cookies}}/">Cookie settings</a>
             </div>
         </div>
     </div>
 
     <div class="gem-c-cookie-banner__confirmation govuk-width-container" tabindex="-1">
         <p class="gem-c-cookie-banner__confirmation-message">
-            You've accepted all cookies. You can <a class="govuk-link" href="/hc/en-gb/articles/360015340619/" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner settings clicked from confirmation">change your cookie settings</a> at any time.
+            You've accepted all cookies. You can <a class="govuk-link" href="/hc/en-gb/articles/{{settings.article_id_cookies}}/ data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner settings clicked from confirmation">change your cookie settings</a> at any time.
         </p>
         <button class="gem-c-cookie-banner__hide-button" data-hide-cookie-banner="true" data-module="track-click" data-track-category="cookieBanner" data-track-action="Hide cookie banner">Hide</button>
     </div>
@@ -41,15 +41,7 @@
 
 <header class="govuk-header " role="banner" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
-        <div class="tl-header--links">
-            <ul>
-                {{#if signed_in}}
-                <li><a href="/hc/en-gb/profile" class="tl-header--link" id="tl-header--profile">Your profile</a></li>
-                <li>{{link 'sign_out' class="tl-header--link"}}</li>
-                {{/if}}
-            </ul>
-        </div>
-        <div class="govuk-header__logo">
+        <div class="govuk-header__logo tl-header--logo">
             <a href="https://www.gov.uk/" class="govuk-header__link govuk-header__link--homepage" id="tl-header--govuk">
                 <span class="govuk-header__logotype">
                     <svg aria-hidden="true" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 132 97" height="30" width="36">
@@ -61,17 +53,55 @@
                     </span>
                 </span>
             </a>
+            <button class="tl-header--search--toggle">Show search</button>
+            <div class="tl-header--search">
+                <div class="tl-search--error tl-hidden">
+                    <span class="tl-error--message"></span>
+                </div>
+                <form role="search" class="tl-search" data-search="" action="/hc/en-gb/search" accept-charset="UTF-8" method="get">
+                    <input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search for support" aria-label="Search for support">
+                    <input type="hidden" name="filter_by" value="knowledge_base" />
+                    <input type="submit" name="commit" value="Search">
+                </form>
+
+            </div>
+
         </div>
+
+
         <div class="govuk-header__content tl-header--title">
             {{#link "help_center" class="govuk-header__link govuk-header__link--service-name tl-header--title"}}
-            Support with delivering T Levels
+            {{settings.service_name}}
             {{/link}}
         </div>
+
 
 
     </div>
 </header>
 
+
+<div class="govuk-width-container ">
+    <!-- Phase banner -->
+    <div class="govuk-phase-banner tl-phase-banner">
+        <p class="govuk-phase-banner__content tl-phase-banner--content">
+            <a href="{{settings.survey_link}}" id="tl-header--feedback-button">
+                <strong class="govuk-tag govuk-phase-banner__content__tag">
+                    Give feedback
+                </strong>
+            </a>
+            <span class="govuk-phase-banner__text">
+                This is a new service - <a class="govuk-link" href="{{settings.survey_link}}" id="tl-header--feedback-link">help us to improve it</a>
+            </span>
+        </p>
+        <ul class="tl-phase-banner--right">
+            {{#if signed_in}}
+            <li><a href="/hc/en-gb/profile" class="tl-phase-banner--link" id="tl-header--profile">Your profile</a></li>
+            <li>{{link 'sign_out' class="tl-phase-banner--link"}}</li>
+            {{/if}}
+        </ul>
+    </div>
+</div>
 
 
 

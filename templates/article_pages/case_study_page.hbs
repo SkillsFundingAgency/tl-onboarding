@@ -13,8 +13,63 @@
 
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl">Case study</span>
                 <h1 class="govuk-heading-xl">{{article.title}}</h1>
-                <div class="tl-article--content">{{article.body}}</div>
+
+
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-body-s">
+                            Published
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-body-s">
+                            {{date article.created_at format='medium'}}
+                        </dd>
+                    </div>
+                    {{#is article.created_at article.edited_at}}{{else}}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-body-s">
+                            Last updated
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-body-s">
+                            {{date article.edited_at format='medium'}}
+                        </dd>
+                    </div>
+                    {{/is}}
+
+                </dl>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <hr class="govuk-section-break govuk-section-break--visible">
+                <script>
+                    $(document).ready(function () {
+                        $('.tl-article--content').find('h2').each(function (index, value) {
+                            if ($(this).text() == 'Overview') {
+                                $('#tl-article--contents').append('<li class="govuk-body-s">&#8212; ' + $(this).html() + '</li>');
+                            }
+
+                            else {
+                                $('#tl-article--contents').append('<li class="govuk-body-s">&#8212; <a class="govuk-link" href="#anchor-' + index + '">' + $(this).html() + '</a></li>');
+                                $(this).html('<a name="anchor-' + index + '">' + $(this).html() + '</a>');
+                            }
+                        });
+                    });
+
+                </script>
+                <h2 class="govuk-body-s govuk-!-margin-top-6">Contents</h2>
+                <ul class="govuk-list" id="tl-article--contents">
+                </ul>
+
+                <div class="tl-article--content tl-article--content--casestudy govuk-!-margin-top-6">
+                    {{article.body}}
+                </div>
 
                 <section class="tl-attachments">
                     {{#each attachments}}
@@ -36,15 +91,47 @@
                     {{/each}}
                 </section>
 
-                <p class="govuk-body-s tl-article--date">
-                    {{#is article.created_at article.edited_at}}
-                    Created: {{date article.created_at format='medium'}}
-                    {{else}}
-                    Last updated: {{date article.edited_at format='medium'}}
-                    {{/is}}
-                </p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <hr class="govuk-section-break govuk-section-break--visible tl-section-break--blue">
+                <div class="tl-article--sidebar govuk-!-margin-top-6">
+                    <h2 class="govuk-heading-m">Related content</h2>
+                    {{related_articles}}
+                    <ul>
+                        {{#each article.path_steps}}
+                        <li title="{{name}}"><a href="{{url}}" target="{{target}}">{{name}}</a></li>
+                        {{/each}}
+                    </ul>
+                    <hr class="govuk-section-break govuk-section-break--m">
+
+                    <a href="#main-content" class="tl-article--backtotop">
+                        <span>&#708;</span>
+                        Back to top
+                    </a>
+                    <script>
+                        function checkOffset() {
+                            var a = $(document).scrollTop() + window.innerHeight;
+                            var b = $('.tl-article--vote').offset().top;
+                            var c = $('.tl-hero').offset().top;
+                            var scroll = $(window).scrollTop();
 
 
+                            if (a < b) {
+                                $('.tl-article--backtotop').css('bottom', '0px');
+                            } else {
+                                $('.tl-article--backtotop').css('bottom', (10 + (a - b)) + 'px');
+                            }
+
+                            if (scroll >= c + 1) {
+                                $('.tl-article--backtotop').show()
+                            } else {
+                                $('.tl-article--backtotop').hide()
+                            }
+                        }
+                        $(document).ready(checkOffset);
+                        $(document).scroll(checkOffset);
+                    </script>
+                </div>
 
             </div>
         </div>
@@ -70,18 +157,18 @@
             </div>
             <div class="govuk-grid-row">
                 <div id="commentform" class="govuk-grid-column-two-thirds govuk-!-margin-top-3">
-                        <form id="formoid" action="/api/v2/requests.json" title="articlefeedback" method="post" class="tl-article--vote--form">
-                            <div class="govuk-character-count">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label" for="Comment">Is there anything we could do to further improve this page? (optional)</label>
-                                    <textarea maxlength="500" class="govuk-textarea govuk-js-character-count" id="Comment" name="Comment" rows="5" aria-describedby="Comment-info"></textarea>
-                                </div>
-                                <div id="Comment-info" class="tl-article--vote--form--count" aria-live="polite">You have <span id="chars">500</span> characters remaining</div>
+                    <form id="formoid" action="/api/v2/requests.json" title="articlefeedback" method="post" class="tl-article--vote--form">
+                        <div class="govuk-character-count">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="Comment">Is there anything we could do to further improve this page? (optional)</label>
+                                <textarea maxlength="500" class="govuk-textarea govuk-js-character-count" id="Comment" name="Comment" rows="5" aria-describedby="Comment-info"></textarea>
                             </div>
-                            <div class="govuk-!-margin-top-3">
-                                <input class="govuk-button articlefeedbackbutton" type="submit" id="submitButton" name="submitButton" value="Submit">
-                            </div>
-                        </form>
+                            <div id="Comment-info" class="tl-article--vote--form--count" aria-live="polite">You have <span id="chars">500</span> characters remaining</div>
+                        </div>
+                        <div class="govuk-!-margin-top-3">
+                            <input class="govuk-button articlefeedbackbutton" type="submit" id="submitButton" name="submitButton" value="Submit">
+                        </div>
+                    </form>
 
                 </div>
             </div>
@@ -194,6 +281,7 @@
               	$('#voteQuestion').hide();
               	$('#voteResponse').show();
             });
+
 
     </script>
 
