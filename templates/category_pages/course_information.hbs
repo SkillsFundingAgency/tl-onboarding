@@ -17,90 +17,83 @@
                 {{#if category.description}}
                 <p class="govuk-body-l">{{category.description}}</p>
                 {{/if}}
-            <section>
-                {{#each sections}}
-                <h2 class="govuk-heading-m govuk-!-margin-top-9">{{name}}</h2>
-                {{#is name "Course structure and curriculum design"}}
-                <ul class="govuk-list">
-                    {{#each articles}}
-                    <li>
-                        <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
-                    </li>
-                    {{/each}}
-                </ul>
-                {{else}}
-                <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default--{{id}}">
-
+                <section>
                     {{#each sections}}
+                    <h2 class="govuk-heading-m govuk-!-margin-top-7">{{name}}</h2>
+                    {{#is name "Course structure and curriculum design"}}
+                    <ul class="govuk-list">
+                        {{#each articles}}
+                        <li>
+                            <a class="govuk-link tl-category--article" id="tl-article--{{id}}" href="{{url}}">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    {{#each sections}}
+                    <h3 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-2">{{name}}</h3>
+                    <ul class="govuk-list">
+                        {{#each articles}}
+                        <li>
+                            <a class="govuk-link tl-category--article" id="tl-article--{{id}}" href="{{url}}">{{title}}</a>
+                        </li>
+                        {{/each}}
+                        {{#if more_articles}}
+                        <li class="govuk-!-margin-top-4">
+                            <a class="govuk-link govuk-body-s tl-category--more" href="{{url}}">
+                                {{t 'show_all_articles' count=article_count}}
+                            </a>
+                        </li>
+                        {{/if}}
+                    </ul>
 
-                    <div class="govuk-accordion__section ">
-                        <div class="govuk-accordion__section-header">
-                            <h2 class="govuk-accordion__section-heading">
-                                <span class="govuk-accordion__section-button" id="accordion-default-heading-{{id}}">
-                                    {{name}}
-                                </span>
-                            </h2>
-                        </div>
-                        <div id="accordion-default-content-{{id}}" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-{{id}}">
-                            <ul class="govuk-list">
-                                {{#each articles}}
-                                <li>
-                                    <a class="govuk-link tl-category--article" id="tl-article--{{id}}" href="{{url}}">{{title}}</a>
-                                </li>
 
-                                <script>
-                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
-
-                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
-                                    $("#tl-article--{{id}}").attr("href", articlelabels.article.label_names);
-                                    $("#tl-article--{{id}}").attr("target", "_blank")
-                                }
-
-                            });
-
-                                </script>
-                                {{/each}}
-
-                                {{#if more_articles}}
-                                <li class="govuk-!-margin-top-4">
-                                    <a class="govuk-link govuk-body-s tl-category--more" href="{{url}}">
-                                        {{t 'show_all_articles' count=article_count}}
-                                    </a>
-                                </li>
-                                {{/if}}
-                            </ul>
-                        </div>
-                    </div>
                     {{/each}}
 
-                </div>
-                {{/is}}
-                {{/each}}
-            <h2 class="govuk-heading-m govuk-!-margin-top-9">T Levels starting September 2023</h2>
-            <ul class="govuk-list govuk-list--bullet">
-                <li>
-                    Agriculture, Land Management and Production
-                </li>
-                <li>
-                    Animal Care and Management
-                </li>
-                <li>
-                    Catering
-                </li>
-                <li>
-                    Craft and Design
-                </li>
-                <li>
-                    Hair, Beauty and Aesthetics
-                </li>
-                <li>
-                    Legal Services
-                </li>
-                <li>
-                    Media, Broadcast and Production
-                </li>
-            </ul>
-            </section>
+                    {{/is}}
+                    {{/each}}
+                    <h2 class="govuk-heading-m govuk-!-margin-top-7">T Levels starting September 2023</h2>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-top-5">Agriculture, Environmental and Animal Care route</h3>
+                    <ul class="govuk-list">
+                        <li>
+                            Agriculture, Land Management and Production
+                        </li>
+                        <li>
+                            Animal Care and Management
+                        </li>
+                    </ul>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-2">Catering and Hospitality route</h3>
+                    <ul class="govuk-list">
+                        <li>
+                            Catering
+                        </li>
+                    </ul>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-2">Creative and Design route</h3>
+                    <ul class="govuk-list">
+                        <li>
+                            Craft and Design
+                        </li>
+                        <li>
+                            Media, Broadcast and Production
+                        </li>
+                    </ul>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-2">Hair and Beauty route</h3>
+                    <ul class="govuk-list">
+                        <li>
+                            Hair and Beauty
+                        </li>
+                    </ul>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-top-5 govuk-!-margin-bottom-2">Legal, Finance and Accounting route</h3>
+                    <ul class="govuk-list">
+                        <li>
+                            Legal Services
+                        </li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
