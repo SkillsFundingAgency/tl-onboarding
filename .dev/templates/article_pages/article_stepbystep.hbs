@@ -658,12 +658,10 @@
         <script type="text/javascript">
 
             $(document).ready(function () {
-                GOVUK.modules.start()
+                var $element = $('#step-by-step-navigation')
+                var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+                stepByStepNavigation.start($element)
             });
-
-            var $element = $('#step-by-step-navigation')
-            var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
-            stepByStepNavigation.start($element)
         </script>
 
         <script type="text/javascript">
