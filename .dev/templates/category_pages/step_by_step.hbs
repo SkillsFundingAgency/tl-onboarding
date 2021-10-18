@@ -67,7 +67,11 @@
             $(document).ready(function () {
                 var $element = $('#step-by-step-navigation')
                 var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
-                stepByStepNavigation.start($element)
+                stepByStepNavigation.start($element);
+
+                $(".app-step-nav__circle--number").each(function (i) {
+                    $(this).prepend(i + 1);
+                });
             });
     </script>
 </main>
