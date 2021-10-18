@@ -369,18 +369,12 @@
                 var $element = $('#step-by-step-navigation')
                 var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
                 stepByStepNavigation.start($element)
-            });
-        </script>
 
-        <script>
-            $(document).ready(function () {
                 $(".app-step-nav__circle--number").each(function (i) {
                     $(this).prepend(i + 1);
                 });
             });
-        </script>
 
-        <script type="text/javascript">
                 var maxLength = 500;
             $('#Comment').keyup(function() {
             	var length = $(this).val().length;
