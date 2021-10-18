@@ -43,8 +43,9 @@
                                 </div>
 
                                 <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-{{id}}">
+                                    {{#if description}}
                                     <p class="app-step-nav__paragraph">{{description}}</p>
-
+                                    {{/if}}
                                     <ol class="app-step-nav__list " data-length="{{article_count}}">
                                         {{#each articles}}
                                         <li class="app-step-nav__list-item js-list-item ">
