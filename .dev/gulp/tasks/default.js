@@ -19,6 +19,13 @@ gulp.task('assets', () => {
         .pipe(gulp.dest(paths.dist.Assets));
 });
 
+gulp.task('settings', () => {
+    return src([
+        (paths.src.Settings)
+    ])
+        .pipe(gulp.dest(paths.dist.Settings));
+});
+
 gulp.task('js', () => {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
@@ -31,6 +38,7 @@ gulp.task('js', () => {
 gulp.task('customjs', () => {
     return src([
         'Frontend/src/js/custom.js',
+        'Frontend/src/js/step-by-step-nav.js',
         'node_modules/moment/moment.js',
     ])
         .pipe(concat('custom.js'))
