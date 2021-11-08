@@ -104,12 +104,12 @@ $(document).ready(function () {
         const unfollowButtonText = 'Stop getting news updates';
 
         var getSectionSubscription = function (sectionId, userId, page = 1, itemsPerPage = 50) {
-            return $.getJSON(`/api/v2/help_center/${HelpCenter.user.locale}/sections/${sectionId}/subscriptions.json?page=${page}&per_page=${itemsPerPage}`)
+            return $.getJSON('/api/v2/help_center/${HelpCenter.user.locale}/sections/${sectionId}/subscriptions.json?page=${page}&per_page=${itemsPerPage}')
                 .then(function (subscriptions) {
                     if (subscriptions) {
                         var subscription = subscriptions.subscriptions.find(s => s.user_id == userId);
                         if (subscription) {
-                            console.log(`getSectionSubscription: found subscription for user id ${userId} on page ${subscriptions.page} of ${subscriptions.page_count}`);
+                            console.log('getSectionSubscription: found subscription for user id ${userId} on page ${subscriptions.page} of ${subscriptions.page_count}');
                             console.log(subscription);
                             return subscription;
                         }
@@ -139,18 +139,18 @@ $(document).ready(function () {
                 $('#follow-btn').removeClass("tl-hidden");
             })
             .fail(function(r){
-                console.log(`Call from setFollowButtonStatus to getCurrentUserSectionSubscription failed. ${r}`);
+                console.log('Call from setFollowButtonStatus to getCurrentUserSectionSubscription failed. ${r}');
             });
         }
 
         function subscribeToSection(sectionId) {
             $.getJSON('/hc/api/internal/csrf_token.json')
             .then(function (csrfResponse) {
-                $.ajax({url: `/api/v2/help_center/sections/${sectionId}/subscriptions.json`,
+                $.ajax({url: '/api/v2/help_center/sections/${sectionId}/subscriptions.json',
                     type: "POST",
                     data: jQuery.param({
                         "subscription": {
-                            "source_locale": `${HelpCenter.user.locale}`, 
+                            "source_locale": '${HelpCenter.user.locale}', 
                             "include_comments": true
                         }
                     }),
@@ -159,7 +159,7 @@ $(document).ready(function () {
                         "X-CSRF-Token":  csrfResponse.current_session.csrf_token
                     },
                     complete: function(){
-                        console.log(`Subscribed to section ${sectionId}`);
+                        console.log('Subscribed to section ${sectionId}');
                         $('#follow-btn').html(unfollowButtonText);
                     }
                 });
@@ -173,7 +173,7 @@ $(document).ready(function () {
                 .done(function(s){
                     if(s) {
                         $.ajax({
-                            url: `/api/v2/help_center/sections/${sectionId}/subscriptions/${s.id}.json`,
+                            url: '/api/v2/help_center/sections/${sectionId}/subscriptions/${s.id}.json',
                             type: "DELETE",
                             dataType: "application/json",
                             headers: {
@@ -181,14 +181,14 @@ $(document).ready(function () {
                                     }
                             })
                             .then(function() {
-                                console.log(`Unsubscribed from section ${s.id}`);
+                                console.log('Unsubscribed from section ${s.id}');
                                 setFollowButtonStatus(sectionId);
                             });
                         } else
                             console.log("No subscription found to delete for this user");                
                 })
                 .fail(function(r){
-                    console.log(`Call from unsubscribeFromSection to getCurrentUserSectionSubscription failed. ${r}`);
+                    console.log('Call from unsubscribeFromSection to getCurrentUserSectionSubscription failed. ${r}');
                 });
             });
         }
@@ -342,7 +342,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 function convertNameToInitials(name) {
     if (!name) return '';
-    const cleanName = name.replace(/[`~!@@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+    const cleanName = name.replace(/['~!@@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
     const parts = cleanName.split(' ');
     var initials = parts.length > 0 ? parts[0][0] : '';
     if (parts.length > 1) initials += parts[parts.length - 1][0];
@@ -390,7 +390,7 @@ function getCalendarData(apiKey, dataSource, attempt) {
     if (!attempt) {
         attempt = 1;
     }
-    $.get(`https://sheets.googleapis.com/v4/spreadsheets/${dataSource}/values/sheet1?key=${apiKey}`, function (data) {
+    $.get('https://sheets.googleapis.com/v4/spreadsheets/${dataSource}/values/sheet1?key=${apiKey}', function (data) {
         // parse spreadsheet data to JSON
         data.values.forEach((item, index) => {
             if (index) {
