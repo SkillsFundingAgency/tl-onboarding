@@ -293,6 +293,7 @@ if (cookieConsent.length) {
 /* Cookie Article, with consent ends */
 
 //polyfill for IE11
+console.log("Checking Array.includes");
 if (!Array.prototype.includes) {
     console.log("Running polyfill for Array.includes");
     Object.defineProperty(Array.prototype, 'includes', {
@@ -680,7 +681,8 @@ $('[data-event-pagination-direction]').click(function (event) {
 function sizeSizer(sizerId) {
     $('[data-set-min-height="' + sizerId + '"]').css('min-height', $('[data-set-min-height="' + sizerId + '"]').height());
 }
-
+console.log("temporarily removed frontDoor and calendar functions");
+/*
 function frontDoor(apiKey, dataSource) {
     getCalendarData(apiKey, dataSource);
     $(window).scroll(function () {
@@ -732,6 +734,7 @@ function frontDoor(apiKey, dataSource) {
         }
     });
 }
+*/
 /* END front door functions */
 
 // Based on https://github.com/alphagov/govuk_publishing_components/blob/v22.0.0/app/assets/javascripts/govuk_publishing_components/components/step-by-step-nav.js
