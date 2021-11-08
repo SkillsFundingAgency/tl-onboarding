@@ -104,7 +104,7 @@ $(document).ready(function () {
         const unfollowButtonText = 'Stop getting news updates';
 
         var getSectionSubscription = function (sectionId, userId, page = 1, itemsPerPage = 50) {
-            return $.getJSON('/api/v2/help_center/${HelpCenter.user.locale}/sections/${sectionId}/subscriptions.json?page=${page}&per_page=${itemsPerPage}')
+            return $.getJSON('/api/v2/help_center/' + HelpCenter.user.locale + '/sections/' + sectionId + '/subscriptions.json?page=' + page + '&per_page=' + itemsPerPage)
                 .then(function (subscriptions) {
                     if (subscriptions) {
                         var subscription = subscriptions.subscriptions.find(s => s.user_id == userId);
