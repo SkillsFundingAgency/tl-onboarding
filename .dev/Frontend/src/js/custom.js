@@ -434,6 +434,7 @@ $(function () {
 
 
 /* START front door functions */
+/*
 var myCalendar;
 var calendarData = [];
 var $dateListItemTemplage = $('[data-date-template]').clone();
@@ -682,7 +683,7 @@ function sizeSizer(sizerId) {
     $('[data-set-min-height="' + sizerId + '"]').css('min-height', $('[data-set-min-height="' + sizerId + '"]').height());
 }
 console.log("temporarily removed frontDoor and calendar functions");
-/*
+
 function frontDoor(apiKey, dataSource) {
     getCalendarData(apiKey, dataSource);
     $(window).scroll(function () {
