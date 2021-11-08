@@ -9,12 +9,12 @@
 
 
 
-#tl-calender {
+#tl-calendar {
     display: none
 }
 
 @supports not (old: ie) {
-    #tl-calender {
+    #tl-calendar {
         display: unset
     }
 }
