@@ -103,7 +103,9 @@ $(document).ready(function () {
         const followButtonText = 'Get news updates';
         const unfollowButtonText = 'Stop getting news updates';
 
-        var getSectionSubscription = function (sectionId, userId, page = 1, itemsPerPage = 50) {
+        var getSectionSubscription = function (sectionId, userId, page, itemsPerPage) {
+            page = (page === undefined ? 1 : page);
+            itemsPerPage = (itemsPerPage === undefined ? 50 : itemsPerPage);
             return $.getJSON('/api/v2/help_center/' + HelpCenter.user.locale + '/sections/' + sectionId + '/subscriptions.json?page=' + page + '&per_page=' + itemsPerPage)
                 .then(function (subscriptions) {
                     if (subscriptions) {
@@ -342,7 +344,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 function convertNameToInitials(name) {
     if (!name) return '';
-    const cleanName = name.replace(/['~!@@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+    const cleanName = name.replace(/[`~!@@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
     const parts = cleanName.split(' ');
     var initials = parts.length > 0 ? parts[0][0] : '';
     if (parts.length > 1) initials += parts[parts.length - 1][0];
