@@ -47,6 +47,7 @@ gulp.task('customjs', () => {
 
 gulp.task('calendarjs', () => {
     return src([
+        'Frontend/src/js/calendar.js',
         'Frontend/src/js/tavo-calendar.js',
     ])
         .pipe(gulp.dest(paths.dist.Assets));
