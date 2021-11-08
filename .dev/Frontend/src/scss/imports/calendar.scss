@@ -6,6 +6,20 @@
 }
 
 
+
+
+
+.tl-calender {
+    display: none
+}
+
+@supports not (old: ie) {
+    .tl-calender {
+        display: unset
+    }
+}
+
+
 /* Spinner */
 .spinner {
     text-align: center;

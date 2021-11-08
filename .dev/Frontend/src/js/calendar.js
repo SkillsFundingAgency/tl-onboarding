@@ -1,20 +1,8 @@
-"use strict";
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 // Calendar //
 
+
 /* START front door functions */
+
 var myCalendar;
 var calendarData = [];
 var $dateListItemTemplage = $('[data-date-template]').clone();
@@ -24,10 +12,9 @@ function getCalendarData(apiKey, dataSource, attempt) {
     if (!attempt) {
         attempt = 1;
     }
-
     $.get('https://sheets.googleapis.com/v4/spreadsheets/' + dataSource + '/values/sheet1?key=' + apiKey, function (data) {
         // parse spreadsheet data to JSON
-        data.values.forEach(function (item, index) {
+        data.values.forEach((item, index) => {
             if (index) {
                 calendarData.push({
                     date: item[0].substr(6, 4) + '-' + item[0].substr(3, 2) + '-' + item[0].substr(0, 2),
@@ -36,12 +23,10 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     flagged: item[3] == 'Yes' ? true : false
                 });
             }
-        }); // sort into date order
-
-        calendarData.sort(function (a, b) {
-            return a.date > b.date ? 1 : b.date > a.date ? -1 : 0;
-        }); // build the calendar and flagged dates
-
+        });
+        // sort into date order
+        calendarData.sort((a, b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0));
+        // build the calendar and flagged dates
         calendarInit();
         buildFlaggedDates();
         $(window).resize(function () {
@@ -64,17 +49,14 @@ function getCalendarData(apiKey, dataSource, attempt) {
 
 function calendarInit() {
     // get current date
-    var currentDate = moment().format('YYYY-MM-DD'); // get unique list of dates with events
-
-    var datesWithEvents = _toConsumableArray(new Set(calendarData.map(function (item) {
-        return item.date;
-    }))); // create calendar, passing in a unique list of dates with events
-
-
+    var currentDate = moment().format('YYYY-MM-DD');
+    // get unique list of dates with events
+    var datesWithEvents = [...new Set(calendarData.map(item => item.date))];
+    // create calendar, passing in a unique list of dates with events
     myCalendar = new TavoCalendar('#events-calendar', {
         selected: datesWithEvents
-    }); // get initial event list
-
+    });
+    // get initial event list
     buildEventList(currentDate);
 }
 
@@ -83,22 +65,22 @@ function updateEventListMonth(yearMonth) {
 }
 
 function updateEventListDay(yearMonthDay) {
-    buildEventList(moment(yearMonthDay).format('YYYY-MM-DD'), true); // clear any other user selected dates
-
+    buildEventList(moment(yearMonthDay).format('YYYY-MM-DD'), true);
+    // clear any other user selected dates
     $('.event-calendar__user-selected').removeClass('event-calendar__user-selected');
 }
 
 function buildEventList(date, dayOnly) {
     // clear any highlighted dates on the calendat
-    $('.event-calendar__displaying-date').removeClass('event-calendar__displaying-date'); // get date list and clear
-
+    $('.event-calendar__displaying-date').removeClass('event-calendar__displaying-date');
+    // get date list and clear
     var $dateList = $('[data-dates]');
-    $dateList.empty(); // get no date message
-
-    var $noDates = $('[data-no-dates]'); // generate list of event elements
-
+    $dateList.empty();
+    // get no date message
+    var $noDates = $('[data-no-dates]');
+    // generate list of event elements
     var eventListElements = [];
-    calendarData.forEach(function (item, index) {
+    calendarData.forEach((item, index) => {
         if (!dayOnly || item.date === date) {
             var $newDateItem = $dateListItemTemplage.clone();
             $newDateItem.attr('data-date-index', index);
@@ -108,84 +90,69 @@ function buildEventList(date, dayOnly) {
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
                 event.preventDefault();
-                toggleEventDescription(index);
+                toggleEventDescription(index)
             });
-
             if (item.description !== "") {
                 $('[data-date-description-toggle]', $newDateItem).removeClass("tl-js-hidden");
-            }
-
-            ;
-
+            };
             if (dayOnly) {
                 $newDateItem.removeClass('feature-panels__panel--front-door');
                 $newDateItem.addClass('feature-panels__panel--dark');
             }
-
             eventListElements.push($newDateItem);
         }
-    }); // create page elements
-
+    });
+    // create page elements
     var $page = $('<div class="feature-panels feature-panels--small-margin event-list__page" />');
-    var $currentPage = $page.clone(); // make the first page the visible page
-
-    $currentPage.addClass('event-list__page--current'); // set flag for incomplete page
-
-    var incompletePage = false; // get future date pages
-
-    eventListElements.filter(function (item) {
-        return moment(date).diff(item.attr('data-event-date'), 'days') < 1;
-    }).forEach(function ($eventElement, index) {
+    var $currentPage = $page.clone();
+    // make the first page the visible page
+    $currentPage.addClass('event-list__page--current');
+    // set flag for incomplete page
+    var incompletePage = false;
+    // get future date pages
+    eventListElements.filter(item => moment(date).diff(item.attr('data-event-date'), 'days') < 1).forEach(($eventElement, index) => {
         $eventElement.appendTo($currentPage);
-        incompletePage = true; // if current page, highlight date on calendar
-
+        incompletePage = true;
+        // if current page, highlight date on calendar
         if ($currentPage.hasClass('event-list__page--current')) {
             $('[data-calendar-day-date="' + $eventElement.attr('data-event-date') + '"]').addClass('event-calendar__displaying-date');
-        } // if three items on page, add page and create a new one
-
-
+        }
+        // if three items on page, add page and create a new one
         if ((index + 1) % 3 === 0) {
             $currentPage.appendTo('[data-dates]');
             $currentPage = $page.clone();
             incompletePage = false;
         }
-    }); // if there is an incomplete page, add page as we have no more items
-
+    });
+    // if there is an incomplete page, add page as we have no more items
     if (incompletePage) {
         $currentPage.appendTo('[data-dates]');
         $currentPage = $page.clone();
         incompletePage = false;
-    } // get past date pages
-
-
-    eventListElements.filter(function (item) {
-        return moment(date).diff(item.attr('data-event-date'), 'days') > 0;
-    }).sort(function (a, b) {
-        return a.attr('data-event-date') < b.attr('data-event-date') ? 1 : b.attr('data-event-date') < a.attr('data-event-date') ? -1 : 0;
-    }).forEach(function ($eventElement, index) {
+    }
+    // get past date pages
+    eventListElements.filter(item => moment(date).diff(item.attr('data-event-date'), 'days') > 0).sort((a, b) => (a.attr('data-event-date') < b.attr('data-event-date')) ? 1 : ((b.attr('data-event-date') < a.attr('data-event-date')) ? -1 : 0)).forEach(($eventElement, index) => {
         $eventElement.prependTo($currentPage);
-        incompletePage = true; // if current page, highlight date on calendar
-
+        incompletePage = true;
+        // if current page, highlight date on calendar
         if ($currentPage.hasClass('event-list__page--current')) {
             $('[data-calendar-day-date="' + $eventElement.attr('data-event-date') + '"]').addClass('event-calendar__displaying-date');
-        } // if three items on page, add page and create a new one
-
-
+        }
+        // if three items on page, add page and create a new one
         if ((index + 1) % 3 === 0) {
             $currentPage.prependTo('[data-dates]');
             $currentPage = $page.clone();
             incompletePage = false;
         }
-    }); // if there is an incomplete page, add page as we have no more items
-
+    });
+    // if there is an incomplete page, add page as we have no more items
     if (incompletePage) {
         $currentPage.prependTo('[data-dates]');
         $currentPage = $page.clone();
         incompletePage = false;
     }
-
-    setEventListPagination(); // if any dates have been added, hide the no dates to display message
-
+    setEventListPagination();
+    // if any dates have been added, hide the no dates to display message
     if ($('.feature-panels', '[data-dates]').length > 0) {
         $noDates.hide();
     }
@@ -196,14 +163,12 @@ function setEventListPagination() {
         $('[data-event-pagination]').show();
         var numberOfPages = $('.event-list__page', '[data-dates]').length;
         var currentPageIndex = $('.event-list__page--current', '[data-dates]').index();
-
         if (currentPageIndex === 0) {
             $('[data-event-pagination-direction="previous"]').parent().hide();
         } else {
             $('[data-event-pagination-direction="previous"]').parent().show();
         }
-
-        if (currentPageIndex + 1 === numberOfPages) {
+        if ((currentPageIndex + 1) === numberOfPages) {
             $('[data-event-pagination-direction="next"]').parent().hide();
         } else {
             $('[data-event-pagination-direction="next"]').parent().show();
@@ -225,9 +190,7 @@ function buildFlaggedDates() {
     var $flaggedDatesList = $('[data-flagged-list]');
     var $flaggedDatesLink = $('[data-flagged-dates-link]');
     $flaggedDatesList.empty();
-    calendarData.filter(function (item) {
-        return item.flagged && moment().diff(item.date, 'days') < 1;
-    }).forEach(function (item, index) {
+    calendarData.filter(item => item.flagged && moment().diff(item.date, 'days') < 1).forEach((item, index) => {
         var $newFlaggedItem = $dateFlaggedItemTemplage.clone();
         $newFlaggedItem.attr('data-flagged-index', index);
         $('[data-flagged-date]', $newFlaggedItem).text(moment(item.date).format('DD MMMM YYYY'));
@@ -235,7 +198,7 @@ function buildFlaggedDates() {
         $('[data-flagged-description]', $newFlaggedItem).text(item.description);
         $('[data-flagged-description-toggle]', $newFlaggedItem).click(function (event) {
             event.preventDefault();
-            toggleFlaggedDescription(index);
+            toggleFlaggedDescription(index)
         });
         $newFlaggedItem.appendTo($flaggedDatesList);
         $flaggedDates.show();
@@ -248,40 +211,37 @@ function toggleFlaggedDescription(index) {
     $('[data-flagged-index="' + index + '"] [data-flagged-description-wrapper]').toggleClass('event-description-wrapper--expand');
     $('[data-flagged-index]:not([data-flagged-index="' + index + '"])').toggle();
 }
-
 $('[data-event-pagination-direction]').click(function (event) {
     event.preventDefault();
     var dateInView;
-    sizeSizer('calendar-list'); // get the current page index
-
-    var currentPageIndex = $('.event-list__page--current', '[data-dates]').index(); // set the requested page index
-
+    sizeSizer('calendar-list');
+    // get the current page index
+    var currentPageIndex = $('.event-list__page--current', '[data-dates]').index();
+    // set the requested page index
     if ($(this).attr('data-event-pagination-direction') === 'next') {
         currentPageIndex++;
     } else {
         currentPageIndex--;
-    } // hide the current page and show the requested page
-
-
+    }
+    // hide the current page and show the requested page
     $('.event-list__page--current', '[data-dates]').removeClass('event-list__page--current');
-    $('.event-list__page', '[data-dates]').eq(currentPageIndex).addClass('event-list__page--current'); // reset the pagination
-
-    setEventListPagination(); // make sure no events are expanded
-
+    $('.event-list__page', '[data-dates]').eq(currentPageIndex).addClass('event-list__page--current');
+    // reset the pagination
+    setEventListPagination();
+    // make sure no events are expanded
     $('.event-description-wrapper--expand').removeClass('event-description-wrapper--expand');
-    $('[data-date-index]').show(); // clear highlighted dates on calendar
-
-    $('.event-calendar__displaying-date').removeClass('event-calendar__displaying-date'); // get calendar to show date
-
+    $('[data-date-index]').show();
+    // clear highlighted dates on calendar
+    $('.event-calendar__displaying-date').removeClass('event-calendar__displaying-date');
+    // get calendar to show date
     if ($(this).attr('data-event-pagination-direction') === 'next') {
         dateInView = $('.event-list__page--current [data-event-date]', '[data-dates]').first().attr('data-event-date');
     } else {
         dateInView = $('.event-list__page--current [data-event-date]', '[data-dates]').last().attr('data-event-date');
     }
-
     myCalendar.setFocusYear(moment(dateInView).format('YYYY'));
-    myCalendar.setFocusMonth(moment(dateInView).format('MM')); // loop dates on current page and highlight on calendar
-
+    myCalendar.setFocusMonth(moment(dateInView).format('MM'));
+    // loop dates on current page and highlight on calendar
     $('.event-list__page', '[data-dates]').eq(currentPageIndex).find('[data-event-date]').each(function () {
         $('[data-calendar-day-date="' + $(this).attr('data-event-date') + '"]').addClass('event-calendar__displaying-date');
     });
@@ -312,29 +272,28 @@ function frontDoor(apiKey, dataSource) {
         $(this).find('[data-accordion-state]').text(function (i, text) {
             return text === 'Hide' ? 'Show' : 'Hide';
         });
-        $('[data-accordion-body="' + sectionName + '"]').toggle(); // save hide state to local storage
-
+        $('[data-accordion-body="' + sectionName + '"]').toggle();
+        // save hide state to local storage
         var currentHideStoredState = localStorage.getItem('hide-' + sectionName) === null ? false : localStorage.getItem('hide-' + sectionName) === 'true';
         localStorage.setItem('hide-' + sectionName, !currentHideStoredState);
     });
     $('[data-scroll-to]').click(function (e) {
-        e.preventDefault(); // get requested section name
-
-        var sectionName = $(this).attr('data-scroll-to'); // scroll to section
-
+        e.preventDefault();
+        // get requested section name
+        var sectionName = $(this).attr('data-scroll-to');
+        // scroll to section
         $('html, body').animate({
             scrollTop: $('#' + sectionName).offset().top
-        }, 500); // make sure section is open
-
+        }, 500);
+        // make sure section is open
         $('[data-accordion-link="' + sectionName + '"]').find('span').text('Hide');
-        $('[data-accordion-body="' + sectionName + '"]').show(); // save hide state to local storeage
-
+        $('[data-accordion-body="' + sectionName + '"]').show();
+        // save hide state to local storeage
         localStorage.setItem('hide-' + sectionName, false);
-    }); // load section hide/show status from session storage
-
+    });
+    // load section hide/show status from session storage
     $('[data-accordion-link]').each(function () {
         var sectionName = $(this).attr('data-accordion-link');
-
         if (localStorage.getItem('hide-' + sectionName) === 'true') {
             $(this).find('[data-accordion-state]').text(function (i, text) {
                 return text === "Hide" ? "Show" : "Hide";
@@ -343,4 +302,5 @@ function frontDoor(apiKey, dataSource) {
         }
     });
 }
+
 /* END front door functions */
