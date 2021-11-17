@@ -6178,6 +6178,13 @@ ul.govuk-radios label .gem-radios__input {
   display: flex;
   justify-content: space-between; }
 
+#tl-calendar {
+  display: none; }
+
+@supports not (old: ie) {
+  #tl-calendar {
+    display: unset; } }
+
 /* Spinner */
 .spinner {
   text-align: center; }
