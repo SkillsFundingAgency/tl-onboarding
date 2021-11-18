@@ -32,6 +32,12 @@ gulp.task('js', () => {
         'node_modules/govuk-frontend/govuk/all.js',
     ])
         .pipe(concat('govuk.js'))
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
         .pipe(gulp.dest(paths.dist.JS));
 });
 
@@ -42,13 +48,26 @@ gulp.task('customjs', () => {
         'node_modules/moment/moment.js',
     ])
         .pipe(concat('custom.js'))
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
         .pipe(gulp.dest(paths.dist.Assets));
 });
 
 gulp.task('calendarjs', () => {
     return src([
+        'Frontend/src/js/calendar.js',
         'Frontend/src/js/tavo-calendar.js',
     ])
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
         .pipe(gulp.dest(paths.dist.Assets));
 });
 
