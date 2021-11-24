@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - IE11 Fixes",
+  "name": "GDS Style - Article Feedback",
   "author": "Ash Anderton",
-  "version": "2.3.50",
+  "version": "2.3.54",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -299,6 +299,13 @@
           "description": "Sitewide",
           "label": "Subject Form ID",
           "value": "360019751459"
+        },
+        {
+          "identifier": "subdomain",
+          "type": "text",
+          "description": "Subdomain of ZD instance",
+          "label": "Subdomain of ZD instance",
+          "value": "esfa"
         }
       ]
     },
