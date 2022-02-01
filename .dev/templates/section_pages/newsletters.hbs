@@ -75,39 +75,6 @@
                     <button data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu" type="button">
                         Sign in to get news updates
                     </button>
-
-                    <p class="govuk-body-l">or...</p>
-                    {{!-- Alternative approach using oauth in javascript --}}
-                    <form id="subscribe-user-form" method="post">
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for="subscriber-name">Name</label>
-                            <input type="text" id="subscriber-name" name="subscriber-name" placeholder="Type your name">
-                        </div>
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for="subscriber-email">Name</label>
-                            <input type="text" id="subscriber-email" name="subscriber-email" placeholder="Type your email">
-                        </div>
-                        <div class="govuk-!-margin-top-3">
-                            <input type="submit" name="commit" value="Subscribe">
-                        </div>
-                    </form>
-                    <script type="text/javascript">
-                        $("#subscribe-user-form").submit(function(e){
-
-                            e.preventDefault();
-                            
-                            const subscription_client_id = {{settings.tl_subscription_client_id}}
-                            const subscription_client_secret = {{settings.tl_subscription_client_secret}}
-
-                            subscriber-name = $("#subscriber-name").val();
-                            subscriber_email = $("#subscriber-email").val();
-
-                            console.log(`subscribe form submitted`);
-                            console.log(`subscription_client_id = ${subscription_client_id}`);
-                            console.log(`subscription_client_secret = ${subscription_client_secret}`);
-                            console.log(`user = ${subscriber_email} (${subscriber_name})`);
-                        });
-                    </script>
                 </div>
                 {{/if}}
                 {{/if}}
