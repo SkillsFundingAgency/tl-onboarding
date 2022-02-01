@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Course Info Page Text",
   "author": "Ash Anderton",
-  "version": "2.3.56",
+  "version": "2.3.57",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -332,6 +332,25 @@
           "description": "Calendar",
           "label": "Title",
           "value": "Calendar"
+        }
+      ]
+    },
+    {
+      "label": "Subscription Authentication",
+      "variables": [
+        {
+          "identifier": "tl_subscription_client_id",
+          "type": "text",
+          "description": "Subscription client id",
+          "label": "Subscription client id",
+          "value": "t_levels_subscription_service"
+        },
+        {
+          "identifier": "tl_subscription_client_secret",
+          "type": "text",
+          "description": "Subscription client secret",
+          "label": "Subscription client secret",
+          "value": ""
         }
       ]
     }
