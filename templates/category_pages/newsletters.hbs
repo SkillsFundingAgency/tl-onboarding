@@ -126,12 +126,13 @@
 
                             e.preventDefault();
                             
-                            const subscription_client_id = {{settings.tl_subscription_client_id}}
-                            const subscription_client_secret = {{settings.tl_subscription_client_secret}}
+                            const subscription_client_id = "{{settings.tl_subscription_client_id}}";
+                            const subscription_client_secret = "{{settings.tl_subscription_client_secret}}";
 
                             subscriber-name = $("#subscriber-name").val();
                             subscriber_email = $("#subscriber-email").val();
 
+                            //TODO: Remove ` style from strings so they work in ie11
                             console.log(`subscribe form submitted`);
                             console.log(`subscription_client_id = ${subscription_client_id}`);
                             console.log(`subscription_client_secret = ${subscription_client_secret}`);
