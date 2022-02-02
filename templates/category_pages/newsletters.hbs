@@ -132,11 +132,82 @@
                             const subscriber_name = $("#subscriber-name").val();
                             const subscriber_email = $("#subscriber-email").val();
 
+                            //const section_id_newsletters = {{settings.section_id_newsletters}}
+                            const sectionId = {{settings.section_id_newsletters}}
+
                             //TODO: Remove ` style from strings so they work in ie11
                             console.log(`subscribe form submitted`);
                             console.log(`subscription_client_id = ${subscription_client_id}`);
                             console.log(`subscription_client_secret = ${subscription_client_secret}`);
                             console.log(`user = ${subscriber_email} (${subscriber_name})`);
+                            console.log(`user = ${sectionId} (${sectionId})`);
+
+                            //get auth token
+
+/*
+curl https://{subdomain}.zendesk.com/oauth/tokens \
+  -H "Content-Type: application/json" \
+  -d '{"grant_type": "authorization_code", "code": "{your_code}",
+    "client_id": "{your_client_id}", "client_secret": "{your_client_secret}", 
+    "redirect_uri": "{your_redirect_url}", "scope": "read" }' \
+  -X POST
+
+//limit scope with something like
+                scope: "hc:read hc:write users:read users:write"
+*/
+
+                            const oauth_request = JSON.stringify({
+                                grant_type: "client_credentials",//"authorization_code",
+                                client_id: subscription_client_id,
+                                client_secret: subscription_client_secret
+                                //code: code,
+                                //redirect_uri: "", //what goes here? redirect_uri,
+                                scope: "read write"
+                            });
+                            console.log(oauth_request);
+                            $.ajax({
+                                type: 'POST',
+                                url: "/oauth/tokens",
+                                //contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                                contentType: 'application/json',
+                                //crossDomain:true,
+                                //cache : true, 
+                                //dataType: 'json',
+                                data: oauth_request
+                             })
+                            .then(function (tokenResponse) {
+                                console.log(`have token response ${tokenResponse}`);
+
+                                //get csrf token (is this needed?)     
+                                $.getJSON('/hc/api/internal/csrf_token.json')
+                                .then(function (csrfResponse) {
+
+                                    console.log(`preparing to call subscribe with section id ${sectionId}`);
+                    
+                                    //subscribe                    
+                                    //TODO: Will need to get/create the user first and add userId to call
+                                    $.ajax({url: '/api/v2/help_center/sections/' + sectionId + '/subscriptions.json',
+                                        type: "POST",
+                                        data: jQuery.param({
+                                            "subscription": {
+                                                "source_locale": HelpCenter.user.locale, 
+                                                "include_comments": true
+                                            }
+                                        }),
+                                        dataType: "application/json",
+                                        headers: {
+                                            "X-CSRF-Token":  csrfResponse.current_session.csrf_token
+                                            //Authorization: "Bearer oauth_access_token"
+                                        },
+                                        complete: function(){
+                                            console.log('Subscribed to section ' + sectionId);
+                                            $('#follow-btn').html(unfollowButtonText);
+                                        }
+                                    }); //end of ajax call
+                                }); //end of then .. csrfResponse
+                            }, function (e) { //error response callback for token request
+                            console.log(`token error ${e.responseText}`)
+                        }); //end of then .. tokenResponse
                         });
                     </script>
                 </div>
