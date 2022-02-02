@@ -159,12 +159,13 @@ curl https://{subdomain}.zendesk.com/oauth/tokens \
                             const oauth_request = JSON.stringify({
                                 grant_type: "client_credentials",//"authorization_code",
                                 client_id: subscription_client_id,
-                                client_secret: subscription_client_secret
+                                client_secret: subscription_client_secret,
                                 //code: code,
                                 //redirect_uri: "", //what goes here? redirect_uri,
                                 scope: "read write"
                             });
                             console.log(oauth_request);
+
                             $.ajax({
                                 type: 'POST',
                                 url: "/oauth/tokens",
