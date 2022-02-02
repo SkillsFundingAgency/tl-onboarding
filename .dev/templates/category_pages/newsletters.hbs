@@ -161,8 +161,7 @@ scope=read%20write
 //limit scope with something like
                 scope: "hc:read hc:write users:read users:write"
 */
-//TODO: Build url as current page url
-                            const = redirect_uri = window.location.href;
+                            const redirect_uri = window.location.href;
 
                             const oauth_new_request = JSON.stringify({
                                 response_type: "code",
