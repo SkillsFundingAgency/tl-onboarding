@@ -5459,6 +5459,12 @@
   background-color: #f5f5f5;
   padding: 40px 0; }
 
+.tl-home--panel--blue {
+  background-color: #1d70b8;
+  color: #ffffff; }
+  .tl-home--panel--blue * {
+    color: #ffffff; }
+
 /*Breadcrumbs*/
 /* Prevents sections from showing in breadcrumb on article page */
 #tl-breadcrumbs--article ol li:nth-child(3), #tl-breadcrumbs--article ol li:nth-child(4) {
