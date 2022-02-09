@@ -110,6 +110,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    align-items: stretch;
 
     * {
         color: govuk-colour("white");
@@ -117,14 +118,12 @@
 
     &--content {
         padding: 30px;
-        display: flex;
         flex-direction: column;
         flex-basis: 100%;
         flex: 3;
     }
 
     &--image {
-        display: flex;
         flex-direction: column;
         flex-basis: 100%;
         flex: 2;
