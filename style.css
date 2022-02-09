@@ -5464,6 +5464,8 @@
   color: #ffffff; }
   .tl-home--panel--blue * {
     color: #ffffff; }
+  .tl-home--panel--blue--content {
+    padding: 30px; }
 
 /*Breadcrumbs*/
 /* Prevents sections from showing in breadcrumb on article page */
