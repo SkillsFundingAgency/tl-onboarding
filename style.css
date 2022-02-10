@@ -5470,7 +5470,7 @@
   .tl-home--panel--blue * {
     color: #ffffff; }
   .tl-home--panel--blue--content {
-    padding: 30px;
+    padding: 20px;
     flex-direction: column;
     flex-basis: 100%;
     flex: 3; }
@@ -5514,6 +5514,15 @@
     .tl-home--panel--white--image img {
       max-height: 100%;
       max-width: 100%; }
+
+.tl-home--panel--events {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; }
+  .tl-home--panel--events--content {
+    padding: 20px; }
 
 /*Breadcrumbs*/
 /* Prevents sections from showing in breadcrumb on article page */
