@@ -31,9 +31,19 @@
                     <div class="tl-home--panel--blue">
                         <div class="tl-home--panel--blue--content">
                             <h3 class="govuk-heading-s">Latest News</h3>
-                            <h4 class="govuk-heading-s"><a href="#">Title of article being linked to</a></h4>
-                            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque bibendum nibh nibh, eu finibus est porttitor feugiat. Pellentesque lectus nisi, fermentum at massa id, viverra venenatis neque.</p>
-                            <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: 06.01.2022</p>
+                            {{#each categories}}
+                                {{#is name "T Level news and events"}}
+                                    {{#each sections}}
+                                        {{#is name "Events, webinars and information"}}
+                                            {{#each promoted.articles}}
+                                            <h4 class="govuk-heading-s"><a href="{{url}}">{{title}}</a></h4>
+                                            <p class="govuk-body">{{excerpt body characters=200}}</p>
+                                            <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: {{date updated_at class='metadata' format='short'}}</p>
+                                            {{/each}}
+                                        {{/is}}
+                                    {{/each}}
+                                {{/is}}
+                            {{/each}}
                         </div>
                         <div class="tl-home--panel--blue--image">
                             <img src="{{settings.home_image_2}}" />
