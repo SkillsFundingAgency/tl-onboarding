@@ -21,9 +21,39 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">{{category.name}}</h1>
-                {{#if category.description}}
-                <p class="govuk-body-l">{{category.description}}</p>
-                {{/if}}
+
+                <section>
+                    {{#each sections}}
+                    {{#is name "Latest news"}}
+                    <h2 class="govuk-heading-l">{{name}}</h2>
+                    
+                    {{#if articles}}
+                <div class="govuk-grid-row">
+                    {{#each articles}}
+                    {{is @index 1}}
+                    <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link">{{title}}</a></h3>
+                        <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: {{date created_at class='metadata' format='medium'}}</p>
+                    </div>
+                    {{/is}}
+                    {{is @index 2}}
+                    <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link">{{title}}</a></h3>
+                        <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: {{date created_at class='metadata' format='medium'}}</p>
+                    </div>
+                    {{else}}
+                    {{/is}}
+                </div>
+
+                </section>
+
+
+
+
+
+
+
+
                 <section>
                     {{#each sections}}
                     <h2 class="govuk-heading-m">{{name}}</h2>
