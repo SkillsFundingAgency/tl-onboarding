@@ -5478,7 +5478,8 @@
     flex-basis: 100%; }
     .tl-home--panel--blue--image img {
       display: block;
-      position: relative; }
+      position: relative;
+      max-width: 100%; }
   @media (min-width: 40.0625em) {
     .tl-home--panel--blue--content {
       flex: 3; }
@@ -5492,6 +5493,7 @@
         left: 50%;
         min-height: 100%;
         min-width: 100%;
+        max-width: unset;
         transform: translate(-50%, -50%); } }
 
 .tl-home--panel--white {
