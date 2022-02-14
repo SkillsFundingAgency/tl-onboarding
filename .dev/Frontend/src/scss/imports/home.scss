@@ -177,6 +177,7 @@
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        text-align: center;
 
         img {
             max-height: 100%;
@@ -196,7 +197,7 @@
             position: relative;
 
             img {
-                max-height: 100%;
+                max-width: 100%;
             }
         }
     }

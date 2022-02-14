@@ -5513,7 +5513,8 @@
     -webkit-flex-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
-    align-items: center; }
+    align-items: center;
+    text-align: center; }
     .tl-home--panel--white--image img {
       max-height: 100%;
       max-width: 60%; }
@@ -5526,7 +5527,7 @@
       overflow: hidden;
       position: relative; }
       .tl-home--panel--white--image img {
-        max-height: 100%; } }
+        max-width: 100%; } }
 
 .tl-home--panel--events {
   background-color: #ffffff;
