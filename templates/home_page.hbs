@@ -82,6 +82,7 @@
                             {{#each categories}}
                             {{#is name "T Level events"}}
                             {{#each sections}}
+                            {{#is name "Events"}}
                             {{#each articles}}
                             {{#is @index 1}}
                             <p class="govuk-body-s govuk-!-margin-bottom-0" id="tl-article--date--{{id}}"></p>
@@ -138,6 +139,7 @@
                             </script>
                             {{/is}}
                             {{/each}}
+                            {{/is}}
                             {{/each}}
                             <p class="govuk-body"><a href="{{url}}" class="govuk-link">See all events</a></p>
                             {{/is}}
