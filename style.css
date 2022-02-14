@@ -5517,7 +5517,8 @@
     text-align: center; }
     .tl-home--panel--white--image img {
       max-height: 100%;
-      max-width: 60%; }
+      max-width: 60%;
+      width: 200px; }
   @media (min-width: 40.0625em) {
     .tl-home--panel--white--content {
       flex: 6;
