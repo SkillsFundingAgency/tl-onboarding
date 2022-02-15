@@ -6629,6 +6629,18 @@ ul.govuk-radios label .gem-radios__input {
           font-size: 14pt;
           line-height: 1.15; } }
 
+.tl-filter {
+  border: 3px solid #f3f2f1;
+  overflow: hidden; }
+  .tl-filter fieldset legend {
+    background: #f3f2f1;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 400px;
+    min-width: 100%; }
+  .tl-filter .tl-filter--radios {
+    padding: 0 15px; }
+
 .app-step-nav-header {
   color: #0b0c0c;
   position: relative;
