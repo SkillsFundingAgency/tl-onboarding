@@ -1,139 +1,142 @@
-
 <!-- Main content -->
-<main id="main-content" role="main">
-    <!-- Search Hero -->
-    <div class="tl-hero tl-hero--minimal">
-        <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-half">
 
-                    <div id="tl-breadcrumbs--category">
-                        <div class="tl-breadcrumbs">
-                            {{breadcrumbs}}
-                        </div>
-                    </div>
-                </div>
-                <div class="govuk-grid-column-one-half tl-text--right govuk-!-margin-top-1">
-                    <div class="tl-form-group tl-search--container tl-search--home tl-search--home--minimal" id="tl-search--category">
 
-                        <div class="tl-search--error tl-hidden">
-                            <span class="tl-error--message"></span>
-                        </div>
-                        <form role="search" class="tl-search" data-search="" action="/hc/en-gb/search" accept-charset="UTF-8" method="get">
-                            <input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search for support" aria-label="Search for support">
-                            <input type="hidden" name="filter_by" value="knowledge_base" />
-                            <input type="submit" name="commit" value="Search">
-                        </form>
-
-                    </div>
-                </div>
-            </div>
+<div class="govuk-width-container">
+    <div id="tl-breadcrumbs--help">
+        <div class="tl-breadcrumbs">
+            {{breadcrumbs}}
         </div>
     </div>
+</div>
 
 
+<!-- Category Content -->
+<div class="govuk-width-container govuk-main-wrapper">
 
-    <!-- Article Content -->
-    <div class="govuk-width-container govuk-main-wrapper">
-
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">{{category.name}}</h1>
-                {{#if category.description}}
-                <p class="govuk-body-l">{{category.description}}</p>
-                {{/if}}
-                <section>
-                    {{#each sections}}
-                    <h2 class="govuk-heading-m">{{name}}</h2>
-                    {{#is name "Newsletters"}}
-                    {{#if articles}}
-                    <ul class="govuk-list tl-newsletter--list">
-                        {{#each articles}}
-                        <li>
-                            <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
-                        </li>
-                        {{/each}}
-                        <li class="govuk-!-margin-top-4">
-                            {{#if more_articles}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/if}}
-                            {{#is article_count 5}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/is}}
-                            {{#is article_count 6}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/is}}
-                        </li>
-                    </ul>
-                    {{else}}
-                    <ul class="govuk-list">
-                        <li>
-                            <p class="govuk-body">There's nothing here at the moment</p>
-                        </li>
-                    </ul>
-                    {{/if}}
-                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-8 govuk-!-margin-bottom-7">
-                    {{else}}
-                    {{#if articles}}
-                    <ul class="govuk-list">
-                        {{#each articles}}
-                        <li>
-                            <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
-                        </li>
-                        {{/each}}
-                        {{#if more_articles}}
-                        <li class="govuk-!-margin-top-4">
-                            <a class="govuk-link govuk-body tl-category--more" href="{{url}}">
-                                See all events, webinars and information
-                            </a>
-                        </li>
-                        {{/if}}
-                    </ul>
-                    {{else}}
-                    <ul class="govuk-list">
-                        <li>
-                            <p class="govuk-body">There's nothing here at the moment</p>
-                        </li>
-                    </ul>
-                    {{/if}}
-                    {{/is}}
+    <div class="govuk-grid-row govuk-!-margin-bottom-7">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">{{section.name}}</h1>
+            {{#if section.description}}
+            <p class="govuk-body-l">{{section.description}}</p>
+            {{/if}}
 
 
-                    {{/each}}
-                </section>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third tl-hide tl-js-visible">
+            <div class="govuk-form-group tl-filter">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <span class="govuk-fieldset__heading">
+                            Filter by event type
+                        </span>
+                    </legend>
+                    <div class="govuk-radios--small tl-filter--radios">
+                        <div class="govuk-radios__item" id="tl-events-filter--all">
+                            <input class="govuk-radios__input" id="event-type" name="Event type" type="radio" value="all" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="event-type">
+                                All events
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item" id="tl-events-filter--courseinfo">
+                            <input class="govuk-radios__input" id="event-type-2" name="Event type" type="radio" value="Course information events">
+                            <label class="govuk-label govuk-radios__label" for="event-type-2">
+                                Course information events
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item" id="tl-events-filter--industryplacements">
+                            <input class="govuk-radios__input" id="event-type-3" name="Event type" type="radio" value="Industry placements events">
+                            <label class="govuk-label govuk-radios__label" for="event-type-3">
+                                Industry placements events
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item" id="tl-events-filter--networking">
+                            <input class="govuk-radios__input" id="event-type-4" name="Event type" type="radio" value="Networking events">
+                            <label class="govuk-label govuk-radios__label" for="event-type-4">
+                                Networking events
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item" id="tl-events-filter--professionaldevelopment">
+                            <input class="govuk-radios__input" id="event-type-4" name="Event type" type="radio" value="T Level professional development events">
+                            <label class="govuk-label govuk-radios__label" for="event-type-5">
+                                T Level professional development events
+                            </label>
+                        </div>
 
+                        <script>
+                            $('input:radio[name="Event type"]').change(
+                                function () {
+                                    if ($(this).is(':checked')) {
+                                        var eventtype = $(this).val();
+                                        $(".tl-event--list").attr("data-event--filter", eventtype);
+                                        sessionStorage.setItem('eventfilter', eventtype);
+                                    }
+                                });
+
+                            $(document).ready(function () {
+                                if (sessionStorage.getItem("eventfilter")) {
+                                    var eventtype = sessionStorage.getItem('eventfilter');
+                                    $('.tl-event--list').attr("data-event--filter", eventtype);
+                                    $('input:radio[value=' + eventtype + ']').prop("checked", true);
+                                }
+                                else {
+                                    var eventtype = $('input:radio[name="Event type"]:checked').val();
+                                    $(".tl-event--list").attr("data-event--filter", eventtype);
+                                }
+                            });
+                        </script>
+                    </div>
+
+                </fieldset>
             </div>
-            <div class="govuk-grid-column-one-third">
 
-                {{#if signed_in}}
-                <div class="article-subscribe tl-article--subscribe--signedin tl-js-visible" id="tl-newsletter--subscribe">
-                    <button id="follow-btn" type="button" class="tl-hidden">Follow </button>
-                    <script type="text/javascript">
-                        const section_id_newsletters = {{settings.section_id_newsletters}}
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <section>
+                <ul class="govuk-list tl-event--list" data-event--filter="all">
+
+                    {{#each section.articles}}
+                    <li id="tl-article--container--{{id}}">
+                        <span class="govuk-body-s tl-text-headercase" id="tl-article--type--{{id}}"></span>
+                        <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
+                        <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
+                        <p class="govuk-body">{{excerpt body characters=400}}</p>
+                        <a class="govuk-link tl-waw--book" GTMname="{{title}}" href="{{url}}">Book your place</a>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                    </li>
+
+                    <script>
+                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                    articlelabels.article.label_names.forEach(function (labelname) {
+
+                                        if (labelname.indexOf("type") != -1) {
+                                            var type = labelname.split('/')[1];
+                                            $("#tl-article--type--{{id}}").text(type);
+                                            $("#tl-article--container--{{id}}").attr("data-event--labels", type);
+                                        }
+
+                                        if (labelname.indexOf("date") != -1) {
+                                            var date = labelname.split('/')[1];
+                                            $("#tl-article--date--{{id}}").text(date);
+                                        }
+                                    });
+                                }
+                            });
+
                     </script>
-                </div>
-                {{else}}
-                <div class="article-subscribe tl-article--subscribe">
-                    <button data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu" type="button">
-                        Sign in to get news updates
-                    </button>
-                </div>
-                {{/if}}
+                    {{/each}}
 
+                </ul>
+            </section>
+            <div class="tl-event--pagination">
+                {{pagination}}
             </div>
         </div>
     </div>
+</div>
 </main>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-  	frontDoor('{{settings.tl_calendar_api_key}}', '{{settings.tl_calendar_data_source}}');
-  });
-</script>
-<script src="{{asset 'tavo-calendar.js'}}"></script>
