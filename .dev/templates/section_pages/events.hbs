@@ -99,7 +99,6 @@
 
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
-                        <span class="govuk-body-s tl-text-headercase" id="tl-article--type--{{id}}"></span>
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
                         <p class="govuk-body">{{excerpt body characters=400}}</p>
@@ -115,7 +114,6 @@
 
                                         if (labelname.indexOf("type") != -1) {
                                             var type = labelname.split('/')[1];
-                                            $("#tl-article--type--{{id}}").text(type);
                                             $("#tl-article--container--{{id}}").attr("data-event--labels", type);
                                         }
 
