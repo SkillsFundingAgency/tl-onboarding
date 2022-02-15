@@ -9,14 +9,26 @@
         }
     }
 
-    &[data-event--filter="workshops"] {
-        li[data-event--labels*="workshop"] {
+    &[data-event--filter="courseinformation"] {
+        li[data-event--labels*="courseinformation"] {
             display: block;
         }
     }
 
-    &[data-event--filter="webinars"] {
-        li[data-event--labels*="webinar"] {
+    &[data-event--filter="industryplacements"] {
+        li[data-event--labels*="industryplacements"] {
+            display: block;
+        }
+    }
+
+    &[data-event--filter="networking"] {
+        li[data-event--labels*="networking"] {
+            display: block;
+        }
+    }
+
+    &[data-event--filter="professionaldevelopment"] {
+        li[data-event--labels*="professionaldevelopment"] {
             display: block;
         }
     }

@@ -6585,10 +6585,16 @@ ul.govuk-radios label .gem-radios__input {
   .tl-event--list li p {
     margin: 10px 0 15px 0; }
 
-.tl-event--list[data-event--filter="workshops"] li[data-event--labels*="workshop"] {
+.tl-event--list[data-event--filter="courseinformation"] li[data-event--labels*="courseinformation"] {
   display: block; }
 
-.tl-event--list[data-event--filter="webinars"] li[data-event--labels*="webinar"] {
+.tl-event--list[data-event--filter="industryplacements"] li[data-event--labels*="industryplacements"] {
+  display: block; }
+
+.tl-event--list[data-event--filter="networking"] li[data-event--labels*="networking"] {
+  display: block; }
+
+.tl-event--list[data-event--filter="professionaldevelopment"] li[data-event--labels*="professionaldevelopment"] {
   display: block; }
 
 .tl-event--list[data-event--filter="all"] li {
