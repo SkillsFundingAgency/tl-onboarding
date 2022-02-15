@@ -126,7 +126,7 @@
 
 
                                         if (labelname.indexOf("book") != -1) {
-                                            var book = labelname.split('/')[1];
+                                            var book = labelname.replace("book/", "");
                                             $("#tl-article--book--{{id}}").attr("href", book);
                                         }
                                     });
