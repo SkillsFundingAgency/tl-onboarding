@@ -107,7 +107,7 @@
     background-color: $govuk-link-colour;
     color: govuk-colour("white");
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     flex-wrap: wrap;
     width: 100%;
     align-items: stretch;
@@ -134,6 +134,8 @@
     }
 
     @include govuk-media-query($from: tablet) {
+        flex-direction: row;
+
         &--content {
             flex: 3;
         }
