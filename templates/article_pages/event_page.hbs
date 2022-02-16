@@ -33,6 +33,11 @@
                     <strong>Date and time</strong><br>
                     <span></span>
                 </p>
+                <p id="tl-article--location" class="tl-hide govuk-body">
+                    <strong>Location</strong><br>
+                    <span></span>
+                </p>
+
 
                 <p id="tl-article--book" class="tl-hide govuk-body">
                     <a href="#" class="govuk-link">Book your place</a>. There is no charge to attend this webinar.
@@ -208,6 +213,13 @@
                         $("#tl-article--details").show();
                         $("#tl-article--date").show();
                         $("#tl-article--date span").text(date);
+                    }
+
+                    if (labelname.indexOf("location") != -1) {
+                        var location = labelname.split('/')[1];
+                        $("#tl-article--details").show();
+                        $("#tl-article--location").show();
+                        $("#tl-article--location span").text(location);
                     }
 
                     if (labelname.indexOf("book") != -1) {
