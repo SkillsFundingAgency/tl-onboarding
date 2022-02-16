@@ -4845,11 +4845,17 @@
 .tl-row-fill {
   display: flex;
   align-items: stretch; }
+  @media (max-width: 40.0525em) {
+    .tl-row-fill {
+      display: block; } }
 
 .tl-row-fill--column {
   display: flex;
   align-items: stretch;
   flex-direction: column; }
+  @media (max-width: 40.0525em) {
+    .tl-row-fill--column {
+      display: block; } }
 
 .tl-search {
   display: flex; }
