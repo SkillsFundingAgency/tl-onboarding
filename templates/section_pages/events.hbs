@@ -102,7 +102,7 @@
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
                         <p class="govuk-body">{{excerpt body characters=400}}</p>
-                        <a class="govuk-link tl-event--book" id="tl-article--book--{{id}}" GTMname="{{title}}" href="{{url}}">Book your place</a>
+                        <a class="govuk-link tl-event--book" id="tl-article--book--{{id}}" GTMname="{{title}}" href="{{url}}">More information</a>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </li>
 
@@ -120,12 +120,6 @@
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
                                             $("#tl-article--date--{{id}}").text(date);
-                                        }
-
-
-                                        if (labelname.indexOf("book") != -1) {
-                                            var book = labelname.replace("book/", "");
-                                            $("#tl-article--book--{{id}}").attr("href", book);
                                         }
                                     });
                                 }
