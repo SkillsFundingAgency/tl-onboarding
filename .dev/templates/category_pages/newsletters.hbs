@@ -21,7 +21,24 @@
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">{{category.name}}</h1>
             </div>
+            <div class="govuk-grid-column-one-third tl-text--right">
 
+                {{#if signed_in}}
+                <div class="article-subscribe tl-article--subscribe--signedin tl-js-visible" id="tl-newsletter--subscribe">
+                    <button id="follow-btn" type="button" class="tl-hidden">Follow </button>
+                    <script type="text/javascript">
+                        const section_id_newsletters = {{settings.section_id_newsletters}}
+                    </script>
+                </div>
+                {{else}}
+                <div class="article-subscribe tl-article--subscribe">
+                    <button data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu" type="button">
+                        Sign in to get news updates
+                    </button>
+                </div>
+                {{/if}}
+
+            </div>
         </div>
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -89,32 +106,9 @@
 
 
                 <section>
-
                     {{#each sections}}
                     {{#is name "Newsletters"}}
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-two-thirds">
-                            <h2 class="govuk-heading-m">{{name}}</h2>
-                        </div>
-                        <div class="govuk-grid-column-one-third tl-text--right">
-
-                            {{#if signed_in}}
-                            <div class="article-subscribe tl-article--subscribe--signedin tl-js-visible" id="tl-newsletter--subscribe">
-                                <button id="follow-btn" type="button" class="tl-hidden">Follow </button>
-                                <script type="text/javascript">
-                        const section_id_newsletters = {{settings.section_id_newsletters}}
-                                </script>
-                            </div>
-                            {{else}}
-                            <div class="article-subscribe tl-article--subscribe">
-                                <button data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu" type="button">
-                                    Sign in to get news updates
-                                </button>
-                            </div>
-                            {{/if}}
-
-                        </div>
-                    </div>
+                    <h2 class="govuk-heading-m">{{name}}</h2>
 
                     {{#if articles}}
                     <ul class="govuk-list tl-newsletter--list">
