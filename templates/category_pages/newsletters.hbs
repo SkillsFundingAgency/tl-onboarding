@@ -115,47 +115,38 @@
                     {{#is name "Newsletters"}}
 
                     {{#if articles}}
-                    <ul class="govuk-list tl-newsletter--list">
+                    <div class="govuk-grid-row">
                         {{#each articles}}
-                        <li>
-                            <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
-                        </li>
-                        {{/each}}
-                        <li class="govuk-!-margin-top-4">
-                            {{#if more_articles}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/if}}
-                            {{#is article_count 5}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/is}}
-                            {{#is article_count 6}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/is}}
-                        </li>
-                    </ul>
-                    {{else}}
-                    <ul class="govuk-list">
-                        <li>
-                            <p class="govuk-body">There's nothing here at the moment</p>
-                        </li>
-                    </ul>
+                        {{#is @index 0}}
+                        <div class="govuk-grid-column-one-third">
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link">{{title}}</a></h3>
+                            <p class="govuk-body">{{excerpt body characters=150}}</p>
+                        </div>
+                        {{/is}}
+                        {{#is @index 1}}
+                        <div class="govuk-grid-column-one-third">
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link">{{title}}</a></h3>
+                            <p class="govuk-body">{{excerpt body characters=150}}</p>
+                        </div>
+                        {{/is}}
+                        {{#is @index 2}}
+                        <div class="govuk-grid-column-one-third">
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link">{{title}}</a></h3>
+                            <p class="govuk-body">{{excerpt body characters=150}}</p>
+                        </div>
+                        {{/is}}
+                    </div>
+                    {{/each}}
+
+                    <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
+                        See all newsletters
+                    </a>
                     {{/if}}
                     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-8 govuk-!-margin-bottom-7">
-
                     {{/is}}
-
-
                     {{/each}}
                 </section>
-
             </div>
-
         </div>
     </div>
 </main>
