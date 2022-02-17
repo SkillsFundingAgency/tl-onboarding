@@ -1533,14 +1533,14 @@
     top: 0;
     box-shadow: 0 2px 0 #002d18; }
 
-.govuk-button--secondary, .tl-article--subscribe button, .tl-article--subscribe--signedin button, .tl-section--subscribe button {
+.govuk-button--secondary, .tl-section--subscribe button {
   background-color: #f3f2f1;
   box-shadow: 0 2px 0 #929191; }
-  .govuk-button--secondary, .tl-article--subscribe button, .tl-article--subscribe--signedin button, .tl-section--subscribe button, .govuk-button--secondary:link, .tl-article--subscribe button:link, .tl-article--subscribe--signedin button:link, .tl-section--subscribe button:link, .govuk-button--secondary:visited, .tl-article--subscribe button:visited, .tl-article--subscribe--signedin button:visited, .tl-section--subscribe button:visited, .govuk-button--secondary:active, .tl-article--subscribe button:active, .tl-article--subscribe--signedin button:active, .tl-section--subscribe button:active, .govuk-button--secondary:hover, .tl-article--subscribe button:hover, .tl-article--subscribe--signedin button:hover, .tl-section--subscribe button:hover {
+  .govuk-button--secondary, .tl-section--subscribe button, .govuk-button--secondary:link, .tl-section--subscribe button:link, .govuk-button--secondary:visited, .tl-section--subscribe button:visited, .govuk-button--secondary:active, .tl-section--subscribe button:active, .govuk-button--secondary:hover, .tl-section--subscribe button:hover {
     color: #0b0c0c; }
-  .govuk-button--secondary:hover, .tl-article--subscribe button:hover, .tl-article--subscribe--signedin button:hover, .tl-section--subscribe button:hover {
+  .govuk-button--secondary:hover, .tl-section--subscribe button:hover {
     background-color: #dbdad9; }
-    .govuk-button--secondary:hover[disabled], .tl-article--subscribe button:hover[disabled], .tl-article--subscribe--signedin button:hover[disabled], .tl-section--subscribe button:hover[disabled] {
+    .govuk-button--secondary:hover[disabled], .tl-section--subscribe button:hover[disabled] {
       background-color: #f3f2f1; }
 
 .govuk-button--warning {

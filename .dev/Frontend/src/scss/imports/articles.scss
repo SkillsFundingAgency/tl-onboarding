@@ -117,14 +117,12 @@
     button {
         margin-top: 5px;
         @extend .govuk-button;
-        @extend .govuk-button--secondary;
     }
 
     &--signedin {
         button {
             margin-top: 5px;
             @extend .govuk-button;
-            @extend .govuk-button--secondary;
         }
     }
 }
