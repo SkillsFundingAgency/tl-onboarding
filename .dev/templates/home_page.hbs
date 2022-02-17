@@ -32,7 +32,7 @@
                         <div class="tl-home--panel--blue--content">
                             <h3 class="govuk-heading-s">Latest news</h3>
                             {{#each categories}}
-                            {{#is name "News and updates"}}
+                            {{#is name "T Level news"}}
                             {{#each sections}}
                             {{#is name "Latest news"}}
                             {{#each articles}}
@@ -59,7 +59,7 @@
 
                         <div class="tl-home--panel--white--content">
                             {{#each categories}}
-                            {{#is name "News and updates"}}
+                            {{#is name "T Level news"}}
                             {{#each sections}}
                             {{#is name "Newsletters"}}
                             {{#each articles}}
@@ -167,7 +167,7 @@
             {{#each categories}}
             {{#is name "How this site works"}}
             {{else}}
-            {{#is name "News and updates"}}
+            {{#is name "T Level news"}}
             {{else}}
             {{#is name "T Level events"}}
             {{else}}
