@@ -35,7 +35,7 @@
                         {{#each articles}}
                         {{#is @index 0}}
                         <div class="govuk-grid-column-one-half">
-                            <h3 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link">{{title}}</a></h3>
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link">{{title characters=40}}</a></h3>
                             <p class="govuk-body-s">{{date created_at class='metadata' format='medium'}}</p>
                             <p class="govuk-body">{{excerpt body characters=150}}</p>
                         </div>
