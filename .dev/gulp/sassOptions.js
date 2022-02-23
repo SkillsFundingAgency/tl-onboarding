@@ -1,7 +1,8 @@
 let sassOptions;
 
 sassOptions = {
-  errLogToConsole: true,
+    errLogToConsole: true,
+    quietDeps: true,
   includePaths: [
       'src/scss'
   ]
