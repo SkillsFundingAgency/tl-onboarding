@@ -99,7 +99,7 @@ $(document).ready(function () {
     if($('#follow-btn').length) {
     
         const followButtonText = 'Subscribe to newsletters';
-        const unfollowButtonText = 'Unsubscribe from newsletters';
+        const unfollowButtonText = 'Stop newsletter subscription';
 
         var getSectionSubscription = function (sectionId, userId, page, itemsPerPage) {
             page = (page === undefined ? 1 : page);
