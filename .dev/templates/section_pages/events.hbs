@@ -78,7 +78,7 @@
                                 if (sessionStorage.getItem("eventfilter")) {
                                     var eventtype = sessionStorage.getItem('eventfilter');
                                     $('.tl-event--list').attr("data-event--filter", eventtype);
-                                    $('input:radio[value=' + eventtype + ']').prop("checked", true);
+                                    $('input:radio[value="' + eventtype + '"]').prop("checked", true);
                                 }
                                 else {
                                     var eventtype = $('input:radio[name="Event type"]:checked').val();
