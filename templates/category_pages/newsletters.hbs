@@ -153,10 +153,13 @@
 
                 <script>
                     $(document).ready(function () {
-                        $('h3 a:contains("- newsletter")').contents().each(function () {
+                        $('h3 a:contains("- T Level newsletter")').contents().each(function () {
                             if (this.nodeType == 3) {
                                 $(this).parent().html(function (_, oldValue) {
-                                    return oldValue.replace(/- newsletter/g, "<span class='tl-hidden'>$&</span>")
+                                    return oldValue.replace(/- /g, "<span class='tl-hidden'>$&")
+                                })
+                                $(this).parent().html(function (_, oldValue2) {
+                                    return oldValue2.replace(/newsletter/g, "$&</span>")
                                 })
                             }
                         });
