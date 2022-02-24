@@ -30,16 +30,16 @@
                 <div class="govuk-grid-column-two-thirds tl-row-fill--column">
                     <div class="tl-home--panel--blue">
                         <div class="tl-home--panel--blue--content">
-                            <h3 class="govuk-heading-s">Latest news</h3>
+                            <h3 class="govuk-heading-s">Featured news</h3>
                             {{#each categories}}
                             {{#is name "T Level news"}}
                             {{#each sections}}
-                            {{#is name "Latest news"}}
+                            {{#is name "Featured news"}}
                             {{#each articles}}
                             {{#if @first}}
                             <h4 class="govuk-heading-s"><a href="{{url}}">{{title}}</a></h4>
                             <p class="govuk-body">{{excerpt body characters=200}}</p>
-                            <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: {{date updated_at class='metadata' format='short'}}</p>
+                            <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: {{date updated_at class='metadata' format='medium'}}</p>
                             {{/if}}
                             {{/each}}
                             {{/is}}
