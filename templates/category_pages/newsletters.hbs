@@ -121,6 +121,8 @@
                 {{#is name "Newsletters"}}
 
                 {{#if articles}}
+
+
                 <div class="govuk-grid-row ">
                     {{#each articles}}
                     {{#is @index 0}}
@@ -148,6 +150,18 @@
                 <a href="{{url}}" class="govuk-link govuk-!-font-weight-bold see-all-articles govuk-body tl-category--more">
                     All T Level newsletters
                 </a>
+
+                <script>
+                    $(document).ready(function () {
+                        $('h3 a:contains("- newsletter")').contents().each(function () {
+                            if (this.nodeType == 3) {
+                                $(this).parent().html(function (_, oldValue) {
+                                    return oldValue.replace(/- newsletter/g, "<span class='tl-hidden'>$&</span>")
+                                })
+                            }
+                        });
+                    });
+                </script>
                 {{/if}}
                 {{/is}}
                 {{/each}}
