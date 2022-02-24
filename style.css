@@ -6860,6 +6860,7 @@ x:-moz-any-link {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.25;
+  cursor: pointer;
 }
 @media print {
   .tl-article--subscribe span {
@@ -6908,6 +6909,7 @@ x:-moz-any-link {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.25;
+  cursor: pointer;
 }
 @media print {
   .tl-article--subscribe--signedin span {
