@@ -98,16 +98,16 @@
 
                     {{#if signed_in}}
                     <div class="article-subscribe tl-article--subscribe--signedin tl-js-visible" id="tl-newsletter--subscribe">
-                        <button id="follow-btn" type="button" class="tl-hidden">Follow </button>
+                        <a id="follow-btn" class="tl-hidden">Follow </a>
                         <script type="text/javascript">
                         const section_id_newsletters = {{settings.section_id_newsletters}}
                         </script>
                     </div>
                     {{else}}
                     <div class="article-subscribe tl-article--subscribe">
-                        <button data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu" type="button">
+                        <a data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu">
                             Sign in to subscribe
-                        </button>
+                        </a>
                     </div>
                     {{/if}}
 

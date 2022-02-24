@@ -119,10 +119,20 @@
         @extend .govuk-button;
     }
 
+    a {
+        margin-top: 5px;
+        @extend .govuk-link;
+    }
+
     &--signedin {
         button {
             margin-top: 5px;
             @extend .govuk-button;
+        }
+
+        a {
+            margin-top: 5px;
+            @extend .govuk-link;
         }
     }
 }
