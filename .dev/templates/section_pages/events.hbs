@@ -186,17 +186,17 @@
                             if (is_finished) {
                                 // Write the new list to the current page.
                                 document.getElementsByClassName("tl-event--list")[0].innerHTML = long_list;
-                                // Add a class to allow styling via CSS.
-
+                                // Run JS functions for filtering.
+                                $('[id^="tl-article--container--"]').each(function () {
+                                    var eventid = $(this).attr('id');
+                                    console.log(eventid)
+                                });
                                 // Remove the pagination controls.
                                 document.getElementsByClassName("pagination")[0].innerHTML = '';
                             };
                         };
                     };
-                    $('[id^="tl-article--container--"]').each(function () {
-                        var eventid = $(this).attr('id');
-                        console.log(eventid)
-                    });
+
 
 
                 };
