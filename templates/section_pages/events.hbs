@@ -107,6 +107,10 @@
                     </li>
 
                     <script>
+                        window.onload = function () {
+                            articlefiltering();
+                        };
+                        function articlefiltering() {
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
                                 if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
@@ -124,6 +128,7 @@
                                     });
                                 }
                             });
+                        };
 
                     </script>
                     {{/each}}
