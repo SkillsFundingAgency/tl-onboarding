@@ -108,6 +108,14 @@
 
                     <script>
                         function articlefiltering{{id}}() {
+                            console.log("articlefiltering " + id);
+                            if (document.getElementById("#tl-article--container--{{id}}")) {
+                                console.log("found article container");
+                            } else {
+                                console.log("didn't find article container");
+                                //setTimeout(myFunc, 15);
+                            }
+
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
                                 if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
