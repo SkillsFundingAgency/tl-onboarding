@@ -107,9 +107,6 @@
                     </li>
 
                     <script>
-                        window.onload = function () {
-                            articlefiltering{{id}} ();
-                        };
                         function articlefiltering{{id}}() {
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -188,6 +185,9 @@
                             };
                         };
                     };
+                {{#each section.articles}}
+                    articlefiltering{{id}}();
+                {{/each}}
                 };
             </script>
             <div class="tl-event--pagination">
