@@ -95,7 +95,7 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                <ul class="govuk-list tl-event--list" data-event--filter="all">
+                <ul class="govuk-list tl-event--list " data-event--filter="all">
 
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
@@ -130,6 +130,61 @@
 
                 </ul>
             </section>
+
+            <script>
+                window.onload = function () {
+                    unpaginatedSections();
+                };
+
+                function unpaginatedSections() {
+
+                    // Only execute this if we're on a paginated section page.
+                    if (document.getElementsByClassName("pagination")[0] == null) return;
+                    // Does the URL specify a page number? If so, yield to the user.
+                    if (document.URL.includes('?page=')) return;
+
+                    // Start with the articles listed on the first page
+                    var long_list = document.getElementsByClassName("tl-event--list")[0].innerHTML;
+                    var next_url = document.getElementsByClassName("pagination-next-link")[0]
+                        .getAttribute('href');
+                    var is_finished = false;
+
+                    // Request the next page
+                    var next_page = new XMLHttpRequest();
+                    next_page.open("GET", next_url);
+                    next_page.responseType = 'document';
+                    next_page.send();
+                    next_page.onload = function () {
+                        // If something went wrong, leave pagination in place.
+                        if (next_page.status !== 200) return;
+                        // Add the articles from this page of results to our list.
+                        long_list += next_page.response.getElementsByClassName("tl-event--list")[0]
+                            .innerHTML;
+                        // Check for another page.
+                        try {
+                            next_url =
+                                next_page.response.getElementsByClassName("pagination-next-link")[0]
+                                    .getAttribute('href');
+                            next_page.open("GET", next_url);
+                            next_page.send();
+                        }
+                        catch (e) {
+                            // No more pages.
+                            is_finished = true;
+                        }
+                        finally {
+                            if (is_finished) {
+                                // Write the new list to the current page.
+                                document.getElementsByClassName("tl-event--list")[0].innerHTML = long_list;
+                                // Add a class to allow styling via CSS.
+
+                                // Remove the pagination controls.
+                                document.getElementsByClassName("pagination")[0].innerHTML = '';
+                            };
+                        };
+                    };
+                };
+            </script>
             <div class="tl-event--pagination">
                 {{pagination}}
             </div>
