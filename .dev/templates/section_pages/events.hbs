@@ -108,9 +108,9 @@
 
                     <script>
                         window.onload = function () {
-                            articlefiltering();
+                            articlefiltering{{id}}();
                         };
-                        function articlefiltering() {
+                        function articlefiltering{{id}}() {
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
                                 if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
