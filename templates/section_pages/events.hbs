@@ -107,7 +107,7 @@
                     </li>
 
                     <script>
-                        $(document).ready(function () {
+                        window.onload = function () {
                             articlefiltering{{id}}();
                         });
                         function articlefiltering{{id}}() {
@@ -137,7 +137,7 @@
             </section>
 
             <script>
-                window.onload = function () {
+                $(document).ready(function () {
                     unpaginatedSections();
                 };
 
