@@ -8646,6 +8646,7 @@ ul.govuk-radios label .gem-radios__input {
 
 .tl-events--pagination {
   padding: 40px 0px;
+  display: none;
 }
 .tl-events--pagination .pagination-next-text:after, .tl-events--pagination .pagination-prev-text:after {
   content: " page";
