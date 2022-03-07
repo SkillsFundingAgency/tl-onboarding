@@ -107,10 +107,10 @@
                     </li>
 
                     <script>
-                        window.onload = function () {
-                            articlefiltering();
-                        };
-                        function articlefiltering() {
+                        $(document).ready(function () {
+                            articlefiltering{{id}}();
+                        });
+                        function articlefiltering{{id}}() {
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
                                 if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
