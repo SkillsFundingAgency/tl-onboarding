@@ -1,0 +1,76 @@
+/*Workshops and webinars CSS*/
+
+.tl-event--list {
+    li {
+        display: none;
+
+        p {
+            margin: 10px 0 15px 0;
+        }
+    }
+
+    &[data-event--filter="Course information"] {
+        li[data-event--labels*="Course information"] {
+            display: block;
+        }
+    }
+
+    &[data-event--filter="Industry placements"] {
+        li[data-event--labels*="Industry placements"] {
+            display: block;
+        }
+    }
+
+    &[data-event--filter="Networking"] {
+        li[data-event--labels*="Networking"] {
+            display: block;
+        }
+    }
+
+    &[data-event--filter="T Level professional development"] {
+        li[data-event--labels*="T Level professional development"] {
+            display: block;
+        }
+    }
+
+    &[data-event--filter="all"] {
+        li {
+            display: block;
+        }
+    }
+}
+
+.tl-events--pagination {
+    padding: 40px 0px;
+
+    .pagination-next-text, .pagination-prev-text {
+        &:after {
+            content: " page";
+        }
+    }
+
+    .pagination-next {
+        float: right;
+    }
+
+    .pagination-first, .pagination-last {
+        display: none;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+
+        li {
+            float: left;
+            padding: 0 20px 0 0;
+            @include govuk-font($size: 19, $weight: bold);
+
+            a {
+                @extend .govuk-link;
+            }
+        }
+    }
+}
