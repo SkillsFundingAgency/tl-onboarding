@@ -98,8 +98,8 @@ $("div.govuk-details__summary").click(function () {
 $(document).ready(function () {
     if($('#follow-btn').length) {
     
-        const followButtonText = 'Get news updates';
-        const unfollowButtonText = 'Stop getting news updates';
+        const followButtonText = 'Subscribe to newsletters';
+        const unfollowButtonText = 'Stop newsletter subscription';
 
         var getSectionSubscription = function (sectionId, userId, page, itemsPerPage) {
             page = (page === undefined ? 1 : page);
