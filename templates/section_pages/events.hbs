@@ -108,8 +108,8 @@
 
                     <script>
                         window.onload = function () {
-                            articlefiltering{{id}}();
-                        });
+                            articlefiltering{{id}} ();
+                        };
                         function articlefiltering{{id}}() {
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
