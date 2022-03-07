@@ -189,8 +189,10 @@
                                 // Run JS functions for filtering.
                                 $('[id^="tl-article--container--"]').each(function () {
                                     var eventid = $(this).attr('id');
-                                    var functionid = eventid.replace(tl-article--container--, '');
+                                    var functionid = eventid.replace('tl-article--container--', '');
                                     console.log(functionid)
+                                    articlefiltering + functionid()
+
                                 });
                                 // Remove the pagination controls.
                                 document.getElementsByClassName("pagination")[0].innerHTML = '';
