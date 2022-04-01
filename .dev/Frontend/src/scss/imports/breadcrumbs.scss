@@ -20,7 +20,7 @@
 
 #tl-breadcrumbs--article {
     ol {
-        li:nth-child(3) {
+        li:nth-child(3), li:nth-child(4) {
             display: none;
         }
     }

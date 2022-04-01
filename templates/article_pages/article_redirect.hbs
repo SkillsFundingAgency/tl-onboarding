@@ -1,0 +1,14 @@
+<style type='text/css'>
+    body {
+        display: none !important
+    }
+</style>
+
+<script>
+    $.getJSON('/api/v2/help_center/articles/{{article.id}}', function (articlelabels) {
+        var articlelabel = articlelabels.article.label_names;
+        window.location.href = articlelabel;
+
+    });
+
+</script>

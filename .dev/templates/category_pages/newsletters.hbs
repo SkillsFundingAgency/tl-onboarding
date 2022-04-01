@@ -1,51 +1,15 @@
-﻿<div class="govuk-width-container ">
-    <!-- Phase banner -->
-    <div class="govuk-phase-banner tl-phase-banner tl-phase-banner--home">
-        <p class="govuk-phase-banner__content">
-            <a href="{{settings.survey_link}}" id="tl-header--feedback-button">
-                <strong class="govuk-tag govuk-phase-banner__content__tag">
-                    Give feedback
-                </strong>
-            </a>
-            <span class="govuk-phase-banner__text">
-                This is a new service - <a class="govuk-link" href="{{settings.survey_link}}" id="tl-header--feedback-link">help us to improve it</a>
-            </span>
-        </p>
-    </div>
-</div>
-
-
-<!-- Main content -->
+﻿<!-- Main content -->
 <main id="main-content" role="main">
-    <!-- Search Hero -->
-    <div class="tl-hero tl-hero--minimal">
-        <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-half">
 
-                    <div id="tl-breadcrumbs--category">
-                        <div class="tl-breadcrumbs">
-                            {{breadcrumbs}}
-                        </div>
-                    </div>
-                </div>
-                <div class="govuk-grid-column-one-half tl-text--right govuk-!-margin-top-1">
-                    <div class="tl-form-group tl-search--container tl-search--home tl-search--home--minimal" id="tl-search--category">
 
-                        <div class="tl-search--error tl-hidden">
-                            <span class="tl-error--message"></span>
-                        </div>
-                        <form role="search" class="tl-search" data-search="" action="/hc/en-gb/search" accept-charset="UTF-8" method="get">
-                            <input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search for support" aria-label="Search for support">
-                            <input type="hidden" name="filter_by" value="knowledge_base" />
-                            <input type="submit" name="commit" value="Search">
-                        </form>
-
-                    </div>
-                </div>
+    <div class="govuk-width-container">
+        <div id="tl-breadcrumbs--category">
+            <div class="tl-breadcrumbs">
+                {{breadcrumbs}}
             </div>
         </div>
     </div>
+
 
 
 
@@ -56,94 +20,156 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">{{category.name}}</h1>
-                {{#if category.description}}
-                <p class="govuk-body-l">{{category.description}}</p>
-                {{/if}}
-                <section>
+            </div>
+
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <section class="govuk-!-margin-bottom-8">
                     {{#each sections}}
-                    <h2 class="govuk-heading-m">{{name}}</h2>
-                    {{#is name "Newsletters"}}
+                    {{#is name "Featured news"}}
+                    <h2 class="govuk-heading-l">{{name}}</h2>
+
                     {{#if articles}}
-                    <ul class="govuk-list tl-newsletter--list">
+                    <div class="govuk-grid-row">
                         {{#each articles}}
-                        <li>
-                            <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
-                        </li>
+                        {{#is @index 0}}
+                        <div class="govuk-grid-column-one-half">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-news--featured">{{title}}</a></h3>
+                            <p class="govuk-body-s">{{date created_at class='metadata' format='medium'}}</p>
+                            <p class="govuk-body">{{excerpt body characters=90}}</p>
+                        </div>
+                        {{/is}}
+                        {{#is @index 1}}
+                        <div class="govuk-grid-column-one-half">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-news--featured">{{title}}</a></h3>
+                            <p class="govuk-body-s">{{date created_at class='metadata' format='medium'}}</p>
+                            <p class="govuk-body">{{excerpt body characters=90}}</p>
+                        </div>
+                        {{/is}}
                         {{/each}}
-                        <li class="govuk-!-margin-top-4">
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds">
+                            <h2 class="govuk-heading-m govuk-!-margin-top-8">Past news stories</h2>
+
+
+                            <ul class="govuk-list tl-newsletter--list">
+                                {{#each articles}}
+                                {{#is @index 0}}
+                                {{else}}
+                                {{#is @index 1}}
+                                {{else}}
+                                <li>
+                                    <a class="govuk-link tl-news--article" href="{{url}}">{{title}}</a>
+                                </li>
+                                {{/is}}
+                                {{/is}}
+                                {{/each}}
+
+
+                            </ul>
                             {{#if more_articles}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
+                            <a href="{{url}}" id="tl-news--all" class="govuk-link govuk-!-font-weight-bold see-all-articles govuk-!-margin-top-4 govuk-body tl-category--more">
+                                All T Level news articles
                             </a>
                             {{/if}}
-                            {{#is article_count 5}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/is}}
-                            {{#is article_count 6}}
-                            <a href="{{url}}" class="govuk-link see-all-articles govuk-body tl-category--more">
-                                See all newsletters
-                            </a>
-                            {{/is}}
-                        </li>
-                    </ul>
-                    {{else}}
-                    <ul class="govuk-list">
-                        <li>
-                            <p class="govuk-body">There's nothing here at the moment</p>
-                        </li>
-                    </ul>
-                    {{/if}}
-                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-8 govuk-!-margin-bottom-7">
-                    {{else}}
-                    {{#if articles}}
-                    <ul class="govuk-list">
-                        {{#each articles}}
-                        <li>
-                            <a class="govuk-link tl-category--article" href="{{url}}">{{title}}</a>
-                        </li>
-                        {{/each}}
-                        {{#if more_articles}}
-                        <li class="govuk-!-margin-top-4">
-                            <a class="govuk-link govuk-body tl-category--more" href="{{url}}">
-                                See all events, webinars and information
-                            </a>
-                        </li>
-                        {{/if}}
-                    </ul>
-                    {{else}}
-                    <ul class="govuk-list">
-                        <li>
-                            <p class="govuk-body">There's nothing here at the moment</p>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                     {{/if}}
                     {{/is}}
-
-
                     {{/each}}
                 </section>
-
-            </div>
-            <div class="govuk-grid-column-one-third">
-
-                {{#if signed_in}}
-                <div class="article-subscribe tl-article--subscribe--signedin tl-js-visible" id="tl-newsletter--subscribe">
-                    <button id="follow-btn" type="button" class="tl-hidden">Follow </button>
-                    <script type="text/javascript">
-                        const section_id_newsletters = {{settings.section_id_newsletters}}
-                    </script>
-                </div>
-                {{else}}
-                <div class="article-subscribe tl-article--subscribe">
-                    <button data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu" type="button">
-                        Sign in to get news updates
-                    </button>
-                </div>
-                {{/if}}
-
             </div>
         </div>
     </div>
+    <div class="tl-newsletter--container govuk-!-margin-top-1">
+
+        <div class="govuk-width-container govuk-main-wrapper tl-newsletter--container">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h2 class="govuk-heading-l">Newsletters</h2>
+                </div>
+
+
+
+                <div class="govuk-grid-column-one-third tl-text--right">
+
+                    {{#if signed_in}}
+                    <div class="article-subscribe tl-article--subscribe--signedin tl-js-visible" id="tl-newsletter--subscribe">
+                        <span tabindex="0" id="follow-btn" class="tl-hidden">Follow </span>
+                        <script type="text/javascript">
+                        const section_id_newsletters = {{settings.section_id_newsletters}}
+                        </script>
+                    </div>
+                    {{else}}
+                    <div class="article-subscribe tl-article--subscribe">
+                        <span tabindex="0" data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu">
+                            Sign in to subscribe
+                        </span>
+                    </div>
+                    {{/if}}
+
+                </div>
+            </div>
+
+
+
+            <section class="govuk-!-margin-top-3">
+                {{#each sections}}
+                {{#is name "Newsletters"}}
+
+                {{#if articles}}
+
+
+                <div class="govuk-grid-row ">
+                    {{#each articles}}
+                    {{#is @index 0}}
+                    <div class="govuk-grid-column-one-third">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-news--newsletter">{{title}}</a></h3>
+                        <p class="govuk-body">{{excerpt body characters=120}}</p>
+                    </div>
+                    {{/is}}
+                    {{#is @index 1}}
+                    <div class="govuk-grid-column-one-third">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-news--newsletter">{{title}}</a></h3>
+                        <p class="govuk-body">{{excerpt body characters=120}}</p>
+                    </div>
+                    {{/is}}
+                    {{#is @index 2}}
+                    <div class="govuk-grid-column-one-third">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-news--newsletter">{{title}}</a></h3>
+                        <p class="govuk-body">{{excerpt body characters=120}}</p>
+                    </div>
+                    {{/is}}
+
+                    {{/each}}
+                </div>
+
+                <a href="{{url}}" id="tl-news-newsletter--all" class="govuk-link govuk-!-font-weight-bold see-all-articles govuk-body tl-category--more">
+                    All T Level newsletters
+                </a>
+
+                <script>
+                    $(document).ready(function () {
+                        $('h3 a:contains("- T Level Newsletter")').contents().each(function () {
+                            if (this.nodeType == 3) {
+                                $(this).parent().html(function (_, oldValue) {
+                                    return oldValue.replace(/- /g, "<span class='tl-hidden'>$&")
+                                })
+                                $(this).parent().html(function (_, oldValue2) {
+                                    return oldValue2.replace(/newsletter/g, "$&</span>")
+                                })
+                            }
+                        });
+                    });
+                </script>
+                {{/if}}
+                {{/is}}
+                {{/each}}
+            </section>
+        </div>
+    </div>
+
 </main>

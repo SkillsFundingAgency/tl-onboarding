@@ -1,0 +1,426 @@
+.accordion-header {
+    align-items: baseline;
+    border-bottom: 1px solid #BFC1C3;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+#tl-calendar {
+    display: none
+}
+
+@supports not (old: ie) {
+    #tl-calendar {
+        display: unset
+    }
+}
+
+
+/* Spinner */
+.spinner {
+    text-align: center;
+}
+
+.spinner__animation,
+.spinner__animation::after {
+    border-radius: 50%;
+    box-shadow: 0 4px 4px RGB((0 0 0), 0.25),inset 0 4px 4px RGB((0 0 0), 0.25);
+    height: 40px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 40px;
+}
+
+.spinner__animation::before {
+    animation: spin 0.75s infinite linear;
+    background: black;
+    bottom: 20px;
+    content: '';
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    transform-origin: 0% 100%;
+    width: 20px;
+}
+
+.spinner__animation::after {
+    background: white;
+    content: '';
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 20px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Feature panels */
+.feature-panels-header {
+    border-bottom: 1px solid #BFC1C3;
+    padding-bottom: 10px;
+}
+
+.feature-panels {
+    display: flex;
+    flex-direction: column;
+    margin: -10px 0 -10px;
+}
+
+.feature-panels__panel {
+    background: #F8F8F8;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    border-bottom: 5px solid #003A69;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.feature-panels__panel--dark {
+    background: #1D70B8;
+    border-bottom-color: #0E385C;
+}
+
+.feature-panels__panel--dark *:not(:focus, :focus span) {
+    color: #FFFFFF;
+}
+
+.feature-panels__panel--front-door {
+    background: #FFFFFF;
+    border-bottom-color: #626A6E;
+}
+
+.feature-panels__panel--pinned {
+    background: rgba(255, 221, 0, 0.2);
+    border-bottom-color: #807C66;
+}
+
+.feature-panels__panel--with-image {
+    border-bottom: none;
+}
+
+.feature-panels__panel__image {
+    background-position: 50%;
+    background-size: cover;
+    height: 50vw;
+}
+
+.feature-panels__panel__inner,
+.feature-panels__panel__link {
+    flex: auto;
+    padding: 20px 20px 0;
+    text-decoration: none;
+}
+
+.feature-panels__panel__link:focus {
+    background: #1D70B8;
+    outline: none;
+}
+
+.feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:focus {
+    box-shadow: 0px 5px #0E385C;
+}
+
+.feature-panels__panel__link .govuk-heading-s {
+    color: #1D70B8;
+}
+
+.feature-panels__panel__link:focus * {
+    color: #FFF;
+}
+
+.feature-panels__panel .govuk-list {
+    background: #FFF;
+    margin: 0;
+    padding: 20px 20px 0;
+}
+
+@media (min-width: 641px) {
+    .feature-panels {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -15px -20px;
+    }
+
+    .feature-panels:not(.feature-panels--small-margin) {
+        margin-bottom: -30px;
+    }
+
+    .feature-panels__panel {
+        box-sizing: border-box;
+        margin: 0 15px 20px;
+        width: calc(33.33% - 30px);
+    }
+
+    .feature-panels:not(.feature-panels--small-margin) .feature-panels__panel {
+        margin-bottom: 30px;
+    }
+
+    .feature-panels__panel--half {
+        width: calc(50% - 30px);
+    }
+
+    .feature-panels__panel--full {
+        width: calc(100% - 30px);
+    }
+
+    .feature-panels__panel--with-image {
+        flex-direction: row;
+    }
+
+    .feature-panels__panel__image {
+        flex-basis: calc(33.33% + 25px);
+        height: auto;
+        min-height: 173px;
+    }
+
+    .feature-panels__panel--with-image .feature-panels__panel__link {
+        flex-basis: calc(66.66% - 25px);
+        padding-left: 30px;
+    }
+
+    @supports (display: grid) {
+        .feature-panels--grid {
+            display: grid;
+            grid-auto-rows: 1fr;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .feature-panels--grid .feature-panels__panel {
+            width: auto;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .feature-panels__panel__link:hover {
+        background: #1D70B8;
+    }
+
+    .feature-panels__panel:not(.feature-panels__panel--with-image) .feature-panels__panel__link:hover {
+        box-shadow: 0px 5px #0E385C;
+    }
+
+    .feature-panels__panel__link:hover * {
+        color: #FFF;
+    }
+}
+
+
+
+/* FRONT DOOR CALENDAR */
+
+/* Front Door Calendar - plug-in styles */
+
+.tavo-calendar {
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+@media (min-width: 641px) {
+    .tavo-calendar {
+        margin-bottom: 0;
+    }
+}
+
+.tavo-calendar__info:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.tavo-calendar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    color: #1D70B8;
+    letter-spacing: 2px;
+}
+
+.tavo-calendar__nav_prev svg,
+.tavo-calendar__nav_next svg {
+    width: 16px;
+    height: 16px;
+}
+
+.tavo-calendar__week-names {
+    display: flex;
+}
+
+.tavo-calendar__days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tavo-calendar__weekday {
+    flex: 1;
+    text-align: center;
+    width: 14.28%;
+}
+
+.tavo-calendar__day {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    position: relative;
+    text-align: center;
+    width: 14.28%;
+}
+
+.tavo-calendar__day .tavo-calendar__day-inner {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin: 4px 0;
+    width: 40px;
+}
+
+.tavo-calendar__day_select {
+    pointer-events: all;
+}
+
+.tavo-calendar__day_select .tavo-calendar__day-inner {
+    color: #1D70B8;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tavo-calendar__day_different-month:not(.event-calendar__user-selected) {
+    opacity: 0.35;
+}
+
+/* Front Door Calendar - custom styles */
+
+[data-set-min-height] {
+    display: flow-root;
+}
+
+[data-flagged-dates],
+[data-flagged-dates-link],
+[data-calendar-state="loaded"],
+[data-calendar-state="error"],
+[data-event-pagination] {
+    display: none;
+}
+
+.event-wrapper--show {
+    display: block;
+}
+
+@media (min-width: 641px) {
+    .event-wrapper--show {
+        display: flex;
+    }
+}
+
+.event-flagged-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-description-wrapper {
+    align-items: flex-end;
+    display: flex;
+}
+
+.event-description-wrapper .event-description {
+    color: #505a5f;
+}
+
+.event-description-wrapper:not(.event-description-wrapper--expand) .event-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-description-wrapper--expand .event-description-toggle .event-description-toggle__more,
+.event-description-toggle .event-description-toggle__less {
+    display: none;
+}
+
+.event-description-toggle .event-description-toggle__more,
+.event-description-wrapper--expand .event-description-toggle .event-description-toggle__less {
+    display: inline;
+    white-space: nowrap;
+}
+
+.event-pagination {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.event-pagination__item {
+    display: inline;
+    list-style-type: none;
+    margin-right: 45px;
+}
+
+.event-pagination__item:last-child {
+    margin-right: 0;
+}
+
+.event-calendar__user-selected .tavo-calendar__day-inner {
+    background: #1D70B8;
+    color: #fff;
+    cursor: unset;
+    text-decoration: none;
+}
+
+.event-calendar__user-selected__close {
+    align-items: center;
+    background: #0E385C;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    height: 25px;
+    justify-content: center;
+    left: calc(50% + 5px);
+    position: absolute;
+    top: -10px;
+    width: 25px;
+}
+
+.event-calendar__user-selected .event-calendar__user-selected__close {
+    display: flex;
+}
+
+.event-calendar__displaying-date:not(.event-calendar__user-selected) .tavo-calendar__day-inner {
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 1px 1px #1D70B8;
+}
+
+@media (min-width: 641px) {
+    .event-list {
+        border-left: 1px solid #BFC1C3;
+        min-height: 100%;
+        padding-left: 30px;
+    }
+}
+
+.event-list__page {
+    display: none;
+}
+
+.event-list__page--current {
+    display: flex;
+}
+
+

@@ -104,4 +104,26 @@
     }
 }
 
+.tl-section-break--blue {
+    border-bottom: 3px solid $govuk-link-colour;
+}
 
+
+.tl-row-fill {
+    display: flex;
+    align-items: stretch;
+
+    @include govuk-media-query ($until: tablet) {
+        display: block;
+    }
+}
+
+.tl-row-fill--column {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    @include govuk-media-query ($until: tablet) {
+        display: block;
+    }
+}

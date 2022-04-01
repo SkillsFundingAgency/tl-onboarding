@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     minify = require('gulp-minify'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass'));
     wait = require('gulp-wait'),
     watch = require('gulp-watch');
 
@@ -19,23 +19,58 @@ gulp.task('assets', () => {
         .pipe(gulp.dest(paths.dist.Assets));
 });
 
+gulp.task('settings', () => {
+    return src([
+        (paths.src.Settings)
+    ])
+        .pipe(gulp.dest(paths.dist.Settings));
+});
+
 gulp.task('js', () => {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
         'node_modules/govuk-frontend/govuk/all.js',
     ])
         .pipe(concat('govuk.js'))
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
         .pipe(gulp.dest(paths.dist.JS));
 });
 
 gulp.task('customjs', () => {
     return src([
         'Frontend/src/js/custom.js',
+        'Frontend/src/js/step-by-step-nav.js',
         'node_modules/moment/moment.js',
     ])
         .pipe(concat('custom.js'))
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
         .pipe(gulp.dest(paths.dist.Assets));
 });
+
+gulp.task('calendarjs', () => {
+    return src([
+        'Frontend/src/js/calendar.js',
+        'Frontend/src/js/tavo-calendar.js',
+    ])
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
+        .pipe(gulp.dest(paths.dist.Assets));
+});
+
 
 gulp.task('sass', () => {
         return src(paths.src.SCSS)

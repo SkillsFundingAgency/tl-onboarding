@@ -18,7 +18,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(".tl-article--vote--button").click(function () {
         event.preventDefault();
-        $(".tl-article--vote--buttons").addClass("tl-hidden");
+        $(".tl-article--vote--buttons").addClass("tl-hidden");       
         $(".tl-article--vote--question").text("Thank you for your feedback");
     });
 });
@@ -29,16 +29,16 @@ $(document).ready(function () {
 var searchbox = $(".tl-search--container input[type=search]");
 
 function showerror(message) {
-    $(".tl-search--error").removeClass("tl-hidden");
-    $(".tl-form-group").addClass("tl-form-group--error");
-    $(".tl-search #query").addClass("tl-input--error");
-    $(".tl-error--message").text(message);
-    $(".tl-input--error:visible:first").focus();
+    $(".tl-search--container .tl-search--error").removeClass("tl-hidden");   
+    $(".tl-search--container .tl-form-group").addClass("tl-form-group--error");
+    $(".tl-search--container .tl-search #query").addClass("tl-input--error");
+    $(".tl-search--container .tl-error--message").text(message);
+    $(".tl-search--container .tl-input--error:visible:first").focus();
 }
 
 $(document).ready(function () {
-    $(".tl-search--container").submit(function () {
-        if (!searchbox.val()) {
+    $(".tl-search--container").submit(function ()  {
+        if ( !searchbox.val() ) {
             event.preventDefault();
             showerror("You must enter a search term");
         }
@@ -46,107 +46,163 @@ $(document).ready(function () {
 });
 
 
+// Search header messaging
+
+var headersearchbox = $(".tl-header--search input[type=search]");
+
+function showheadererror(message) {
+    $(".tl-header--search .tl-search--error").removeClass("tl-hidden");
+    $(".tl-header--search .tl-form-group").addClass("tl-form-group--error");
+    $(".tl-header--search .tl-search #query").addClass("tl-input--error");
+    $(".tl-header--search .tl-error--message").text(message);
+    $(".tl-header--search .tl-input--error:visible:first").focus();
+}
+
+$(document).ready(function () {
+    $(".tl-header--search").submit(function () {
+        if (!headersearchbox.val()) {
+            event.preventDefault();
+            showheadererror("You must enter a search term");
+        }
+    });
+});
+
+// Search header toggle
+
+$(".tl-header--search--toggle").click(function () {
+    $(".tl-header--search").toggleClass("active");
+
+    if ($(".tl-header--search").hasClass("active")) {
+        $(".tl-header--search--toggle").html("Hide search")
+    }
+    else {
+        $(".tl-header--search--toggle").html("Show search")
+    }
+});
+
+/* Make tabs and details work in articles */
+
+$(".govuk-tabs").attr("data-module", "govuk-tabs");
+
+$("div.govuk-details").attr("data-module", "govuk-details");
+$("div.govuk-details__summary").click(function () {
+    if (this.closest(".govuk-details").hasAttribute("open")) {
+        $(this).closest(".govuk-details").removeAttr('open');
+    }
+    else {
+        $(this).closest(".govuk-details").attr('open', true);
+    }
+});
+
 /* Follow/unfollow section subscription */
 $(document).ready(function () {
-    if ($('#follow-btn').length) {
+    if($('#follow-btn').length) {
+    
+        const followButtonText = 'Subscribe to newsletters';
+        const unfollowButtonText = 'Stop newsletter subscription';
 
-        const followButtonText = 'Get news updates';
-        const unfollowButtonText = 'Stop getting news updates';
-
-        var getCurrentUserSectionSubscription = function (sectionId) {
-            var subscriptions;
-            return $.getJSON(`/api/v2/help_center/${HelpCenter.user.locale}/sections/${sectionId}/subscriptions.json`)
-                .then(function (subscriptionsResult) {
-                    subscriptions = subscriptionsResult.subscriptions;
-                    return $.getJSON('/api/v2/users/me.json');
-                })
-                .then(function (user) {
-                    var actualSubscription = subscriptions.find(s => s.user_id == user.user.id);
-                    if (actualSubscription) {
-                        return actualSubscription;
+        var getSectionSubscription = function (sectionId, userId, page, itemsPerPage) {
+            page = (page === undefined ? 1 : page);
+            itemsPerPage = (itemsPerPage === undefined ? 50 : itemsPerPage);
+            return $.getJSON('/api/v2/help_center/' + HelpCenter.user.locale + '/sections/' + sectionId + '/subscriptions.json?page=' + page + '&per_page=' + itemsPerPage)
+                .then(function (subscriptions) {
+                    if (subscriptions) {
+                        var subscription = subscriptions.subscriptions.find(function (s) {return s.user_id == userId;});
+                        if (subscription) {
+                            console.log('getSectionSubscription: found subscription for user id ' + userId + ' on page ' + subscriptions.page + ' of ' + subscriptions.page_count);
+                            console.log(subscription);
+                            return subscription;
+                        }
+        
+                        if (subscriptions.next_page) {
+                            return getSectionSubscription(sectionId, userId, page + 1, itemsPerPage);
+                        }
                     }
-
+        
                     return undefined;
                 });
         }
+        
+        var getCurrentUserSectionSubscription = function (sectionId) {
+            return $.getJSON('/api/v2/users/me.json')
+                .then(function (user) {
+                    return (user && user.user && user.user.id)
+                        ? getSectionSubscription(sectionId, user.user.id)
+                        : undefined;
+                });
+        }        
 
         function setFollowButtonStatus(sectionId) {
             getCurrentUserSectionSubscription(sectionId)
-                .done(function (s) {
-                    if (s) {
-                        console.log("setFollowButtonStatus::Found subscription:");
-                        console.log(s);
-                    }
-
-                    $("#follow-btn").html(s ? unfollowButtonText : followButtonText);
-                    $('#follow-btn').removeClass("tl-hidden");
-                })
-                .fail(function (r) {
-                    console.log(`Call from setFollowButtonStatus to getCurrentUserSectionSubscription failed. ${r}`);
-                });
+            .done(function(s){
+                $("#follow-btn").html(s ? unfollowButtonText : followButtonText);
+                $('#follow-btn').removeClass("tl-hidden");
+            })
+            .fail(function(r){
+                console.log('Call from setFollowButtonStatus to getCurrentUserSectionSubscription failed. ' + r);
+            });
         }
 
         function subscribeToSection(sectionId) {
             $.getJSON('/hc/api/internal/csrf_token.json')
-                .then(function (csrfResponse) {
-                    $.ajax({
-                        url: `/api/v2/help_center/sections/${sectionId}/subscriptions.json`,
-                        type: "POST",
-                        data: jQuery.param({
-                            "subscription": {
-                                "source_locale": `${HelpCenter.user.locale}`,
-                                "include_comments": true
-                            }
-                        }),
-                        dataType: "application/json",
-                        headers: {
-                            "X-CSRF-Token": csrfResponse.current_session.csrf_token
-                        },
-                        complete: function () {
-                            console.log(`Subscribed to section ${sectionId}`);
-                            $('#follow-btn').html(unfollowButtonText);
+            .then(function (csrfResponse) {
+                $.ajax({url: '/api/v2/help_center/sections/' + sectionId + '/subscriptions.json',
+                    type: "POST",
+                    data: jQuery.param({
+                        "subscription": {
+                            "source_locale": HelpCenter.user.locale, 
+                            "include_comments": true
                         }
-                    });
+                    }),
+                    dataType: "application/json",
+                    headers: {
+                        "X-CSRF-Token":  csrfResponse.current_session.csrf_token
+                    },
+                    complete: function(){
+                        console.log('Subscribed to section ' + sectionId);
+                        $('#follow-btn').html(unfollowButtonText);
+                    }
                 });
+            });
         }
 
         function unsubscribeFromSection(sectionId) {
             $.getJSON('/hc/api/internal/csrf_token.json')
-                .then(function (csrfResponse) {
-                    getCurrentUserSectionSubscription(sectionId)
-                        .done(function (s) {
-                            if (s) {
-                                $.ajax({
-                                    url: `/api/v2/help_center/sections/${sectionId}/subscriptions/${s.id}.json`,
-                                    type: "DELETE",
-                                    dataType: "application/json",
-                                    headers: {
-                                        "X-CSRF-Token": csrfResponse.current_session.csrf_token
+            .then(function (csrfResponse) {
+                getCurrentUserSectionSubscription(sectionId)
+                .done(function(s){
+                    if(s) {
+                        $.ajax({
+                            url: '/api/v2/help_center/sections/' + sectionId + '/subscriptions/' + s.id + '.json',
+                            type: "DELETE",
+                            dataType: "application/json",
+                            headers: {
+                                    "X-CSRF-Token": csrfResponse.current_session.csrf_token
                                     }
-                                })
-                                    .then(function () {
-                                        console.log(`Unsubscribed from section ${s.id}`);
-                                        setFollowButtonStatus(sectionId);
-                                    });
-                            } else
-                                console.log("No subscription found to delete for this user");
-                        })
-                        .fail(function (r) {
-                            console.log(`Call from unsubscribeFromSection to getCurrentUserSectionSubscription failed. ${r}`);
-                        });
+                            })
+                            .then(function() {
+                                console.log('Unsubscribed from section ' + s.id);
+                                setFollowButtonStatus(sectionId);
+                            });
+                        } else
+                            console.log("No subscription found to delete for this user");                
+                })
+                .fail(function(r){
+                    console.log('Call from unsubscribeFromSection to getCurrentUserSectionSubscription failed. ' + r);
                 });
+            });
         }
 
         //Set initial button state on load
         setFollowButtonStatus(section_id_newsletters);
-
+        
         //Click handlers  
         $('#follow-btn').click(function () {
             $('#follow-btn').html() === followButtonText
                 ? subscribeToSection(section_id_newsletters)
                 : unsubscribeFromSection(section_id_newsletters);
-        });
-    }
+            });
+        }
 });
 /* Follow/unfollow section subscription ends */
 
@@ -236,6 +292,57 @@ if (cookieConsent.length) {
 }
 /* Cookie Article, with consent ends */
 
+//polyfill for IE11
+if (!Array.prototype.includes) {
+    Object.defineProperty(Array.prototype, 'includes', {
+        value: function (searchElement, fromIndex) {
+
+        if (this == null) {
+            throw new TypeError('"this" is null or not defined');
+        }
+
+        // 1. Let O be ? ToObject(this value).
+        var o = Object(this);
+
+        // 2. Let len be ? ToLength(? Get(O, "length")).
+        var len = o.length >>> 0;
+
+        // 3. If len is 0, return false.
+        if (len === 0) {
+            return false;
+        }
+
+        // 4. Let n be ? ToInteger(fromIndex).
+        //    (If fromIndex is undefined, this step produces the value 0.)
+        var n = fromIndex | 0;
+
+        // 5. If n ≥ 0, then
+        //  a. Let k be n.
+        // 6. Else n < 0,
+        //  a. Let k be len + n.
+        //  b. If k < 0, let k be 0.
+        var k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+
+        function sameValueZero(x, y) {
+            return x === y || (typeof x === 'number' && typeof y === 'number' && isNaN(x) && isNaN(y));
+        }
+
+        // 7. Repeat, while k < len
+        while (k < len) {
+            // a. Let elementK be the result of ? Get(O, ! ToString(k)).
+            // b. If SameValueZero(searchElement, elementK) is true, return true.
+            if (sameValueZero(o[k], searchElement)) {
+            return true;
+            }
+            // c. Increase k by 1.
+            k++;
+        }
+
+        // 8. Return false
+        return false;
+        }
+    });
+}
 
 /* APPROVED USER CHECK */
 
@@ -303,7 +410,7 @@ function stringToHslColorLog(str, s, l) {
 }
 
 
-//  Function to convert the intials to a hash string.
+//  Function to convert the intials to a hash string. //
 function stringToHslColor(str, s, l) {
     var hash = 0;
     for (var i = 0; i < str.length; i++) {
@@ -321,5 +428,51 @@ $(function () {
 
 
 
+// Calendar //
 
 
+/* START front door functions */
+/*
+var myCalendar;
+var calendarData = [];
+var $dateListItemTemplage = $('[data-date-template]').clone();
+var $dateFlaggedItemTemplage = $('[data-flagged-template]').clone();
+
+function getCalendarData(apiKey, dataSource, attempt) {
+    if (!attempt) {
+        attempt = 1;
+    }
+    $.get('https://sheets.googleapis.com/v4/spreadsheets/' + dataSource + '/values/sheet1?key=' + apiKey, function (data) {
+        // parse spreadsheet data to JSON
+        data.values.forEach((item, index) => {
+            if (index) {
+                calendarData.push({
+                    date: item[0].substr(6, 4) + '-' + item[0].substr(3, 2) + '-' + item[0].substr(0, 2),
+                    title: item[1],
+                    description: item[2],
+                    flagged: item[3] == 'Yes' ? true : false
+                });
+            }
+        });
+        // sort into date order
+        calendarData.sort((a, b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0));
+        // build the calendar and flagged dates
+        calendarInit();
+        buildFlaggedDates();
+        $(window).resize(function () {
+            $('[data-set-min-height]').css('min-height', 'auto');
+        });
+        $('[data-calendar-state="loading"]').hide();
+        $('[data-calendar-state="loaded"]').addClass('event-wrapper--show');
+    }).fail(function () {
+        if (attempt < 5) {
+            setTimeout(function () {
+                attempt++;
+                getCalendarData(apiKey, dataSource, attempt);
+            }, 2000);
+        } else {
+            $('[data-calendar-state="loading"]').hide();
+            $('[data-calendar-state="error"]').show();
+        }
+    });
+}

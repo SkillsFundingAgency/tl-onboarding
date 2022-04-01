@@ -1,24 +1,34 @@
 ﻿<script>
     document.title = "Discussion forum | Support with delivering T Levels"
+
+    $(".tl-phase-banner").addClass("tl-phase-banner--home");
+    $(".tl-header--search").hide();
+    $(".tl-header--search--toggle").hide();
+
+
+    if (typeof Object.assign != 'function') {
+        Object.assign = function (target) {
+            'use strict';
+            if (target == null) {
+                throw new TypeError('Cannot convert undefined or null to object');
+            }
+
+            target = Object(target);
+            for (var index = 1; index < arguments.length; index++) {
+                var source = arguments[index];
+                if (source != null) {
+                    for (var key in source) {
+                        if (Object.prototype.hasOwnProperty.call(source, key)) {
+                            target[key] = source[key];
+                        }
+                    }
+                }
+            }
+            return target;
+        };
+    }
 </script>
 
-
-
-<div class="govuk-width-container ">
-    <!-- Phase banner -->
-    <div class="govuk-phase-banner tl-phase-banner tl-phase-banner--home">
-        <p class="govuk-phase-banner__content">
-            <a href="{{settings.survey_link}}" id="tl-header--feedback-button">
-                <strong class="govuk-tag govuk-phase-banner__content__tag">
-                    Give feedback
-                </strong>
-            </a>
-            <span class="govuk-phase-banner__text">
-                This is a new service - <a class="govuk-link" href="{{settings.survey_link}}" id="tl-header--feedback">help us to improve it</a>
-            </span>
-        </p>
-    </div>
-</div>
 
 
 
@@ -113,17 +123,50 @@
 
                 <table class="govuk-table">
                     <thead class="govuk-table__head">
+
+                        <tr class="govuk-table__row tl-community-table__header--pinned">
+                            <th scope="col" class="govuk-table__header tl-community--table__header">Pinned discussion</th>
+                            <th scope="col" class="govuk-table__header tl-community--table__header">Replies</th>
+                        </tr>
+
+                        <script>
+                            $(document).ready(function () {
+                                if ($(".tl-community--table__row--pinned")[0]) {
+                                    $(".tl-community-table__header--pinned").show();
+                                }
+                            });
+                        </script>
+                        {{#each posts}}
+                        {{#if pinned}}
+                        <tr class="govuk-table__row tl-community--table__row tl-community--table__row--pinned ">
+                            <th scope="row" class="govuk-table__cell tl-community-table-post--pinned">
+                                <a href="{{url}}" id="tl-community-home--post" class="govuk-link tl-community-table-post--link">{{title}}</a>
+                                <script>
+                                  $.getJSON('/api/v2/community/posts/{{id}}.json', function(title) {
+                                      $('.{{id}}post').html(title.post.details.replace(/(<([^>]+)>)/gi, "").replace("&nbsp;", " ").substring(0, 75) + '...');
+                                  });
+                                </script>
+                                <div class="{{id}}post govuk-!-margin-top-0 tl-community-table-post--description">
+                                </div>
+                            </th>
+                            <td class="govuk-table__cell">{{comment_count}}</td>
+
+                        </tr>
+                        {{/if}}
+                        {{/each}}
+                    </thead>
+
+                    <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header tl-community--table__header">Question</th>
+                            <th scope="col" class="govuk-table__header tl-community--table__header">Discussion</th>
                             <th scope="col" class="govuk-table__header tl-community--table__header">Replies</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body">
-
-
-
                         {{#each posts}}
-                        <tr class="govuk-table__row tl-community--table__row">
+                        {{#if pinned}}
+                        {{else}}
+                        <tr class="govuk-table__row tl-community--table__row ">
                             <th scope="row" class="govuk-table__cell">
                                 <a href="{{url}}" id="tl-community-home--post" class="govuk-link tl-community-table-post--link">{{title}}</a>
                                 <script>
@@ -137,6 +180,7 @@
                             <td class="govuk-table__cell">{{comment_count}}</td>
 
                         </tr>
+                        {{/if}}
                         {{/each}}
 
                     </tbody>
