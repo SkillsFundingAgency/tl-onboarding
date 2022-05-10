@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - ESFA to DFE",
+  "name": "GDS Style - Search Indexing",
   "author": "Ash Anderton",
-  "version": "2.4.68",
+  "version": "2.4.69",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
