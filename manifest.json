@@ -128,6 +128,13 @@
           "description": "scoped_community_search_description",
           "label": "scoped_community_search_label",
           "value": true
+        },
+        {
+          "identifier": "indexed_search",
+          "type": "checkbox",
+          "description": "Show website in google / bing etc search results",
+          "label": "Show on google / bing",
+          "value": false
         }
       ]
     },
