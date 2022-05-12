@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Search Indexing",
   "author": "Ash Anderton",
-  "version": "2.4.71",
+  "version": "2.4.72",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -14,6 +14,13 @@
           "description": "Name of the service",
           "label": "Service Name",
           "value": "T Levels support for schools and colleges"
+        },
+        {
+          "identifier": "service_description",
+          "type": "text",
+          "description": "Description for the service",
+          "label": "Service description",
+          "value": "Help, guidance and support materials for schools, colleges and other T Level providers"
         },
         {
           "identifier": "logo",
