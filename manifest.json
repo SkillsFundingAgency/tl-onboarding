@@ -13,7 +13,7 @@
           "type": "text",
           "description": "Name of the service",
           "label": "Service Name",
-          "value": "Support with delivering T Levels"
+          "value": "T Levels support for schools and colleges"
         },
         {
           "identifier": "logo",
