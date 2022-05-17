@@ -137,8 +137,11 @@
 <title>GOV.UK - The best place to find government services and information</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0c0c">
+{{#if settings.indexed_search}}
+{{else}}
 <meta name="robots" content="noindex">
 <meta name="robots" content="nofollow">
+{{/if}}
 <meta name="google-site-verification" content="oWC-Mdf43or7RH5yNFPhFFb5LXJxuq4cojJx2_gzTTk" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
