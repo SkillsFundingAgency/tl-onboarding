@@ -7522,6 +7522,56 @@ x:-moz-any-link {
     padding: 20px;
   }
 }
+.tl-card--grey, .tl-hero--card {
+  background-color: #f3f2f1;
+  padding: 30px;
+  position: relative;
+}
+@media (max-width: 40.0525em) {
+  .tl-card--grey, .tl-hero--card {
+    padding: 20px;
+  }
+}
+.tl-card--grey--lower {
+  margin-top: auto;
+}
+.tl-card--flex {
+  display: flex;
+  flex-direction: column;
+}
+.tl-card--purple {
+  background-color: #f3f2f1;
+  padding: 30px;
+  margin: 20px 0;
+  border-bottom: 5px solid #4c2c92;
+}
+@media (max-width: 40.0525em) {
+  .tl-card--purple {
+    padding: 20px;
+  }
+}
+.tl-card--boxlinks {
+  background-color: #f3f2f1;
+  padding: 30px;
+  margin-top: 15px;
+}
+@media (min-width: 40.0625em) {
+  .tl-card--boxlinks {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 40.0525em) {
+  .tl-card--boxlinks {
+    background-color: unset;
+    padding: 0px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 40.0525em) and (min-width: 40.0625em) {
+  .tl-card--boxlinks {
+    margin-top: 10px;
+  }
+}
 
 /*** cookie msg starts ***/
 .gem-c-cookie-banner__wrapper.govuk-width-container, .tl-article--vote .gem-c-cookie-banner__wrapper.tl-article--vote--container, .tl-article--resources .gem-c-cookie-banner__wrapper.tl-article--resources--container {
@@ -8704,6 +8754,73 @@ ul.govuk-radios label .gem-radios__input {
 }
 .tl-filter .tl-filter--radios {
   padding: 0 15px;
+}
+
+.tl-hero {
+  background-color: #f3f2f1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.tl-hero--column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.tl-hero--column:first-child {
+  flex-basis: 66.6666%;
+}
+@media (max-width: 40.0525em) {
+  .tl-hero--column:first-child {
+    order: 2;
+  }
+}
+.tl-hero--column:last-child {
+  width: 33.3333%;
+}
+@media (max-width: 40.0525em) {
+  .tl-hero--column:last-child {
+    width: 100%;
+  }
+}
+.tl-hero--card {
+  height: 100%;
+  padding: 30px;
+}
+@media (min-width: 40.0625em) {
+  .tl-hero--card {
+    padding: 50px;
+  }
+}
+@media (max-width: 40.0525em) {
+  .tl-hero--card {
+    padding: 0;
+    padding-top: 25px;
+  }
+}
+@media (max-width: 40.0525em) and (min-width: 40.0625em) {
+  .tl-hero--card {
+    padding: 0;
+  }
+}
+@media (max-width: 40.0525em) and (min-width: 40.0625em) {
+  .tl-hero--card {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 40.0525em) {
+  .tl-hero {
+    flex-direction: column;
+    margin: 0 -15px 0 -15px;
+    width: calc(100% + 30px);
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  .tl-hero--column {
+    width: 100%;
+  }
 }
 
 .app-step-nav-header {
