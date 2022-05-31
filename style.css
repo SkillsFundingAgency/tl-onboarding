@@ -8794,11 +8794,11 @@ ul.govuk-radios label .gem-radios__input {
 }
 .tl-hero--card {
   height: 100%;
-  padding: 30px;
+  padding: 20px;
 }
 @media (min-width: 40.0625em) {
   .tl-hero--card {
-    padding: 50px;
+    padding: 30px;
   }
 }
 @media (max-width: 40.0525em) {
