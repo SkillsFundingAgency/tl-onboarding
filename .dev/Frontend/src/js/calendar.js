@@ -20,7 +20,9 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     date: item[0].substr(6, 4) + '-' + item[0].substr(3, 2) + '-' + item[0].substr(0, 2),
                     title: item[1],
                     description: item[2],
-                    flagged: item[3] == 'Yes' ? true : false
+                    flagged: item[3] == 'Yes' ? true : false,
+                    link1: item[4],
+                    link2: item[5],
                 });
             }
         });
@@ -87,6 +89,8 @@ function buildEventList(date, dayOnly) {
             $newDateItem.attr('data-event-date', item.date);
             $('[data-date-date]', $newDateItem).text(moment(item.date).format('DD MMMM YYYY'));
             $('[data-date-title]', $newDateItem).text(item.title);
+            $('[data-date-link1]', $newDateItem).attr("href", item.link1);
+            $('[data-date-link2]', $newDateItem).attr("href", item.link2);
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
                 event.preventDefault();
