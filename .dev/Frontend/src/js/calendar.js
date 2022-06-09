@@ -14,7 +14,9 @@ function getCalendarData(apiKey, dataSource, attempt) {
     }
     $.get('https://sheets.googleapis.com/v4/spreadsheets/' + dataSource + '/values/sheet1?key=' + apiKey, function (data) {
         // parse spreadsheet data to JSON
+        let i = 0;
         data.values.forEach((item, index) => {
+            i = i + 1;
             if (index) {
                 calendarData.push({
                     date: item[0].substr(6, 4) + '-' + item[0].substr(3, 2) + '-' + item[0].substr(0, 2),
@@ -23,6 +25,7 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     flagged: item[3] == 'Yes' ? true : false,
                     link1: item[4],
                     link2: item[5],
+                    ics: "javascript: cal_" + i + ".download('" + item[1] + "')",
                 });
             }
         });
@@ -91,6 +94,8 @@ function buildEventList(date, dayOnly) {
             $('[data-date-title]', $newDateItem).text(item.title);
             $('[data-date-link1]', $newDateItem).attr("href", item.link1);
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
+            $('[data-date-ics]', $newDateItem).attr("href", item.ics);
+
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
                 event.preventDefault();
@@ -318,7 +323,6 @@ var ics = function (e, t) { "use strict"; { if (!(navigator.userAgent.indexOf("M
 
 
 
-    cal_single = ics();
-    cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
+
 
 
