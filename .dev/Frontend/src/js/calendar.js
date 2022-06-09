@@ -104,7 +104,7 @@ function buildEventList(date, dayOnly) {
             cal_[item.id] = ics()
             cal_[item.id].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
 
-            $('[data-date-ics]', $newDateItem).click(cal_(item.id).download(item.title));
+            $('[data-date-ics]', $newDateItem).click(cal_[item.id].download(item.title));
 
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
