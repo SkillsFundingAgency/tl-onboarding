@@ -15,6 +15,8 @@ var calendarData = [];
 var $dateListItemTemplage = $('[data-date-template]').clone();
 var $dateFlaggedItemTemplage = $('[data-flagged-template]').clone();
 
+cal = ics()
+
 function getCalendarData(apiKey, dataSource, attempt) {
     if (!attempt) {
         attempt = 1;
@@ -35,7 +37,6 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     id: i,
                 });
             }
-            cal[i] = ics()
             cal[i].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
 
         });
