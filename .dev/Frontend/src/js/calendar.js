@@ -25,7 +25,7 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     flagged: item[3] == 'Yes' ? true : false,
                     link1: item[4],
                     link2: item[5],
-                    ics: "javascript: cal_" + i + ".download('" + item[1] + "')",
+                    id: i,
                 });
             }
         });
@@ -94,7 +94,7 @@ function buildEventList(date, dayOnly) {
             $('[data-date-title]', $newDateItem).text(item.title);
             $('[data-date-link1]', $newDateItem).attr("href", item.link1);
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
-            $('[data-date-ics]', $newDateItem).attr("href", item.ics);
+            $('[data-date-ics]', $newDateItem).click(cal_(item.id).download(item.title));
 
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
