@@ -12,7 +12,7 @@
 #tl-calendar {
     display: none;
 
-    &--event-links {
+    .tl-calendar--event-links {
         @extend .govuk-body-s;
         @extend .govuk-link;
         color: $govuk-link-colour;
