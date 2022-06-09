@@ -35,6 +35,9 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     id: i,
                 });
             }
+            cal[i] = ics()
+            cal[i].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
+
         });
         // sort into date order
         calendarData.sort((a, b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0));
@@ -101,10 +104,7 @@ function buildEventList(date, dayOnly) {
             $('[data-date-title]', $newDateItem).text(item.title);
             $('[data-date-link1]', $newDateItem).attr("href", item.link1);
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
-            cal_[item.id] = ics()
-            cal_[item.id].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
-
-            $('[data-date-ics]', $newDateItem).click(cal_[item.id].download(item.title));
+            $('[data-date-ics]', $newDateItem).click(cal[item.id].download(item.title));
 
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
