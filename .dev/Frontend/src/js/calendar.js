@@ -34,6 +34,7 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     link1: item[4],
                     link2: item[5],
                     id: i,
+                    icsdate: item[0].substr(6, 4) + '/' + item[0].substr(3, 2) + '/' + item[0].substr(0, 2),
                 });
             }
         });
@@ -106,7 +107,7 @@ function buildEventList(date, dayOnly) {
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
             window['cal_' + item.id] = ics();
             window['cal_' + item.id].addEvent(item.title, item.description, '', item.date, item.date);
-            $('[data-date-ics]', $newDateItem).attr("onclick", "javascript: cal_" + item.date + ".download('Awesome Day')");
+            $('[data-date-ics]', $newDateItem).attr("onclick", "javascript: cal_" + item.icsdate + ".download('Awesome Day')");
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
                 event.preventDefault();
