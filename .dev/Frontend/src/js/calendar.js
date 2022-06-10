@@ -106,7 +106,7 @@ function buildEventList(date, dayOnly) {
             $('[data-date-link1]', $newDateItem).attr("href", item.link1);
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
             window['cal_' + item.id] = ics();
-            window['cal_' + item.id].addEvent(item.title, item.description, '', item.date, item.date);
+            window['cal_' + item.id].addEvent(item.title, item.description, '', item.icsdate, item.icsdate);
             $('[data-date-ics]', $newDateItem).attr("onclick", "javascript: cal_" + item.id + ".download('Awesome Day')");
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
