@@ -35,6 +35,7 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     link2: item[5],
                     id: i,
                     icsdate: item[0].substr(3, 2) + '/' + item[0].substr(0, 2) + '/' + item[0].substr(6, 4),
+                    icsdescription: item[2].replace(/\n/g, "<br>"),
                 });
             }
         });
@@ -106,8 +107,8 @@ function buildEventList(date, dayOnly) {
             $('[data-date-link1]', $newDateItem).attr("href", item.link1);
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
             window['cal_' + item.id] = ics();
-            window['cal_' + item.id].addEvent(item.title, item.description, '', item.icsdate, item.icsdate);
-            $('[data-date-ics]', $newDateItem).attr("onclick", "javascript: cal_" + item.id + ".download('Awesome Day')");
+            window['cal_' + item.id].addEvent(item.title, item.icsdescription, '', item.icsdate, item.icsdate);
+            $('[data-date-ics]', $newDateItem).attr("onclick", "javascript: cal_" + item.id + ".download('" + item.title + "')");
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
                 event.preventDefault();
