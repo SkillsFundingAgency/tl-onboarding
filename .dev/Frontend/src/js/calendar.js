@@ -106,7 +106,7 @@ function buildEventList(date, dayOnly) {
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
             window['cal_' + item.id] = ics();
             window['cal_' + item.id].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
-
+            alert(cal_147);
 
 
 
