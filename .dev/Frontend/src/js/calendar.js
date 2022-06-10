@@ -104,9 +104,13 @@ function buildEventList(date, dayOnly) {
             $('[data-date-title]', $newDateItem).text(item.title);
             $('[data-date-link1]', $newDateItem).attr("href", item.link1);
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
-            window['cal_' + item.id] = ics();
-            window['cal_' + item.id].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
-            $('[data-date-ics]', $newDateItem).attr("href", "javascript: cal_" + item.id + ".download('Awesome Day')");
+            //window['cal_' + item.id] = ics();
+            //window['cal_' + item.id].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
+            //$('[data-date-ics]', $newDateItem).attr("href", "javascript: cal_" + item.id + ".download('Awesome Day')");
+            cal_single = ics();
+            cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
+            $('[data-date-ics]', $newDateItem).attr("href", "javascript: cal_single.download('Awesome Day')");
+
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
                 event.preventDefault();
