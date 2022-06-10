@@ -106,10 +106,7 @@ function buildEventList(date, dayOnly) {
             $('[data-date-link2]', $newDateItem).attr("href", item.link2);
             window['cal_' + item.id] = ics();
             window['cal_' + item.id].addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
-
-
-            $('[data-date-ics]', $newDateItem).click(window['cal_' + item.id].download(item.title));
-
+            $('[data-date-ics]', $newDateItem).attr("href", "javascript: window['cal_' + item.id].download('Awesome Day')");
             $('[data-date-description]', $newDateItem).text(item.description);
             $('[data-date-description-toggle]', $newDateItem).click(function (event) {
                 event.preventDefault();
