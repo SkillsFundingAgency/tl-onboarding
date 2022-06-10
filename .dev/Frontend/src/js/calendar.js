@@ -34,7 +34,7 @@ function getCalendarData(apiKey, dataSource, attempt) {
                     link1: item[4],
                     link2: item[5],
                     id: i,
-                    icsdate: item[0].substr(6, 4) + '/' + item[0].substr(3, 2) + '/' + item[0].substr(0, 2),
+                    icsdate: item[0].substr(3, 2) + '/' + item[0].substr(0, 2) + '/' + item[0].substr(6, 4),
                 });
             }
         });
