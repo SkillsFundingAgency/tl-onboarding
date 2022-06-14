@@ -53,5 +53,11 @@
             cursor: pointer;
             font-weight: bold;
         }
+
+        &:hover {
+            &:before {
+                text-decoration: underline;
+            }
+        }
     }
 }

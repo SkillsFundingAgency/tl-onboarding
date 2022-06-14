@@ -8883,6 +8883,9 @@ ul.govuk-radios label .gem-radios__input {
   cursor: pointer;
   font-weight: bold;
 }
+.tl-modal--close:hover:before {
+  text-decoration: underline;
+}
 
 .app-step-nav-header {
   color: #0b0c0c;
