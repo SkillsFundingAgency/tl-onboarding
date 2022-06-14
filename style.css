@@ -8860,14 +8860,18 @@ ul.govuk-radios label .gem-radios__input {
   border: 3px solid #0b0c0c;
 }
 .tl-modal--content--top {
-  padding: 15px 20px;
+  padding: 15px 30px;
   background: #0b0c0c;
 }
 .tl-modal--content--top path {
   color: #ffffff;
 }
 .tl-modal--content--bottom {
-  padding: 40px 20px;
+  padding: 30px;
+}
+.tl-modal--content--bottom .govuk-link, .tl-modal--content--bottom .tl-search--pagination ul li a, .tl-search--pagination ul li .tl-modal--content--bottom a, .tl-modal--content--bottom .tl-article--sidebar a, .tl-article--sidebar .tl-modal--content--bottom a, .tl-modal--content--bottom .tl-article--vote .tl-article--vote--button, .tl-article--vote .tl-modal--content--bottom .tl-article--vote--button, .tl-modal--content--bottom .tl-article--content a, .tl-article--content .tl-modal--content--bottom a, .tl-modal--content--bottom .tl-article--backtotop, .tl-modal--content--bottom .tl-phase-banner--link, .tl-modal--content--bottom .tl-community--pagination ul li a, .tl-community--pagination ul li .tl-modal--content--bottom a, .tl-modal--content--bottom .tl-community--post--content a, .tl-community--post--content .tl-modal--content--bottom a, .tl-modal--content--bottom .tl-community--comment--actions button, .tl-community--comment--actions .tl-modal--content--bottom button, .tl-modal--content--bottom .tl-community--post--actions button, .tl-community--post--actions .tl-modal--content--bottom button, .tl-modal--content--bottom .tl-event--pagination ul li a, .tl-event--pagination ul li .tl-modal--content--bottom a {
+  top: 5px;
+  position: relative;
 }
 
 .app-step-nav-header {

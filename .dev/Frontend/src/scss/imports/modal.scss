@@ -24,7 +24,7 @@
         border: 3px solid govuk-colour("black");
 
         &--top {
-            padding: 15px 20px;
+            padding: 15px 30px;
             background: govuk-colour("black");
 
             path {
@@ -33,7 +33,12 @@
         }
 
         &--bottom {
-            padding: 40px 20px;
+            padding: 30px;
+
+            .govuk-link {
+                top: 5px;
+                position: relative;
+            }
         }
     }
 }
