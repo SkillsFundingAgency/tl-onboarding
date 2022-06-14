@@ -8873,6 +8873,15 @@ ul.govuk-radios label .gem-radios__input {
   top: 5px;
   position: relative;
 }
+.tl-modal--close:before {
+  content: "×";
+  color: #ffffff;
+  position: absolute;
+  right: 5px;
+  font-size: 30px;
+  top: 0px;
+  cursor: pointer;
+}
 
 .app-step-nav-header {
   color: #0b0c0c;

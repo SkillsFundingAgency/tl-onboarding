@@ -41,4 +41,16 @@
             }
         }
     }
+
+    &--close {
+        &:before {
+            content: "\00d7";
+            color: govuk-colour("white");
+            position: absolute;
+            right: 5px;
+            font-size: 30px;
+            top: 0px;
+            cursor: pointer;
+        }
+    }
 }
