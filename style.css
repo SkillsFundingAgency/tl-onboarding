@@ -8831,10 +8831,31 @@ ul.govuk-radios label .gem-radios__input {
 }
 
 .tl-modal {
+  position: fixed;
+  /* Positioning and size */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.5);
+  /* color */
   display: none;
+  /* making it hidden by default */
 }
 .tl-modal[active] {
   display: inline-block;
+}
+.tl-modal--content {
+  position: fixed;
+  /* positioning in center of page */
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  /* size */
+  width: 600px;
+  background-color: white;
+  /* background color */
 }
 
 .app-step-nav-header {

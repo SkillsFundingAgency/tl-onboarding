@@ -98,8 +98,42 @@
                 </div>
             </div>
             <div class="govuk-grid-column-one-half tl-text--right govuk-!-margin-top-5">
+                <a href="#" class="govuk-button tl-community--newpost--signin" id="tl-community--signin">Sign in to post a question</a>
+                <div class="tl-modal" id="tl-community--signin--modal">
+                    <div class="tl-modall-content">
+                        <p>Test</p>
+                        <a href="#" class="govuk-button tl-community--newpost--signin" id="tl-community--signin--close">Close</a>
+                    </div>
+                </div>
+
+
+
+                <script>
+
+                    function modalopen() {
+                        event.preventDefault();
+                        console.log("click open");
+                        $("#tl-community--signin--modal").attr("active", "true");
+
+                    };
+
+                    function modalclose() {
+                        event.preventDefault();
+                        console.log("click close");
+                        $("#tl-community--signin--modal").removeAttr("active");
+
+                    };
+
+                    $(document).ready(function () {
+                        $("#tl-community--signin").click(modalopen);
+                        $("#tl-community--signin--close").click(modalclose);
+
+
+                    });
+                </script>
+
                 {{#if signed_in}}
-                <a href="#" class="govuk-button govuk-!-margin-bottom-0" id="tl-community--newpost">Post a question</a>
+                <!--<a href="#" class="govuk-button govuk-!-margin-bottom-0" id="tl-community--newpost">Post a question</a>
 
                 <script>
                     $(document).ready(function () {
@@ -111,22 +145,9 @@
                             $("#tl-community--newpost").attr('href', "/hc/en-gb/articles/{{settings.article_id_interrupt}}");
                         }
                     });
-                </script>
+                </script>-->
                 {{else}}
-                <a href="#" class="govuk-button tl-community--newpost--signin" id="tl-community--signin">Sign in to post a question</a>
-                <div class="tl-modal">
-                    <p>Test</p>
-                </div>
 
-
-
-                <script>
-                    $(document).ready(function () {
-                        $("#tl-community--signin").click(function () {
-                            $(".tl-modal").attr("active");
-                        });
-                    });
-                </script>
 
 
 
