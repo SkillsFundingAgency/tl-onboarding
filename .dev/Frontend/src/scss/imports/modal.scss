@@ -16,8 +16,19 @@
         top: 50vh;
         left: 50vw;
         transform: translate(-50%,-50%);
-        height: 400px; /* size */
-        width: 600px;
+        max-height: 300px; 
+        max-width: 600px;
+        height: 100%;
+        width: 100%;
         background-color: white; /* background color */
+
+        &--top {
+            padding: 5px 10px;
+            background: govuk-colour("black");
+
+            path {
+                color: govuk-colour("white");
+            }
+        }
     }
 }

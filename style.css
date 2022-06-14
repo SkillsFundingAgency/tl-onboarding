@@ -8851,11 +8851,19 @@ ul.govuk-radios label .gem-radios__input {
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  height: 400px;
-  /* size */
-  width: 600px;
+  max-height: 300px;
+  max-width: 600px;
+  height: 100%;
+  width: 100%;
   background-color: white;
   /* background color */
+}
+.tl-modal--content--top {
+  padding: 5px 10px;
+  background: #0b0c0c;
+}
+.tl-modal--content--top path {
+  color: #ffffff;
 }
 
 .app-step-nav-header {
