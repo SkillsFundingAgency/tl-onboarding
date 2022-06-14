@@ -127,3 +127,12 @@
         display: block;
     }
 }
+
+
+
+.tl-image--cover {
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    object-position: right bottom;
+}
