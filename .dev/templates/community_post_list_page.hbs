@@ -113,7 +113,25 @@
                     });
                 </script>
                 {{else}}
-                {{#link 'new_post' class="govuk-button tl-community--newpost--signin"}}Sign in to post a question{{/link}}</li>
+                <a href="#" class="govuk-button tl-community--newpost--signin" id="tl-community--signin">Sign in to post a question</a>
+                <div class="tl-modal">
+                    <p>Test</p>
+                </div>
+
+
+
+                <script>
+                    $("#tl-community--signin").click(function () {
+                        $(".tl-modal").attr("active");
+                    });
+                </script>
+
+
+
+
+
+
+
                 {{/if}}
             </div>
         </div>
