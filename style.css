@@ -8877,10 +8877,11 @@ ul.govuk-radios label .gem-radios__input {
   content: "×";
   color: #ffffff;
   position: absolute;
-  right: 5px;
-  font-size: 30px;
+  right: 15px;
+  font-size: 50px;
   top: 0px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .app-step-nav-header {
