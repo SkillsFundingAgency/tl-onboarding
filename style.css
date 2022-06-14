@@ -8851,9 +8851,8 @@ ul.govuk-radios label .gem-radios__input {
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  max-height: 300px;
   max-width: 750px;
-  height: 100%;
+  height: auto;
   width: 100%;
   background-color: white;
   /* background color */
@@ -8866,6 +8865,9 @@ ul.govuk-radios label .gem-radios__input {
 }
 .tl-modal--content--top path {
   color: #ffffff;
+}
+.tl-modal--content--bottom {
+  padding: 20px;
 }
 
 .app-step-nav-header {
