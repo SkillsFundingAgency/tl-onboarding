@@ -8841,6 +8841,7 @@ ul.govuk-radios label .gem-radios__input {
   /* color */
   display: none;
   /* making it hidden by default */
+  z-index: 1000;
 }
 .tl-modal[active] {
   display: inline-block;
