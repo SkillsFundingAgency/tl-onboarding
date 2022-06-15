@@ -618,12 +618,14 @@
                                 <image src="{{asset 'govuk-logotype-crown.png'}}" xlink:href="" class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
                             </svg>
 
-                            <a href="#" class="tl-modal--close" id="tl-community--reoly--close"><span class="govuk-visually-hidden">Close modal</span></a>
+                            <a href="#" class="tl-modal--close" id="tl-community--reply--close"><span class="govuk-visually-hidden">Close modal</span></a>
                         </div>
                         <div class="tl-modal--content--bottom">
                             <p class="govuk-body">To post a question, sign in with an email address linked to a T Level school or college. </p>
                             {{#link "sign_in" class="govuk-button tl-community--newpost--signin"}}Sign in to post a reply{{/link}}
-                            {{#link "sign_up" class="govuk-link govuk-body govuk-!-margin-left-4"}}Not registered? Sign up{{/link}}
+
+                            <a href="/hc/en-gb/signup" class="govuk-link govuk-body govuk-!-margin-left-4" id="tl-community--signup">Not registered? Sign up</a>
+
                         </div>
                     </div>
                 </div>
