@@ -98,6 +98,23 @@
                 </div>
             </div>
             <div class="govuk-grid-column-one-half tl-text--right govuk-!-margin-top-5">
+
+                {{#if signed_in}}
+                <a href="#" class="govuk-button govuk-!-margin-bottom-0" id="tl-community--newpost">Post a question</a>
+
+                <script>
+                    $(document).ready(function () {
+                        if (isApprovedUser()) {
+                            $("#tl-community--newpost").attr('href', "/hc/en-gb/community/posts/new");
+
+                        }
+                        else {
+                            $("#tl-community--newpost").attr('href', "/hc/en-gb/articles/{{settings.article_id_interrupt}}");
+                        }
+                    });
+                </script>
+                {{else}}
+
                 <a href="#" class="govuk-button tl-community--newpost--signin" id="tl-community--signin">Sign in to post a question</a>
                 <div class="tl-modal" id="tl-community--signin--modal">
                     <div class="tl-modal--content">
@@ -143,30 +160,6 @@
 
                     });
                 </script>
-
-                {{#if signed_in}}
-                <!--<a href="#" class="govuk-button govuk-!-margin-bottom-0" id="tl-community--newpost">Post a question</a>
-
-                <script>
-                    $(document).ready(function () {
-                        if (isApprovedUser()) {
-                            $("#tl-community--newpost").attr('href', "/hc/en-gb/community/posts/new");
-
-                        }
-                        else {
-                            $("#tl-community--newpost").attr('href', "/hc/en-gb/articles/{{settings.article_id_interrupt}}");
-                        }
-                    });
-                </script>-->
-                {{else}}
-
-
-
-
-
-
-
-
                 {{/if}}
             </div>
         </div>
