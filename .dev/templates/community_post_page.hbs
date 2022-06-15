@@ -172,14 +172,14 @@
 
                     <script>
 
-                        function modalopen() {
+                        function postmodalopen() {
                             event.preventDefault();
                             console.log("click open");
                             $("#tl-community--signin--modal").attr("active", "true");
 
                         };
 
-                        function modalclose() {
+                        function postmodalclose() {
                             event.preventDefault();
                             console.log("click close");
                             $("#tl-community--signin--modal").removeAttr("active");
@@ -187,8 +187,8 @@
                         };
 
                         $(document).ready(function () {
-                            $("#tl-community--signin").click(modalopen);
-                            $("#tl-community--signin--close").click(modalclose);
+                            $("#tl-community--signin").click(postmodalopen);
+                            $("#tl-community--signin--close").click(postmodalclose);
 
 
                         });
@@ -632,25 +632,22 @@
 
                 <script>
 
-                    function modalopen() {
+                    function replymodalopen() {
                         event.preventDefault();
                         console.log("click open");
                         $("#tl-community--reply--modal").attr("active", "true");
 
                     };
 
-                    function modalclose() {
+                    function replymodalclose() {
                         event.preventDefault();
                         console.log("click close");
                         $("#tl-community--reply--modal").removeAttr("active");
-
                     };
 
                     $(document).ready(function () {
-                        $("#tl-community--reply").click(modalopen);
-                        $("#tl-community--reply--close").click(modalclose);
-
-
+                        $("#tl-community--reply").click(replymodalopen);
+                        $("#tl-community--reply--close").click(replymodalclose);
                     });
                 </script>
                 {{/if}}
