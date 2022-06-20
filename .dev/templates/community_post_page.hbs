@@ -622,7 +622,9 @@
                         </div>
                         <div class="tl-modal--content--bottom">
                             <p class="govuk-body">To post a reply, sign in with an email address linked to a T Level school or college. </p>
-                            {{#link "sign_in" class="govuk-button tl-community--newpost--signin"}}Sign in{{/link}}
+                            <span class="govuk-button tl-community--newpost--signin" tabindex="0" data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu">
+                                Sign in
+                            </span>
 
                             <a href="/hc/en-gb/signup" class="govuk-link govuk-body govuk-!-margin-left-4" id="tl-community--signup">Not registered? Sign up</a>
 
