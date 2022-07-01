@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - Course Directory",
+  "name": "GDS Style - Forum Guidance",
   "author": "Ash Anderton",
-  "version": "2.4.79",
+  "version": "2.5.10",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -115,6 +115,31 @@
           "type": "file",
           "description": "community_image_description",
           "label": "community_image_label"
+        }
+      ]
+    },
+    {
+      "label": "Answerbot",
+      "variables": [
+        {
+          "identifier": "answerbot_icon",
+          "type": "file",
+          "description": "Answerbot Icon",
+          "label": "Answerbot Icon"
+        },
+        {
+          "identifier": "answerbot_name",
+          "type": "text",
+          "description": "Name of the answerbot",
+          "label": "Answerbot Name",
+          "value": "T Levels"
+        },
+        {
+          "identifier": "answerbot_key",
+          "type": "text",
+          "description": "Key for answerbot config",
+          "label": "Answerbot Key",
+          "value": "7650daf8-2a6e-410e-b54e-de1ef8d35798"
         }
       ]
     },
