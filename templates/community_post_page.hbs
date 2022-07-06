@@ -276,7 +276,7 @@
                                         .fail(function () {
                                             $('button#tl-community--post--subscribe').attr('disabled', true);
                                         })
-                                    } 
+                                    }
                                     else {
                                     helpers.deletePostSubscribeStatus({{ post.id }})
                                         .done(function (status) {
@@ -678,18 +678,28 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    {{#if settings.answerbiot_enabled}}
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
+    <script type="text/javascript">
+    window.zESettings = {
+        webWidget: {
+            answerBot: {
+                avatar: {
+                    url: "{{settings.answerbot_icon}}",
+                    name: {
+                        "*": '{{settings.answerbot_name}}'
+                    }
+                },
+                title: {
+                    "en-gb": "T Levels support for schools and colleges"
+                },
+                search: {
+                    labels:
+                        ['answerbot']
+                },
+                contactOnlyAfterQuery: true
+            }
+        }
+    };
+    </script>
+    {{/if}}

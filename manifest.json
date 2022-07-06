@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - Forum Guidance",
+  "name": "GDS Style - Answerbot",
   "author": "Ash Anderton",
-  "version": "2.5.10",
+  "version": "2.5.11",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -121,6 +121,13 @@
     {
       "label": "Answerbot",
       "variables": [
+        {
+          "identifier": "answerbot_enabled",
+          "type": "checkbox",
+          "description": "Enable Answerbot",
+          "label": "Show answerbot accross site",
+          "value": false
+        },
         {
           "identifier": "answerbot_icon",
           "type": "file",

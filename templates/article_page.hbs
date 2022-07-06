@@ -197,9 +197,8 @@
 </script>
 
 
-<!-- Start of tlevelsemployertest Zendesk Widget script -->
+{{#if settings.answerbiot_enabled}}
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
-
 <script type="text/javascript">
     window.zESettings = {
         webWidget: {
@@ -222,4 +221,4 @@
         }
     };
 </script>
-<!-- End of tlevelsemployertest Zendesk Widget script -->
+{{/if}}
