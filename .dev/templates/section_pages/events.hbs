@@ -123,7 +123,32 @@
                 function unpaginatedSections() {
 
                     // Only execute this if we're on a paginated section page.
-                    if (document.getElementsByClassName("pagination")[0] == null) return;
+                    if (document.getElementsByClassName("pagination")[0] == null) {
+                        $('[id^="tl-article--container--"]').each(function () {
+                            var eventid = $(this).attr('id');
+                            var functionid = eventid.replace('tl-article--container--', '');
+
+                            $.getJSON('/api/v2/help_center/articles/' + functionid, function (articlelabels) {
+
+                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                    articlelabels.article.label_names.forEach(function (labelname) {
+
+                                        if (labelname.indexOf("type") != -1) {
+                                            var type = labelname.split('/')[1];
+                                            $("#tl-article--container--" + functionid).attr("data-event--labels", type);
+                                        }
+
+                                        if (labelname.indexOf("date") != -1) {
+                                            var date = labelname.split('/')[1];
+                                            $("#tl-article--date--" + functionid).text(date);
+                                        }
+                                    });
+                                };
+                            });
+                        });
+
+                    return;
+                    };
                     // Does the URL specify a page number? If so, yield to the user.
                     if (document.URL.includes('?page=')) return;
 
@@ -187,6 +212,7 @@
                                 document.getElementsByClassName("pagination")[0].innerHTML = '';
                             };
                         };
+
                     };
 
 
