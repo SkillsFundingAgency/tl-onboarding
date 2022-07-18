@@ -80,17 +80,17 @@
                     <div class="tl-home--panel--events govuk-!-margin-bottom-3">
                         <div class="tl-home--panel--events--content">
                             <h3 class="govuk-heading-s">Upcoming events</h3>
+                            <div class="tl-home--panel--events--events">
+                                {{#each categories}}
+                                {{#is name "T Level events"}}
+                                {{#each sections}}
+                                {{#is name "T Level events"}}
+                                {{#each articles}}
+                                {{#is @index 0}}
+                                <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                                <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
 
-                            {{#each categories}}
-                            {{#is name "T Level events"}}
-                            {{#each sections}}
-                            {{#is name "T Level events"}}
-                            {{#each articles}}
-                            {{#is @index 0}}
-                            <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
-                            <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
-
-                            <script>
+                                <script>
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
                                 if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
@@ -103,12 +103,12 @@
                                     });
                                 }
                             });
-                            </script>
-                            {{/is}}
-                            {{#is @index 1}}
-                            <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
-                            <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
-                            <script>
+                                </script>
+                                {{/is}}
+                                {{#is @index 1}}
+                                <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                                <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
+                                <script>
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
                                 if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
@@ -121,12 +121,12 @@
                                     });
                                 }
                             });
-                            </script>
-                            {{/is}}
-                            {{#is @index 2}}
-                            <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
-                            <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
-                            <script>
+                                </script>
+                                {{/is}}
+                                {{#is @index 2}}
+                                <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                                <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
+                                <script>
                             $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
                                 if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
@@ -139,21 +139,18 @@
                                     });
                                 }
                             });
-                            </script>
-                            {{/is}}
-                            {{else}}
-                            <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
-                            {{/each}}
-                            {{#if articles}}
-                            <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
-                            {{/if}}
-                            {{/is}}
-                            {{/each}}
-                            {{/is}}
-                            {{/each}}
+                                </script>
+                                {{/is}}
 
-
-
+                                {{/each}}
+                                {{#if articles}}
+                                <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
+                                {{/if}}
+                                {{/is}}
+                                {{/each}}
+                                {{/is}}
+                                {{/each}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -341,3 +338,8 @@
 </script>
 <script src="{{asset 'tavo-calendar.js'}}"></script>
 
+<script>
+    if ($('.tl-home--panel--events--events').children().length == 0) {
+        $('.tl-home--panel--events--events').html('<p class="govuk-body">There are no upcoming T Level events at the moment.</p>')
+    }
+</script>
