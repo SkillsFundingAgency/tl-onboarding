@@ -85,7 +85,6 @@
                             {{#is name "T Level events"}}
                             {{#each sections}}
                             {{#is name "T Level events"}}
-                            {{#if articles}}
                             {{#each articles}}
                             {{#is @index 0}}
                             <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
@@ -142,10 +141,11 @@
                             });
                             </script>
                             {{/is}}
-                            {{/each}}
-                            <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
                             {{else}}
                             <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
+                            {{/each}}
+                            {{#if articles}}
+                            <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
                             {{/if}}
                             {{/is}}
                             {{/each}}
