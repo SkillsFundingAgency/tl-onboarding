@@ -141,17 +141,16 @@
                             });
                                 </script>
                                 {{/is}}
-                                {{else}}
-                                <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
+
+                                {{/each}}
+                                {{#if articles}}
+                                <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
+                                {{/if}}
+                                {{/is}}
+                                {{/each}}
+                                {{/is}}
                                 {{/each}}
                             </div>
-                            {{#if articles}}
-                            <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
-                            {{/if}}
-                            {{/is}}
-                            {{/each}}
-                            {{/is}}
-                            {{/each}}
                         </div>
                     </div>
                 </div>
