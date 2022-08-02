@@ -71,3 +71,19 @@
 #request_subject_label, #request_subject {
     display: none;
 }
+
+
+.govuk-radios__input {
+    + label {
+        .govuk-inset-text {
+            display: none;
+        }
+    }
+
+    &:checked + label {
+        .govuk-inset-text {
+            display: inline-block;
+        }
+    }
+}
+ 

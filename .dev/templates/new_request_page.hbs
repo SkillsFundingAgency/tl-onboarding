@@ -48,10 +48,10 @@
                                 <input class="govuk-radios__input" id="contact-reason-3" name="contact-reason" type="radio" value="Marketing and communications" aria-describedby="contact-reason-3-hint">
                                 <label class="govuk-label govuk-radios__label" for="contact-reason-3">
                                     Marketing and communications
+                                    <div class="govuk-inset-text">
+                                        You can find <a href="https://www.gov.uk/government/collections/resources-and-materials-for-promoting-t-levels" class="govuk-link">T Level brand and marketing materials on GOV.UK</a>
+                                    </div>
                                 </label>
-                                <div id="contact-reason-3-hint" class="govuk-hint govuk-radios__hint">
-                                    You can find <a href="https://www.gov.uk/government/collections/resources-and-materials-for-promoting-t-levels" class="govuk-link">T Level brand and marketing materials on GOV.UK</a>
-                                </div>
                             </div>
 
                             <div class="govuk-radios__item">
@@ -133,6 +133,7 @@
         $('#tl-reason input[type=radio]').change(function () {
             var reasonlabel = $(this).val()
             $("#request_subject").val(reasonlabel);
+            $(this).parents(".govuk-radios__item").children(.)
         });
 
         var currentsubject = $("#request_subject").val()

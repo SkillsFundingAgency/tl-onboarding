@@ -8270,6 +8270,13 @@ ul.govuk-radios label .gem-radios__input {
   display: none;
 }
 
+.govuk-radios__input + label .govuk-inset-text, .govuk-radios__input + label .tl-article--content blockquote, .tl-article--content .govuk-radios__input + label blockquote, .govuk-radios__input + label .tl-article--content .wysiwyg-indent1, .tl-article--content .govuk-radios__input + label .wysiwyg-indent1, .govuk-radios__input + label .tl-community--post--content blockquote, .tl-community--post--content .govuk-radios__input + label blockquote {
+  display: none;
+}
+.govuk-radios__input:checked + label .govuk-inset-text, .govuk-radios__input:checked + label .tl-article--content blockquote, .tl-article--content .govuk-radios__input:checked + label blockquote, .govuk-radios__input:checked + label .tl-article--content .wysiwyg-indent1, .tl-article--content .govuk-radios__input:checked + label .wysiwyg-indent1, .govuk-radios__input:checked + label .tl-community--post--content blockquote, .tl-community--post--content .govuk-radios__input:checked + label blockquote {
+  display: inline-block;
+}
+
 .tl-newsletter--list li:nth-child(n+5) {
   display: none;
 }
