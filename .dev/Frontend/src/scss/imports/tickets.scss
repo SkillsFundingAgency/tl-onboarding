@@ -1,8 +1,9 @@
 .tl-ticket--form {
     input {
 
-        &[type="text"] {
+        &[type="text"], &[type="tel"], &[type="number"] {
             @extend .govuk-input;
+            @extend .govuk-input--width-20;
         }
 
         &[type="submit"] {
@@ -12,6 +13,7 @@
 
     .nesty-input {
         @extend .govuk-input;
+        max-width: 41ex !important;
     }
 
     textarea {
@@ -29,10 +31,6 @@
 
     p {
         @extend .govuk-body;
-    }
-
-    .request_subject {
-        display: none;
     }
 
     #request_description_hint {
@@ -57,11 +55,19 @@
         @extend .govuk-error-message;
     }
 
-    #request_description_label {
+    span.optional {
+        display: inline-block;
+        margin-left: 5px;
+    }
+}
+
+
+.tl-reason {
+    label[id^='request_custom_fields'], input[id^='request_custom_fields'], .nesty-input {
         display: none;
     }
 }
 
-.request_ticket_form_id {
+#request_subject_label, #request_subject {
     display: none;
 }
