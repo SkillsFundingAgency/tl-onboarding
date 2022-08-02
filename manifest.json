@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Answerbot",
   "author": "Ash Anderton",
-  "version": "2.5.20",
+  "version": "2.5.21",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -361,21 +361,14 @@
           "type": "text",
           "description": "Name Field ID",
           "label": "Name field ID",
-          "value": "360019503240"
+          "value": "360019751459"
         },
         {
           "identifier": "field_id_school",
           "type": "text",
           "description": "Company Field ID",
           "label": "Company field ID",
-          "value": "1"
-        },
-        {
-          "identifier": "field_id_reason",
-          "type": "text",
-          "description": "Contact Reason Field ID",
-          "label": "Contact Reason field ID",
-          "value": "360019751459"
+          "value": "6950614738450"
         }
       ]
     },
