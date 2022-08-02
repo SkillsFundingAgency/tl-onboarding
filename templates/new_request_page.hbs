@@ -119,7 +119,7 @@
 
         $("div[id$='_error']").each(function () {
             var text = $(this).text();
-            $(this).text(text.replace('Name: cannot be blank', 'Enter your name').replace('Requester: Email:  cannot be blank', 'Enter your email address').replace('Requester: Email: cannot be blank', 'Enter your email address').replace('School or college name: cannot be blank', 'Enter your School or college name').replace('Description: cannot be blank', 'Enter your message').replace('Subject: cannot be blank', 'Choose a subject'));
+            $(this).text(text.replace('Name: cannot be blank', 'Enter your name').replace('Requester: Email:  cannot be blank', 'Enter your email address').replace('Requester: Email: cannot be blank', 'Enter your email address').replace('School or college name: cannot be blank', 'Enter your school or college's name').replace('Description: cannot be blank', 'Enter your message').replace('Subject: cannot be blank', 'Choose a subject'));
         });
         $("#request_anonymous_requester_email_error:contains('is not properly formatted')").text("Enter an email address in the correct format, like name@example.com");
 
