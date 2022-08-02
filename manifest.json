@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Answerbot",
   "author": "Ash Anderton",
-  "version": "2.5.17",
+  "version": "2.5.19",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -345,20 +345,6 @@
           "value": "360005433999"
         },
         {
-          "identifier": "field_id_name",
-          "type": "text",
-          "description": "Sitewide",
-          "label": "Name Form ID",
-          "value": "360019503240"
-        },
-        {
-          "identifier": "field_id_subject",
-          "type": "text",
-          "description": "Sitewide",
-          "label": "Subject Form ID",
-          "value": "360019751459"
-        },
-        {
           "identifier": "subdomain",
           "type": "text",
           "description": "Subdomain of ZD instance",
@@ -375,21 +361,21 @@
           "type": "text",
           "description": "Name Field ID",
           "label": "Name field ID",
-          "value": ""
+          "value": "360019503240"
         },
         {
           "identifier": "field_id_company",
           "type": "text",
           "description": "Company Field ID",
           "label": "Company field ID",
-          "value": ""
+          "value": "1"
         },
         {
           "identifier": "field_id_reason",
           "type": "text",
           "description": "Contact Reason Field ID",
           "label": "Contact Reason field ID",
-          "value": ""
+          "value": "360019751459"
         }
       ]
     },
