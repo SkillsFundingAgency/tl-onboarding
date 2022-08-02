@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Answerbot",
   "author": "Ash Anderton",
-  "version": "2.5.16",
+  "version": "2.5.17",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -364,6 +364,32 @@
           "description": "Subdomain of ZD instance",
           "label": "Subdomain of ZD instance",
           "value": "esfa"
+        }
+      ]
+    },
+    {
+      "label": "Custom form field IDs",
+      "variables": [
+        {
+          "identifier": "field_id_name",
+          "type": "text",
+          "description": "Name Field ID",
+          "label": "Name field ID",
+          "value": "360019751459"
+        },
+        {
+          "identifier": "field_id_company",
+          "type": "text",
+          "description": "Company Field ID",
+          "label": "Company field ID",
+          "value": "360020522620"
+        },
+        {
+          "identifier": "field_id_reason",
+          "type": "text",
+          "description": "Contact Reason Field ID",
+          "label": "Contact Reason field ID",
+          "value": "4636997855378"
         }
       ]
     },
