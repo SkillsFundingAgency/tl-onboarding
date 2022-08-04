@@ -103,7 +103,7 @@
         /* Form Styling */
         $('.form-field.request_custom_fields_' + form_name_field_id).prepend('<h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-3">Your details</h2>');
         $("#request_description_label").html('Enter your message - be as detailed as you can');
-        $('label[for="request_anonymous_requester_email"]').text("Work email");
+        $('label[for="request_anonymous_requester_email"]').text("Email address");
         $('label[for="request-attachments"]').parent(".form-field").addClass('tl-js-hidden');
         var NameField = $('input#request_custom_fields_' + form_name_field_id).parent();
         NameField.insertBefore($('input#request_anonymous_requester_email').parent());
