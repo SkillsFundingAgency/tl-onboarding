@@ -3,73 +3,180 @@
 
 </script>
 
-
-
-<!-- Main content -->
-<main id="main-content" role="main">
-
-    <div class="govuk-width-container">
-        <div id="tl-breadcrumbs--help">
-            <div class="tl-breadcrumbs">
-                {{breadcrumbs}}
-            </div>
+<div class="govuk-width-container">
+    <div id="tl-breadcrumbs--help">
+        <div class="tl-breadcrumbs">
+            {{breadcrumbs}}
         </div>
     </div>
+</div>
+<div class="govuk-width-container govuk-main-wrapper">
 
-    <div class="govuk-width-container govuk-main-wrapper">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Contact us</h1>
+            <p class="govuk-body">
+                Use this form to send a message to the Department for Education (DfE) about T Levels. You can usually expect a reply within 2 working days.
+            </p>
 
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">Contact us</h1>
-                <p class="govuk-body">Use this form to send a message to the Department for Education (DfE) about T Levels. You can usually expect a reply within 2 working days. </p>
-                <p class="govuk-body">Before you send a question, check to see if it has been answered in the {{#link 'posts' class='govuk-link' }}T Level discussion forum{{/link}}</p>
-                <div class="tl-ticket--form">
-                    {{request_form}}
+
+            <div class="tl-ticket--form">
+                {{request_form}}
+
+                <div class="govuk-form-group govuk-!-margin-top-9" id="tl-reason">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                                What would you like to contact us about?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-reason" name="contact-reason" type="radio" value="Events and webinars">
+                                <label class="govuk-label govuk-radios__label" for="contact-reason">
+                                    Events and webinars
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-reason-2" name="contact-reason" type="radio" value="Funding and support">
+                                <label class="govuk-label govuk-radios__label" for="contact-reason-2">
+                                    Funding and support
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-reason-3" name="contact-reason" type="radio" value="Marketing and communications" aria-describedby="contact-reason-3-hint">
+                                <label class="govuk-label govuk-radios__label" for="contact-reason-3">
+                                    Marketing and communications
+                                    <div class="govuk-inset-text">
+                                        You can find <a href="https://www.gov.uk/government/collections/resources-and-materials-for-promoting-t-levels" class="govuk-link">T Level brand and marketing materials on GOV.UK</a>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-reason-4" name="contact-reason" type="radio" value="T Level Transition Programme" >
+                                <label class="govuk-label govuk-radios__label" for="contact-reason-4">
+                                    T Level Transition Programme
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-reason-5" name="contact-reason" type="radio" value="Something else">
+                                <label class="govuk-label govuk-radios__label" for="contact-reason-5">
+                                    Something else
+                                </label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+                <div class="govuk-form-group govuk-!-margin-top-5" id="tl-consent">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="tl-consent-check" name="consent" type="checkbox" value="agree">
+                            <label class="govuk-label govuk-checkboxes__label" for="tl-consent-check">
+                                By selecting this box you confirm that you consent to the Department for Education processing and storing your data for the purposes described in the <a href="https://www.gov.uk/government/publications/privacy-notice-for-key-stage-5-and-adult-education" class="govuk-link">privacy notice</a>.
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</main>
+</div>
 
 <script>
 
     const form_name_field_id = {{ settings.field_id_name }}
-    const form_subject_field_id = {{ settings.field_id_subject }}
+    const form_organisation_field_id = {{ settings.field_id_school }}
 
 
-    $(function () {
-        $("input[type='submit']").click(function () {
-            event.preventDefault;
-            var subjectselect = $(".nesty-input").text();
-            $("#request_subject").val(subjectselect);
-        });
-    });
+
+
+
 
     $(document).ready(function () {
-        if (isLoggedIn()) {
-            $.getJSON('/api/v2/users/me.json', function (data) {
-                $("#request_custom_fields_360019751459").val(data.user.name);
-            });
-        };
 
-        $('.form-field.request_custom_fields_' + form_name_field_id).prepend('<h2 class="govuk-heading-m govuk-!-margin-top-7">Your details</h2>');
-        $('.form-field.request_custom_fields_' + form_subject_field_id ).prepend('<h2 class="govuk-heading-m govuk-!-margin-top-7">Your message</h2>');
-        $("input[type='submit']").attr('value', 'Send');
-
-
+        /* Form Styling */
+        $('.form-field.request_custom_fields_' + form_name_field_id).prepend('<h2 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-3">Your details</h2>');
+        $("#request_description_label").html('Enter your message - be as detailed as you can');
+        $('label[for="request_anonymous_requester_email"]').text("Email address");
+        $('label[for="request-attachments"]').parent(".form-field").addClass('tl-js-hidden');
         var NameField = $('input#request_custom_fields_' + form_name_field_id).parent();
         NameField.insertBefore($('input#request_anonymous_requester_email').parent());
 
+        /* Validation Message Changes */
         $(".notification-error").each(function () {
             $(this).parent('.form-field').find("label").after(this);
             if (!$(this).parent('.form-field').find('#upload-error').length) {
                 $(this).parent('.form-field').addClass("govuk-form-group--error");
             }
-
         });
 
-        $('label[for="request_anonymous_requester_email"]').text("Email address");
+
+        $("div[id$='_error']").each(function () {
+            var text = $(this).text();
+            $(this).text(text.replace('Name: cannot be blank', 'Enter your name').replace('Requester: Email:  cannot be blank', 'Enter your email address').replace('Requester: Email: cannot be blank', 'Enter your email address').replace('School or college name: cannot be blank', "Enter your school or college's name").replace('Description: cannot be blank', 'Enter your message').replace('Subject: cannot be blank', 'Choose a subject'));
+        });
+        $("#request_anonymous_requester_email_error:contains('is not properly formatted')").text("Enter an email address in the correct format, like name@example.com");
+
+        /* Contact Reason Radio Buttons */
+        $('#tl-reason').insertAfter($('#request_subject_label'));
+        $('#request_subject').addClass('tl-reason');
+        $('#request_subject').insertAfter($('#tl-reason h1'));
+        $('#request_subject_error').insertAfter($('#tl-reason h1'));
+
+
+        $('#tl-reason input[type=radio]').change(function () {
+            var reasonlabel = $(this).val()
+            $("#request_subject").val(reasonlabel);
+        });
+
+        var currentsubject = $("#request_subject").val()
+
+        $('#tl-reason input[value="' + currentsubject +'"]').prop('checked', true);
+
+
+
+        /* Constent Checkbox */
+        $("input[type='submit']").attr('value', 'Send message').prop("disabled");
+        $("#tl-consent").insertBefore($(".request-form input[type='submit']"));
+        $('#tl-consent-check').change(function () {
+            $(".request-form input[type='submit']").prop("disabled", !this.checked);
+        }).change()
+
 
     });
 
 </script>
+
+
+<!-- Start of tlevelsemployertest Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
+
+<script type="text/javascript">
+    window.zESettings = {
+        webWidget: {
+            answerBot: {
+                avatar: {
+                    url: "{{settings.answerbot_icon}}",
+                    name: {
+                        "*": '{{settings.answerbot_name}}'
+                    }
+                },
+                title: {
+                    "en-gb": "T Levels support for schools and colleges"
+                },
+                search: {
+                    labels:
+                        ['answerbot']
+                },
+                contactOnlyAfterQuery: true
+            }
+        }
+    };
+</script>
+<!-- End of tlevelsemployertest Zendesk Widget script -->

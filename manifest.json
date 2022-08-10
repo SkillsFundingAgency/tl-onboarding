@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - Forum Guidance",
+  "name": "GDS Style - Answerbot",
   "author": "Ash Anderton",
-  "version": "2.5.10",
+  "version": "2.5.34",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -122,6 +122,13 @@
       "label": "Answerbot",
       "variables": [
         {
+          "identifier": "answerbot_enabled",
+          "type": "checkbox",
+          "description": "Enable Answerbot",
+          "label": "Show answerbot accross site",
+          "value": false
+        },
+        {
           "identifier": "answerbot_icon",
           "type": "file",
           "description": "Answerbot Icon",
@@ -132,7 +139,7 @@
           "type": "text",
           "description": "Name of the answerbot",
           "label": "Answerbot Name",
-          "value": "T Levels"
+          "value": "T Levels Support"
         },
         {
           "identifier": "answerbot_key",
@@ -338,25 +345,30 @@
           "value": "360005433999"
         },
         {
-          "identifier": "field_id_name",
-          "type": "text",
-          "description": "Sitewide",
-          "label": "Name Form ID",
-          "value": "360019503240"
-        },
-        {
-          "identifier": "field_id_subject",
-          "type": "text",
-          "description": "Sitewide",
-          "label": "Subject Form ID",
-          "value": "360019751459"
-        },
-        {
           "identifier": "subdomain",
           "type": "text",
           "description": "Subdomain of ZD instance",
           "label": "Subdomain of ZD instance",
           "value": "esfa"
+        }
+      ]
+    },
+    {
+      "label": "Custom form field IDs",
+      "variables": [
+        {
+          "identifier": "field_id_name",
+          "type": "text",
+          "description": "Name Field ID",
+          "label": "Name field ID",
+          "value": "360019751459"
+        },
+        {
+          "identifier": "field_id_school",
+          "type": "text",
+          "description": "Company Field ID",
+          "label": "Company field ID",
+          "value": "6950614738450"
         }
       ]
     },
