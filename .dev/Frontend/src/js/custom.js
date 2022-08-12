@@ -94,6 +94,19 @@ $("div.govuk-details__summary").click(function () {
     }
 });
 
+
+/* Open Close Chatbot */
+function openHelp() {
+    let iframe = $('#launcher');
+    let button = iframe.contents().find('button');
+    button.trigger("click");
+}
+function closeHelp() {
+    let iframe = $('#webWidget');
+    let button = iframe.contents().find('button');
+    button.trigger("click");
+}
+
 /* Follow/unfollow section subscription */
 $(document).ready(function () {
     if($('#follow-btn').length) {

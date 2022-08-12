@@ -273,45 +273,33 @@
 
 
 
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row tl-row-fill">
 
 
-            {{#if help_center.community_enabled}}
-            <div class="govuk-grid-column-one-half">
+            <div class="govuk-grid-column-one-half tl-row-fill">
                 <div class="tl-card">
-                    <h3 class="govuk-heading-m">Discussion forum</h3>
+                    <h3 class="govuk-heading-m">Have a T Levels question?</h3>
                     <p class="govuk-body">
-                        Use the community discussion forum to:
+                        Our T Levels support bot is here to help you find the answers.
                     </p>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>get answers to your T Level queries</li>
-                        <li>talk about delivering T Levels with people from other schools and colleges</li>
-                    </ul>
                     <p class="govuk-body govuk-!-margin-bottom-0">
-                        {{#link 'posts' class='govuk-button tl-home--forum govuk-!-margin-bottom-0' }}
-                        Go to the forum
-                        {{/link}}
+                        <a href="#" id="tl-home--answerbot" class="govuk-link">Ask a question</a>
 
                     </p>
 
                 </div>
             </div>
-            {{/if}}
 
-            <div class="govuk-grid-column-one-half">
+            <div class="govuk-grid-column-one-half tl-row-fill">
                 <div class="tl-card tl-js-hidden" id="tl-home--ticket">
                     <h3 class="govuk-heading-m">Contact us</h3>
                     <p class="govuk-body">
-                        Do you have questions about delivering T Levels? We're here to help.
+                        If you'd like to speak to someone about T Levels, contact us and we'll get back to you within 2 days.
                     </p>
-                    <p class="govuk-body">
-                        Send us a message and we'll get back to you within 2 days.
-                    </p>
-                    <p class="govuk-body govuk-!-margin-bottom-0">
-                        {{#link 'new_request' class='govuk-button tl-home--contact govuk-!-margin-bottom-0' }}
+                     <p class="govuk-body govuk-!-margin-bottom-0">
+                        {{#link 'new_request' class='govuk-link tl-home--contact govuk-!-margin-bottom-0' }}
                         Send a message
                         {{/link}}
-
                     </p>
 
                 </div>
@@ -335,8 +323,39 @@
   document.addEventListener('DOMContentLoaded', function() {
   	frontDoor('{{settings.tl_calendar_api_key}}', '{{settings.tl_calendar_data_source}}');
   });
+
+    $('#tl-home--answerbot').click(function () {
+    openHelp();
+    event.preventDefault();
+});
 </script>
 <script src="{{asset 'tavo-calendar.js'}}"></script>
+
+{{#if settings.answerbot_enabled}}
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
+<script type="text/javascript">
+    window.zESettings = {
+        webWidget: {
+            answerBot: {
+                avatar: {
+                    url: "{{settings.answerbot_icon}}",
+                    name: {
+                        "*": '{{settings.answerbot_name}}'
+                    }
+                },
+                title: {
+                    "en-gb": "T Levels support for schools and colleges"
+                },
+                search: {
+                    labels:
+                        ['answerbot']
+                },
+                contactOnlyAfterQuery: true
+            }
+        }
+    };
+</script>
+{{/if}}
 
 <script>
     if ($('.tl-home--panel--events--events').children().length == 0) {
