@@ -37,6 +37,29 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
                         <h2 class="govuk-heading-m tl-heading--bar">Featured news</h2>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.homepage_news_image}}" />
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                {{#each categories}}
+                                {{#is name "T Level news"}}
+                                {{#each sections}}
+                                {{#is name "Featured news"}}
+                                {{#each articles}}
+                                {{#if @first}}
+                                <span class="govuk-caption-m">{{date updated_at class='metadata' format='medium'}}</span>
+                                <h4 class="govuk-heading-m"><a id="tl-home-news--article" href="{{url}}">{{title}}</a></h4>
+                                <p class="govuk-body">{{excerpt body characters=200}}</p>
+                                {{/if}}
+                                {{/each}}
+                                {{/is}}
+                                {{/each}}
+                                <p class="govuk-body"><a id="tl-home-news--all" href="{{url}}" class="govuk-link">All T Level news</a></p>
+                                {{/is}}
+                                {{/each}}
+                            </div>
+                        </div>
                 </div>
 
 
