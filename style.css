@@ -6316,6 +6316,12 @@ x:-moz-any-link {
 .tl-heading--bar {
   border-bottom: 3px solid #0b0c0c;
   width: 100%;
+  padding-bottom: 10px;
+}
+@media (min-width: 40.0625em) {
+  .tl-heading--bar {
+    padding-bottom: 10px;
+  }
 }
 
 .tl-search {

@@ -140,4 +140,5 @@
 .tl-heading--bar {
     border-bottom: 3px solid $govuk-text-colour;
     width: 100%;
+    @include govuk-responsive-padding(2, "bottom");
 }
