@@ -49,7 +49,7 @@
                                 {{#each articles}}
                                 {{#if @first}}
                                 <span class="govuk-caption-m">{{date updated_at class='metadata' format='medium'}}</span>
-                                <h4 class="govuk-heading-m"><a id="tl-home-news--article" href="{{url}}">{{title}}</a></h4>
+                                <h4 class="govuk-heading-m"><a id="tl-home-news--article" class="govuk-link govuk-link--no-visited-state" href="{{url}}">{{title}}</a></h4>
                                 <p class="govuk-body">{{excerpt body characters=200}}</p>
                                 {{/if}}
                                 {{/each}}
