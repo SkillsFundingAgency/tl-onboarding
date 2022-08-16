@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Homepage",
   "author": "Ash Anderton",
-  "version": "2.5.35",
+  "version": "2.5.36",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -59,6 +59,13 @@
           "description": "Home page banner text",
           "label": "Home page banner text",
           "value": "Find out more"
+        },
+        {
+          "identifier": "homepage_banner_category",
+          "type": "text",
+          "description": "Home page banner category ID",
+          "label": "Home page banner category ID",
+          "value": "1"
         },
         {
           "identifier": "homepage_banner_image",
