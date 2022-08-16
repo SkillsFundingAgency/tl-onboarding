@@ -66,7 +66,7 @@
 
             </div>
 
-            <div class="govuk-grid-row tl-row-fill">
+            <div class="govuk-grid-row tl-row-fill govuk-!-margin-top-7">
                 <div class="govuk-grid-column-one-third tl-flex--column">
                     <h2 class="govuk-heading-m tl-heading--bar">T Level newsletter</h2>
                     {{#each categories}}
@@ -75,7 +75,7 @@
                     {{#is name "Newsletters"}}
                     {{#each articles}}
                     {{#if @first}}
-                    <h4 class="govuk-heading-m govuk-!-margin-top-2"><a id="tl-home-news--article" class="govuk-link govuk-link--no-visited-state" href="{{url}}">{{title}}</a></h4>
+                    <h4 class="govuk-heading-s govuk-!-margin-top-2"><a id="tl-home-news--article" class="govuk-link govuk-link--no-visited-state" href="{{url}}">{{title}}</a></h4>
                     <p class="govuk-body">{{excerpt body characters=100}}</p>
                     {{/if}}
                     {{/each}}
