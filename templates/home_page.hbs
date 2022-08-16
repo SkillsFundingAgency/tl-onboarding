@@ -41,7 +41,7 @@
                             <div class="govuk-grid-column-one-half">
                                 <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.homepage_news_image}}" />
                             </div>
-                            <div class="govuk-grid-column-one-half tl-row-fill">
+                            <div class="govuk-grid-column-one-half tl-flex--column">
                                 {{#each categories}}
                                 {{#is name "T Level news"}}
                                 {{#each sections}}
@@ -55,8 +55,8 @@
                                 {{/each}}
                                 {{/is}}
                                 {{/each}}
-                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                                <p class="govuk-body tl-text--right"><a id="tl-home-news--all" href="{{url}}" class="govuk-link">All T Level news</a></p>
+                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible tl-flex--grow">
+                                <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link">All T Level news</a></p>
                                 {{/is}}
                                 {{/each}}
                             </div>

@@ -144,3 +144,14 @@
     width: 100%;
     @include govuk-responsive-padding(2, "bottom");
 }
+
+.tl-flex{
+    &--column {
+    display: flex;
+    flex-direction: column;
+    }
+
+    &--grow {
+        flex-grow: 1;
+    }
+}

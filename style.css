@@ -6326,6 +6326,14 @@ x:-moz-any-link {
   }
 }
 
+.tl-flex--column {
+  display: flex;
+  flex-direction: column;
+}
+.tl-flex--grow {
+  flex-grow: 1;
+}
+
 .tl-search {
   display: flex;
 }
