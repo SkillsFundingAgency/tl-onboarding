@@ -61,13 +61,6 @@
           "value": "Find out more"
         },
         {
-          "identifier": "homepage_banner_button_category",
-          "type": "text",
-          "description": "Home page banner category ID",
-          "label": "Home page banner category ID",
-          "value": "4408836866066"
-        },
-        {
           "identifier": "homepage_banner_image",
           "type": "file",
           "description": "Home Page Banner Image",
