@@ -136,3 +136,8 @@
     min-height: 100%;
     object-position: right bottom;
 }
+
+.tl-heading--bar {
+    border-bottom: 3px solid $govuk-text-colour;
+    width: 100%;
+}

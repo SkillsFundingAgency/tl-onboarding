@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - Answerbot",
+  "name": "GDS Style - Homepage",
   "author": "Ash Anderton",
-  "version": "2.5.34",
+  "version": "2.5.35",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -36,6 +36,46 @@
         }
       ]
     },
+    {
+      "label": "Home Page Settings",
+      "variables": [
+        {
+          "identifier": "homepage_banner_title",
+          "type": "text",
+          "description": "Home page banner title",
+          "label": "Home page banner title",
+          "value": "A step-by-step guide to delivering T Levels"
+        },
+        {
+          "identifier": "homepage_banner_text",
+          "type": "text",
+          "description": "Home page banner text",
+          "label": "Home page banner text",
+          "value": "From registration to results, find out how to deliver T Levels at your school or college, and what support you can get."
+        },
+        {
+          "identifier": "homepage_banner_button",
+          "type": "text",
+          "description": "Home page banner text",
+          "label": "Home page banner text",
+          "value": "Find out more"
+        },
+        {
+          "identifier": "homepage_banner_button_category",
+          "type": "text",
+          "description": "Home page banner category ID",
+          "label": "Home page banner category ID",
+          "value": "4408836866066"
+        },
+        {
+          "identifier": "homepage_banner_image",
+          "type": "file",
+          "description": "Home Page Banner Image",
+          "label": "Banner Image"
+        }
+      ]
+    },
+
     {
       "label": "Home Page Images",
       "variables": [

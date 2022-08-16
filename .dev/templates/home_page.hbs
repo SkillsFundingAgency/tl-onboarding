@@ -8,318 +8,360 @@
 
 <!-- Main content -->
 <main id="main-content" role="main">
-    <!-- Hero Banner -->
-    <div class="tl-home--hero">
+    <!-- Banner -->
+    <section id="tl-home--banner">
         <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">{{settings.service_name}}</h1>
-                    <p class="tl-inlineblock govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">
-                        {{settings.service_description}}
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tl-home--panels">
-        <div class="govuk-width-container">
-            <h2 class="govuk-heading-m">T Level news and events</h2>
-
-            <div class="govuk-grid-row tl-row-fill">
-                <div class="govuk-grid-column-two-thirds tl-row-fill--column">
-                    <div class="tl-home--panel--blue">
-                        <div class="tl-home--panel--blue--content">
-                            <h3 class="govuk-heading-s">Featured news</h3>
-                            {{#each categories}}
-                            {{#is name "T Level news"}}
-                            {{#each sections}}
-                            {{#is name "Featured news"}}
-                            {{#each articles}}
-                            {{#if @first}}
-                            <h4 class="govuk-heading-s"><a id="tl-home-news--article" href="{{url}}">{{title}}</a></h4>
-                            <p class="govuk-body">{{excerpt body characters=200}}</p>
-                            <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: {{date updated_at class='metadata' format='medium'}}</p>
-                            {{/if}}
-                            {{/each}}
-                            {{/is}}
-                            {{/each}}
-                            {{/is}}
-                            {{/each}}
-                        </div>
-                        <div class="tl-home--panel--blue--image">
-                            <img src="{{settings.home_image_main}}" />
-                        </div>
-                    </div>
-
-                    <div class="tl-home--panel--white govuk-!-margin-top-4 govuk-!-margin-bottom-3">
-                        <div class="tl-home--panel--white--image">
-                            <img src="{{asset 'megaphone.png'}}" />
-                        </div>
-
-                        <div class="tl-home--panel--white--content">
-                            {{#each categories}}
-                            {{#is name "T Level news"}}
-                            {{#each sections}}
-                            {{#is name "Newsletters"}}
-                            {{#each articles}}
-                            {{#if @first}}
-                            <h4 class="govuk-heading-s govuk-!-margin-bottom-2"><a class="govuk-link" id="tl-home-news--newsletter" href="{{url}}">{{title}}</a></h4>
-                            <p class="govuk-body">The latest T Level updates from the Department for Education, the Institute, awarding organisations and more.</p>
-                            {{/if}}
-                            {{/each}}
-                            {{/is}}
-                            {{/each}}
-                            <p class="govuk-body"><a id="tl-home-news--all" href="{{url}}" class="govuk-link">All T Level news</a></p>
-                            {{/is}}
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-                <div class="govuk-grid-column-one-third tl-row-fill">
-                    <div class="tl-home--panel--events govuk-!-margin-bottom-3">
-                        <div class="tl-home--panel--events--content">
-                            <h3 class="govuk-heading-s">Upcoming events</h3>
-                            <div class="tl-home--panel--events--events">
-                                {{#each categories}}
-                                {{#is name "T Level events"}}
-                                {{#each sections}}
-                                {{#is name "T Level events"}}
-                                {{#each articles}}
-                                {{#is @index 0}}
-                                <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
-                                <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
-
-                                <script>
-                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
-
-                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
-                                    articlelabels.article.label_names.forEach(function (labelname) {
-
-                                        if (labelname.indexOf("date") != -1) {
-                                            var date = labelname.split('/')[1];
-                                            $("#tl-article--date--{{id}}").text(date);
-                                        }
-                                    });
-                                }
-                            });
-                                </script>
-                                {{/is}}
-                                {{#is @index 1}}
-                                <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
-                                <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
-                                <script>
-                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
-
-                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
-                                    articlelabels.article.label_names.forEach(function (labelname) {
-
-                                        if (labelname.indexOf("date") != -1) {
-                                            var date = labelname.split('/')[1];
-                                            $("#tl-article--date--{{id}}").text(date);
-                                        }
-                                    });
-                                }
-                            });
-                                </script>
-                                {{/is}}
-                                {{#is @index 2}}
-                                <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
-                                <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
-                                <script>
-                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
-
-                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
-                                    articlelabels.article.label_names.forEach(function (labelname) {
-
-                                        if (labelname.indexOf("date") != -1) {
-                                            var date = labelname.split('/')[1];
-                                            $("#tl-article--date--{{id}}").text(date);
-                                        }
-                                    });
-                                }
-                            });
-                                </script>
-                                {{/is}}
-
-                                {{/each}}
-                                {{#if articles}}
-                                <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
-                                {{/if}}
-                                {{/is}}
-                                {{/each}}
-                                {{/is}}
-                                {{/each}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Lower Content -->
-    <div class="govuk-width-container govuk-main-wrapper">
-        <div class="tl-home--categories">
-
-            {{#each categories}}
-            {{#is name "How this site works"}}
-            {{else}}
-            {{#is name "T Level news"}}
-            {{else}}
-            {{#is name "T Level events"}}
-            {{else}}
-            <div class="tl-home--category">
-                <span class="tl-home--category--image"></span>
-                <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
-                <p class="govuk-body">{{excerpt description}}</p>
-            </div>
-            {{/is}}
-            {{/is}}
-            {{/is}}
-            {{/each}}
-
-
-        </div>
-
-        <!-- Course Directory -->
-        <div class="tl-hero govuk-!-margin-bottom-8 govuk-!-margin-top-8">
-            <div class="tl-hero--column">
-                <div class="tl-hero--card">
-                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-0">Are your T Level details up to date?</h2>
-                    <p class="govuk-body">Make sure you have updated the National Careers Service Course Directory so students and employers can find your T Level courses.</p>
-                    <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link govuk-!-margin-bottom-0" id="tl-coursedirectory--link" href="https://support.tlevels.gov.uk/hc/en-gb/articles/360020077859-How-to-update-T-Level-course-information">How to update your T Level information</a></p>
-                </div>
-
-            </div>
-            <div class="tl-hero--column">
-                <img class="tl-image--cover" src="{{settings.coursedirectory_image}}" />
-            </div>
-        </div>
-
-
-
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-half">
-                <div class="govuk-inset-text">
-                    <h3 class="govuk-heading--small govuk-!-margin-bottom-0">T Levels brand and marketing materials</h3>
-                    <p class="govuk-body">Available on <a href="https://www.gov.uk/government/collections/resources-and-materials-for-promoting-t-levels" class="govuk-link" id="tl-home--marketing">GOV.UK</a></p>
-                </div>
-            </div>
-            <div class="govuk-grid-column-one-half">
-                <div class="govuk-inset-text">
-                    <h3 class="govuk-heading--small govuk-!-margin-bottom-0">Resources for employers</h3>
-                    <p class="govuk-body">Available on our <a href="https://employers.tlevels.gov.uk/hc/en-gb" id="tl-home--tlipse" class="govuk-link">industry placement employer support service</a></p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Calendar -->
-        <div id="tl-calendar" class="govuk-!-margin-bottom-8">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-
-                    <div class="accordion-header govuk-!-margin-bottom-6 govuk-!-margin-top-4">
-                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">{{settings.tl_calendar_title}}</h2>
-                    </div>
-                    <div class="section-body">
-                        <div class="spinner" data-calendar-state="loading">
-                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Loading <span class="lower-case">{{settings.tl_calendar_title}}</span>&hellip;</p>
-                            <div class="spinner__animation"></div>
-                        </div>
-                        <p class="govuk-body" data-calendar-state="error">{{settings.tl_calendar_title}} could not be loaded at this time. Please try again later.</p>
-                        <div class="govuk-grid-row event-wrapper" data-calendar-state="loaded">
-                            <div class="govuk-grid-column-one-third">
-                                <div id="events-calendar" data-set-min-height="events-calendar"></div>
+                    <div class="tl-home--banner">
+                        <div class="tl-home--banner--column">
+                            <div class="tl-home--banner--card govuk-!-padding-8">
+                                <h1 class="govuk-heading-xl govuk-!-margin-bottom-5 govuk-!-margin-top-0">{{settings.homepage_banner_title}}</h1>
+                                <p class="govuk-body-l">{{settings.homepage_banner_text}}</p>
+                                <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-button govuk-!-margin-bottom-0" id="tl-home-banner--cta" href="/hc/en-gb/articles/{{settings.homepage_banner_button_article}}">{{settings.homepage_banner_button}}</a></p>
                             </div>
-                            <div class="govuk-grid-column-two-thirds">
-                                <div class="event-list">
-                                    <p class="govuk-body" data-no-dates>There are no <span class="lower-case">{{settings.tl_calendar_title}}</span> to display.</p>
-                                    <div data-dates data-set-min-height="calendar">
-                                        <div class="feature-panels__panel feature-panels__panel--front-door feature-panels__panel--full" data-date-template>
-                                            <div class="feature-panels__panel__inner">
-                                                <span class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1" data-date-date></span>
-                                                <h3 class="govuk-heading-s govuk-!-margin-bottom-2" data-date-title></h3>
-                                                <div class="event-description-wrapper" data-date-description-wrapper>
-                                                    <p class="govuk-body govuk-!-margin-right-4 event-description" data-date-description></p>
-                                                    <a class="govuk-link govuk-!-margin-bottom-4 event-description-toggle tl-js-hidden" href="#" data-date-description-toggle>
-                                                        <span class="event-description-toggle__more">Show more</span>
-                                                        <span class="event-description-toggle__less">Show less</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul class="event-pagination govuk-!-margin-top-6 govuk-!-margin-bottom-6" data-event-pagination>
-                                        <li class="event-pagination__item">
-                                            <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="previous" href="#"><svg class="govuk-!-margin-right-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 9L5 5L9 1" stroke="#1D70B8" /><path d="M5 9L1 5L5 1" stroke="#1D70B8" /></svg>Previous</a>
-                                        </li>
-                                        <li class="event-pagination__item">
-                                            <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="next" href="#">Next<svg class="govuk-!-margin-left-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L0.999999 9" stroke="#1D70B8" /><path d="M5 1L9 5L5 9" stroke="#1D70B8" /></svg></a>
-                                        </li>
-                                    </ul>
+                        </div>
+                        <div class="tl-home--banner--column">
+                            <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.homepage_banner_image}}" />
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="tl-home--news">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                        <h2 class="govuk-heading-m tl-heading--bar">Featured news</h2>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+
+    <!-- OLD content -->
+    <main id="main-content" role="main">
+        <!-- Hero Banner -->
+        <div class="tl-home--hero">
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">{{settings.service_name}}</h1>
+                        <p class="tl-inlineblock govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">
+                            {{settings.service_description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tl-home--panels">
+            <div class="govuk-width-container">
+                <h2 class="govuk-heading-m">T Level news and events</h2>
+
+                <div class="govuk-grid-row tl-row-fill">
+                    <div class="govuk-grid-column-two-thirds tl-row-fill--column">
+                        <div class="tl-home--panel--blue">
+                            <div class="tl-home--panel--blue--content">
+                                <h3 class="govuk-heading-s">Featured news</h3>
+                                {{#each categories}}
+                                {{#is name "T Level news"}}
+                                {{#each sections}}
+                                {{#is name "Featured news"}}
+                                {{#each articles}}
+                                {{#if @first}}
+                                <h4 class="govuk-heading-s"><a id="tl-home-news--article" href="{{url}}">{{title}}</a></h4>
+                                <p class="govuk-body">{{excerpt body characters=200}}</p>
+                                <p class="govuk-body-s  govuk-!-margin-bottom-0">Last updated: {{date updated_at class='metadata' format='medium'}}</p>
+                                {{/if}}
+                                {{/each}}
+                                {{/is}}
+                                {{/each}}
+                                {{/is}}
+                                {{/each}}
+                            </div>
+                            <div class="tl-home--panel--blue--image">
+                                <img src="{{settings.home_image_main}}" />
+                            </div>
+                        </div>
+
+                        <div class="tl-home--panel--white govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+                            <div class="tl-home--panel--white--image">
+                                <img src="{{asset 'megaphone.png'}}" />
+                            </div>
+
+                            <div class="tl-home--panel--white--content">
+                                {{#each categories}}
+                                {{#is name "T Level news"}}
+                                {{#each sections}}
+                                {{#is name "Newsletters"}}
+                                {{#each articles}}
+                                {{#if @first}}
+                                <h4 class="govuk-heading-s govuk-!-margin-bottom-2"><a class="govuk-link" id="tl-home-news--newsletter" href="{{url}}">{{title}}</a></h4>
+                                <p class="govuk-body">The latest T Level updates from the Department for Education, the Institute, awarding organisations and more.</p>
+                                {{/if}}
+                                {{/each}}
+                                {{/is}}
+                                {{/each}}
+                                <p class="govuk-body"><a id="tl-home-news--all" href="{{url}}" class="govuk-link">All T Level news</a></p>
+                                {{/is}}
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-third tl-row-fill">
+                        <div class="tl-home--panel--events govuk-!-margin-bottom-3">
+                            <div class="tl-home--panel--events--content">
+                                <h3 class="govuk-heading-s">Upcoming events</h3>
+                                <div class="tl-home--panel--events--events">
+                                    {{#each categories}}
+                                    {{#is name "T Level events"}}
+                                    {{#each sections}}
+                                    {{#is name "T Level events"}}
+                                    {{#each articles}}
+                                    {{#is @index 0}}
+                                    <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                                    <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
+
+                                    <script>
+                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                    articlelabels.article.label_names.forEach(function (labelname) {
+
+                                        if (labelname.indexOf("date") != -1) {
+                                            var date = labelname.split('/')[1];
+                                            $("#tl-article--date--{{id}}").text(date);
+                                        }
+                                    });
+                                }
+                            });
+                                    </script>
+                                    {{/is}}
+                                    {{#is @index 1}}
+                                    <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                                    <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
+                                    <script>
+                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                    articlelabels.article.label_names.forEach(function (labelname) {
+
+                                        if (labelname.indexOf("date") != -1) {
+                                            var date = labelname.split('/')[1];
+                                            $("#tl-article--date--{{id}}").text(date);
+                                        }
+                                    });
+                                }
+                            });
+                                    </script>
+                                    {{/is}}
+                                    {{#is @index 2}}
+                                    <h4 class="govuk-heading-s govuk-!-margin-bottom-0 "><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                                    <p class="govuk-body-s govuk-!-padding-top-0 govuk-!-margin-bottom-4" id="tl-article--date--{{id}}"></p>
+                                    <script>
+                            $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                    articlelabels.article.label_names.forEach(function (labelname) {
+
+                                        if (labelname.indexOf("date") != -1) {
+                                            var date = labelname.split('/')[1];
+                                            $("#tl-article--date--{{id}}").text(date);
+                                        }
+                                    });
+                                }
+                            });
+                                    </script>
+                                    {{/is}}
+
+                                    {{/each}}
+                                    {{#if articles}}
+                                    <p class="govuk-body"><a id="tl-home-events--all" href="{{url}}" class="govuk-link">All T Level events</a></p>
+                                    {{/if}}
+                                    {{/is}}
+                                    {{/each}}
+                                    {{/is}}
+                                    {{/each}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <hr class="govuk-section-break govuk-section-break--visible">
 
 
 
-        <div class="govuk-grid-row tl-row-fill">
+        <!-- Lower Content -->
+        <div class="govuk-width-container govuk-main-wrapper">
+            <div class="tl-home--categories">
+
+                {{#each categories}}
+                {{#is name "How this site works"}}
+                {{else}}
+                {{#is name "T Level news"}}
+                {{else}}
+                {{#is name "T Level events"}}
+                {{else}}
+                <div class="tl-home--category">
+                    <span class="tl-home--category--image"></span>
+                    <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                    <p class="govuk-body">{{excerpt description}}</p>
+                </div>
+                {{/is}}
+                {{/is}}
+                {{/is}}
+                {{/each}}
 
 
-            <div class="govuk-grid-column-one-half tl-row-fill">
-                <div class="tl-card">
-                    <h3 class="govuk-heading-m">Have a T Levels question?</h3>
-                    <p class="govuk-body">
-                        Our T Levels support bot is here to help you find the answers.
-                    </p>
-                    <p class="govuk-body govuk-!-margin-bottom-0">
-                        <a href="#" id="tl-home--answerbot" class="govuk-link">Ask a question</a>
+            </div>
 
-                    </p>
+            <!-- Course Directory -->
+            <div class="tl-hero govuk-!-margin-bottom-8 govuk-!-margin-top-8">
+                <div class="tl-hero--column">
+                    <div class="tl-hero--card">
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-0">Are your T Level details up to date?</h2>
+                        <p class="govuk-body">Make sure you have updated the National Careers Service Course Directory so students and employers can find your T Level courses.</p>
+                        <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link govuk-!-margin-bottom-0" id="tl-coursedirectory--link" href="https://support.tlevels.gov.uk/hc/en-gb/articles/360020077859-How-to-update-T-Level-course-information">How to update your T Level information</a></p>
+                    </div>
 
+                </div>
+                <div class="tl-hero--column">
+                    <img class="tl-image--cover" src="{{settings.coursedirectory_image}}" />
                 </div>
             </div>
 
-            <div class="govuk-grid-column-one-half tl-row-fill">
-                <div class="tl-card tl-js-hidden" id="tl-home--ticket">
-                    <h3 class="govuk-heading-m">Contact us</h3>
-                    <p class="govuk-body">
-                        If you'd like to speak to someone about T Levels, contact us and we'll get back to you within 2 days.
-                    </p>
-                     <p class="govuk-body govuk-!-margin-bottom-0">
-                        {{#link 'new_request' class='govuk-link tl-home--contact govuk-!-margin-bottom-0' }}
-                        Send a message
-                        {{/link}}
-                    </p>
+
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                    <div class="govuk-inset-text">
+                        <h3 class="govuk-heading--small govuk-!-margin-bottom-0">T Levels brand and marketing materials</h3>
+                        <p class="govuk-body">Available on <a href="https://www.gov.uk/government/collections/resources-and-materials-for-promoting-t-levels" class="govuk-link" id="tl-home--marketing">GOV.UK</a></p>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                    <div class="govuk-inset-text">
+                        <h3 class="govuk-heading--small govuk-!-margin-bottom-0">Resources for employers</h3>
+                        <p class="govuk-body">Available on our <a href="https://employers.tlevels.gov.uk/hc/en-gb" id="tl-home--tlipse" class="govuk-link">industry placement employer support service</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Calendar -->
+            <div id="tl-calendar" class="govuk-!-margin-bottom-8">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+                        <div class="accordion-header govuk-!-margin-bottom-6 govuk-!-margin-top-4">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">{{settings.tl_calendar_title}}</h2>
+                        </div>
+                        <div class="section-body">
+                            <div class="spinner" data-calendar-state="loading">
+                                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Loading <span class="lower-case">{{settings.tl_calendar_title}}</span>&hellip;</p>
+                                <div class="spinner__animation"></div>
+                            </div>
+                            <p class="govuk-body" data-calendar-state="error">{{settings.tl_calendar_title}} could not be loaded at this time. Please try again later.</p>
+                            <div class="govuk-grid-row event-wrapper" data-calendar-state="loaded">
+                                <div class="govuk-grid-column-one-third">
+                                    <div id="events-calendar" data-set-min-height="events-calendar"></div>
+                                </div>
+                                <div class="govuk-grid-column-two-thirds">
+                                    <div class="event-list">
+                                        <p class="govuk-body" data-no-dates>There are no <span class="lower-case">{{settings.tl_calendar_title}}</span> to display.</p>
+                                        <div data-dates data-set-min-height="calendar">
+                                            <div class="feature-panels__panel feature-panels__panel--front-door feature-panels__panel--full" data-date-template>
+                                                <div class="feature-panels__panel__inner">
+                                                    <span class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1" data-date-date></span>
+                                                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2" data-date-title></h3>
+                                                    <div class="event-description-wrapper" data-date-description-wrapper>
+                                                        <p class="govuk-body govuk-!-margin-right-4 event-description" data-date-description></p>
+                                                        <a class="govuk-link govuk-!-margin-bottom-4 event-description-toggle tl-js-hidden" href="#" data-date-description-toggle>
+                                                            <span class="event-description-toggle__more">Show more</span>
+                                                            <span class="event-description-toggle__less">Show less</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="event-pagination govuk-!-margin-top-6 govuk-!-margin-bottom-6" data-event-pagination>
+                                            <li class="event-pagination__item">
+                                                <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="previous" href="#"><svg class="govuk-!-margin-right-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 9L5 5L9 1" stroke="#1D70B8" /><path d="M5 9L1 5L5 1" stroke="#1D70B8" /></svg>Previous</a>
+                                            </li>
+                                            <li class="event-pagination__item">
+                                                <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="next" href="#">Next<svg class="govuk-!-margin-left-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L0.999999 9" stroke="#1D70B8" /><path d="M5 1L9 5L5 9" stroke="#1D70B8" /></svg></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    if (!isAgent()) {
-                        $("#tl-home--ticket").show();
-                    }
-                });
-            </script>
+
+
+            <div class="govuk-grid-row tl-row-fill">
+
+
+                <div class="govuk-grid-column-one-half tl-row-fill">
+                    <div class="tl-card">
+                        <h3 class="govuk-heading-m">Have a T Levels question?</h3>
+                        <p class="govuk-body">
+                            Our T Levels support bot is here to help you find the answers.
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-0">
+                            <a href="#" id="tl-home--answerbot" class="govuk-link">Ask a question</a>
+
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-half tl-row-fill">
+                    <div class="tl-card tl-js-hidden" id="tl-home--ticket">
+                        <h3 class="govuk-heading-m">Contact us</h3>
+                        <p class="govuk-body">
+                            If you'd like to speak to someone about T Levels, contact us and we'll get back to you within 2 days.
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-0">
+                            {{#link 'new_request' class='govuk-link tl-home--contact govuk-!-margin-bottom-0' }}
+                            Send a message
+                            {{/link}}
+                        </p>
+
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        if (!isAgent()) {
+                            $("#tl-home--ticket").show();
+                        }
+                    });
+                </script>
+            </div>
+
+
         </div>
+    </main>
+    <script src="{{asset 'calendar.js'}}"></script>
 
-
-    </div>
-</main>
-<script src="{{asset 'calendar.js'}}"></script>
-
-<script>
+    <script>
   document.addEventListener('DOMContentLoaded', function() {
   	frontDoor('{{settings.tl_calendar_api_key}}', '{{settings.tl_calendar_data_source}}');
   });
@@ -328,12 +370,12 @@
     openHelp();
     event.preventDefault();
 });
-</script>
-<script src="{{asset 'tavo-calendar.js'}}"></script>
+    </script>
+    <script src="{{asset 'tavo-calendar.js'}}"></script>
 
-{{#if settings.answerbot_enabled}}
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
-<script type="text/javascript">
+    {{#if settings.answerbot_enabled}}
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
+    <script type="text/javascript">
     window.zESettings = {
         webWidget: {
             answerBot: {
@@ -354,11 +396,11 @@
             }
         }
     };
-</script>
-{{/if}}
+    </script>
+    {{/if}}
 
-<script>
-    if ($('.tl-home--panel--events--events').children().length == 0) {
-        $('.tl-home--panel--events--events').html('<p class="govuk-body">There are no upcoming T Level events at the moment.</p>')
-    }
-</script>
+    <script>
+        if ($('.tl-home--panel--events--events').children().length == 0) {
+            $('.tl-home--panel--events--events').html('<p class="govuk-body">There are no upcoming T Level events at the moment.</p>')
+        }
+    </script>

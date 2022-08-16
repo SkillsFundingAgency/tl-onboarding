@@ -57,43 +57,40 @@
     }
 }
 
-.tl-home--hero {
-    background-color: $govuk-link-colour;
-    color: govuk-colour("white");
-    @include govuk-responsive-padding(7, "top");
-    @include govuk-responsive-padding(7, "bottom");
+.tl-home--banner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 
-    * {
-        color: govuk-colour("white");
-    }
 
-    .govuk-link {
-        color: govuk-colour("white");
-    }
+    &--column {
+        display: flex;
+        flex-basis: 100%;
+        flex: 1;
+        width: 50%;
 
-    .govuk-details__summary:focus {
-        .govuk-details__summary-text {
-            color: govuk-colour("black");
+        &:first-child {
+            @include govuk-media-query($until: desktop) {
+                order: 2;
+            }
         }
     }
 
-    .tl-breadcrumbs {
-
-        li:before {
-            border-color: govuk-colour("white");
-        }
-
-        * {
-            color: govuk-colour("white") !important;
-        }
+    &--card {
+        @extend .tl-card--grey;
     }
 
-    &--minimal {
-        @include govuk-responsive-padding(2, "bottom");
-        @include govuk-responsive-padding(2, "top");
 
-        .tl-search--error {
-            text-align: left;
+    @include govuk-media-query($until: desktop) {
+        flex-direction: column;
+
+        &--column {
+            width: 100%;
+
+            &--image {
+                max-height: 73vw;
+            }
         }
     }
 }

@@ -6313,6 +6313,11 @@ x:-moz-any-link {
   object-position: right bottom;
 }
 
+.tl-heading--bar {
+  border-bottom: 3px solid #0b0c0c;
+  width: 100%;
+}
+
 .tl-search {
   display: flex;
 }
@@ -7157,53 +7162,33 @@ x:-moz-any-link {
   background-image: url("$home_image_6");
 }
 
-.tl-home--hero {
-  background-color: #1d70b8;
-  color: #ffffff;
-  padding-top: 25px;
-  padding-bottom: 25px;
+.tl-home--banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
-@media (min-width: 40.0625em) {
-  .tl-home--hero {
-    padding-top: 40px;
+.tl-home--banner--column {
+  display: flex;
+  flex-basis: 100%;
+  flex: 1;
+  width: 50%;
+}
+@media (max-width: 48.0525em) {
+  .tl-home--banner--column:first-child {
+    order: 2;
   }
 }
-@media (min-width: 40.0625em) {
-  .tl-home--hero {
-    padding-bottom: 40px;
+@media (max-width: 48.0525em) {
+  .tl-home--banner {
+    flex-direction: column;
   }
-}
-.tl-home--hero * {
-  color: #ffffff;
-}
-.tl-home--hero .govuk-link, .tl-home--hero .tl-event--pagination ul li a, .tl-event--pagination ul li .tl-home--hero a, .tl-home--hero .tl-community--comment--actions button, .tl-community--comment--actions .tl-home--hero button, .tl-home--hero .tl-community--post--actions button, .tl-community--post--actions .tl-home--hero button, .tl-home--hero .tl-community--post--content a, .tl-community--post--content .tl-home--hero a, .tl-home--hero .tl-phase-banner--link, .tl-home--hero .tl-search--pagination ul li a, .tl-home--hero .tl-community--pagination ul li a, .tl-search--pagination ul li .tl-home--hero a, .tl-community--pagination ul li .tl-home--hero a, .tl-home--hero .tl-article--sidebar a, .tl-article--sidebar .tl-home--hero a, .tl-home--hero .tl-article--vote .tl-article--vote--button, .tl-article--vote .tl-home--hero .tl-article--vote--button, .tl-home--hero .tl-article--content a, .tl-article--content .tl-home--hero a, .tl-home--hero .tl-article--backtotop {
-  color: #ffffff;
-}
-.tl-home--hero .govuk-details__summary:focus .govuk-details__summary-text, .tl-home--hero .tl-article--details__summary:focus .govuk-details__summary-text {
-  color: #0b0c0c;
-}
-.tl-home--hero .tl-breadcrumbs li:before {
-  border-color: #ffffff;
-}
-.tl-home--hero .tl-breadcrumbs * {
-  color: #ffffff !important;
-}
-.tl-home--hero--minimal {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-@media (min-width: 40.0625em) {
-  .tl-home--hero--minimal {
-    padding-bottom: 10px;
+  .tl-home--banner--column {
+    width: 100%;
   }
-}
-@media (min-width: 40.0625em) {
-  .tl-home--hero--minimal {
-    padding-top: 10px;
+  .tl-home--banner--column--image {
+    max-height: 73vw;
   }
-}
-.tl-home--hero--minimal .tl-search--error {
-  text-align: left;
 }
 
 .tl-home--panels {
@@ -7531,13 +7516,13 @@ x:-moz-any-link {
     padding: 20px;
   }
 }
-.tl-card--grey, .tl-hero--card {
+.tl-card--grey, .tl-hero--card, .tl-home--banner--card {
   background-color: #f3f2f1;
   padding: 30px;
   position: relative;
 }
 @media (max-width: 40.0525em) {
-  .tl-card--grey, .tl-hero--card {
+  .tl-card--grey, .tl-hero--card, .tl-home--banner--card {
     padding: 20px;
   }
 }
