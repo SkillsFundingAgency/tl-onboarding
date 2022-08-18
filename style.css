@@ -7314,6 +7314,21 @@ x:-moz-any-link {
   padding: 20px;
 }
 
+.tl-home-keydates {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #b1b4b6;
+}
+@media (min-width: 40.0625em) {
+  .tl-home-keydates {
+    padding-bottom: 5px;
+  }
+}
+.tl-home-keydates--date {
+  display: inline-block;
+  float: left;
+  min-width: 90px;
+}
+
 /*Breadcrumbs*/
 /* Prevents sections from showing in breadcrumb on article page */
 #tl-breadcrumbs--article ol li:nth-child(3), #tl-breadcrumbs--article ol li:nth-child(4) {

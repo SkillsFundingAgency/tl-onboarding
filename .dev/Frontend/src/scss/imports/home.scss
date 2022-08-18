@@ -214,3 +214,14 @@
         padding: 20px;
     }
 }
+
+.tl-home-keydates {
+    @include govuk-responsive-padding(1, "bottom");
+    border-bottom: 1px solid $govuk-border-colour;
+
+    &--date {
+        display: inline-block;
+        float: left;
+        min-width: 90px;
+    }
+}
