@@ -219,9 +219,10 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
                     <h2 class="govuk-heading-m tl-heading--bar">Information and guidance</h2>
+                    {{#each categories}}
+                    {{#is name "T Level events"}}
                     <div class="govuk-grid-row tl-row-fill">
-                        {{#each categories}}
-                        {{#is name "T Level events"}}
+
                         {{#each sections}}
                         {{#is name "T Level events"}}
                         {{#each articles}}
@@ -299,19 +300,21 @@
                         {{/each}}
                         {{/is}}
                         {{/each}}
+                    </div>
+                    <div class="govuk-grid-row tl-row-fill">
 
                         <div class="govuk-grid-column-full">
                             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible tl-flex--grow">
                             <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
                         </div>
+                    </div>
                         {{/is}}
                         {{/each}}
 
-                    </div>
+
                 </div>
                 </div>
             </div>
-        </div>
 
     </section>
 
