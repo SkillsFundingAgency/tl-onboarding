@@ -76,7 +76,7 @@
                     {{#is name "Newsletters"}}
                     {{#each articles}}
                     {{#if @first}}
-                    <h4 class="govuk-heading-s  govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a id="tl-home-news--article" class="govuk-link govuk-link--no-visited-state" href="{{url}}">{{title}}</a></h4>
+                    <h3 class="govuk-heading-s  govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a id="tl-home-news--article" class="govuk-link govuk-link--no-visited-state" href="{{url}}">{{title}}</a></h3>
                     <p class="govuk-body govuk-!-margin-bottom-0">The latest T Level updates from the Department for Education, the Institute, awarding organisations and more.</p>
                     {{/if}}
                     {{/each}}
@@ -100,7 +100,7 @@
                     {{#is @index 0}}
                     <div class="tl-home-keydates govuk-!-margin-top-1">
                         <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                        <h4 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                         <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -122,7 +122,7 @@
                     {{#is @index 1}}
                     <div class="tl-home-keydates">
                         <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                        <h4 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                         <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -144,7 +144,7 @@
                     {{#is @index 2}}
                     <div class="tl-home-keydates">
                         <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                        <h4 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h4>
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                         <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -210,6 +210,109 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section id="tl-events">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-m tl-heading--bar">Information and guidance</h2>
+
+
+
+                    <div class="govuk-grid-row">
+
+
+
+                        {{#each categories}}
+                        {{#is name "T Level events"}}
+                        {{#each sections}}
+                        {{#is name "T Level events"}}
+                        {{#each articles}}
+                        {{#is @index 0}}
+
+                        <div class="govuk-grid-one-third">
+                            <div class="tl-card--grey">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                                <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
+                                <script>
+                                $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                    if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                        articlelabels.article.label_names.forEach(function (labelname) {
+
+                                            if (labelname.indexOf("date") != -1) {
+                                                var date = labelname.split('/')[1];
+                                                $("#tl-article--date--{{id}}").text(date);
+                                            }
+                                        });
+                                    }
+                                });
+                                </script>
+
+                            </div>
+                        </div>
+                        {{/is}}
+                        {{#is @index 1}}
+                        <div class="govuk-grid-one-third">
+                            <div class="tl-card--grey">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                                <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
+                                <script>
+                                $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                    if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                        articlelabels.article.label_names.forEach(function (labelname) {
+
+                                            if (labelname.indexOf("date") != -1) {
+                                                var date = labelname.split('/')[1];
+                                                $("#tl-article--date--{{id}}").text(date);
+                                            }
+                                        });
+                                    }
+                                });
+                                </script>
+
+                            </div>
+                        </div>
+                        {{/is}}
+                        {{#is @index 2}}
+                        <div class="govuk-grid-one-third">
+                            <div class="tl-card--grey">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                                <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
+                                <script>
+                                $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
+
+                                    if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                        articlelabels.article.label_names.forEach(function (labelname) {
+
+                                            if (labelname.indexOf("date") != -1) {
+                                                var date = labelname.split('/')[1];
+                                                $("#tl-article--date--{{id}}").text(date);
+                                            }
+                                        });
+                                    }
+                                });
+                                </script>
+
+                            </div>
+                        </div>
+                        {{/is}}
+
+                        {{/each}}
+                        {{/is}}
+                        {{/each}}
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible tl-flex--grow">
+                        <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
+                        {{/is}}
+                        {{/each}}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
 </main>
