@@ -7369,6 +7369,9 @@ x:-moz-any-link {
     margin-right: 10px;
   }
 }
+.tl-home--category--image--5 {
+  background-image: url("$home_image_5");
+}
 .tl-home--category--image--6 {
   background-image: url("$home_image_6");
 }
