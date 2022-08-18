@@ -7175,6 +7175,9 @@ x:-moz-any-link {
     margin-right: 10px;
   }
 }
+.tl-home--category h3 {
+  word-break: break-word;
+}
 .tl-home--category:nth-child(2) .tl-home--category--image {
   background-image: url("$home_image_2");
 }
