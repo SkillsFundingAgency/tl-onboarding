@@ -249,3 +249,28 @@
     @include govuk-responsive-margin(1, "bottom");
     box-sizing: border-box;
 }
+
+.tl-home--category--image {
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-image: url("$home_image_1");
+    background-size: cover;
+    min-height: 150px;
+    display: block;
+    background-repeat: no-repeat;
+
+    @include govuk-media-query(mobile, tablet) {
+        display: inline-block;
+        width: 50%;
+        float: left;
+        margin-right: 10px;
+    }
+
+    &--6 {
+        background-image: url("$home_image_6");
+    }
+
+    &--7 {
+        background-image: url("$home_image_7");
+    }
+}

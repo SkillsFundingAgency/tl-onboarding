@@ -7352,6 +7352,30 @@ x:-moz-any-link {
   }
 }
 
+.tl-home--category--image {
+  max-width: 100%;
+  margin-bottom: 20px;
+  background-image: url("$home_image_1");
+  background-size: cover;
+  min-height: 150px;
+  display: block;
+  background-repeat: no-repeat;
+}
+@media (min-width: 20em) and (max-width: 40.0525em) {
+  .tl-home--category--image {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin-right: 10px;
+  }
+}
+.tl-home--category--image--6 {
+  background-image: url("$home_image_6");
+}
+.tl-home--category--image--7 {
+  background-image: url("$home_image_7");
+}
+
 /*Breadcrumbs*/
 /* Prevents sections from showing in breadcrumb on article page */
 #tl-breadcrumbs--article ol li:nth-child(3), #tl-breadcrumbs--article ol li:nth-child(4) {
