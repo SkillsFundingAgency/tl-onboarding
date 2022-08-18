@@ -7315,9 +7315,13 @@ x:-moz-any-link {
 }
 
 .tl-home-keydates--date {
-  display: inline-block;
-  float: left;
   min-width: 90px;
+}
+@media (min-width: 40.0625em) {
+  .tl-home-keydates--date {
+    display: inline-block;
+    float: left;
+  }
 }
 
 /*Breadcrumbs*/

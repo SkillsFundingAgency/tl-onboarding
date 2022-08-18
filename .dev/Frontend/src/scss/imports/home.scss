@@ -218,8 +218,11 @@
 .tl-home-keydates {
 
     &--date {
-        display: inline-block;
-        float: left;
+        @include govuk-media-query($from: tablet) {
+            display: inline-block;
+            float: left;
+        }
+
         min-width: 90px;
     }
 }
