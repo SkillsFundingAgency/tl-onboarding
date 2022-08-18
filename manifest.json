@@ -132,12 +132,6 @@
           "type": "file",
           "description": "Home page image 7",
           "label": "Image 7"
-        },
-        {
-          "identifier": "coursedirectory_image",
-          "type": "file",
-          "description": "Course directory section image",
-          "label": "Course directory section image"
         }
       ]
     },
