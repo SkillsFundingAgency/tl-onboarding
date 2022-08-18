@@ -1,7 +1,7 @@
 {
   "name": "GDS Style - Homepage",
   "author": "Ash Anderton",
-  "version": "2.5.78",
+  "version": "2.5.79",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -76,8 +76,8 @@
         {
           "identifier": "homepage_news_image",
           "type": "file",
-          "description": "Home Page Banner Image",
-          "label": "Banner Image"
+          "description": "Home Page News Image",
+          "label": "News Image"
         }
       ]
     },

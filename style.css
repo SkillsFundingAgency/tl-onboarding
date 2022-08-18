@@ -7625,6 +7625,17 @@ x:-moz-any-link {
     padding: 20px;
   }
 }
+.tl-card--black {
+  background-color: #f3f2f1;
+  padding: 30px;
+  margin: 20px 0;
+  border-bottom: 5px solid #0b0c0c;
+}
+@media (max-width: 40.0525em) {
+  .tl-card--black {
+    padding: 20px;
+  }
+}
 .tl-card--boxlinks {
   background-color: #f3f2f1;
   padding: 30px;
