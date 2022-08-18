@@ -216,13 +216,7 @@
 }
 
 .tl-home-keydates {
-    @include govuk-responsive-padding(0, "bottom");
-    margin-bottom: 13px;
-    border-bottom: 1px solid $govuk-border-colour;
-
-    &:last-child {
-        border-bottom: none !important;
-    }
+    padding: 10px 0;
 
     &--date {
         display: inline-block;

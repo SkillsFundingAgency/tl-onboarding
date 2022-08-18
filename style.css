@@ -7315,17 +7315,7 @@ x:-moz-any-link {
 }
 
 .tl-home-keydates {
-  padding-bottom: 0;
-  margin-bottom: 13px;
-  border-bottom: 1px solid #b1b4b6;
-}
-@media (min-width: 40.0625em) {
-  .tl-home-keydates {
-    padding-bottom: 0;
-  }
-}
-.tl-home-keydates:last-child {
-  border-bottom: none !important;
+  padding: 10px 0;
 }
 .tl-home-keydates--date {
   display: inline-block;
