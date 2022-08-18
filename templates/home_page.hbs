@@ -312,12 +312,52 @@
                         {{/each}}
 
 
+                    </div>
                 </div>
+            </div>
+    </section>
+
+    <section id="tl-more">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+
+
+                <!-- More information -->
+                <div class="govuk-grid-column-two-thirds-from-desktop govuk-grid-column-full">
+                    <h2 class="govuk-heading-m tl-heading--bar">More about T Levels</h2>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            {{#each categories}}
+                            {{#is name "Case studies"}}
+                            <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.home_image_5}}" />
+                            <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                            <p class="govuk-body">{{excerpt description}}</p>
+                            {{/is}}
+                            {{/each}}
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                            {{#each categories}}
+                            {{#is name "T Level Transition Programme"}}
+                            <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.home_image_6}}" />
+                            <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                            <p class="govuk-body">{{excerpt description}}</p>
+                            {{/is}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <!-- Help employers find -->
+                <div class="govuk-grid-column-one-third-from-desktop govuk-grid-column-full">
+                    <h2 class="govuk-heading-m tl-heading--bar">Help employers find you</h2>
+                    <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.home_image_6}}" />
+                    <h3 class="govuk-heading-m"><a href="https://support.tlevels.gov.uk/hc/en-gb/articles/360020077859-How-to-update-T-Level-course-information" class="govuk-link" GTMname="Update your information">Update your information</a></h3>
+                    <p class="govuk-body">Have you updated the National Careers Service Course Directory so students and employers can find you?</p>
+
                 </div>
             </div>
 
+        </div>
     </section>
-
 </main>
 
 
@@ -361,59 +401,6 @@
 
             </div>
 
-            <!-- Calendar -->
-            <div id="tl-calendar" class="govuk-!-margin-bottom-8">
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-full">
-
-                        <div class="accordion-header govuk-!-margin-bottom-6 govuk-!-margin-top-4">
-                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">{{settings.tl_calendar_title}}</h2>
-                        </div>
-                        <div class="section-body">
-                            <div class="spinner" data-calendar-state="loading">
-                                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Loading <span class="lower-case">{{settings.tl_calendar_title}}</span>&hellip;</p>
-                                <div class="spinner__animation"></div>
-                            </div>
-                            <p class="govuk-body" data-calendar-state="error">{{settings.tl_calendar_title}} could not be loaded at this time. Please try again later.</p>
-                            <div class="govuk-grid-row event-wrapper" data-calendar-state="loaded">
-                                <div class="govuk-grid-column-one-third">
-                                    <div id="events-calendar" data-set-min-height="events-calendar"></div>
-                                </div>
-                                <div class="govuk-grid-column-two-thirds">
-                                    <div class="event-list">
-                                        <p class="govuk-body" data-no-dates>There are no <span class="lower-case">{{settings.tl_calendar_title}}</span> to display.</p>
-                                        <div data-dates data-set-min-height="calendar">
-                                            <div class="feature-panels__panel feature-panels__panel--front-door feature-panels__panel--full" data-date-template>
-                                                <div class="feature-panels__panel__inner">
-                                                    <span class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1" data-date-date></span>
-                                                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2" data-date-title></h3>
-                                                    <div class="event-description-wrapper" data-date-description-wrapper>
-                                                        <p class="govuk-body govuk-!-margin-right-4 event-description" data-date-description></p>
-                                                        <a class="govuk-link govuk-!-margin-bottom-4 event-description-toggle tl-js-hidden" href="#" data-date-description-toggle>
-                                                            <span class="event-description-toggle__more">Show more</span>
-                                                            <span class="event-description-toggle__less">Show less</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="event-pagination govuk-!-margin-top-6 govuk-!-margin-bottom-6" data-event-pagination>
-                                            <li class="event-pagination__item">
-                                                <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="previous" href="#"><svg class="govuk-!-margin-right-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 9L5 5L9 1" stroke="#1D70B8" /><path d="M5 9L1 5L5 1" stroke="#1D70B8" /></svg>Previous</a>
-                                            </li>
-                                            <li class="event-pagination__item">
-                                                <a class="govuk-link govuk-!-font-size-19" data-event-pagination-direction="next" href="#">Next<svg class="govuk-!-margin-left-1" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L0.999999 9" stroke="#1D70B8" /><path d="M5 1L9 5L5 9" stroke="#1D70B8" /></svg></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <hr class="govuk-section-break govuk-section-break--visible">
 
 
 
