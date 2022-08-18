@@ -7150,6 +7150,11 @@ x:-moz-any-link {
 }
 @media (min-width: 40.0625em) {
   .tl-home--category {
+    width: calc(50% - 30px);
+  }
+}
+@media (min-width: 48.0625em) {
+  .tl-home--category {
     width: calc(25% - 30px);
   }
 }
@@ -7158,9 +7163,17 @@ x:-moz-any-link {
   margin-bottom: 20px;
   background-image: url("$home_image_1");
   background-size: cover;
-  min-height: 200px;
+  min-height: 150px;
   display: block;
   background-repeat: no-repeat;
+}
+@media (max-width: 19.99em) {
+  .tl-home--category .tl-home--category--image {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin-right: 10px;
+  }
 }
 .tl-home--category:nth-child(2) .tl-home--category--image {
   background-image: url("$home_image_2");

@@ -177,36 +177,37 @@
     <section id="tl-information">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-                <h2 class="govuk-heading-m tl-heading--bar">Information and guidance</h2>
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-m tl-heading--bar">Information and guidance</h2>
 
-                <div class="tl-home--categories">
+                    <div class="tl-home--categories">
 
-                    {{#each categories}}
-                    {{#is name "How this site works"}}
-                    {{else}}
-                    {{#is name "T Level news"}}
-                    {{else}}
-                    {{#is name "T Level events"}}
-                    {{else}}
-                    {{#is name "New to T Levels"}}
-                    {{else}}
-                    {{#is name "T Level Transition Programme"}}
-                    {{else}}
-                    <div class="tl-home--category">
-                        <span class="tl-home--category--image"></span>
-                        <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
-                        <p class="govuk-body">{{excerpt description}}</p>
+                        {{#each categories}}
+                        {{#is name "How this site works"}}
+                        {{else}}
+                        {{#is name "T Level news"}}
+                        {{else}}
+                        {{#is name "T Level events"}}
+                        {{else}}
+                        {{#is name "New to T Levels"}}
+                        {{else}}
+                        {{#is name "T Level Transition Programme"}}
+                        {{else}}
+                        <div class="tl-home--category">
+                            <span class="tl-home--category--image"></span>
+                            <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                            <p class="govuk-body">{{excerpt description}}</p>
+                        </div>
+                        {{/is}}
+                        {{/is}}
+                        {{/is}}
+                        {{/is}}
+                        {{/is}}
+                        {{/each}}
+
+
                     </div>
-                    {{/is}}
-                    {{/is}}
-                    {{/is}}
-                    {{/is}}
-                    {{/is}}
-                    {{/each}}
-
-
                 </div>
-
             </div>
         </div>
     </section>

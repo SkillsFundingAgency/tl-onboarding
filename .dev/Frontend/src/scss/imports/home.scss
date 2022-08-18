@@ -12,6 +12,10 @@
     @include govuk-responsive-margin(3, "bottom");
 
     @include govuk-media-query($from: tablet) {
+        width: calc(50% - 30px);
+    }
+
+    @include govuk-media-query($from: desktop) {
         width: calc(25% - 30px);
     }
 
@@ -20,9 +24,16 @@
         margin-bottom: 20px;
         background-image: url("$home_image_1");
         background-size: cover;
-        min-height: 200px;
+        min-height: 150px;
         display: block;
         background-repeat: no-repeat;
+
+        @include govuk-media-query($until: mobile) {
+            display: inline-block;
+            width: 50%;
+            float: left;
+            margin-right: 10px;
+        }
     }
 
 
