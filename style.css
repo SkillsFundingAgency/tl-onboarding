@@ -7167,7 +7167,7 @@ x:-moz-any-link {
   display: block;
   background-repeat: no-repeat;
 }
-@media (max-width: 19.99em) {
+@media (min-width: 20em) and (max-width: 40.0525em) {
   .tl-home--category .tl-home--category--image {
     display: inline-block;
     width: 50%;

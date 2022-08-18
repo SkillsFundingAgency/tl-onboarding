@@ -28,7 +28,7 @@
         display: block;
         background-repeat: no-repeat;
 
-        @include govuk-media-query($until: mobile) {
+        @include govuk-media-query(mobile, tablet) {
             display: inline-block;
             width: 50%;
             float: left;
