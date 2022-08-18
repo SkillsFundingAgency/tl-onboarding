@@ -7357,7 +7357,7 @@ x:-moz-any-link {
   margin-bottom: 20px;
   background-image: url("$home_image_1");
   background-size: cover;
-  min-height: 150px;
+  min-height: 200px;
   display: block;
   background-repeat: no-repeat;
 }
