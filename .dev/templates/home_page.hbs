@@ -33,6 +33,7 @@
     </section>
 
     <section id="tl-home--news">
+        <!-- NEWS -->
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
@@ -65,7 +66,7 @@
 
 
             </div>
-
+            <!-- NEWSLETTER -->
             <div class="govuk-grid-row tl-row-fill govuk-!-margin-top-7">
                 <div class="govuk-grid-column-one-third-from-desktop govuk-grid-column-full tl-flex--column govuk-!-margin-bottom-7">
                     <h2 class="govuk-heading-m tl-heading--bar">T Level newsletter</h2>
@@ -86,6 +87,8 @@
                     {{/is}}
                     {{/each}}
                 </div>
+
+                <!-- KEY DATES -->
                 <div class="govuk-grid-column-two-thirds-from-desktop govuk-grid-column-full tl-flex--column govuk-!-margin-bottom-7">
                     <h2 class="govuk-heading-m tl-heading--bar">Key dates and deadlines</h2>
 
@@ -168,6 +171,38 @@
                     {{/is}}
                     {{/each}}
                 </div>
+            </div>
+        </div>
+    </section>
+    <section id="tl-information">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="tl-home--categories">
+
+                    {{#each categories}}
+                    {{#is name "How this site works"}}
+                    {{else}}
+                    {{#is name "T Level news"}}
+                    {{else}}
+                    {{#is name "T Level events"}}
+                    {{else}}
+                    {{#is name "New to T Levels"}}
+                    {{else}}
+                    {{#is name "T Level Transition Programme"}}
+                    {{else}}
+                    <div class="tl-home--category">
+                        <span class="tl-home--category--image"></span>
+                        <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                        <p class="govuk-body">{{excerpt description}}</p>
+                    </div>
+                    {{/is}}
+                    {{/is}}
+                    {{/is}}
+                    {{/each}}
+
+
+                </div>
+
             </div>
         </div>
     </section>

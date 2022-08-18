@@ -7150,7 +7150,7 @@ x:-moz-any-link {
 }
 @media (min-width: 40.0625em) {
   .tl-home--category {
-    width: calc(33.333% - 30px);
+    width: calc(25% - 30px);
   }
 }
 .tl-home--category .tl-home--category--image {
