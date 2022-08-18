@@ -56,6 +56,10 @@
     }
 }
 
+.tl-overflow--auto {
+    overflow: auto;
+}
+
 .tl-push {
     &--right {
         float: right;

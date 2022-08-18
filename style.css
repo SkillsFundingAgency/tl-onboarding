@@ -6218,6 +6218,10 @@ x:-moz-any-link {
   text-align: left;
 }
 
+.tl-overflow--auto {
+  overflow: auto;
+}
+
 .tl-push--right {
   float: right;
 }
