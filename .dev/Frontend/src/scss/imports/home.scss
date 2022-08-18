@@ -244,7 +244,7 @@
 
 .tl-home--events--card {
     @extend .tl-card--grey;
-    padding: 20px;
+    padding: 20px !important;
     width: 100%;
     @include govuk-responsive-margin(1, "bottom");
 }
