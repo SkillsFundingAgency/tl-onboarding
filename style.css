@@ -7571,9 +7571,6 @@ x:-moz-any-link {
   background-color: #ffdd00;
   color: #0b0c0c;
 }
-.tl-phase-banner--home {
-  border-bottom: none;
-}
 .tl-phase-banner--link {
   font-weight: bold;
 }
