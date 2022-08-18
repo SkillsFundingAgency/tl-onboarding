@@ -241,3 +241,10 @@
         min-width: 90px;
     }
 }
+
+.tl-home--events--card {
+    @extend .tl-card--grey;
+    padding: 20px;
+    width: 100%;
+    @include govuk-responsive-margin(1, "bottom");
+}
