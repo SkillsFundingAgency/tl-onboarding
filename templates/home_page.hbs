@@ -219,13 +219,7 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
                     <h2 class="govuk-heading-m tl-heading--bar">Information and guidance</h2>
-
-
-
-                    <div class="govuk-grid-row">
-
-
-
+                    <div class="govuk-grid-row tl-row-fill">
                         {{#each categories}}
                         {{#is name "T Level events"}}
                         {{#each sections}}
@@ -233,7 +227,7 @@
                         {{#each articles}}
                         {{#is @index 0}}
 
-                        <div class="govuk-grid-column-one-third">
+                        <div class="govuk-grid-column-one-third tl-row-fill">
                             <div class="tl-card--grey">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                                 <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
@@ -256,7 +250,7 @@
                         </div>
                         {{/is}}
                         {{#is @index 1}}
-                        <div class="govuk-grid-column-one-third">
+                        <div class="govuk-grid-column-one-third tl-row-fill">
                             <div class="tl-card--grey">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                                 <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
@@ -279,7 +273,7 @@
                         </div>
                         {{/is}}
                         {{#is @index 2}}
-                        <div class="govuk-grid-column-one-third">
+                        <div class="govuk-grid-column-one-third tl-row-fill">
                             <div class="tl-card--grey">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                                 <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
@@ -305,13 +299,16 @@
                         {{/each}}
                         {{/is}}
                         {{/each}}
-                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible tl-flex--grow">
-                        <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
+
+                        <div class="govuk-grid-column-full">
+                            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible tl-flex--grow">
+                            <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
+                        </div>
                         {{/is}}
                         {{/each}}
 
-
                     </div>
+                </div>
                 </div>
             </div>
         </div>
