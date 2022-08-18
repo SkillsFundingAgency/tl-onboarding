@@ -219,27 +219,7 @@
     <main id="main-content" role="main">
         <!-- Lower Content -->
         <div class="govuk-width-container govuk-main-wrapper">
-            <div class="tl-home--categories">
 
-                {{#each categories}}
-                {{#is name "How this site works"}}
-                {{else}}
-                {{#is name "T Level news"}}
-                {{else}}
-                {{#is name "T Level events"}}
-                {{else}}
-                <div class="tl-home--category">
-                    <span class="tl-home--category--image"></span>
-                    <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
-                    <p class="govuk-body">{{excerpt description}}</p>
-                </div>
-                {{/is}}
-                {{/is}}
-                {{/is}}
-                {{/each}}
-
-
-            </div>
 
             <!-- Course Directory -->
             <div class="tl-hero govuk-!-margin-bottom-8 govuk-!-margin-top-8">
