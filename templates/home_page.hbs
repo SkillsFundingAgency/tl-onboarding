@@ -193,11 +193,14 @@
                         {{else}}
                         {{#is name "T Level Transition Programme"}}
                         {{else}}
+                        {{#is name "Case studies"}}
+                        {{else}}
                         <div class="tl-home--category">
                             <span class="tl-home--category--image"></span>
                             <h3 class="govuk-heading-m"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
                             <p class="govuk-body">{{excerpt description}}</p>
                         </div>
+                        {{/is}}
                         {{/is}}
                         {{/is}}
                         {{/is}}
