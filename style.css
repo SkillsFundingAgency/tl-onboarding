@@ -6320,7 +6320,7 @@ x:-moz-any-link {
 }
 
 .tl-heading--bar {
-  border-bottom: 3px solid #0b0c0c;
+  border-bottom: 4px solid #0b0c0c;
   width: 100%;
   padding-bottom: 10px;
 }
@@ -6336,6 +6336,10 @@ x:-moz-any-link {
 }
 .tl-flex--grow {
   flex-grow: 1;
+}
+
+.tl-section-break {
+  border-bottom: 2px solid #b1b4b6;
 }
 
 .tl-search {

@@ -144,7 +144,7 @@
 }
 
 .tl-heading--bar {
-    border-bottom: 3px solid $govuk-text-colour;
+    border-bottom: 4px solid $govuk-text-colour;
     width: 100%;
     @include govuk-responsive-padding(2, "bottom");
 }
@@ -158,4 +158,8 @@
     &--grow {
         flex-grow: 1;
     }
+}
+
+.tl-section-break {
+    border-bottom: 2px solid $govuk-border-colour;
 }
