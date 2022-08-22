@@ -86,6 +86,21 @@
                     <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All newsletters</a></p>
                     {{/is}}
                     {{/each}}
+
+                    <script>
+                        $(document).ready(function () {
+                            $('h3 a:contains("- T Level Newsletter")').contents().each(function () {
+                                if (this.nodeType == 3) {
+                                    $(this).parent().html(function (_, oldValue) {
+                                        return oldValue.replace(/- /g, "<span class='tl-hidden'>$&")
+                                    })
+                                    $(this).parent().html(function (_, oldValue2) {
+                                        return oldValue2.replace(/newsletter/g, "$&</span>")
+                                    })
+                                }
+                            });
+                        });
+                    </script>
                 </div>
 
                 <!-- KEY DATES -->
