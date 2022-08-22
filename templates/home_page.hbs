@@ -98,9 +98,9 @@
                     {{#is name "Key dates and deadlines"}}
                     {{#each articles}}
                     {{#is @index 0}}
-                    <div class="tl-home-keydates govuk-!-margin-top-1 tl-flex--column">
+                    <div class="tl-home-keydates govuk-!-margin-top-1">
                         <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title tl-flex--grow"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                         <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -120,9 +120,9 @@
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     {{/is}}
                     {{#is @index 1}}
-                    <div class="tl-home-keydates tl-flex--column">
+                    <div class="tl-home-keydates">
                         <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title tl-flex--grow"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                         <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -142,9 +142,9 @@
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     {{/is}}
                     {{#is @index 2}}
-                    <div class="tl-home-keydates tl-flex--column">
+                    <div class="tl-home-keydates">
                         <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title tl-flex--grow"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                         <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -198,7 +198,7 @@
                         {{else}}
                         <div class="tl-home--category">
                             <span class="tl-home--category--image"></span>
-                            <h3 class="govuk-heading-s govuk-!-margin-bottom-2""><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
                             <p class="govuk-body-s">{{excerpt description}}</p>
                         </div>
                         {{/is}}
@@ -231,8 +231,8 @@
                         {{#is @index 0}}
 
                         <div class="govuk-grid-column-one-third tl-row-fill">
-                            <div class="tl-home--events--card">
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                            <div class="tl-home--events--card tl-flex--column">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title tl-flex--grow"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                                 <p class="govuk-body govuk-!-margin-top-1 govuk-!-font-weight-bold govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
                                 <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
@@ -254,8 +254,8 @@
                         {{/is}}
                         {{#is @index 1}}
                         <div class="govuk-grid-column-one-third tl-row-fill">
-                            <div class="tl-home--events--card">
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                            <div class="tl-home--events--card tl-flex--column">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title tl-flex--grow"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                                 <p class="govuk-body govuk-!-margin-top-1 govuk-!-font-weight-bold govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
                                 <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
@@ -277,8 +277,8 @@
                         {{/is}}
                         {{#is @index 2}}
                         <div class="govuk-grid-column-one-third tl-row-fill">
-                            <div class="tl-home--events--card">
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                            <div class="tl-home--events--card tl-flex--column">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title tl-flex--grow"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
                                 <p class="govuk-body govuk-!-margin-top-1 govuk-!-font-weight-bold govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
                                 <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
