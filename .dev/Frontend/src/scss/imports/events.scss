@@ -9,25 +9,25 @@
         }
     }
 
-    &[data-event--filter="Course information"] {
+    &[data-event--filter~="Course information"] {
         li[data-event--labels*="Course information"] {
             display: block;
         }
     }
 
-    &[data-event--filter="Industry placements"] {
+    &[data-event--filter~="Industry placements"] {
         li[data-event--labels*="Industry placements"] {
             display: block;
         }
     }
 
-    &[data-event--filter="Networking"] {
+    &[data-event--filter~="Networking"] {
         li[data-event--labels*="Networking"] {
             display: block;
         }
     }
 
-    &[data-event--filter="T Level professional development"] {
+    &[data-event--filter~="T Level professional development"] {
         li[data-event--labels*="T Level professional development"] {
             display: block;
         }
