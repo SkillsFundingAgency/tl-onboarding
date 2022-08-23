@@ -33,7 +33,7 @@
         }
     }
 
-    &[data-event--filter="all"] {
+    &[data-event--filter~="all events"] {
         li {
             display: block;
         }

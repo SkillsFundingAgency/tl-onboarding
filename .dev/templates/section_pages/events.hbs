@@ -35,7 +35,7 @@
 
                     <div class="govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item" id="tl-events-filter--all" gtmname="All events">
-                            <input class="govuk-checkboxes__input" id="event-type" name="Event type" type="checkbox" value="all" checked="checked" gtmname="All events">
+                            <input class="govuk-checkboxes__input" id="event-type" name="Event type" type="checkbox" value="all events" checked="checked" gtmname="All events">
                             <label class="govuk-label govuk-checkboxes__label" for="event-type" gtmname="All events">
                                 All events
                             </label>
@@ -68,6 +68,8 @@
                         <script>
                             $('input:checkbox[name="Event type"]').change(
                                 function () {
+                                    var eventtype = $(".tl-event--list").attr("data-event--filter")
+
                                     if ($(this).is(':checked')) {
                                         var eventtype = eventtype + $(this).val();
                                         $(".tl-event--list").attr("data-event--filter", eventtype);
