@@ -107,7 +107,11 @@
                                 if (sessionStorage.getItem("eventfilter")) {
                                     var eventtype = sessionStorage.getItem('eventfilter');
                                     $('.tl-event--list').attr("data-event--filter", eventtype);
-                                    $('input:checkbox[value="' + eventtype + '"]').prop("checked", true);
+                                    $('input:checkbox[name="Event type"]').each(function (index) {
+                                        if (eventype.indexOf($(this).attr("Value")) {
+                                            $(this).prop("checked", true)
+                                        }
+                                    });
                                 }
                                 else {
                                     $('input:checkbox[name="Event type"]').prop("checked", true)
