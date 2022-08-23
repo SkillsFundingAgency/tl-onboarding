@@ -86,8 +86,6 @@
 
                             $('input:checkbox[name="Event type all"]').change(
                                 function () {
-                                    var eventtype = $(".tl-event--list").attr("data-event--filter")
-
                                     if ($(this).is(':checked')) {
                                         $('input:checkbox[name="Event type"]').each.prop("checked", true)
                                     }
