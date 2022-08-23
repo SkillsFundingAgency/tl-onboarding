@@ -35,92 +35,101 @@
 
                     <div class="govuk-checkboxes--small">
                         <div class="govuk-checkboxes__item" id="tl-events-filter--all" gtmname="All events">
-                            <input class="govuk-checkboxes__input" id="event-type" name="Event type all" type="checkbox" value="all events" checked="checked" gtmname="All events">
-                            <label class="govuk-label govuk-checkboxes__label" for="event-type" gtmname="All events">
+                            <input class="govuk-checkboxes__input" id="all" name="Event type all" type="checkbox" value="all events" gtmname="All events">
+                            <label class="govuk-label govuk-checkboxes__label" for="all" gtmname="All events">
                                 All events
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--courseinfo" gtmname="Course information events">
-                            <input class="govuk-checkboxes__input" id="event-type-2" name="Event type" type="checkbox" value="Course information" checked="checked" gtmname="Course information events">
-                            <label class="govuk-label govuk-checkboxes__label" for="event-type-2" gtmname="Course information events">
+                            <input class="govuk-checkboxes__input" id="course-information" name="Event type" type="checkbox" value="Course information" gtmname="Course information events">
+                            <label class="govuk-label govuk-checkboxes__label" for="course-information" gtmname="Course information events">
                                 Course information events
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--industryplacements" gtmname="Industry placements events">
-                            <input class="govuk-checkboxes__input" id="event-type-3" name="Event type" type="checkbox" value="Industry placements" checked="checked" gtmname="Industry placements events">
-                            <label class="govuk-label govuk-checkboxes__label" for="event-type-3" gtmname="Industry placements events">
+                            <input class="govuk-checkboxes__input" id="industry-placements" name="Event type" type="checkbox" value="Industry placements" gtmname="Industry placements events">
+                            <label class="govuk-label govuk-checkboxes__label" for="industry-placements" gtmname="Industry placements events">
                                 Industry placements events
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--networking" gtmname="Networking events">
-                            <input class="govuk-checkboxes__input" id="event-type-4" name="Event type" type="checkbox" value="Networking" checked="checked" gtmname="Networking events">
-                            <label class="govuk-label govuk-checkboxes__label" for="event-type-4" gtmname="Networking events">
+                            <input class="govuk-checkboxes__input" id="networking" name="Event type" type="checkbox" value="Networking" gtmname="Networking events">
+                            <label class="govuk-label govuk-checkboxes__label" for="networking" gtmname="Networking events">
                                 Networking events
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--professionaldevelopment" gtmname="T Level professional development events">
-                            <input class="govuk-checkboxes__input" id="event-type-5" name="Event type" type="checkbox" value="T Level professional development" checked="checked" gtmname="T Level professional development events">
-                            <label class="govuk-label govuk-checkboxes__label" for="event-type-5" gtmname="T Level professional development events">
+                            <input class="govuk-checkboxes__input" id="professional-development" name="Event type" type="checkbox" value="T Level professional development" gtmname="T Level professional development events">
+                            <label class="govuk-label govuk-checkboxes__label" for="professional-development" gtmname="T Level professional development events">
                                 T Level professional development events
                             </label>
                         </div>
 
                         <script>
-                            $('input:checkbox[name="Event type"]').change(
-                                function () {
-                                    var eventtype = $(".tl-event--list").attr("data-event--filter")
 
-                                    if ($(this).is(':checked')) {
-                                        var eventtype = eventtype + $(this).val();
-                                        $(".tl-event--list").attr("data-event--filter", eventtype);
-                                        sessionStorage.setItem('eventfilter', eventtype);
-                                    }
 
-                                    else if ($(this).not(':checked')) {
-                                        var eventtype = eventtype.replace($(this).val(), "") 
-                                        $(".tl-event--list").attr("data-event--filter", eventtype);
-                                        sessionStorage.setItem('eventfilter', eventtype);
-                                   
-                                    }
-                                });
 
-                            $('input:checkbox[name="Event type all"]').change(
-                                function () {
-                                    if ($(this).is(':checked')) {
-                                        $('input:checkbox[name="Event type"]').prop("checked", true)
-                                        var eventtype = "Course informationIndustry placementsNetworkingNetworkingT Level professional development";
-                                        $(".tl-event--list").attr("data-event--filter", eventtype);
-                                        sessionStorage.setItem('eventfilter', eventtype);
 
-                                    }
-
-                                    else if ($(this).not(':checked')) {
-                                        $('input:checkbox[name="Event type"]').prop("checked", false)
-                                        var eventtype = "";
-                                        $(".tl-event--list").attr("data-event--filter", eventtype);
-                                        sessionStorage.setItem('eventfilter', eventtype);
-
-                                    }
-                                });
-
-                            $(document).ready(function () {
-                                if (sessionStorage.getItem("eventfilter")) {
-                                    var eventtype = sessionStorage.getItem('eventfilter');
-                                    $('.tl-event--list').attr("data-event--filter", eventtype);
-                                    $('input:checkbox[name="Event type"]').each(function (index) {
-                                        if (eventype.indexOf($(this).attr("Value")) {
-                                            $(this).prop("checked", true)
-                                        }
-                                    });
+                            function checkchange() {
+                                let checkitem = $(this).attr("id");
+                                console.log(checkitem);
+                                if ($(this).is(':checked')) {
+                                    sessionStorage.setItem(checkitem, 'true');
+                                    $(".tl-event--list").attr("data-" + checkitem, true);
                                 }
+
                                 else {
-                                    $('input:checkbox[name="Event type"]').prop("checked", true)
-                                    $('input:checkbox[name="Event type all"]').prop("checked", true)
-                                    var eventtype = "Course informationIndustry placementsNetworkingNetworkingT Level professional development";
-                                    $(".tl-event--list").attr("data-event--filter", eventtype);
-                                    sessionStorage.setItem('eventfilter', eventtype);
+                                    sessionStorage.setItem(checkitem, 'false');
+                                    $(".tl-event--list").attr("data-" + checkitem, false);
                                 }
-                            });
+                            }
+
+
+
+                            $('input:checkbox[name="Event type"]').change(checkchange);
+
+
+                            //$('input:checkbox[name="Event type all"]').change(
+                            //    function () {
+                            //        if ($(this).is(':checked')) {
+                            //            $('input:checkbox[name="Event type"]').prop("checked", true)
+                            //            var eventtype = "Course informationIndustry placementsNetworkingT Level professional development";
+                            //            $(".tl-event--list").attr("data-event--filter", eventtype);
+                            //            sessionStorage.setItem('eventfilter', eventtype);
+
+                            //        }
+
+                            //        else if ($(this).not(':checked')) {
+                            //            $('input:checkbox[name="Event type"]').prop("checked", false)
+                            //            var eventtype = "null";
+                            //            $(".tl-event--list").attr("data-event--filter", eventtype);
+                            //            sessionStorage.setItem('eventfilter', eventtype);
+
+                            //        }
+                            //    });
+
+                            //$(document).ready(function () {
+                            //    if (sessionStorage.getItem("eventfilter")) {
+                            //        var eventtype = sessionStorage.getItem('eventfilter');
+                            //        $('.tl-event--list').attr("data-event--filter", eventtype);
+                            //        $('input:checkbox[name="Event type"]').each(function () {
+                            //            let checkvalue = eventtype.indexOf($(this).attr("Value"))
+                            //            console.log(eventtype)
+                            //            if (checkvalue != -1 ) {
+                            //                $(this).prop("checked", true)
+                            //            };
+                            //        });
+                            //    }
+                            //    else {
+                            //        $('input:checkbox[name="Event type"]').prop("checked", true)
+                            //        $('input:checkbox[name="Event type all"]').prop("checked", true)
+                            //        var eventtype = "Course informationIndustry placementsNetworkingNetworkingT Level professional development";
+                            //        $(".tl-event--list").attr("data-event--filter", eventtype);
+                            //        sessionStorage.setItem('eventfilter', eventtype);
+                            //    }
+                            //});
+
+
                         </script>
                     </div>
 
@@ -131,7 +140,7 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                <ul class="govuk-list tl-event--list " data-event--filter="Course informationIndustry placementsNetworkingNetworkingT Level professional development">
+                <ul class="govuk-list tl-event--list " data-industry-placements="true" data-course-information="true" data-networking="true" data-professional-development="true">
 
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">

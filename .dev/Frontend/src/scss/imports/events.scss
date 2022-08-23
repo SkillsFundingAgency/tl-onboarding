@@ -9,31 +9,31 @@
         }
     }
 
-    &[data-event--filter~="Course information"] {
+    &[data-course-information="true"] {
         li[data-event--labels*="Course information"] {
             display: block;
         }
     }
 
-    &[data-event--filter~="Industry placements"] {
+    &[data-industry-placements~="true"] {
         li[data-event--labels*="Industry placements"] {
             display: block;
         }
     }
 
-    &[data-event--filter~="Networking"] {
+    &[data-networking~="true"] {
         li[data-event--labels*="Networking"] {
             display: block;
         }
     }
 
-    &[data-event--filter~="T Level professional development"] {
+    &[data-professional-development~="true"] {
         li[data-event--labels*="T Level professional development"] {
             display: block;
         }
     }
-
 }
+
 
 .tl-event--pagination {
     padding: 40px 0px;

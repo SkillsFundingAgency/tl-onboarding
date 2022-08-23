@@ -8787,16 +8787,16 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list li p {
   margin: 10px 0 15px 0;
 }
-.tl-event--list[data-event--filter~="Course information"] li[data-event--labels*="Course information"] {
+.tl-event--list[data-course-information=true] li[data-event--labels*="Course information"] {
   display: block;
 }
-.tl-event--list[data-event--filter~="Industry placements"] li[data-event--labels*="Industry placements"] {
+.tl-event--list[data-industry-placements~=true] li[data-event--labels*="Industry placements"] {
   display: block;
 }
-.tl-event--list[data-event--filter~=Networking] li[data-event--labels*=Networking] {
+.tl-event--list[data-networking~=true] li[data-event--labels*=Networking] {
   display: block;
 }
-.tl-event--list[data-event--filter~="T Level professional development"] li[data-event--labels*="T Level professional development"] {
+.tl-event--list[data-professional-development~=true] li[data-event--labels*="T Level professional development"] {
   display: block;
 }
 
