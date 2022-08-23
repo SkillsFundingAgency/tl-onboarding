@@ -8799,9 +8799,6 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list[data-event--filter~="T Level professional development"] li[data-event--labels*="T Level professional development"] {
   display: block;
 }
-.tl-event--list[data-event--filter~="all events"] li {
-  display: block;
-}
 
 .tl-event--pagination {
   padding: 40px 0px;

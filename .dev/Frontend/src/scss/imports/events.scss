@@ -33,11 +33,6 @@
         }
     }
 
-    &[data-event--filter~="all events"] {
-        li {
-            display: block;
-        }
-    }
 }
 
 .tl-event--pagination {
