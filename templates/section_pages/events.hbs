@@ -87,11 +87,19 @@
                             $('input:checkbox[name="Event type all"]').change(
                                 function () {
                                     if ($(this).is(':checked')) {
-                                        $('input:checkbox[name="Event type"]').each.prop("checked", true)
+                                        $('input:checkbox[name="Event type"]').prop("checked", true)
+                                        var eventtype = "Course informationIndustry placementsNetworkingNetworkingT Level professional development";
+                                        $(".tl-event--list").attr("data-event--filter", eventtype);
+                                        sessionStorage.setItem('eventfilter', eventtype);
+
                                     }
 
                                     else if ($(this).not(':checked')) {
-                                        $('input:checkbox[name="Event type"]').each.prop("checked", false)
+                                        $('input:checkbox[name="Event type"]').prop("checked", false)
+                                        var eventtype = "";
+                                        $(".tl-event--list").attr("data-event--filter", eventtype);
+                                        sessionStorage.setItem('eventfilter', eventtype);
+
                                     }
                                 });
 
@@ -102,8 +110,11 @@
                                     $('input:checkbox[value="' + eventtype + '"]').prop("checked", true);
                                 }
                                 else {
-                                    var eventtype = $('input:checkbox[name="Event type"]:checked').each.val();
+                                    $('input:checkbox[name="Event type"]').prop("checked", true)
+                                    $('input:checkbox[name="Event type all"]').prop("checked", true)
+                                    var eventtype = "Course informationIndustry placementsNetworkingNetworkingT Level professional development";
                                     $(".tl-event--list").attr("data-event--filter", eventtype);
+                                    sessionStorage.setItem('eventfilter', eventtype);
                                 }
                             });
                         </script>
