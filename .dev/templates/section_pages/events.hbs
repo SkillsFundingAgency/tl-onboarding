@@ -102,7 +102,7 @@
                                     $('input:checkbox[value="' + eventtype + '"]').prop("checked", true);
                                 }
                                 else {
-                                    var eventtype = $('input:checkbox[name="Event type"]:checked').val();
+                                    var eventtype = $('input:checkbox[name="Event type"]:checked').each.val();
                                     $(".tl-event--list").attr("data-event--filter", eventtype);
                                 }
                             });
