@@ -32,107 +32,85 @@
                             Filter
                         </span>
                     </legend>
+                    <div class="govuk-checkboxes--small govuk-!-margin-left-3 govuk-!-margin-bottom-4 tl-overflow--auto">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Type of event</h3>
 
-                    <div class="govuk-checkboxes--small">
-                        <div class="govuk-checkboxes__item" id="tl-events-filter--all" gtmname="All events">
-                            <input class="govuk-checkboxes__input" id="all" name="Event type all" type="checkbox" value="all events" gtmname="All events">
-                            <label class="govuk-label govuk-checkboxes__label" for="all" gtmname="All events">
-                                All events
-                            </label>
-                        </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--courseinfo" gtmname="Course information events">
-                            <input class="govuk-checkboxes__input" id="course-information" name="Event type" type="checkbox" value="Course information" gtmname="Course information events">
+                            <input class="govuk-checkboxes__input" id="course-information" name="Event type" type="checkbox" value="Course information" gtmname="Course information events" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="course-information" gtmname="Course information events">
                                 Course information events
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--industryplacements" gtmname="Industry placements events">
-                            <input class="govuk-checkboxes__input" id="industry-placements" name="Event type" type="checkbox" value="Industry placements" gtmname="Industry placements events">
+                            <input class="govuk-checkboxes__input" id="industry-placements" name="Event type" type="checkbox" value="Industry placements" gtmname="Industry placements events" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="industry-placements" gtmname="Industry placements events">
                                 Industry placements events
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--networking" gtmname="Networking events">
-                            <input class="govuk-checkboxes__input" id="networking" name="Event type" type="checkbox" value="Networking" gtmname="Networking events">
+                            <input class="govuk-checkboxes__input" id="networking" name="Event type" type="checkbox" value="Networking" gtmname="Networking events" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="networking" gtmname="Networking events">
                                 Networking events
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--professionaldevelopment" gtmname="T Level professional development events">
-                            <input class="govuk-checkboxes__input" id="professional-development" name="Event type" type="checkbox" value="T Level professional development" gtmname="T Level professional development events">
+                            <input class="govuk-checkboxes__input" id="professional-development" name="Event type" type="checkbox" value="T Level professional development" gtmname="T Level professional development events" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="professional-development" gtmname="T Level professional development events">
                                 T Level professional development events
                             </label>
                         </div>
 
-                        <script>
-
-
-
-
-                            function checkchange() {
-                                let checkitem = $(this).attr("id");
-                                console.log(checkitem);
-                                if ($(this).is(':checked')) {
-                                    sessionStorage.setItem(checkitem, 'true');
-                                    $(".tl-event--list").attr("data-" + checkitem, true);
-                                }
-
-                                else {
-                                    sessionStorage.setItem(checkitem, 'false');
-                                    $(".tl-event--list").attr("data-" + checkitem, false);
-                                }
-                            }
-
-
-
-                            $('input:checkbox[name="Event type"]').change(checkchange);
-
-
-                            //$('input:checkbox[name="Event type all"]').change(
-                            //    function () {
-                            //        if ($(this).is(':checked')) {
-                            //            $('input:checkbox[name="Event type"]').prop("checked", true)
-                            //            var eventtype = "Course informationIndustry placementsNetworkingT Level professional development";
-                            //            $(".tl-event--list").attr("data-event--filter", eventtype);
-                            //            sessionStorage.setItem('eventfilter', eventtype);
-
-                            //        }
-
-                            //        else if ($(this).not(':checked')) {
-                            //            $('input:checkbox[name="Event type"]').prop("checked", false)
-                            //            var eventtype = "null";
-                            //            $(".tl-event--list").attr("data-event--filter", eventtype);
-                            //            sessionStorage.setItem('eventfilter', eventtype);
-
-                            //        }
-                            //    });
-
-                            //$(document).ready(function () {
-                            //    if (sessionStorage.getItem("eventfilter")) {
-                            //        var eventtype = sessionStorage.getItem('eventfilter');
-                            //        $('.tl-event--list').attr("data-event--filter", eventtype);
-                            //        $('input:checkbox[name="Event type"]').each(function () {
-                            //            let checkvalue = eventtype.indexOf($(this).attr("Value"))
-                            //            console.log(eventtype)
-                            //            if (checkvalue != -1 ) {
-                            //                $(this).prop("checked", true)
-                            //            };
-                            //        });
-                            //    }
-                            //    else {
-                            //        $('input:checkbox[name="Event type"]').prop("checked", true)
-                            //        $('input:checkbox[name="Event type all"]').prop("checked", true)
-                            //        var eventtype = "Course informationIndustry placementsNetworkingNetworkingT Level professional development";
-                            //        $(".tl-event--list").attr("data-event--filter", eventtype);
-                            //        sessionStorage.setItem('eventfilter', eventtype);
-                            //    }
-                            //});
-
-
-                        </script>
                     </div>
 
+                    <div class="govuk-checkboxes--small govuk-!-margin-left-3 govuk-!-margin-bottom-4 tl-overflow--auto">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Location</h3>
+
+                        <div class="govuk-checkboxes__item" id="tl-events-filter--online" gtmname="Online">
+                            <input class="govuk-checkboxes__input" id="location-online" name="Event location" type="checkbox" value="Online" gtmname="location-online" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="location-online" gtmname="location-online">
+                                Online
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item" id="tl-events-filter--inperson" gtmname="inperson">
+                            <input class="govuk-checkboxes__input" id="location-inperson" name="Event location" type="checkbox" value="inperson" gtmname="location-inperson" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="location-inperson" gtmname="location-inperson">
+                                In person
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <script>
+                        function checkchange() {
+                            let checkitem = $(this).attr("id");
+                            if ($(this).is(':checked')) {
+                                sessionStorage.setItem("eventfilter" + checkitem, 'true');
+                                $(".tl-event--list").attr("data-" + checkitem, true);
+                            }
+                            else {
+                                sessionStorage.setItem("eventfilter" + checkitem, 'false');
+                                $(".tl-event--list").attr("data-" + checkitem, false);
+                            }
+                            checkifall()
+                        }
+
+                        function setfilters() {
+                            for (const [key, value] of Object.entries(sessionStorage)) {
+                                if (!key.indexOf("eventfilter")) {
+                                    let checkitem = key.replace("eventfilter", "");
+                                    let checkvalue = value;
+                                    $(".tl-event--list").attr("data-" + checkitem, checkvalue)
+                                    if (checkvalue != "true") {
+                                        $('input:checkbox[id="' + checkitem + '"]').prop("checked", false)
+                                    }
+                                }
+                            }
+                        }
+
+                        $('input:checkbox[name="Event type"]').change(checkchange);
+                        $('input:checkbox[name="Event location"]').change(checkchange);
+                        $(document).ready(setfilters);
+                    </script>
                 </fieldset>
             </div>
 
@@ -140,7 +118,7 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                <ul class="govuk-list tl-event--list " data-industry-placements="true" data-course-information="true" data-networking="true" data-professional-development="true">
+                <ul class="govuk-list tl-event--list" data-course-information="true" data-industry-placements="true" data-networking="true" data-professional-development="true" data-location-online="true" data-location-inperson="true">
 
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
@@ -180,12 +158,17 @@
 
                                         if (labelname.indexOf("type") != -1) {
                                             var type = labelname.split('/')[1];
-                                            $("#tl-article--container--" + functionid).attr("data-event--labels", type);
+                                            $("#tl-article--container--" + functionid).attr("data-event--type", type);
                                         }
 
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
                                             $("#tl-article--date--" + functionid).text(date);
+                                        }
+
+                                        if (labelname.indexOf("location") != -1) {
+                                            var location = labelname.split('/')[1];
+                                            $("#tl-article--container--" + functionid).attr("data-event--location", location);;
                                         }
                                     });
                                 };
@@ -249,6 +232,11 @@
                                                         var date = labelname.split('/')[1];
                                                         $("#tl-article--date--" + functionid).text(date);
                                                     }
+
+                                                    if (labelname.indexOf("location") != -1) {
+                                                        var location = labelname.split('/')[1];
+                                                        $("#tl-article--location--" + functionid).text(location);
+                                                    }
                                                 });
                                             };
                                         });
@@ -270,5 +258,4 @@
         </div>
     </div>
 </div>
-</main>
 

@@ -6222,6 +6222,10 @@ x:-moz-any-link {
   overflow: auto;
 }
 
+.tl-overflow--visible {
+  overflow: visible;
+}
+
 .tl-push--right {
   float: right;
 }
@@ -8782,22 +8786,28 @@ ul.govuk-radios label .gem-radios__input {
 
 /*Workshops and webinars CSS*/
 .tl-event--list li {
-  display: none;
+  display: block;
 }
 .tl-event--list li p {
   margin: 10px 0 15px 0;
 }
-.tl-event--list[data-course-information=true] li[data-event--labels*="Course information"] {
-  display: block;
+.tl-event--list[data-course-information=false] li[data-event--type*="Course information"] {
+  display: none;
 }
-.tl-event--list[data-industry-placements~=true] li[data-event--labels*="Industry placements"] {
-  display: block;
+.tl-event--list[data-industry-placements~=false] li[data-event--type*="Industry placements"] {
+  display: none;
 }
-.tl-event--list[data-networking~=true] li[data-event--labels*=Networking] {
-  display: block;
+.tl-event--list[data-networking~=false] li[data-event--type*=Networking] {
+  display: none;
 }
-.tl-event--list[data-professional-development~=true] li[data-event--labels*="T Level professional development"] {
-  display: block;
+.tl-event--list[data-professional-development~=false] li[data-event--type*="T Level professional development"] {
+  display: none;
+}
+.tl-event--list[data-location-online~=false] li[data-event--location*=Online] {
+  display: none;
+}
+.tl-event--list[data-location-inperson~=false] li[data-event--location*="In person"] {
+  display: none;
 }
 
 .tl-event--pagination {

@@ -2,38 +2,51 @@
 
 .tl-event--list {
     li {
-        display: none;
+        display: block;
 
         p {
             margin: 10px 0 15px 0;
         }
     }
 
-    &[data-course-information="true"] {
-        li[data-event--labels*="Course information"] {
-            display: block;
+
+
+    &[data-course-information="false"] {
+        li[data-event--type*="Course information"] {
+            display: none;
         }
     }
 
-    &[data-industry-placements~="true"] {
-        li[data-event--labels*="Industry placements"] {
-            display: block;
+    &[data-industry-placements~="false"] {
+        li[data-event--type*="Industry placements"] {
+            display: none;
         }
     }
 
-    &[data-networking~="true"] {
-        li[data-event--labels*="Networking"] {
-            display: block;
+    &[data-networking~="false"] {
+        li[data-event--type*="Networking"] {
+            display: none;
         }
     }
 
-    &[data-professional-development~="true"] {
-        li[data-event--labels*="T Level professional development"] {
-            display: block;
+    &[data-professional-development~="false"] {
+        li[data-event--type*="T Level professional development"] {
+            display: none;
+        }
+    }
+
+    &[data-location-online~="false"] {
+        li[data-event--location*="Online"] {
+            display: none;
+        }
+    }
+
+    &[data-location-inperson~="false"] {
+        li[data-event--location*="In person"] {
+            display: none;
         }
     }
 }
-
 
 .tl-event--pagination {
     padding: 40px 0px;
