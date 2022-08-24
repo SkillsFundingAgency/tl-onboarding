@@ -32,7 +32,9 @@
                             Filter
                         </span>
                     </legend>
-                    <div class="govuk-radios--small tl-filter--radios">
+                    <div class="govuk-radios--small tl-filter--radios govuk-!-margin-left-1 govuk-!-margin-bottom-4 tl-overflow--auto">
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date</h3>
+
                         <div class="govuk-radios__item" id="tl-events-filter--all" gtmname="All date events">
                             <input class="govuk-radios__input" id="date-all" name="Event date" type="radio" value="all" checked="checked" gtmname="All date events">
                             <label class="govuk-label govuk-radios__label" for="event-date-all" gtmname="All date events">
@@ -110,13 +112,21 @@
                     <script>
                         function checkchange() {
                             let checkitem = $(this).attr("id");
-                            if ($(this).is(':checked')) {
-                                sessionStorage.setItem("eventfilter" + checkitem, 'true');
-                                $(".tl-event--list").attr("data-" + checkitem, true);
-                            }
-                            else {
+                            if (!$(this).is(':checked')) {
                                 sessionStorage.setItem("eventfilter" + checkitem, 'false');
                                 $(".tl-event--list").attr("data-" + checkitem, false);
+                            }
+
+                            else {
+                                sessionStorage.removeItem("eventfilter" + checkitem);
+                            }
+                        }
+
+                        function radiochange() {
+                            let checkitem = $(this).attr("id");
+                            if ($(this).is(':checked')) {
+                                sessionStorage.setItem("eventdate", checkitem);
+                                $(".tl-event--list").attr("data-date", checkitem);
                             }
                         }
 
@@ -130,11 +140,17 @@
                                         $('input[id="' + checkitem + '"]').prop("checked", false)
                                     }
                                 }
+
+                                if (!key.indexOf("eventdate")) {
+                                    let checkvalue = value;
+                                    $(".tl-event--list").attr("data-date", checkvalue)
+                                    $('input[id="' + checkvalue + '"]').prop("checked", true)
+                                }
                             }
                         }
                         $('input[name="Event type"]').change(checkchange);
                         $('input[name="Event location"]').change(checkchange);
-                        $('input[name="Event date"]').change(checkchange);
+                        $('input[name="Event date"]').change(radiochange);
                         $(document).ready(setfilters);
                     </script>
                 </fieldset>
@@ -144,7 +160,7 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                <ul class="govuk-list tl-event--list" data-course-information="true" data-industry-placements="true" data-networking="true" data-professional-development="true" data-location-online="true" data-location-inperson="true" data-date-all="true" data-date-week="false" data-date-this-month="false" data-date-next-month="false">
+                <ul class="govuk-list tl-event--list" data-course-information="true" data-industry-placements="true" data-networking="true" data-professional-development="true" data-location-online="true" data-location-inperson="true">
 
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
@@ -156,7 +172,7 @@
                     </li>
 
                     <script>
-                        
+
 
                     </script>
                     {{/each}}
@@ -189,8 +205,12 @@
 
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
-                                            $("#tl-article--date--" + functionid).text(date);
+                                            var format = require('date-fns/format')
+                                            var dateformatted = format(date, DD / MM / YYYY)
+                                            console.log(dateformatted)
+                                            $("#tl-article--container--" + functionid).attr("data-event--date", date);;
                                         }
+
 
                                         if (labelname.indexOf("location") != -1) {
                                             var location = labelname.split('/')[1];
@@ -201,7 +221,7 @@
                             });
                         });
 
-                    return;
+                        return;
                     };
                     // Does the URL specify a page number? If so, yield to the user.
                     if (document.URL.includes('?page=')) return;
@@ -244,28 +264,31 @@
                                     var eventid = $(this).attr('id');
                                     var functionid = eventid.replace('tl-article--container--', '');
 
-                                        $.getJSON('/api/v2/help_center/articles/' + functionid, function (articlelabels) {
+                                    $.getJSON('/api/v2/help_center/articles/' + functionid, function (articlelabels) {
 
-                                            if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
-                                                articlelabels.article.label_names.forEach(function (labelname) {
+                                        if (articlelabels.article.label_names && articlelabels.article.label_names.length) {
+                                            articlelabels.article.label_names.forEach(function (labelname) {
 
-                                                    if (labelname.indexOf("type") != -1) {
-                                                        var type = labelname.split('/')[1];
-                                                        $("#tl-article--container--" + functionid).attr("data-event--labels", type);
-                                                    }
+                                                if (labelname.indexOf("type") != -1) {
+                                                    var type = labelname.split('/')[1];
+                                                    $("#tl-article--container--" + functionid).attr("data-event--type", type);
+                                                }
 
-                                                    if (labelname.indexOf("date") != -1) {
-                                                        var date = labelname.split('/')[1];
-                                                        $("#tl-article--date--" + functionid).text(date);
-                                                    }
+                                                if (labelname.indexOf("date") != -1) {
+                                                    var date = labelname.split('/')[1];
+                                                    var format = require('date-fns/format')
+                                                    var dateformatted = format(date, DD / MM / YYYY)
+                                                    console.log(dateformatted)
+                                                    $("#tl-article--container--" + functionid).attr("data-event--date", date);;
+                                                }
 
-                                                    if (labelname.indexOf("location") != -1) {
-                                                        var location = labelname.split('/')[1];
-                                                        $("#tl-article--location--" + functionid).text(location);
-                                                    }
-                                                });
-                                            };
-                                        });
+                                                if (labelname.indexOf("location") != -1) {
+                                                    var location = labelname.split('/')[1];
+                                                    $("#tl-article--container--" + functionid).attr("data-event--location", location);;
+                                                }
+                                            });
+                                        };
+                                    });
                                 });
                                 // Remove the pagination controls.
                                 document.getElementsByClassName("pagination")[0].innerHTML = '';
@@ -284,4 +307,6 @@
         </div>
     </div>
 </div>
+
+<script src="{{asset 'date.js'}}"></script>
 

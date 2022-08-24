@@ -12,7 +12,8 @@
     "govuk-frontend": "^3.6.0",
     "jquery": "^3.4.1",
     "moment": "^2.27.0",
-    "tar": "^6.1.11"
+    "tar": "^6.1.11",
+    "date-fns": "^2.29.2"
   },
   "devDependencies": {
     "gulp": "^4.0.2",

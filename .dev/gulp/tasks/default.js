@@ -57,11 +57,15 @@ gulp.task('customjs', () => {
         .pipe(gulp.dest(paths.dist.Assets));
 });
 
-gulp.task('calendarjs', () => {
+gulp.task('datejs', () => {
     return src([
-        'Frontend/src/js/calendar.js',
-        'Frontend/src/js/tavo-calendar.js',
+        'node_modules/date-fns/index.js',
+        'node_modules/date-fns/isThisWeek/index.js',
+        'node_modules/date-fns/isThisMonth/index.js',
+        'node_modules/date-fns/format/index.js',
+
     ])
+        .pipe(concat('date.js'))
         .pipe(minify({
             ext: {
                 min: '.js'

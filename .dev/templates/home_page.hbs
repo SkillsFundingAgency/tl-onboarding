@@ -428,8 +428,6 @@
     </section>
 </main>
 
-    <script src="{{asset 'calendar.js'}}"></script>
-
     <script>
   document.addEventListener('DOMContentLoaded', function() {
   	frontDoor('{{settings.tl_calendar_api_key}}', '{{settings.tl_calendar_data_source}}');
@@ -440,7 +438,6 @@
     event.preventDefault();
 });
     </script>
-    <script src="{{asset 'tavo-calendar.js'}}"></script>
 
     {{#if settings.answerbot_enabled}}
     <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
