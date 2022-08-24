@@ -32,6 +32,33 @@
                             Filter
                         </span>
                     </legend>
+                    <div class="govuk-radios--small tl-filter--radios">
+                        <div class="govuk-radios__item" id="tl-events-filter--all" gtmname="All date events">
+                            <input class="govuk-radios__input" id="date-all" name="Event date" type="radio" value="all" checked="checked" gtmname="All date events">
+                            <label class="govuk-label govuk-radios__label" for="event-date-all" gtmname="All date events">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item" id="tl-events-filter--courseinfo" gtmname="This week events">
+                            <input class="govuk-radios__input" id="date-week" name="Event date" type="radio" value="This week" gtmname="This week events">
+                            <label class="govuk-label govuk-radios__label" for="event-date-week" gtmname="This week events">
+                                This week
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item" id="tl-events-filter--industryplacements" gtmname="This month events">
+                            <input class="govuk-radios__input" id="date-this-month" name="Event date" type="radio" value="This month" gtmname="This month events">
+                            <label class="govuk-label govuk-radios__label" for="event-date-this-month" gtmname="This month events">
+                                This month
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item" id="tl-events-filter--networking" gtmname="Next month events">
+                            <input class="govuk-radios__input" id="date-next-month" name="Event date" type="radio" value="Next month" gtmname="Next month events">
+                            <label class="govuk-label govuk-radios__label" for="event-date-next-month" gtmname="Next month events">
+                                Next month
+                            </label>
+                        </div>
+
+                    </div>
                     <div class="govuk-checkboxes--small govuk-!-margin-left-3 govuk-!-margin-bottom-4 tl-overflow--auto">
                         <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Type of event</h3>
 
@@ -91,7 +118,6 @@
                                 sessionStorage.setItem("eventfilter" + checkitem, 'false');
                                 $(".tl-event--list").attr("data-" + checkitem, false);
                             }
-                            checkifall()
                         }
 
                         function setfilters() {
@@ -101,14 +127,14 @@
                                     let checkvalue = value;
                                     $(".tl-event--list").attr("data-" + checkitem, checkvalue)
                                     if (checkvalue != "true") {
-                                        $('input:checkbox[id="' + checkitem + '"]').prop("checked", false)
+                                        $('input[id="' + checkitem + '"]').prop("checked", false)
                                     }
                                 }
                             }
                         }
-
-                        $('input:checkbox[name="Event type"]').change(checkchange);
-                        $('input:checkbox[name="Event location"]').change(checkchange);
+                        $('input[name="Event type"]').change(checkchange);
+                        $('input[name="Event location"]').change(checkchange);
+                        $('input[name="Event date"]').change(checkchange);
                         $(document).ready(setfilters);
                     </script>
                 </fieldset>
@@ -118,7 +144,7 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                <ul class="govuk-list tl-event--list" data-course-information="true" data-industry-placements="true" data-networking="true" data-professional-development="true" data-location-online="true" data-location-inperson="true">
+                <ul class="govuk-list tl-event--list" data-course-information="true" data-industry-placements="true" data-networking="true" data-professional-development="true" data-location-online="true" data-location-inperson="true" data-date-all="true" data-date-week="false" data-date-this-month="false" data-date-next-month="false">
 
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
