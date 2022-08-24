@@ -179,7 +179,7 @@
 
                 </ul>
             </section>
-
+            <script src="{{asset 'date.js'}}"></script>
             <script>
                 window.onload = function () {
                     unpaginatedSections();
@@ -205,7 +205,6 @@
 
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
-                                            var format = require('date-fns/format')
                                             var dateformatted = format(date, DD / MM / YYYY)
                                             console.log(dateformatted)
                                             $("#tl-article--container--" + functionid).attr("data-event--date", date);;
@@ -276,7 +275,6 @@
 
                                                 if (labelname.indexOf("date") != -1) {
                                                     var date = labelname.split('/')[1];
-                                                    var format = require('date-fns/format')
                                                     var dateformatted = format(date, DD / MM / YYYY)
                                                     console.log(dateformatted)
                                                     $("#tl-article--container--" + functionid).attr("data-event--date", date);;
@@ -308,5 +306,5 @@
     </div>
 </div>
 
-<script src="{{asset 'date.js'}}"></script>
+
 
