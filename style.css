@@ -8812,19 +8812,19 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list[data-date=date-week] li {
   display: none;
 }
-.tl-event--list[data-date=date-week] li[data-event--week=true] {
+.tl-event--list[data-date=date-week] li[data-event--thisweek=true] {
   display: block;
 }
-.tl-event--list[data-date=date-thismonth] li {
+.tl-event--list[data-date=date-this-month] li {
   display: none;
 }
-.tl-event--list[data-date=date-thismonth] li[data-event--thismonth=true] {
+.tl-event--list[data-date=date-this-month] li[data-event--thismonth=true] {
   display: block;
 }
-.tl-event--list[data-date=date-nextmonth] li {
+.tl-event--list[data-date=date-next-month] li {
   display: none;
 }
-.tl-event--list[data-date=date-nextmonth] li[data-event--nextmonth=true] {
+.tl-event--list[data-date=date-next-month] li[data-event--nextmonth=true] {
   display: block;
 }
 

@@ -52,12 +52,12 @@
             display: none;
         }
 
-        li[data-event--week="true"] {
+        li[data-event--thisweek="true"] {
             display: block;
         }
     }
 
-    &[data-date="date-thismonth"] {
+    &[data-date="date-this-month"] {
         li {
             display: none;
         }
@@ -67,7 +67,7 @@
         }
     }
 
-    &[data-date="date-nextmonth"] {
+    &[data-date="date-next-month"] {
         li {
             display: none;
         }
