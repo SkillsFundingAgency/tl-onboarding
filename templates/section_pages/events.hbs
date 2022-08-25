@@ -168,7 +168,7 @@
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
                         <p class="govuk-body">{{excerpt body characters=400}}</p>
-                        <a class="govuk-link tl-event--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
+                        <a class="govuk-link govuk-link-no-visited-state tl-event--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </li>
 
@@ -205,6 +205,7 @@
 
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
+                                            $("#tl-article--date--" + functionid).text(date);;
                                             $("#tl-article--container--" + functionid).attr("data-event--date", date);;
                                         }
 
