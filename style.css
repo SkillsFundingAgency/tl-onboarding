@@ -8803,16 +8803,16 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list[data-professional-development~=false] li[data-event--type*="T Level professional development"] {
   display: none !important;
 }
-.tl-event--list[data-professional-assessments-and-results~=false] li[data-event--type*="Assessments and results"] {
+.tl-event--list[data-assessments-and-results~=false] li[data-event--type*="Assessments and results"] {
   display: none !important;
 }
-.tl-event--list[data-professional-census-and-data-collections~=false] li[data-event--type*="Census and data collections"] {
+.tl-event--list[data-census-and-data-collections~=false] li[data-event--type*="Census and data collections"] {
   display: none !important;
 }
-.tl-event--list[data-professional-implementation-plan~=false] li[data-event--type*="Implementation plan"] {
+.tl-event--list[data-implementation-plan~=false] li[data-event--type*="Implementation plan"] {
   display: none !important;
 }
-.tl-event--list[data-professional-funding~=false] li[data-event--type*=Funding] {
+.tl-event--list[data-funding~=false] li[data-event--type*=Funding] {
   display: none !important;
 }
 .tl-event--list[data-professional-registration~=false] li[data-event--type*=Registration] {

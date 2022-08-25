@@ -35,25 +35,25 @@
         }
     }
 
-    &[data-professional-assessments-and-results~="false"] {
+    &[data-assessments-and-results~="false"] {
         li[data-event--type*="Assessments and results"] {
             display: none !important;
         }
     }
 
-    &[data-professional-census-and-data-collections~="false"] {
+    &[data-census-and-data-collections~="false"] {
         li[data-event--type*="Census and data collections"] {
             display: none !important;
         }
     }
 
-    &[data-professional-implementation-plan~="false"] {
+    &[data-implementation-plan~="false"] {
         li[data-event--type*="Implementation plan"] {
             display: none !important;
         }
     }
 
-    &[data-professional-funding~="false"] {
+    &[data-funding~="false"] {
         li[data-event--type*="Funding"] {
             display: none !important;
         }
