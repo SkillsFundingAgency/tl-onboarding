@@ -8815,7 +8815,7 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list[data-funding~=false] li[data-event--type*=Funding] {
   display: none !important;
 }
-.tl-event--list[data-professional-registration~=false] li[data-event--type*=Registration] {
+.tl-event--list[data-registration~=false] li[data-event--type*=Registration] {
   display: none !important;
 }
 .tl-event--list[data-location-online~=false] li[data-event--location*=Online] {

@@ -59,7 +59,7 @@
         }
     }
 
-    &[data-professional-registration~="false"] {
+    &[data-registration~="false"] {
         li[data-event--type*="Registration"] {
             display: none !important;
         }
