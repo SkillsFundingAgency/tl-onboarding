@@ -35,6 +35,37 @@
         }
     }
 
+    &[data-professional-assessments-and-results~="false"] {
+        li[data-event--type*="Assessments and results"] {
+            display: none !important;
+        }
+    }
+
+    &[data-professional-census-and-data-collections~="false"] {
+        li[data-event--type*="Census and data collections"] {
+            display: none !important;
+        }
+    }
+
+    &[data-professional-implementation-plan~="false"] {
+        li[data-event--type*="Implementation plan"] {
+            display: none !important;
+        }
+    }
+
+    &[data-professional-funding~="false"] {
+        li[data-event--type*="Funding"] {
+            display: none !important;
+        }
+    }
+
+    &[data-professional-registration~="false"] {
+        li[data-event--type*="Registration"] {
+            display: none !important;
+        }
+    }
+
+
     &[data-location-online~="false"] {
         li[data-event--location*="Online"] {
             display: none !important;
