@@ -8809,10 +8809,10 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list[data-location-inperson~=false] li[data-event--location*="In person"] {
   display: none !important;
 }
-.tl-event--list[data-date=date-week] li {
+.tl-event--list[data-date=date-this-week] li {
   display: none;
 }
-.tl-event--list[data-date=date-week] li[data-event--thisweek=true] {
+.tl-event--list[data-date=date-this-week] li[data-event--thisweek=true] {
   display: block;
 }
 .tl-event--list[data-date=date-this-month] li {
