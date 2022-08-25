@@ -8792,22 +8792,40 @@ ul.govuk-radios label .gem-radios__input {
   margin: 10px 0 15px 0;
 }
 .tl-event--list[data-course-information=false] li[data-event--type*="Course information"] {
-  display: none;
+  display: none !important;
 }
 .tl-event--list[data-industry-placements~=false] li[data-event--type*="Industry placements"] {
-  display: none;
+  display: none !important;
 }
 .tl-event--list[data-networking~=false] li[data-event--type*=Networking] {
-  display: none;
+  display: none !important;
 }
 .tl-event--list[data-professional-development~=false] li[data-event--type*="T Level professional development"] {
-  display: none;
+  display: none !important;
 }
 .tl-event--list[data-location-online~=false] li[data-event--location*=Online] {
-  display: none;
+  display: none !important;
 }
 .tl-event--list[data-location-inperson~=false] li[data-event--location*="In person"] {
+  display: none !important;
+}
+.tl-event--list[data-date=date-week] li {
   display: none;
+}
+.tl-event--list[data-date=date-week] li[data-event--week=true] {
+  display: block;
+}
+.tl-event--list[data-date=date-thismonth] li {
+  display: none;
+}
+.tl-event--list[data-date=date-thismonth] li[data-event--thismonth=true] {
+  display: block;
+}
+.tl-event--list[data-date=date-nextmonth] li {
+  display: none;
+}
+.tl-event--list[data-date=date-nextmonth] li[data-event--nextmonth=true] {
+  display: block;
 }
 
 .tl-event--pagination {

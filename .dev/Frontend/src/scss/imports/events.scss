@@ -13,37 +13,67 @@
 
     &[data-course-information="false"] {
         li[data-event--type*="Course information"] {
-            display: none;
+            display: none !important;
         }
     }
 
     &[data-industry-placements~="false"] {
         li[data-event--type*="Industry placements"] {
-            display: none;
+            display: none !important;
         }
     }
 
     &[data-networking~="false"] {
         li[data-event--type*="Networking"] {
-            display: none;
+            display: none !important;
         }
     }
 
     &[data-professional-development~="false"] {
         li[data-event--type*="T Level professional development"] {
-            display: none;
+            display: none !important;
         }
     }
 
     &[data-location-online~="false"] {
         li[data-event--location*="Online"] {
-            display: none;
+            display: none !important;
         }
     }
 
     &[data-location-inperson~="false"] {
         li[data-event--location*="In person"] {
+            display: none !important;
+        }
+    }
+
+    &[data-date="date-week"] {
+        li {
             display: none;
+        }
+
+        li[data-event--week="true"] {
+            display: block;
+        }
+    }
+
+    &[data-date="date-thismonth"] {
+        li {
+            display: none;
+        }
+
+        li[data-event--thismonth="true"] {
+            display: block;
+        }
+    }
+
+    &[data-date="date-nextmonth"] {
+        li {
+            display: none;
+        }
+
+        li[data-event--nextmonth="true"] {
+            display: block;
         }
     }
 }

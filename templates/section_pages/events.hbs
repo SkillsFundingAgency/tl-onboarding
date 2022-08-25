@@ -42,8 +42,8 @@
                             </label>
                         </div>
                         <div class="govuk-radios__item" id="tl-events-filter--courseinfo" gtmname="This week events">
-                            <input class="govuk-radios__input" id="date-week" name="Event date" type="radio" value="This week" gtmname="This week events">
-                            <label class="govuk-label govuk-radios__label" for="event-date-week" gtmname="This week events">
+                            <input class="govuk-radios__input" id="date-this-week" name="Event date" type="radio" value="This week" gtmname="This week events">
+                            <label class="govuk-label govuk-radios__label" for="event-date-this-week" gtmname="This week events">
                                 This week
                             </label>
                         </div>
@@ -119,6 +119,7 @@
 
                             else {
                                 sessionStorage.removeItem("eventfilter" + checkitem);
+                                $(".tl-event--list").removeAttr("data-" + checkitem);
                             }
                         }
 
@@ -179,7 +180,6 @@
 
                 </ul>
             </section>
-            <script src="{{asset 'date.js'}}"></script>
             <script>
                 window.onload = function () {
                     unpaginatedSections();
@@ -205,9 +205,23 @@
 
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
-                                            var dateformatted = format(date, DD / MM / YYYY)
-                                            console.log(dateformatted)
                                             $("#tl-article--container--" + functionid).attr("data-event--date", date);;
+                                        }
+
+                                        if (labelname.indexOf("day") != -1) {
+                                            var day = labelname.split('/')[1];
+                                            var weekcheck = moment(day).isSame(new Date(), 'week')
+                                            var monthcheck = moment(day).isSame(new Date(), 'month')
+                                            var nextmonthcheck = moment(day).subtract(1, 'months').isSame(new Date(), 'month')
+                                            if (weekcheck == true) {
+                                                $("#tl-article--container--" + functionid).attr("data-event--thisweek", true);;
+                                            }
+                                            if (monthcheck == true) {
+                                                $("#tl-article--container--" + functionid).attr("data-event--thismonth", true);;
+                                            }
+                                            if (nextmonthcheck == true) {
+                                                $("#tl-article--container--" + functionid).attr("data-event--nextmonth", true);;
+                                            }
                                         }
 
 
@@ -275,9 +289,23 @@
 
                                                 if (labelname.indexOf("date") != -1) {
                                                     var date = labelname.split('/')[1];
-                                                    var dateformatted = format(date, DD / MM / YYYY)
-                                                    console.log(dateformatted)
                                                     $("#tl-article--container--" + functionid).attr("data-event--date", date);;
+                                                }
+
+                                                if (labelname.indexOf("day") != -1) {
+                                                    var day = labelname.split('/')[1];
+                                                    var weekcheck = moment(day).isSame(new Date(), 'week')
+                                                    var monthcheck = moment(day).isSame(new Date(), 'month')
+                                                    var nextmonthcheck = moment(day).subtract(1, 'months').isSame(new Date(), 'month')
+                                                    if (weekcheck == true) {
+                                                        $("#tl-article--container--" + functionid).attr("data-event--thisweek", true);;
+                                                    }
+                                                    if (monthcheck == true) {
+                                                        $("#tl-article--container--" + functionid).attr("data-event--thismonth", true);;
+                                                    }
+                                                    if (nextmonthcheck == true) {
+                                                        $("#tl-article--container--" + functionid).attr("data-event--nextmonth", true);;
+                                                    }
                                                 }
 
                                                 if (labelname.indexOf("location") != -1) {
