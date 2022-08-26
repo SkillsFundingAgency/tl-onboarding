@@ -362,6 +362,20 @@
           "value": "360005433999"
         },
         {
+          "identifier": "section_id_keydates",
+          "type": "text",
+          "description": "Sitewide",
+          "label": "Keydates Section ID",
+          "value": "7201670708242"
+        },
+        {
+          "identifier": "section_id_events",
+          "type": "text",
+          "description": "Sitewide",
+          "label": "Events Section ID",
+          "value": "6493403059218"
+        },
+        {
           "identifier": "subdomain",
           "type": "text",
           "description": "Subdomain of ZD instance",
