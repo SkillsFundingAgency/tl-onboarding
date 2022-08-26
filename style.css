@@ -6186,12 +6186,18 @@ x:-moz-any-link {
 .js-enabled .tl-js-visible {
   display: inline-block;
 }
+.js-enabled .tl-js-visible--inline {
+  display: inline;
+}
 
 .tl-js-hidden {
   display: inline-block;
 }
 
 .tl-js-visible {
+  display: none;
+}
+.tl-js-visible--inline {
   display: none;
 }
 
@@ -8790,6 +8796,46 @@ ul.govuk-radios label .gem-radios__input {
 }
 .tl-event--list li p {
   margin: 10px 0 15px 0;
+}
+.tl-event--list li--tag {
+  padding: 3px 5px;
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+@media print {
+  .tl-event--list li--tag {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .tl-event--list li--tag {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.4285714286;
+  }
+}
+@media print {
+  .tl-event--list li--tag {
+    font-size: 12pt;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 40.0625em) {
+  .tl-event--list li--tag {
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 40.0625em) {
+  .tl-event--list li--tag {
+    margin-left: 5px;
+  }
 }
 .tl-event--list[data-course-information=false] li[data-event--type*="Course information"] {
   display: none !important;

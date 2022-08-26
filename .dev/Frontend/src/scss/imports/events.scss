@@ -7,6 +7,13 @@
         p {
             margin: 10px 0 15px 0;
         }
+
+        &--tag {
+            padding: 3px 5px;
+            @include govuk-font($size: 14, $weight: bold);
+            @include govuk-responsive-margin(1, "bottom");
+            @include govuk-responsive-margin(1, "left");
+        }
     }
 
 

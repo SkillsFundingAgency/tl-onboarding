@@ -19,7 +19,7 @@
             {{#if section.description}}
             <p class="govuk-body-l">{{section.description}}</p>
             {{/if}}
-            <p class="govuk-body">You can find important dates and deadlines on the <a href="/sections/{{settings.section_id_keydates}}" class="govuk-link">key dates page</a></p>
+            <p class="govuk-body">You can find important dates and deadlines on the <a href="/hc/en-gb/sections/{{settings.section_id_keydates}}" class="govuk-link">key dates page</a></p>
 
 
         </div>
@@ -162,13 +162,37 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                <div class="tl-event--search tl-search">
-                    <input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search events" aria-label="Search events">
-                    <input type="submit" name="commit" value="Search">
-                </div>
+                    <form class="tl-event--search tl-search govuk-!-margin-bottom-4 tl-js-visible--inline">
+                        <input type="search" name="query" id="tl-event--search--input" placeholder="Search events" aria-label="Search events">
+                        <input type="submit" value="Search">
+                    </form>
+                <!-- Search Events JS -->
+                <script>
+                    $(".tl-event--search").submit(function (e) {
+                        e.preventDefault();
+                        eventsearch();
+                    });
+
+                    function eventsearch() {
+                        var searchquery = $("#tl-event--search--input").val();
+
+                        $(".tl-event--list li").each(function () {
+                            var eventtitle = $(this).find("h3").text();
+
+                            if (eventtitle.toLowerCase().indexOf(searchquery) >= 0) {
+                                $(this).removeClass("tl-js-hidden");
+                            }
+                            else {
+                                $(this).addClass("tl-js-hidden");
+                            }
+                        });
+                    }
+                </script>
+
                 <ul class="govuk-list tl-event--list">
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
+                        <div class="tl-text--right"><strong class="govuk-tag govuk-tag--grey govuk-body govuk-!-font-size-14 govuk-!-margin-bottom-1">Inactive</strong><strong class="govuk-tag govuk-tag--grey govuk-body govuk-!-font-size-14 govuk-!-margin-bottom-1">Inactive</strong></div>
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
                         <p class="govuk-body">{{excerpt body characters=400}}</p>

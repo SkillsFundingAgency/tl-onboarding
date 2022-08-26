@@ -18,6 +18,10 @@
 
     .tl-js-visible {
         display: inline-block;
+
+        &--inline {
+            display: inline;
+        }
     }
 }
 
@@ -27,6 +31,10 @@
 
 .tl-js-visible {
     display: none;
+
+    &--inline {
+        display: none;
+    }
 }
 
 
