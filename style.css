@@ -8803,7 +8803,7 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list li p {
   margin: 10px 0 15px 0;
 }
-.tl-event--list li--tag {
+.tl-event--list--tag {
   padding: 3px 5px;
   font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -8816,30 +8816,30 @@ ul.govuk-radios label .gem-radios__input {
   margin-left: 5px;
 }
 @media print {
-  .tl-event--list li--tag {
+  .tl-event--list--tag {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .tl-event--list li--tag {
+  .tl-event--list--tag {
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.4285714286;
   }
 }
 @media print {
-  .tl-event--list li--tag {
+  .tl-event--list--tag {
     font-size: 12pt;
     line-height: 1.2;
   }
 }
 @media (min-width: 40.0625em) {
-  .tl-event--list li--tag {
+  .tl-event--list--tag {
     margin-bottom: 5px;
   }
 }
 @media (min-width: 40.0625em) {
-  .tl-event--list li--tag {
+  .tl-event--list--tag {
     margin-left: 5px;
   }
 }
