@@ -194,7 +194,7 @@
 
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
-                                            var dateformatted = moment(date).format("dddd, Do MMMM YYYY, h:mm A");
+                                            var dateformatted = moment(date).format("dddd, Do MMMM YYYY");
                                             var weekcheck = moment(date).isSame(new Date(), 'week');
                                             var monthcheck = moment(date).isSame(new Date(), 'month');
                                             var nextmonthcheck = moment(date).subtract(1, 'months').isSame(new Date(), 'month');
@@ -270,7 +270,7 @@
 
                                                 if (labelname.indexOf("date") != -1) {
                                                     var date = labelname.split('/')[1];
-                                                    var dateformatted = moment(date).format("dddd, Do MMMM YYYY, h:mm A");
+                                                    var dateformatted = moment(date).format("dddd, Do MMMM YYYY");
                                                     var weekcheck = moment(date).isSame(new Date(), 'week');
                                                     var monthcheck = moment(date).isSame(new Date(), 'month');
                                                     var nextmonthcheck = moment(date).subtract(1, 'months').isSame(new Date(), 'month');
@@ -285,10 +285,11 @@
                                                     }
                                                     $("#tl-article--date--" + functionid).text(dateformatted);;
                                                 }
-                                            });                                        };
+
+                                            });
+                                        };
                                     });
-                                });
-                                // Remove the pagination controls.
+                                });                                // Remove the pagination controls.
                                 document.getElementsByClassName("pagination")[0].innerHTML = '';
                             };
                         };
