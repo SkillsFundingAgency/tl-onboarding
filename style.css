@@ -8812,7 +8812,7 @@ ul.govuk-radios label .gem-radios__input {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.25;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   margin-left: 5px;
 }
 @media print {
@@ -8835,7 +8835,7 @@ ul.govuk-radios label .gem-radios__input {
 }
 @media (min-width: 40.0625em) {
   .tl-event--list--tag {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
 @media (min-width: 40.0625em) {
