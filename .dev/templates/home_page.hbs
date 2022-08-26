@@ -124,7 +124,8 @@
 
                                             if (labelname.indexOf("date") != -1) {
                                                 var date = labelname.split('/')[1];
-                                                $("#tl-article--date--{{id}}").text(date);
+                                                var dateformatted = moment(date).format("DD MMMM");
+                                                $("#tl-article--date--{{id}}").text(dateformatted);
                                             }
                                         });
                                     }
@@ -146,7 +147,8 @@
 
                                             if (labelname.indexOf("date") != -1) {
                                                 var date = labelname.split('/')[1];
-                                                $("#tl-article--date--{{id}}").text(date);
+                                                var dateformatted = moment(date).format("DD MMMM");
+                                                $("#tl-article--date--{{id}}").text(dateformatted);
                                             }
                                         });
                                     }
@@ -168,7 +170,8 @@
 
                                             if (labelname.indexOf("date") != -1) {
                                                 var date = labelname.split('/')[1];
-                                                $("#tl-article--date--{{id}}").text(date);
+                                                var dateformatted = moment(date).format("DD MMMM");
+                                                $("#tl-article--date--{{id}}").text(dateformatted);
                                             }
                                         });
                                     }
@@ -257,7 +260,8 @@
 
                                             if (labelname.indexOf("date") != -1) {
                                                 var date = labelname.split('/')[1];
-                                                $("#tl-article--date--{{id}}").text(date);
+                                                var dateformatted = moment(date).format("DD MMMM YYYY, h:mm A");
+                                                $("#tl-article--date--{{id}}").text(dateformatted);
                                             }
                                         });
                                     }
@@ -280,7 +284,8 @@
 
                                             if (labelname.indexOf("date") != -1) {
                                                 var date = labelname.split('/')[1];
-                                                $("#tl-article--date--{{id}}").text(date);
+                                                var dateformatted = moment(date).format("DD MMMM YYYY, h:mm A");
+                                                $("#tl-article--date--{{id}}").text(dateformatted);
                                             }
                                         });
                                     }
@@ -303,7 +308,8 @@
 
                                             if (labelname.indexOf("date") != -1) {
                                                 var date = labelname.split('/')[1];
-                                                $("#tl-article--date--{{id}}").text(date);
+                                                var dateformatted = moment(date).format("DD MMMM YYYY, h:mm A");
+                                                $("#tl-article--date--{{id}}").text(dateformatted);
                                             }
                                         });
                                     }
