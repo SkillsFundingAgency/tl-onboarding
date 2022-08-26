@@ -12,7 +12,7 @@
     &--tag {
         padding: 3px 5px;
         @include govuk-font($size: 14, $weight: bold);
-        @include govuk-responsive-margin(2, "bottom");
+        @include govuk-responsive-margin(3, "bottom");
         @include govuk-responsive-margin(1, "left");
     }
 
