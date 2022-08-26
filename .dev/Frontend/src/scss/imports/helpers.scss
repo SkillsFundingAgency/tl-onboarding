@@ -22,6 +22,10 @@
         &--inline {
             display: inline;
         }
+
+        &--flex {
+            display: flex;
+        }
     }
 }
 
@@ -33,6 +37,10 @@
     display: none;
 
     &--inline {
+        display: none;
+    }
+
+    &--flex {
         display: none;
     }
 }

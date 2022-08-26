@@ -162,7 +162,7 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                    <form class="tl-event--search tl-search govuk-!-margin-bottom-4 tl-js-visible--inline">
+                    <form class="tl-event--search tl-search govuk-!-margin-bottom-4 tl-js-visible--flex">
                         <input type="search" name="query" id="tl-event--search--input" placeholder="Search events" aria-label="Search events">
                         <input type="submit" value="Search">
                     </form>
@@ -192,7 +192,7 @@
                 <ul class="govuk-list tl-event--list">
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
-                        <div class="tl-text--right"><strong class="govuk-tag govuk-tag--grey govuk-body govuk-!-font-size-14 govuk-!-margin-bottom-1">Inactive</strong><strong class="govuk-tag govuk-tag--grey govuk-body govuk-!-font-size-14 govuk-!-margin-bottom-1">Inactive</strong></div>
+                        <div class="tl-text--right"><strong class="tl-event--list--tag govuk-tag govuk-tag--grey">Inactive</strong><strong class="tl-event--list--tag govuk-tag govuk-tag--grey">Inactive</strong></div>
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
                         <p class="govuk-body">{{excerpt body characters=400}}</p>
