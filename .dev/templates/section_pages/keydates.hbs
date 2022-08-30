@@ -149,6 +149,40 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
+
+                <form class="tl-event--search tl-search govuk-!-margin-bottom-4 tl-js-visible--flex">
+                    <input type="search" name="query" id="tl-event--search--input" placeholder="Search events" aria-label="Search events">
+                    <input type="submit" value="Search">
+                </form>
+                <!-- Search Events JS -->
+                <script>
+                    $(".tl-event--search").submit(function (e) {
+                        e.preventDefault();
+                        eventsearch();
+                    });
+
+                    function eventsearch() {
+                        var searchquery = $("#tl-event--search--input").val();
+                        $(".tl-event--list-none").show();
+                        $(".tl-event--list-query").text(searchquery);
+
+                        $(".tl-event--list li").each(function () {
+                            var eventtitle = $(this).find("h3").text();
+
+
+                            if (eventtitle.toLowerCase().indexOf(searchquery.toLowerCase()) >= 0) {
+                                $(this).removeClass("tl-js-hidden");
+                                $(".tl-event--list-none").hide();
+                            }
+                            else {
+                                $(this).addClass("tl-js-hidden");
+                            }
+                        });
+                    }
+                </script>
+                <div class="tl-event--list-none" style="display: none">
+                    <p class="govuk-body">No results for "<span class="govuk-!-font-weight-bold tl-event--list-query"></span>". You can use the filter to search by event type, date or location, or see all events.</p>
+                </div>
                 {{#if section.articles}}
                 <ul class="govuk-list tl-event--list">
 
@@ -164,7 +198,7 @@
 
                 </ul>
                 {{else}}
-                <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
+                <p class="govuk-body">There are no upcoming T Level key dates or deadlines.</p>
                 {{/if}}
             </section>
             <script>
