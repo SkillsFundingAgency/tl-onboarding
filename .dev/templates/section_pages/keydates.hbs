@@ -149,6 +149,7 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
+                {{#if section.articles}}
                 <ul class="govuk-list tl-event--list">
 
                     {{#each section.articles}}
@@ -159,14 +160,12 @@
                         <a class="govuk-link govuk-link-no-visited-state tl-event--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </li>
-
-                    <script>
-
-
-                    </script>
                     {{/each}}
 
                 </ul>
+                {{else}}
+                <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
+                {{/if}}
             </section>
             <script>
                 window.onload = function () {

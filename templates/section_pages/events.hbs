@@ -162,10 +162,10 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
-                    <form class="tl-event--search tl-search govuk-!-margin-bottom-4 tl-js-visible--flex">
-                        <input type="search" name="query" id="tl-event--search--input" placeholder="Search events" aria-label="Search events">
-                        <input type="submit" value="Search">
-                    </form>
+                <form class="tl-event--search tl-search govuk-!-margin-bottom-4 tl-js-visible--flex">
+                    <input type="search" name="query" id="tl-event--search--input" placeholder="Search events" aria-label="Search events">
+                    <input type="submit" value="Search">
+                </form>
                 <!-- Search Events JS -->
                 <script>
                     $(".tl-event--search").submit(function (e) {
@@ -175,12 +175,16 @@
 
                     function eventsearch() {
                         var searchquery = $("#tl-event--search--input").val();
+                        $(".tl-event--list-none").show();
+                        $(".tl-event--list-query").text(searchquery);
 
                         $(".tl-event--list li").each(function () {
                             var eventtitle = $(this).find("h3").text();
 
-                            if (eventtitle.toLowerCase().indexOf(searchquery) >= 0) {
+
+                            if (eventtitle.toLowerCase().indexOf(searchquery.toLowerCase()) >= 0) {
                                 $(this).removeClass("tl-js-hidden");
+                                $(".tl-event--list-none").hide();
                             }
                             else {
                                 $(this).addClass("tl-js-hidden");
@@ -188,19 +192,25 @@
                         });
                     }
                 </script>
-
+                <div class="tl-event--list-none" style="display: none">
+                    <p class="govuk-body">No results for "<span class="govuk-!-font-weight-bold tl-event--list-query"></span>". You can use the filter to search by event type, date or location, or see all events.</p>
+                </div>
+                {{#if section.articles}}
                 <ul class="govuk-list tl-event--list">
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
                         <div class="tl-text--right"><strong class="tl-event--list--tag govuk-tag govuk-tag--grey" id="tl-event--list--tag--type--{{id}}"></strong><strong class="tl-event--list--tag govuk-tag govuk-tag--grey" id="tl-event--list--tag--location--{{id}}"></strong></div>
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
-                        <p class="govuk-body">{{excerpt body characters=400}}</p>
+                        <p class="govuk-body">{{excerpt body characters=395}}</p>
                         <a class="govuk-link govuk-link-no-visited-state tl-event--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </li>
                     {{/each}}
                 </ul>
+                {{else}}
+                <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
+                {{/if}}
             </section>
             <script>
                 window.onload = function () {
