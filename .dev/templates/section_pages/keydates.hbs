@@ -110,6 +110,7 @@
                                 sessionStorage.removeItem("keydatefilter" + checkitem);
                                 $(".tl-event--list").removeAttr("data-" + checkitem);
                             }
+                            eventsearch()
                         }
 
                         function radiochange() {
@@ -118,6 +119,7 @@
                                 sessionStorage.setItem("keydatedate", checkitem);
                                 $(".tl-event--list").attr("data-date", checkitem);
                             }
+                            eventsearch()
                         }
 
                         function setfilters() {

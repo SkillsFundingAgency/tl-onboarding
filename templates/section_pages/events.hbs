@@ -122,6 +122,7 @@
                                 sessionStorage.removeItem("eventfilter" + checkitem);
                                 $(".tl-event--list").removeAttr("data-" + checkitem);
                             }
+                            eventsearch()
                         }
 
                         function radiochange() {
@@ -130,6 +131,7 @@
                                 sessionStorage.setItem("eventdate", checkitem);
                                 $(".tl-event--list").attr("data-date", checkitem);
                             }
+                            eventsearch()
                         }
 
                         function setfilters() {
