@@ -244,7 +244,7 @@
                     {{#each sections}}
                     {{#is name "T Level events"}}
                     <div class="govuk-grid-row tl-row-fill">
-
+                        {{#if articles}}
                         {{#each articles}}
                         {{#is @index 0}}
 
@@ -321,7 +321,6 @@
                         {{/is}}
 
                         {{/each}}
-
                     </div>
                     <div class="govuk-grid-row tl-row-fill">
 
@@ -330,13 +329,25 @@
                             <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
                         </div>
                     </div>
-                    {{/is}}
-                    {{/each}}
-                        {{/is}}
-                        {{/each}}
 
-
+                    {{else}}
+                </div>
+                <div class="govuk-grid-row tl-row-fill">
+                    <div class="govuk-grid-column-full">
+                        <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
                     </div>
+                </div>
+
+                {{/if}}
+
+
+                {{/is}}
+                {{/each}}
+                {{/is}}
+                {{/each}}
+
+
+            </div>
                 </div>
             </div>
     </section>
