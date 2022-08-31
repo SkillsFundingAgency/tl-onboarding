@@ -185,11 +185,11 @@
 
 
                             if (eventtitle.toLowerCase().indexOf(searchquery.toLowerCase()) >= 0) {
-                                $(this).removeClass("tl-js-hidden");
+                                $(this).removeClass("tl-js-hidden--important");
                                 $(".tl-event--list-none").hide();
                             }
                             else {
-                                $(this).addClass("tl-js-hidden");
+                                $(this).addClass("tl-js-hidden--important");
                             }
                         });
                     }

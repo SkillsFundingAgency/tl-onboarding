@@ -6183,6 +6183,9 @@ x:-moz-any-link {
 .js-enabled .tl-js-hidden {
   display: none;
 }
+.js-enabled .tl-js-hidden--important {
+  display: none !important;
+}
 .js-enabled .tl-js-visible {
   display: inline-block;
 }
@@ -6194,6 +6197,9 @@ x:-moz-any-link {
 }
 
 .tl-js-hidden {
+  display: inline-block;
+}
+.tl-js-hidden--important {
   display: inline-block;
 }
 

@@ -14,6 +14,10 @@
 .js-enabled {
     .tl-js-hidden {
         display: none;
+
+        &--important {
+            display: none !important;
+        }
     }
 
     .tl-js-visible {
@@ -31,6 +35,10 @@
 
 .tl-js-hidden {
     display: inline-block;
+
+    &--important {
+        display: inline-block;
+    }
 }
 
 .tl-js-visible {
