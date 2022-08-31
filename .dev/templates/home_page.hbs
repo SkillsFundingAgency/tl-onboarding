@@ -250,8 +250,7 @@
 
                     {{#each sections}}
                     {{#is name "T Level events"}}
-                    <div class="govuk-grid-row tl-row-fill">
-                        {{#if articles}}
+                    <div class="govuk-grid-row tl-row-fill tl-home--panel--events--events">
                         {{#each articles}}
                         {{#is @index 0}}
 
@@ -329,24 +328,13 @@
 
                         {{/each}}
                     </div>
-                    <div class="govuk-grid-row tl-row-fill">
+                    <div class="govuk-grid-row tl-row-fill tl-home--panel--events--all">
 
                         <div class="govuk-grid-column-full">
                             <hr class="govuk-section-break tl-section-break govuk-!-margin-bottom-3 govuk-section-break--m govuk-section-break--visible tl-flex--grow">
                             <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
                         </div>
                     </div>
-
-                    {{else}}
-                </div>
-                <div class="govuk-grid-row tl-row-fill">
-                    <div class="govuk-grid-column-full">
-                        <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
-                    </div>
-                </div>
-
-                {{/if}}
-
 
                 {{/is}}
                 {{/each}}
@@ -491,6 +479,7 @@
 
     <script>
         if ($('.tl-home--panel--events--events').children().length == 0) {
-            $('.tl-home--panel--events--events').html('<p class="govuk-body">There are no upcoming T Level events at the moment.</p>')
+            $('.tl-home--panel--events--events').html('<div class="govuk-grid-column-full"><p class="govuk-body">There are no upcoming T Level events at the moment.</p></div>')
+            $('.tl-home--panel--events--all').hide();
         }
     </script>
