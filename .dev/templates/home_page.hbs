@@ -111,8 +111,9 @@
                     {{#is name "T Level events"}}
                     {{#each sections}}
                     {{#is name "Key dates and deadlines"}}
-                    {{#each articles}}
                     {{#if articles}}
+                    {{#each articles}}
+
 
                     {{#is @index 0}}
                     <div class="tl-home-keydates govuk-!-margin-top-1">
@@ -187,7 +188,7 @@
                     <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All key dates</a></p>
 
                     {{else}}
-                <p class="govuk-body">There are no upcoming T Level key dates or deadlines.</p>
+                    <p class="govuk-body">There are no upcoming T Level key dates or deadlines.</p>
 
                     {{/if}}
 
