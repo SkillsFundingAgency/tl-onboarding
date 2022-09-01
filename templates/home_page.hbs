@@ -76,14 +76,14 @@
                     {{#is name "Newsletters"}}
                     {{#each articles}}
                     {{#if @first}}
-                    <h3 class="govuk-heading-s  govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a id="tl-home-news--article" class="govuk-link govuk-link--no-visited-state" href="{{url}}">{{title}}</a></h3>
+                    <h3 class="govuk-heading-s  govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a id="tl-home-newsletter--article" class="govuk-link govuk-link--no-visited-state" href="{{url}}">{{title}}</a></h3>
                     <p class="govuk-body govuk-!-margin-bottom-0">The latest T Level updates from the Department for Education, the Institute, awarding organisations and more.</p>
                     {{/if}}
                     {{/each}}
                     {{/is}}
                     {{/each}}
                     <hr class="govuk-section-break tl-section-break govuk-!-margin-bottom-3 govuk-section-break--m govuk-section-break--visible tl-flex--grow">
-                    <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All newsletters</a></p>
+                    <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-newsletter--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All newsletters</a></p>
                     {{/is}}
                     {{/each}}
 
@@ -118,7 +118,7 @@
                         {{#is @index 0}}
                         <div class="tl-home-keydates govuk-!-margin-top-1">
                             <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                            <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-keydates--article" href="{{url}}">{{title}}</a></h3>
                             <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -141,7 +141,7 @@
                         {{#is @index 1}}
                         <div class="tl-home-keydates">
                             <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                            <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-keydates--article" href="{{url}}">{{title}}</a></h3>
                             <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -164,7 +164,7 @@
                         {{#is @index 2}}
                         <div class="tl-home-keydates">
                             <p class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--date" id="tl-article--date--{{id}}"></p>
-                            <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-events--article" href="{{url}}">{{title}}</a></h3>
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-0 tl-home-keydates--title"><a class="govuk-link tl-home-keydates--article" href="{{url}}">{{title}}</a></h3>
                             <script>
                                 $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlelabels) {
 
@@ -187,7 +187,7 @@
                         </div>
                     <div class="tl-home--panel--keydates--all">
                         <hr class="govuk-section-break tl-section-break govuk-!-margin-bottom-3 govuk-section-break--m govuk-section-break--visible tl-flex--grow">
-                        <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All key dates</a></p>
+                        <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-keydates--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All key dates</a></p>
                     </div>
 
 
@@ -222,7 +222,7 @@
                         {{else}}
                         <div class="tl-home--category">
                             <span class="tl-home--category--image"></span>
-                            <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-home--categorylink" GTMname="{{name}}">{{name}}</a></h3>
                             <p class="govuk-body-s">{{excerpt description}}</p>
                         </div>
                         {{/is}}
@@ -331,7 +331,7 @@
 
                         <div class="govuk-grid-column-full">
                             <hr class="govuk-section-break tl-section-break govuk-!-margin-bottom-3 govuk-section-break--m govuk-section-break--visible tl-flex--grow">
-                            <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-news--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
+                            <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-events--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
                         </div>
                     </div>
 
@@ -359,7 +359,7 @@
                             {{#each categories}}
                             {{#is name "Case studies"}}
                             <span class="tl-home--category--image tl-home--category--image--5"></span>
-                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link tl-home--categorylink" GTMname="{{name}}">{{name}}</a></h3>
                             <p class="govuk-body-s">{{excerpt description}}</p>
                             {{/is}}
                             {{/each}}
@@ -368,7 +368,7 @@
                             {{#each categories}}
                             {{#is name "T Level Transition Programme"}}
                             <span class="tl-home--category--image tl-home--category--image--6"></span>
-                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">{{name}}</a></h3>
+                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link tl-home--categorylink" GTMname="{{name}}">{{name}}</a></h3>
                             <p class="govuk-body-s">{{excerpt description}}</p>
                             {{/is}}
                             {{/each}}

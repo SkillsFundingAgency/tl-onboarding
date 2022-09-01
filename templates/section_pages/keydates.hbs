@@ -35,25 +35,25 @@
                         <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date</h3>
 
                         <div class="govuk-radios__item" id="tl-events-filter--all" gtmname="All date events">
-                            <input class="govuk-radios__input" id="date-all" name="Event date" type="radio" value="all" checked="checked" gtmname="All date events">
+                            <input class="govuk-radios__input" id="date-all" name="Event date" type="radio" value="all" checked="checked" gtmname="All date keydates">
                             <label class="govuk-label govuk-radios__label" for="date-all" gtmname="All date events">
                                 All
                             </label>
                         </div>
                         <div class="govuk-radios__item" id="tl-events-filter--courseinfo" gtmname="This week events">
-                            <input class="govuk-radios__input" id="date-this-week" name="Event date" type="radio" value="This week" gtmname="This week events">
+                            <input class="govuk-radios__input" id="date-this-week" name="Event date" type="radio" value="This week" gtmname="This week keydates">
                             <label class="govuk-label govuk-radios__label" for="date-this-week" gtmname="This week events">
                                 This week
                             </label>
                         </div>
                         <div class="govuk-radios__item" id="tl-events-filter--industryplacements" gtmname="This month events">
-                            <input class="govuk-radios__input" id="date-this-month" name="Event date" type="radio" value="This month" gtmname="This month events">
+                            <input class="govuk-radios__input" id="date-this-month" name="Event date" type="radio" value="This month" gtmname="This month keydates">
                             <label class="govuk-label govuk-radios__label" for="date-this-month" gtmname="This month events">
                                 This month
                             </label>
                         </div>
                         <div class="govuk-radios__item" id="tl-events-filter--networking" gtmname="Next month events">
-                            <input class="govuk-radios__input" id="date-next-month" name="Event date" type="radio" value="Next month" gtmname="Next month events">
+                            <input class="govuk-radios__input" id="date-next-month" name="Event date" type="radio" value="Next month" gtmname="Next month keydates">
                             <label class="govuk-label govuk-radios__label" for="date-next-month" gtmname="Next month events">
                                 Next month
                             </label>
@@ -64,31 +64,31 @@
                         <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Category</h3>
 
                         <div class="govuk-checkboxes__item" id="tl-events-filter--assessments" gtmname="Assessments and results">
-                            <input class="govuk-checkboxes__input" id="assessments-and-results" name="Event type" type="checkbox" value="Course information" gtmname="Assessments and results" checked>
+                            <input class="govuk-checkboxes__input" id="assessments-and-results" name="Event type" type="checkbox" value="Course information" gtmname="Assessments and results keydates" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="assessments-and-results" gtmname="Assessments and results">
                                 Assessments and results
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--census" gtmname="Census and data collections">
-                            <input class="govuk-checkboxes__input" id="census-and-data-collections" name="Event type" type="checkbox" value="Industry placements" gtmname="Census and data collections" checked>
+                            <input class="govuk-checkboxes__input" id="census-and-data-collections" name="Event type" type="checkbox" value="Industry placements" gtmname="Census and data collections keydates" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="census-and-data-collections" gtmname="Census and data collections">
                                 Census and data collections
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--implementation" gtmname="Implementation plan">
-                            <input class="govuk-checkboxes__input" id="implementation-plan" name="Event type" type="checkbox" value="Networking" gtmname="Implementation plan" checked>
+                            <input class="govuk-checkboxes__input" id="implementation-plan" name="Event type" type="checkbox" value="Networking" gtmname="Implementation plan keydates" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="implementation-plan" gtmname="Implementation plan">
                                 Implementation plan
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--funding" gtmname="Funding">
-                            <input class="govuk-checkboxes__input" id="funding" name="Event type" type="checkbox" value="T Level professional development" gtmname="Funding" checked>
+                            <input class="govuk-checkboxes__input" id="funding" name="Event type" type="checkbox" value="T Level professional development" gtmname="Funding keydates" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="funding" gtmname="Funding">
                                 Funding
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item" id="tl-events-filter--registration" gtmname="Registration">
-                            <input class="govuk-checkboxes__input" id="registration" name="Event type" type="checkbox" value="T Level professional development" gtmname="Registration" checked>
+                            <input class="govuk-checkboxes__input" id="registration" name="Event type" type="checkbox" value="T Level professional development" gtmname="Registration keydates" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="registration" gtmname="Registration">
                                 Registration
                             </label>
@@ -193,7 +193,7 @@
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
                         <p class="govuk-body">{{excerpt body characters=400}}</p>
-                        <a class="govuk-link govuk-link-no-visited-state tl-event--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
+                        <a class="govuk-link govuk-link-no-visited-state tl-keydate--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </li>
                     {{/each}}
