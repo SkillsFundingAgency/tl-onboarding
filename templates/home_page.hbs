@@ -244,12 +244,13 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
                     <h2 class="govuk-heading-m tl-heading--bar">T Level events</h2>
-                    {{#each categories}}
-                    {{#is name "T Level events"}}
-
-                    {{#each sections}}
-                    {{#is name "T Level events"}}
                     <div class="govuk-grid-row tl-row-fill tl-home--panel--events--events">
+
+                        {{#each categories}}
+                        {{#is name "T Level events"}}
+
+                        {{#each sections}}
+                        {{#is name "T Level events"}}
                         {{#each articles}}
                         {{#is @index 0}}
 
@@ -333,15 +334,15 @@
                             <hr class="govuk-section-break tl-section-break govuk-!-margin-bottom-3 govuk-section-break--m govuk-section-break--visible tl-flex--grow">
                             <p class="govuk-body tl-text--right govuk-!-margin-bottom-0"><a id="tl-home-events--all" href="{{url}}" class="govuk-link govuk-link--no-visited-state">All events</a></p>
                         </div>
+
+                        {{/is}}
+                        {{/each}}
+                        {{/is}}
+                        {{/each}}
                     </div>
 
-                {{/is}}
-                {{/each}}
-                {{/is}}
-                {{/each}}
 
-
-            </div>
+                </div>
                 </div>
             </div>
     </section>
@@ -381,7 +382,7 @@
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-full tl-overflow--auto">
                             <span class="tl-home--category--image tl-home--category--image--7"></span>
-                            <h3 class="govuk-heading-s"><a href="https://support.tlevels.gov.uk/hc/en-gb/articles/360020077859-How-to-update-T-Level-course-information" class="govuk-link" GTMname="Update your information">Update your information</a></h3>
+                            <h3 class="govuk-heading-s"><a href="https://support.tlevels.gov.uk/hc/en-gb/articles/360020077859-How-to-update-T-Level-course-information" id="tl-coursedirectory--link" class="govuk-link" GTMname="Update your information">Update your information</a></h3>
                             <p class="govuk-body-s">Have you updated the National Careers Service Course Directory so students and employers can find you?</p>
                         </div>
                     </div>
