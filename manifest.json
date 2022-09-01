@@ -61,10 +61,10 @@
           "value": "Find out more"
         },
         {
-          "identifier": "homepage_banner_category",
+          "identifier": "homepage_banner_section",
           "type": "text",
-          "description": "Home page banner category ID",
-          "label": "Home page banner category ID",
+          "description": "Home page banner section ID",
+          "label": "Home page banner section ID",
           "value": "1"
         },
         {
