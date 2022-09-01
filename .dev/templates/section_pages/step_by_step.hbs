@@ -45,13 +45,47 @@
                                 <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-{{id}}">
                                     <div class="tl-article--content" id="articlebody{{id}}">{{excerpt body characters=600}}</div>
 
-
                                     <script>
-                                        $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlebody) {
 
+                                    function1 = function () {
+                                        var def = new jQuery.Deferred();
+
+                                        $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlebody) {
                                             var bodycontent = articlebody.article.body;
                                             $('#articlebody{{id}}').html(bodycontent);
+                                            def.resolve(arguments);
                                         });
+
+                                        return def.promise();
+                                    }
+
+                                    function2 = function () {
+                                        $(".govuk-tabs").attr("data-module", "govuk-tabs");
+                                        $(".tl-article--content .govuk-details").attr("data-module", "govuk-details");
+                                        $(".tl-article--content .govuk-details__summary").click(function () {
+                                            if (this.closest(".govuk-details").hasAttribute("open")) {
+                                                $(this).closest(".govuk-details").removeAttr('open');
+                                            }
+                                            else {
+                                                $(this).closest(".govuk-details").attr('open', true);
+                                            }
+                                        });
+                                        window.GOVUKFrontend.initAll()
+                                        createFindProviderTile();
+                                        scrollToRequestedTab();
+                                    }
+
+                                    function1().done(function2);
+
+                                    $(".tl-article--content .govuk-details__summary").click(function () {
+                                        if (this.closest(".govuk-details").hasAttribute("open")) {
+                                            $(this).closest(".govuk-details").removeAttr('open');
+                                        }
+                                        else {
+                                            $(this).closest(".govuk-details").attr('open', true);
+                                        }
+                                    });
+
                                     </script>
                                 </div>
                             </li>
