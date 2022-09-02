@@ -8858,7 +8858,7 @@ ul.govuk-radios label .gem-radios__input {
 .tl-event--list[data-networking~=false] li[data-event--type*=Networking] {
   display: none !important;
 }
-.tl-event--list[data-professional-development~=false] li[data-event--type*="T Level professional development"] {
+.tl-event--list[data-professional-development~=false] li[data-event--type*="Professional development"] {
   display: none !important;
 }
 .tl-event--list[data-assessments-and-results~=false] li[data-event--type*="Assessments and results"] {
