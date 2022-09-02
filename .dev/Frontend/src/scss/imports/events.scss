@@ -36,7 +36,7 @@
     }
 
     &[data-professional-development~="false"] {
-        li[data-event--type*="T Level professional development"] {
+        li[data-event--type*="Professional development"] {
             display: none !important;
         }
     }
