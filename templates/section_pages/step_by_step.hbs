@@ -62,7 +62,19 @@
 
                                     function2 = function () {
                                         $(".govuk-tabs").attr("data-module", "govuk-tabs");
-                                        $(".tl-article--content .govuk-details").attr("data-module", "govuk-details");
+                                        $("#articlebody{{id}} .govuk-details").attr("data-module", "govuk-details");
+                                        $("#articlebody{{id}} .govuk-details__summary").click(function () {
+                                            console.log("Details click")
+
+                                            if (this.closest(".govuk-details").hasAttribute("open")) {
+                                                console.log("Details already open")
+                                                $(this).closest(".govuk-details").removeAttr('open');
+                                            }
+                                            else {
+                                                console.log("Details opened")
+                                                $(this).closest(".govuk-details").attr('open', true);
+                                            }
+                                        });
                                             window.GOVUKFrontend.initAll()
                                     }
 
@@ -72,21 +84,6 @@
                                 </div>
                             </li>
                             {{/each}}
-
-                            <script>
-                                $(".tl-article--content .govuk-details__summary *").click(function () {
-                                    console.log("Details click")
-
-                                    if (this.closest(".govuk-details").hasAttribute("open")) {
-                                        console.log("Details already open")
-                                        $(this).closest(".govuk-details").removeAttr('open');
-                                    }
-                                    else {
-                                        console.log("Details opened")
-                                        $(this).closest(".govuk-details").attr('open', true);
-                                    }
-                                });
-                            </script>
                         </ol>
                     </div>
                 </section>
