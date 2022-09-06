@@ -7099,11 +7099,11 @@ x:-moz-any-link {
 }
 .tl-article--content .govuk-details[open] > .govuk-details__text {
   display: inline-block !important;
+  box-sizing: border-box;
 }
 .tl-article--content .govuk-details__text {
   display: none;
   width: 100%;
-  box-sizing: border-box;
 }
 .tl-article--content iframe {
   max-width: 100%;

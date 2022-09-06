@@ -47,7 +47,7 @@
 
                                     <script>
 
-                                    function1 = function () {
+                                    function1{{id}} = function () {
                                         var def = new jQuery.Deferred();
 
                                         $.getJSON('/api/v2/help_center/articles/{{id}}', function (articlebody) {
@@ -59,7 +59,7 @@
                                         return def.promise();
                                     }
 
-                                    function2 = function () {
+                                    function2{{id}} = function () {
                                         $(".govuk-tabs").attr("data-module", "govuk-tabs");
                                         $(".tl-article--content .govuk-details").attr("data-module", "govuk-details");
                                         $(".tl-article--content .govuk-details__summary").click(function () {
@@ -73,7 +73,7 @@
                                         window.GOVUKFrontend.initAll()
                                     }
 
-                                    function1().done(function2);
+                                    function1{{id}}().done(function2{{id}});
 
                                     $(".tl-article--content .govuk-details__summary").click(function () {
                                         if (this.closest(".govuk-details").hasAttribute("open")) {
