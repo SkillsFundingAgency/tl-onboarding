@@ -70,11 +70,14 @@
 
                                         $(".tl-article--content .govuk-details__summary").click(function () {
                                             window.GOVUKFrontend.initAll()
+                                            console.log("Details click")
 
-                                        if (this.closest(".govuk-details").hasAttribute("open")) {
+                                            if (this.closest(".govuk-details").hasAttribute("open")) {
+                                                console.log("Details already open")
                                             $(this).closest(".govuk-details").removeAttr('open');
                                         }
-                                        else {
+                                            else {
+                                                console.log("Details opened")
                                             $(this).closest(".govuk-details").attr('open', true);
                                         }
                                     });
