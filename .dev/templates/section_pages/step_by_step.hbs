@@ -56,6 +56,7 @@
                                             def.resolve(arguments);
                                         });
 
+
                                         return def.promise();
                                     }
 
@@ -69,20 +70,12 @@
                                             else {
                                                 $(this).closest(".govuk-details").attr('open', true);
                                             }
+
                                         });
                                         window.GOVUKFrontend.initAll()
                                     }
 
                                     function1{{id}}().done(function2{{id}});
-
-                                    $(".tl-article--content .govuk-details__summary").click(function () {
-                                        if (this.closest(".govuk-details").hasAttribute("open")) {
-                                            $(this).closest(".govuk-details").removeAttr('open');
-                                        }
-                                        else {
-                                            $(this).closest(".govuk-details").attr('open', true);
-                                        }
-                                    });
 
                                     </script>
                                 </div>
