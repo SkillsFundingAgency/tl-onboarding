@@ -68,7 +68,9 @@
 
                                     function1{{id}}().done(function2{{id}});
 
-                                    $(".tl-article--content .govuk-details__summary").click(function () {
+                                        $(".tl-article--content .govuk-details__summary").click(function () {
+                                            window.GOVUKFrontend.initAll()
+
                                         if (this.closest(".govuk-details").hasAttribute("open")) {
                                             $(this).closest(".govuk-details").removeAttr('open');
                                         }
@@ -76,6 +78,8 @@
                                             $(this).closest(".govuk-details").attr('open', true);
                                         }
                                     });
+
+
 
                                     </script>
                                 </div>
