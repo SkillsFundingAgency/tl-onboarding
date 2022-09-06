@@ -74,7 +74,7 @@
                             {{/each}}
 
                             <script>
-                                $(".tl-article--content .govuk-details__summary").click(function () {
+                                $(".tl-article--content .govuk-details__summary *").click(function () {
                                     console.log("Details click")
 
                                     if (this.closest(".govuk-details").hasAttribute("open")) {
