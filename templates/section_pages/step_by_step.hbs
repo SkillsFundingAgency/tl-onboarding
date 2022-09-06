@@ -67,26 +67,26 @@
                                     }
 
                                     function1().done(function2);
-                                    window.GOVUKFrontend.initAll()
-                                    $(".tl-article--content .govuk-details__summary").click(function () {
-                                        console.log("Details click")
-
-                                        if (this.closest(".govuk-details").hasAttribute("open")) {
-                                            console.log("Details already open")
-                                        $(this).closest(".govuk-details").removeAttr('open');
-                                        }
-                                        else {
-                                            console.log("Details opened")
-                                        $(this).closest(".govuk-details").attr('open', true);
-                                        }
-                                    });
-
-
 
                                     </script>
                                 </div>
                             </li>
                             {{/each}}
+
+                            <script>
+                                $(".tl-article--content .govuk-details__summary").click(function () {
+                                    console.log("Details click")
+
+                                    if (this.closest(".govuk-details").hasAttribute("open")) {
+                                        console.log("Details already open")
+                                        $(this).closest(".govuk-details").removeAttr('open');
+                                    }
+                                    else {
+                                        console.log("Details opened")
+                                        $(this).closest(".govuk-details").attr('open', true);
+                                    }
+                                });
+                            </script>
                         </ol>
                     </div>
                 </section>
