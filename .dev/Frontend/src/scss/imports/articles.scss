@@ -293,6 +293,7 @@
         .govuk-details__text {
             display: none;
             width: 100%;
+            box-sizing: border-box;
         }
 
         iframe {
