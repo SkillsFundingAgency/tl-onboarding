@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - Answerbot",
+  "name": "GDS Style - Homepage",
   "author": "Ash Anderton",
-  "version": "2.5.34",
+  "version": "2.6.63",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -36,6 +36,52 @@
         }
       ]
     },
+    {
+      "label": "Home Page Settings",
+      "variables": [
+        {
+          "identifier": "homepage_banner_title",
+          "type": "text",
+          "description": "Home page banner title",
+          "label": "Home page banner title",
+          "value": "A step-by-step guide to delivering T Levels"
+        },
+        {
+          "identifier": "homepage_banner_text",
+          "type": "text",
+          "description": "Home page banner text",
+          "label": "Home page banner text",
+          "value": "From registration to results, find out how to deliver T Levels at your school or college, and what support you can get."
+        },
+        {
+          "identifier": "homepage_banner_button",
+          "type": "text",
+          "description": "Home page banner text",
+          "label": "Home page banner text",
+          "value": "Find out more"
+        },
+        {
+          "identifier": "homepage_banner_section",
+          "type": "text",
+          "description": "Home page banner section ID",
+          "label": "Home page banner section ID",
+          "value": "1"
+        },
+        {
+          "identifier": "homepage_banner_image",
+          "type": "file",
+          "description": "Home Page Banner Image",
+          "label": "Banner Image"
+        },
+        {
+          "identifier": "homepage_news_image",
+          "type": "file",
+          "description": "Home Page News Image",
+          "label": "News Image"
+        }
+      ]
+    },
+
     {
       "label": "Home Page Images",
       "variables": [
@@ -86,35 +132,6 @@
           "type": "file",
           "description": "Home page image 7",
           "label": "Image 7"
-        },
-        {
-          "identifier": "coursedirectory_image",
-          "type": "file",
-          "description": "Course directory section image",
-          "label": "Course directory section image"
-        }
-      ]
-    },
-    {
-      "label": "images_group_label",
-      "variables": [
-        {
-          "identifier": "homepage_background_image",
-          "type": "file",
-          "description": "homepage_background_image_description",
-          "label": "homepage_background_image_label"
-        },
-        {
-          "identifier": "community_background_image",
-          "type": "file",
-          "description": "community_background_image_description",
-          "label": "community_background_image_label"
-        },
-        {
-          "identifier": "community_image",
-          "type": "file",
-          "description": "community_image_description",
-          "label": "community_image_label"
         }
       ]
     },
@@ -343,6 +360,20 @@
           "description": "Sitewide",
           "label": "Newseltter Section ID",
           "value": "360005433999"
+        },
+        {
+          "identifier": "section_id_keydates",
+          "type": "text",
+          "description": "Sitewide",
+          "label": "Keydates Section ID",
+          "value": "7201670708242"
+        },
+        {
+          "identifier": "section_id_events",
+          "type": "text",
+          "description": "Sitewide",
+          "label": "Events Section ID",
+          "value": "6493403059218"
         },
         {
           "identifier": "subdomain",

@@ -57,21 +57,6 @@ gulp.task('customjs', () => {
         .pipe(gulp.dest(paths.dist.Assets));
 });
 
-gulp.task('calendarjs', () => {
-    return src([
-        'Frontend/src/js/calendar.js',
-        'Frontend/src/js/tavo-calendar.js',
-    ])
-        .pipe(minify({
-            ext: {
-                min: '.js'
-            },
-            noSource: true
-        }))
-        .pipe(gulp.dest(paths.dist.Assets));
-});
-
-
 gulp.task('sass', () => {
         return src(paths.src.SCSS)
             .pipe(wait(200))

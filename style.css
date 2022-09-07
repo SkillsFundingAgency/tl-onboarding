@@ -6183,15 +6183,33 @@ x:-moz-any-link {
 .js-enabled .tl-js-hidden {
   display: none;
 }
+.js-enabled .tl-js-hidden--important {
+  display: none !important;
+}
 .js-enabled .tl-js-visible {
   display: inline-block;
+}
+.js-enabled .tl-js-visible--inline {
+  display: inline;
+}
+.js-enabled .tl-js-visible--flex {
+  display: flex;
 }
 
 .tl-js-hidden {
   display: inline-block;
 }
+.tl-js-hidden--important {
+  display: inline-block;
+}
 
 .tl-js-visible {
+  display: none;
+}
+.tl-js-visible--inline {
+  display: none;
+}
+.tl-js-visible--flex {
   display: none;
 }
 
@@ -6216,6 +6234,14 @@ x:-moz-any-link {
 }
 .tl-text--left {
   text-align: left;
+}
+
+.tl-overflow--auto {
+  overflow: auto;
+}
+
+.tl-overflow--visible {
+  overflow: visible;
 }
 
 .tl-push--right {
@@ -6308,9 +6334,34 @@ x:-moz-any-link {
 
 .tl-image--cover {
   object-fit: cover;
-  min-width: 100%;
-  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-position: right bottom;
+  height: 100%;
+  width: 100%;
+}
+
+.tl-heading--bar {
+  border-bottom: 4px solid #0b0c0c;
+  width: 100%;
+  padding-bottom: 10px;
+}
+@media (min-width: 40.0625em) {
+  .tl-heading--bar {
+    padding-bottom: 10px;
+  }
+}
+
+.tl-flex--column {
+  display: flex;
+  flex-direction: column;
+}
+.tl-flex--grow {
+  flex-grow: 1;
+}
+
+.tl-section-break {
+  border-bottom: 2px solid #b1b4b6;
 }
 
 .tl-search {
@@ -7048,6 +7099,7 @@ x:-moz-any-link {
 }
 .tl-article--content .govuk-details[open] > .govuk-details__text {
   display: inline-block !important;
+  box-sizing: border-box;
 }
 .tl-article--content .govuk-details__text {
   display: none;
@@ -7129,7 +7181,12 @@ x:-moz-any-link {
 }
 @media (min-width: 40.0625em) {
   .tl-home--category {
-    width: calc(33.333% - 30px);
+    width: calc(50% - 30px);
+  }
+}
+@media (min-width: 48.0625em) {
+  .tl-home--category {
+    width: calc(25% - 30px);
   }
 }
 .tl-home--category .tl-home--category--image {
@@ -7137,9 +7194,20 @@ x:-moz-any-link {
   margin-bottom: 20px;
   background-image: url("$home_image_1");
   background-size: cover;
-  min-height: 200px;
+  min-height: 150px;
   display: block;
   background-repeat: no-repeat;
+}
+@media (min-width: 20em) and (max-width: 40.0525em) {
+  .tl-home--category .tl-home--category--image {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin-right: 10px;
+  }
+}
+.tl-home--category h3 {
+  word-break: break-word;
 }
 .tl-home--category:nth-child(2) .tl-home--category--image {
   background-image: url("$home_image_2");
@@ -7157,53 +7225,33 @@ x:-moz-any-link {
   background-image: url("$home_image_6");
 }
 
-.tl-home--hero {
-  background-color: #1d70b8;
-  color: #ffffff;
-  padding-top: 25px;
-  padding-bottom: 25px;
+.tl-home--banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
-@media (min-width: 40.0625em) {
-  .tl-home--hero {
-    padding-top: 40px;
+.tl-home--banner--column {
+  display: flex;
+  flex-basis: 100%;
+  flex: 1;
+  width: 50%;
+}
+@media (max-width: 48.0525em) {
+  .tl-home--banner--column:first-child {
+    order: 2;
   }
 }
-@media (min-width: 40.0625em) {
-  .tl-home--hero {
-    padding-bottom: 40px;
+@media (max-width: 48.0525em) {
+  .tl-home--banner {
+    flex-direction: column;
   }
-}
-.tl-home--hero * {
-  color: #ffffff;
-}
-.tl-home--hero .govuk-link, .tl-home--hero .tl-event--pagination ul li a, .tl-event--pagination ul li .tl-home--hero a, .tl-home--hero .tl-community--comment--actions button, .tl-community--comment--actions .tl-home--hero button, .tl-home--hero .tl-community--post--actions button, .tl-community--post--actions .tl-home--hero button, .tl-home--hero .tl-community--post--content a, .tl-community--post--content .tl-home--hero a, .tl-home--hero .tl-phase-banner--link, .tl-home--hero .tl-search--pagination ul li a, .tl-home--hero .tl-community--pagination ul li a, .tl-search--pagination ul li .tl-home--hero a, .tl-community--pagination ul li .tl-home--hero a, .tl-home--hero .tl-article--sidebar a, .tl-article--sidebar .tl-home--hero a, .tl-home--hero .tl-article--vote .tl-article--vote--button, .tl-article--vote .tl-home--hero .tl-article--vote--button, .tl-home--hero .tl-article--content a, .tl-article--content .tl-home--hero a, .tl-home--hero .tl-article--backtotop {
-  color: #ffffff;
-}
-.tl-home--hero .govuk-details__summary:focus .govuk-details__summary-text, .tl-home--hero .tl-article--details__summary:focus .govuk-details__summary-text {
-  color: #0b0c0c;
-}
-.tl-home--hero .tl-breadcrumbs li:before {
-  border-color: #ffffff;
-}
-.tl-home--hero .tl-breadcrumbs * {
-  color: #ffffff !important;
-}
-.tl-home--hero--minimal {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-@media (min-width: 40.0625em) {
-  .tl-home--hero--minimal {
-    padding-bottom: 10px;
+  .tl-home--banner--column {
+    width: 100%;
   }
-}
-@media (min-width: 40.0625em) {
-  .tl-home--hero--minimal {
-    padding-top: 10px;
+  .tl-home--banner--column--image {
+    max-height: 73vw;
   }
-}
-.tl-home--hero--minimal .tl-search--error {
-  text-align: left;
 }
 
 .tl-home--panels {
@@ -7311,6 +7359,55 @@ x:-moz-any-link {
 }
 .tl-home--panel--events--content {
   padding: 20px;
+}
+
+.tl-home-keydates--date {
+  min-width: 90px;
+}
+@media (min-width: 40.0625em) {
+  .tl-home-keydates--date {
+    display: inline-block;
+    float: left;
+  }
+}
+
+.tl-home--events--card {
+  padding: 20px !important;
+  width: 100%;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+@media (min-width: 40.0625em) {
+  .tl-home--events--card {
+    margin-bottom: 5px;
+  }
+}
+
+.tl-home--category--image {
+  max-width: 100%;
+  margin-bottom: 20px;
+  background-image: url("$home_image_1");
+  background-size: cover;
+  min-height: 200px;
+  display: block;
+  background-repeat: no-repeat;
+}
+@media (min-width: 20em) and (max-width: 40.0525em) {
+  .tl-home--category--image {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin-right: 10px;
+  }
+}
+.tl-home--category--image--5 {
+  background-image: url("$home_image_5");
+}
+.tl-home--category--image--6 {
+  background-image: url("$home_image_6");
+}
+.tl-home--category--image--7 {
+  background-image: url("$home_image_7");
 }
 
 /*Breadcrumbs*/
@@ -7501,9 +7598,6 @@ x:-moz-any-link {
   background-color: #ffdd00;
   color: #0b0c0c;
 }
-.tl-phase-banner--home {
-  border-bottom: none;
-}
 .tl-phase-banner--link {
   font-weight: bold;
 }
@@ -7531,13 +7625,13 @@ x:-moz-any-link {
     padding: 20px;
   }
 }
-.tl-card--grey, .tl-hero--card {
+.tl-card--grey, .tl-hero--card, .tl-home--banner--card, .tl-home--events--card {
   background-color: #f3f2f1;
   padding: 30px;
   position: relative;
 }
 @media (max-width: 40.0525em) {
-  .tl-card--grey, .tl-hero--card {
+  .tl-card--grey, .tl-hero--card, .tl-home--banner--card, .tl-home--events--card {
     padding: 20px;
   }
 }
@@ -7556,6 +7650,17 @@ x:-moz-any-link {
 }
 @media (max-width: 40.0525em) {
   .tl-card--purple {
+    padding: 20px;
+  }
+}
+.tl-card--black {
+  background-color: #f3f2f1;
+  padding: 30px;
+  margin: 20px 0;
+  border-bottom: 5px solid #0b0c0c;
+}
+@media (max-width: 40.0525em) {
+  .tl-card--black {
     padding: 20px;
   }
 }
@@ -8700,24 +8805,100 @@ ul.govuk-radios label .gem-radios__input {
 
 /*Workshops and webinars CSS*/
 .tl-event--list li {
-  display: none;
+  display: block;
 }
 .tl-event--list li p {
   margin: 10px 0 15px 0;
 }
-.tl-event--list[data-event--filter="Course information"] li[data-event--labels*="Course information"] {
+.tl-event--list--tag {
+  padding: 3px 5px;
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+@media print {
+  .tl-event--list--tag {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .tl-event--list--tag {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.4285714286;
+  }
+}
+@media print {
+  .tl-event--list--tag {
+    font-size: 12pt;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 40.0625em) {
+  .tl-event--list--tag {
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 40.0625em) {
+  .tl-event--list--tag {
+    margin-left: 5px;
+  }
+}
+.tl-event--list[data-course-information=false] li[data-event--type*="Course information"] {
+  display: none !important;
+}
+.tl-event--list[data-industry-placements~=false] li[data-event--type*="Industry placements"] {
+  display: none !important;
+}
+.tl-event--list[data-networking~=false] li[data-event--type*=Networking] {
+  display: none !important;
+}
+.tl-event--list[data-professional-development~=false] li[data-event--type*="Professional development"] {
+  display: none !important;
+}
+.tl-event--list[data-assessments-and-results~=false] li[data-event--type*="Assessments and results"] {
+  display: none !important;
+}
+.tl-event--list[data-census-and-data-collections~=false] li[data-event--type*="Census and data collections"] {
+  display: none !important;
+}
+.tl-event--list[data-implementation-plan~=false] li[data-event--type*="Implementation plan"] {
+  display: none !important;
+}
+.tl-event--list[data-funding~=false] li[data-event--type*=Funding] {
+  display: none !important;
+}
+.tl-event--list[data-registration~=false] li[data-event--type*=Registration] {
+  display: none !important;
+}
+.tl-event--list[data-location-online~=false] li[data-event--location*=Online] {
+  display: none !important;
+}
+.tl-event--list[data-location-inperson~=false] li[data-event--location*="In person"] {
+  display: none !important;
+}
+.tl-event--list[data-date=date-this-week] li {
+  display: none;
+}
+.tl-event--list[data-date=date-this-week] li[data-event--thisweek=true] {
   display: block;
 }
-.tl-event--list[data-event--filter="Industry placements"] li[data-event--labels*="Industry placements"] {
+.tl-event--list[data-date=date-this-month] li {
+  display: none;
+}
+.tl-event--list[data-date=date-this-month] li[data-event--thismonth=true] {
   display: block;
 }
-.tl-event--list[data-event--filter=Networking] li[data-event--labels*=Networking] {
-  display: block;
+.tl-event--list[data-date=date-next-month] li {
+  display: none;
 }
-.tl-event--list[data-event--filter="T Level professional development"] li[data-event--labels*="T Level professional development"] {
-  display: block;
-}
-.tl-event--list[data-event--filter=all] li {
+.tl-event--list[data-date=date-next-month] li[data-event--nextmonth=true] {
   display: block;
 }
 

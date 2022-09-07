@@ -2,39 +2,114 @@
 
 .tl-event--list {
     li {
-        display: none;
+        display: block;
 
         p {
             margin: 10px 0 15px 0;
         }
     }
 
-    &[data-event--filter="Course information"] {
-        li[data-event--labels*="Course information"] {
-            display: block;
+    &--tag {
+        padding: 3px 5px;
+        @include govuk-font($size: 14, $weight: bold);
+        @include govuk-responsive-margin(3, "bottom");
+        @include govuk-responsive-margin(1, "left");
+    }
+
+
+    &[data-course-information="false"] {
+        li[data-event--type*="Course information"] {
+            display: none !important;
         }
     }
 
-    &[data-event--filter="Industry placements"] {
-        li[data-event--labels*="Industry placements"] {
-            display: block;
+    &[data-industry-placements~="false"] {
+        li[data-event--type*="Industry placements"] {
+            display: none !important;
         }
     }
 
-    &[data-event--filter="Networking"] {
-        li[data-event--labels*="Networking"] {
-            display: block;
+    &[data-networking~="false"] {
+        li[data-event--type*="Networking"] {
+            display: none !important;
         }
     }
 
-    &[data-event--filter="T Level professional development"] {
-        li[data-event--labels*="T Level professional development"] {
-            display: block;
+    &[data-professional-development~="false"] {
+        li[data-event--type*="Professional development"] {
+            display: none !important;
         }
     }
 
-    &[data-event--filter="all"] {
+    &[data-assessments-and-results~="false"] {
+        li[data-event--type*="Assessments and results"] {
+            display: none !important;
+        }
+    }
+
+    &[data-census-and-data-collections~="false"] {
+        li[data-event--type*="Census and data collections"] {
+            display: none !important;
+        }
+    }
+
+    &[data-implementation-plan~="false"] {
+        li[data-event--type*="Implementation plan"] {
+            display: none !important;
+        }
+    }
+
+    &[data-funding~="false"] {
+        li[data-event--type*="Funding"] {
+            display: none !important;
+        }
+    }
+
+    &[data-registration~="false"] {
+        li[data-event--type*="Registration"] {
+            display: none !important;
+        }
+    }
+
+
+    &[data-location-online~="false"] {
+        li[data-event--location*="Online"] {
+            display: none !important;
+        }
+    }
+
+    &[data-location-inperson~="false"] {
+        li[data-event--location*="In person"] {
+            display: none !important;
+        }
+    }
+
+    &[data-date="date-this-week"] {
         li {
+            display: none;
+        }
+
+        li[data-event--thisweek="true"] {
+            display: block;
+        }
+    }
+
+    &[data-date="date-this-month"] {
+        li {
+            display: none;
+        }
+
+        li[data-event--thismonth="true"] {
+            display: block;
+        }
+    }
+
+    &[data-date="date-next-month"] {
+        li {
+            display: none;
+        }
+
+        li[data-event--nextmonth="true"] {
             display: block;
         }
     }

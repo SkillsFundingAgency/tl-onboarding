@@ -1,4 +1,4 @@
-﻿<!-- Main content -->
+<!-- Main content -->
 
 <div class="govuk-width-container">
     <div id="tl-breadcrumbs--newsletter">
@@ -23,19 +23,9 @@
         <div class="govuk-grid-column-two-thirds">
             <div id="tl-article--details" class="tl-hide">
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
                 <p id="tl-article--date" class="tl-hide govuk-body">
                     <strong>Date and time</strong><br>
                     <span></span>
-                </p>
-                <p id="tl-article--location" class="tl-hide govuk-body">
-                    <strong>Location</strong><br>
-                    <span></span>
-                </p>
-
-
-                <p id="tl-article--book" class="tl-hide govuk-body">
-                    <a href="#" gtmname="{{article.title}}" class="govuk-link">Book your place</a>. There is no charge to attend this webinar.
                 </p>
             </div>
             <hr class="govuk-section-break govuk-section-break--visible">
@@ -212,24 +202,10 @@
 
                     if (labelname.indexOf("date") != -1) {
                         var date = labelname.split('/')[1];
-                        var dateformatted = moment(date).format("dddd, Do MMMM YYYY, h:mm A");
+                        var dateformatted = moment(date).format("dddd, Do MMMM YYYY");
                         $("#tl-article--details").show();
                         $("#tl-article--date").show();
                         $("#tl-article--date span").text(dateformatted);                    }
-
-                    if (labelname.indexOf("location") != -1) {
-                        var location = labelname.split('/')[1];
-                        $("#tl-article--details").show();
-                        $("#tl-article--location").show();
-                        $("#tl-article--location span").text(location);
-                    }
-
-                    if (labelname.indexOf("book") != -1) {
-                        var book = labelname.replace("book/", "");
-                        $("#tl-article--details").show();
-                        $("#tl-article--book").show();
-                        $("#tl-article--book a").attr("href", book);
-                    }
                 });
             }
         });

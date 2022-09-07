@@ -1,4 +1,4 @@
-﻿<!-- Main content -->
+<!-- Main content -->
 
 
 <div class="govuk-width-container">
@@ -19,9 +19,7 @@
             {{#if section.description}}
             <p class="govuk-body-l">{{section.description}}</p>
             {{/if}}
-            <p class="govuk-body">You can find important dates and deadlines on the <a href="/hc/en-gb/sections/{{settings.section_id_keydates}}" class="govuk-link">key dates page</a></p>
-
-
+            <p class="govuk-body">You can find workshops, webinars and other events on the <a href="/hc/en-gb/sections/{{settings.section_id_events}}" class="govuk-link">events page</a></p>
         </div>
     </div>
     <div class="govuk-grid-row">
@@ -37,25 +35,25 @@
                         <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date</h3>
 
                         <div class="govuk-radios__item" id="tl-events-filter--all" gtmname="All date events">
-                            <input class="govuk-radios__input" id="date-all" name="Event date" type="radio" value="all" checked="checked" gtmname="All date events">
+                            <input class="govuk-radios__input" id="date-all" name="Event date" type="radio" value="all" checked="checked" gtmname="All date keydates">
                             <label class="govuk-label govuk-radios__label" for="date-all" gtmname="All date events">
                                 All
                             </label>
                         </div>
                         <div class="govuk-radios__item" id="tl-events-filter--courseinfo" gtmname="This week events">
-                            <input class="govuk-radios__input" id="date-this-week" name="Event date" type="radio" value="This week" gtmname="This week events">
+                            <input class="govuk-radios__input" id="date-this-week" name="Event date" type="radio" value="This week" gtmname="This week keydates">
                             <label class="govuk-label govuk-radios__label" for="date-this-week" gtmname="This week events">
                                 This week
                             </label>
                         </div>
                         <div class="govuk-radios__item" id="tl-events-filter--industryplacements" gtmname="This month events">
-                            <input class="govuk-radios__input" id="date-this-month" name="Event date" type="radio" value="This month" gtmname="This month events">
+                            <input class="govuk-radios__input" id="date-this-month" name="Event date" type="radio" value="This month" gtmname="This month keydates">
                             <label class="govuk-label govuk-radios__label" for="date-this-month" gtmname="This month events">
                                 This month
                             </label>
                         </div>
                         <div class="govuk-radios__item" id="tl-events-filter--networking" gtmname="Next month events">
-                            <input class="govuk-radios__input" id="date-next-month" name="Event date" type="radio" value="Next month" gtmname="Next month events">
+                            <input class="govuk-radios__input" id="date-next-month" name="Event date" type="radio" value="Next month" gtmname="Next month keydates">
                             <label class="govuk-label govuk-radios__label" for="date-next-month" gtmname="Next month events">
                                 Next month
                             </label>
@@ -63,63 +61,53 @@
 
                     </div>
                     <div class="govuk-checkboxes--small govuk-!-padding-left-3 govuk-!-margin-bottom-4 tl-overflow--auto">
-                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Event type</h3>
+                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Category</h3>
 
-                        <div class="govuk-checkboxes__item" id="tl-events-filter--courseinfo" gtmname="Course information events">
-                            <input class="govuk-checkboxes__input" id="course-information" name="Event type" type="checkbox" value="Course information" gtmname="Course information events" checked>
-                            <label class="govuk-label govuk-checkboxes__label" for="course-information" gtmname="Course information events">
-                                Course information
+                        <div class="govuk-checkboxes__item" id="tl-events-filter--assessments" gtmname="Assessments and results">
+                            <input class="govuk-checkboxes__input" id="assessments-and-results" name="Event type" type="checkbox" value="Course information" gtmname="Assessments and results keydates" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="assessments-and-results" gtmname="Assessments and results">
+                                Assessments and results
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__item" id="tl-events-filter--industryplacements" gtmname="Industry placements events">
-                            <input class="govuk-checkboxes__input" id="industry-placements" name="Event type" type="checkbox" value="Industry placements" gtmname="Industry placements events" checked>
-                            <label class="govuk-label govuk-checkboxes__label" for="industry-placements" gtmname="Industry placements events">
-                                Industry placements
+                        <div class="govuk-checkboxes__item" id="tl-events-filter--census" gtmname="Census and data collections">
+                            <input class="govuk-checkboxes__input" id="census-and-data-collections" name="Event type" type="checkbox" value="Industry placements" gtmname="Census and data collections keydates" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="census-and-data-collections" gtmname="Census and data collections">
+                                Census and data collections
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__item" id="tl-events-filter--networking" gtmname="Networking events">
-                            <input class="govuk-checkboxes__input" id="networking" name="Event type" type="checkbox" value="Networking" gtmname="Networking events" checked>
-                            <label class="govuk-label govuk-checkboxes__label" for="networking" gtmname="Networking events">
-                                Networking
+                        <div class="govuk-checkboxes__item" id="tl-events-filter--implementation" gtmname="Implementation plan">
+                            <input class="govuk-checkboxes__input" id="implementation-plan" name="Event type" type="checkbox" value="Networking" gtmname="Implementation plan keydates" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="implementation-plan" gtmname="Implementation plan">
+                                Implementation plan
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__item" id="tl-events-filter--professionaldevelopment" gtmname="Professional development events">
-                            <input class="govuk-checkboxes__input" id="professional-development" name="Event type" type="checkbox" value="Professional development" gtmname="Professional development events" checked>
-                            <label class="govuk-label govuk-checkboxes__label" for="professional-development" gtmname="Professional development events">
-                                Professional development
+                        <div class="govuk-checkboxes__item" id="tl-events-filter--funding" gtmname="Funding">
+                            <input class="govuk-checkboxes__input" id="funding" name="Event type" type="checkbox" value="T Level professional development" gtmname="Funding keydates" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="funding" gtmname="Funding">
+                                Funding
                             </label>
                         </div>
-
-                    </div>
-
-                    <div class="govuk-checkboxes--small govuk-!-padding-left-3 govuk-!-margin-bottom-4 tl-overflow--auto">
-                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Location</h3>
-
-                        <div class="govuk-checkboxes__item" id="tl-events-filter--online" gtmname="Online">
-                            <input class="govuk-checkboxes__input" id="location-online" name="Event location" type="checkbox" value="Online" gtmname="Online events" checked>
-                            <label class="govuk-label govuk-checkboxes__label" for="location-online" gtmname="location-online">
-                                Online
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item" id="tl-events-filter--inperson" gtmname="inperson">
-                            <input class="govuk-checkboxes__input" id="location-inperson" name="Event location" type="checkbox" value="inperson" gtmname="In person events" checked>
-                            <label class="govuk-label govuk-checkboxes__label" for="location-inperson" gtmname="location-inperson">
-                                In person
+                        <div class="govuk-checkboxes__item" id="tl-events-filter--registration" gtmname="Registration">
+                            <input class="govuk-checkboxes__input" id="registration" name="Event type" type="checkbox" value="T Level professional development" gtmname="Registration keydates" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="registration" gtmname="Registration">
+                                Registration
                             </label>
                         </div>
 
                     </div>
+
+
 
                     <script>
                         function checkchange() {
                             let checkitem = $(this).attr("id");
                             if (!$(this).is(':checked')) {
-                                sessionStorage.setItem("eventfilter" + checkitem, 'false');
+                                sessionStorage.setItem("keydatefilter" + checkitem, 'false');
                                 $(".tl-event--list").attr("data-" + checkitem, false);
                             }
 
                             else {
-                                sessionStorage.removeItem("eventfilter" + checkitem);
+                                sessionStorage.removeItem("keydatefilter" + checkitem);
                                 $(".tl-event--list").removeAttr("data-" + checkitem);
                             }
                             eventsearch()
@@ -128,7 +116,7 @@
                         function radiochange() {
                             let checkitem = $(this).attr("id");
                             if ($(this).is(':checked')) {
-                                sessionStorage.setItem("eventdate", checkitem);
+                                sessionStorage.setItem("keydatedate", checkitem);
                                 $(".tl-event--list").attr("data-date", checkitem);
                             }
                             eventsearch()
@@ -136,8 +124,8 @@
 
                         function setfilters() {
                             for (const [key, value] of Object.entries(sessionStorage)) {
-                                if (!key.indexOf("eventfilter")) {
-                                    let checkitem = key.replace("eventfilter", "");
+                                if (!key.indexOf("keydatefilter")) {
+                                    let checkitem = key.replace("keydatefilter", "");
                                     let checkvalue = value;
                                     $(".tl-event--list").attr("data-" + checkitem, checkvalue)
                                     if (checkvalue != "true") {
@@ -145,7 +133,7 @@
                                     }
                                 }
 
-                                if (!key.indexOf("eventdate")) {
+                                if (!key.indexOf("keydatedate")) {
                                     let checkvalue = value;
                                     $(".tl-event--list").attr("data-date", checkvalue)
                                     $('input[id="' + checkvalue + '"]').prop("checked", true)
@@ -153,7 +141,6 @@
                             }
                         }
                         $('input[name="Event type"]').change(checkchange);
-                        $('input[name="Event location"]').change(checkchange);
                         $('input[name="Event date"]').change(radiochange);
                         $(document).ready(setfilters);
                     </script>
@@ -164,8 +151,9 @@
 
         <div class="govuk-grid-column-two-thirds">
             <section>
+
                 <form class="tl-event--search tl-search govuk-!-margin-bottom-4 tl-js-visible--flex">
-                    <input type="search" name="query" id="tl-event--search--input" placeholder="Search events" aria-label="Search events">
+                    <input type="search" name="query" id="tl-event--search--input" placeholder="Search key dates" aria-label="Search key dates">
                     <input type="submit" value="Search">
                 </form>
                 <!-- Search Events JS -->
@@ -195,23 +183,24 @@
                     }
                 </script>
                 <div class="tl-event--list-none" style="display: none">
-                    <p class="govuk-body">No results for "<span class="govuk-!-font-weight-bold tl-event--list-query"></span>". You can use the filter to search by event type, date or location, or see all events.</p>
+                    <p class="govuk-body">No results for "<span class="govuk-!-font-weight-bold tl-event--list-query"></span>". You can use the filter to search by key date category or date, or see all key dates.</p>
                 </div>
                 {{#if section.articles}}
                 <ul class="govuk-list tl-event--list">
+
                     {{#each section.articles}}
                     <li id="tl-article--container--{{id}}">
-                        <div class="tl-text--right"><strong class="tl-event--list--tag govuk-tag govuk-tag--grey" id="tl-event--list--tag--type--{{id}}"></strong><strong class="tl-event--list--tag govuk-tag govuk-tag--grey" id="tl-event--list--tag--location--{{id}}"></strong></div>
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-0">{{title}}</h3>
                         <span class="govuk-body-s tl-text-headercase" id="tl-article--date--{{id}}"></span>
-                        <p class="govuk-body">{{excerpt body characters=395}}</p>
-                        <a class="govuk-link govuk-link-no-visited-state tl-event--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
+                        <p class="govuk-body">{{excerpt body characters=400}}</p>
+                        <a class="govuk-link govuk-link-no-visited-state tl-keydate--moreinfo" GTMname="{{title}}" href="{{url}}">More information</a>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </li>
                     {{/each}}
+
                 </ul>
                 {{else}}
-                <p class="govuk-body">There are no upcoming T Level events at the moment.</p>
+                <p class="govuk-body">There are no upcoming T Level key dates or deadlines.</p>
                 {{/if}}
             </section>
             <script>
@@ -235,12 +224,11 @@
                                         if (labelname.indexOf("type") != -1) {
                                             var type = labelname.split('/')[1];
                                             $("#tl-article--container--" + functionid).attr("data-event--type", type);
-                                            $("#tl-event--list--tag--type--" + functionid).text(type);
                                         }
 
                                         if (labelname.indexOf("date") != -1) {
                                             var date = labelname.split('/')[1];
-                                            var dateformatted = moment(date).format("dddd, Do MMMM YYYY, h:mm A");
+                                            var dateformatted = moment(date).format("dddd, Do MMMM YYYY");
                                             var weekcheck = moment(date).isSame(new Date(), 'week');
                                             var monthcheck = moment(date).isSame(new Date(), 'month');
                                             var nextmonthcheck = moment(date).subtract(1, 'months').isSame(new Date(), 'month');
@@ -256,12 +244,6 @@
                                             $("#tl-article--date--" + functionid).text(dateformatted);;
                                         }
 
-                                        if (labelname.indexOf("location") != -1) {
-                                            var location = labelname.split('/')[1];
-                                            $("#tl-article--container--" + functionid).attr("data-event--location", location);
-                                            $("#tl-event--list--tag--location--" + functionid).text(location);
-
-                                        }
                                     });
                                 };
                             });
@@ -318,12 +300,11 @@
                                                 if (labelname.indexOf("type") != -1) {
                                                     var type = labelname.split('/')[1];
                                                     $("#tl-article--container--" + functionid).attr("data-event--type", type);
-                                                    $("#tl-event--list--tag--type--" + functionid).text(type);
                                                 }
 
                                                 if (labelname.indexOf("date") != -1) {
                                                     var date = labelname.split('/')[1];
-                                                    var dateformatted = moment(date).format("dddd, Do MMMM YYYY, h:mm A");
+                                                    var dateformatted = moment(date).format("dddd, Do MMMM YYYY");
                                                     var weekcheck = moment(date).isSame(new Date(), 'week');
                                                     var monthcheck = moment(date).isSame(new Date(), 'month');
                                                     var nextmonthcheck = moment(date).subtract(1, 'months').isSame(new Date(), 'month');
@@ -339,16 +320,10 @@
                                                     $("#tl-article--date--" + functionid).text(dateformatted);;
                                                 }
 
-                                                if (labelname.indexOf("location") != -1) {
-                                                    var location = labelname.split('/')[1];
-                                                    $("#tl-article--container--" + functionid).attr("data-event--location", location);
-                                                    $("#tl-event--list--tag--location--" + functionid).text(location);
-                                                }
                                             });
                                         };
                                     });
-                                });
-                                // Remove the pagination controls.
+                                });                                // Remove the pagination controls.
                                 document.getElementsByClassName("pagination")[0].innerHTML = '';
                             };
                         };

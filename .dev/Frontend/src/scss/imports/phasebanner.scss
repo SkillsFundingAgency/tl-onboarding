@@ -18,10 +18,6 @@
         }
     }
 
-    &--home {
-        border-bottom: none;
-    }
-
     &--link {
         @extend .govuk-link;
         font-weight: bold;
