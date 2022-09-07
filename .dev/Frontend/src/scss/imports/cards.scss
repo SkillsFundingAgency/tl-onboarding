@@ -39,6 +39,18 @@
         }
     }
 
+    &--black {
+        background-color: govuk-colour("light-grey");
+        padding: 30px;
+        margin: 20px 0;
+        border-bottom: 5px solid $govuk-text-colour;
+
+
+        @include govuk-media-query ($until: tablet) {
+            padding: 20px;
+        }
+    }
+
     &--boxlinks {
         background-color: govuk-colour("light-grey");
         padding: 30px;
@@ -51,4 +63,3 @@
         }
     }
 }
-

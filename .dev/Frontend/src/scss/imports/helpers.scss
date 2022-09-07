@@ -14,19 +14,43 @@
 .js-enabled {
     .tl-js-hidden {
         display: none;
+
+        &--important {
+            display: none !important;
+        }
     }
 
     .tl-js-visible {
         display: inline-block;
+
+        &--inline {
+            display: inline;
+        }
+
+        &--flex {
+            display: flex;
+        }
     }
 }
 
 .tl-js-hidden {
     display: inline-block;
+
+    &--important {
+        display: inline-block;
+    }
 }
 
 .tl-js-visible {
     display: none;
+
+    &--inline {
+        display: none;
+    }
+
+    &--flex {
+        display: none;
+    }
 }
 
 
@@ -54,6 +78,14 @@
     &--left {
         text-align: left;
     }
+}
+
+.tl-overflow--auto {
+    overflow: auto;
+}
+
+.tl-overflow--visible {
+    overflow: visible;
 }
 
 .tl-push {
@@ -132,7 +164,30 @@
 
 .tl-image--cover {
     object-fit: cover;
-    min-width: 100%;
-    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-position: right bottom;
+    height: 100%;
+    width: 100%;
+}
+
+.tl-heading--bar {
+    border-bottom: 4px solid $govuk-text-colour;
+    width: 100%;
+    @include govuk-responsive-padding(2, "bottom");
+}
+
+.tl-flex{
+    &--column {
+    display: flex;
+    flex-direction: column;
+    }
+
+    &--grow {
+        flex-grow: 1;
+    }
+}
+
+.tl-section-break {
+    border-bottom: 2px solid $govuk-border-colour;
 }
