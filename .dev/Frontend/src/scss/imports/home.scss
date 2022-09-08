@@ -278,3 +278,9 @@
         background-image: url("$home_image_7");
     }
 }
+
+.tl-home-keydates--title {
+    @include govuk-media-query($from: tablet) {
+        margin-left: 90px;
+    }
+}
