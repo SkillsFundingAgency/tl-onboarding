@@ -211,7 +211,7 @@
                         </div>
                         <div class="tl-column--half tl-flex--column">
                             <h4 class="govuk-heading-s">Connect with employers</h4>
-                            <p class="govuk-body">Use our new service to find employers who have expressed an interest in T Levels and industry placements.</p>
+                            <p class="govuk-body-s">Use our new service to find employers who have expressed an interest in T Levels and industry placements.</p>
                             <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="{{settings.connect_link}}">Find employers near you</a></p>
                         </div>
                     </div>
@@ -223,7 +223,7 @@
                         </div>
                         <div class="tl-column--half tl-flex--column">
                             <h4 class="govuk-heading-s">Are your T Level details up to date?</h4>
-                            <p class="govuk-body">Make sure your organisation and course details are up to date so students and employers can find your T Level courses.</p>
+                            <p class="govuk-body-s">Make sure your organisation and course details are up to date so students and employers can find your T Level courses.</p>
                             <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="/hc/en-gb/articles/{{settings.article_id_updatedetails}}">Update your details</a></p>
                         </div>
                     </div>
@@ -389,38 +389,42 @@
                     <h2 class="govuk-heading-m tl-heading--bar">More about T Levels</h2>
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-one-half tl-row-fill">
-                            {{#each categories}}
-                            {{#is name "Case studies"}}
+
 
                             <div class="govuk-grid-row tl-row-fill">
                                 <div class="tl-column--half">
                                     <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.home_image_5}}" />
                                 </div>
+                                {{#each categories}}
+                                {{#is name "Case studies"}}
                                 <div class="tl-column--half tl-flex--column">
                                     <h4 class="govuk-heading-s">{{name}}</h4>
                                     <p class="govuk-body-s">{{excerpt description}}</p>
                                     <p class="govuk-body govuk-!-margin-bottom-0"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">See T Level case studies</a></p>
                                 </div>
+                                {{/is}}
+                                {{/each}}
                             </div>
-                            {{/is}}
-                            {{/each}}
+
 
                         </div>
-                        <div class="govuk-grid-column-one-half tl-overflow--auto">
-                            {{#each categories}}
-                            {{#is name "T Level Transition Programme"}}
+                        <div class="govuk-grid-column-one-half">
+
                             <div class="govuk-grid-row tl-row-fill">
                                 <div class="tl-column--half">
                                     <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.home_image_6}}" />
                                 </div>
+                                {{#each categories}}
+                                {{#is name "T Level Transition Programme"}}
                                 <div class="tl-column--half tl-flex--column">
                                     <h4 class="govuk-heading-s">{{name}}</h4>
                                     <p class="govuk-body-s">{{excerpt description}}</p>
-                                    <p class="govuk-body govuk-!-margin-bottom-0"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">See T Level case studies</a></p>
+                                    <p class="govuk-body govuk-!-margin-bottom-0"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">Discover the programme</a></p>
                                 </div>
+                                {{/is}}
+                                {{/each}}
                             </div>                            
-                            {{/is}}
-                            {{/each}}
+
                         </div>
                     </div>
                 </div>
