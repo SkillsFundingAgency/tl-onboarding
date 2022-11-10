@@ -388,21 +388,37 @@
                 <div class="govuk-grid-column-full">
                     <h2 class="govuk-heading-m tl-heading--bar">More about T Levels</h2>
                     <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half tl-overflow--auto">
+                        <div class="govuk-grid-column-one-half tl-row-fill">
                             {{#each categories}}
                             {{#is name "Case studies"}}
-                            <span class="tl-home--category--image tl-home--category--image--5"></span>
-                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link tl-home--categorylink" GTMname="{{name}}">{{name}}</a></h3>
-                            <p class="govuk-body-s">{{excerpt description}}</p>
+
+                            <div class="govuk-grid-row tl-row-fill">
+                                <div class="tl-column--half">
+                                    <span class="tl-home--category--image tl-home--category--image--5"></span>
+                                </div>
+                                <div class="tl-column--half tl-flex--column">
+                                    <h4 class="govuk-heading-s">{{name}}</h4>
+                                    <p class="govuk-body-s">{{excerpt description}}</p>
+                                    <p class="govuk-body govuk-!-margin-bottom-0"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">See T Level case studies</a></p>
+                                </div>
+                            </div>
                             {{/is}}
                             {{/each}}
+
                         </div>
                         <div class="govuk-grid-column-one-half tl-overflow--auto">
                             {{#each categories}}
                             {{#is name "T Level Transition Programme"}}
-                            <span class="tl-home--category--image tl-home--category--image--6"></span>
-                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link tl-home--categorylink" GTMname="{{name}}">{{name}}</a></h3>
-                            <p class="govuk-body-s">{{excerpt description}}</p>
+                            <div class="govuk-grid-row tl-row-fill">
+                                <div class="tl-column--half">
+                                    <span class="tl-home--category--image tl-home--category--image--6"></span>
+                                </div>
+                                <div class="tl-column--half tl-flex--column">
+                                    <h4 class="govuk-heading-s">{{name}}</h4>
+                                    <p class="govuk-body-s">{{excerpt description}}</p>
+                                    <p class="govuk-body govuk-!-margin-bottom-0"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">See T Level case studies</a></p>
+                                </div>
+                            </div>                            
                             {{/is}}
                             {{/each}}
                         </div>
