@@ -191,3 +191,10 @@
 .tl-section-break {
     border-bottom: 2px solid $govuk-border-colour;
 }
+
+.tl-column--half {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px;
+}

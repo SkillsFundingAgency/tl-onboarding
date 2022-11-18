@@ -199,6 +199,38 @@
                 </div>
         </div>
     </section>
+    <section id="tl-home--findemployers">
+        <div class="govuk-width-container govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m tl-heading--bar">Find employers and help them find you</h2>
+
+            <div class="govuk-grid-row tl-row-fill">
+                <div class="govuk-grid-column-one-half tl-row-fill govuk-!-margin-top-3">
+                    <div class="govuk-grid-row tl-row-fill">
+                        <div class="tl-column--half">
+                            <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.homepage_employers_image1}}" />
+                        </div>
+                        <div class="tl-column--half tl-flex--column">
+                            <h4 class="govuk-heading-s">Connect with employers</h4>
+                            <p class="govuk-body-s">Use our new service to find employers who have expressed an interest in T Levels and industry placements.</p>
+                            <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="{{settings.connect_link}}">Find employers near you</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-half tl-row-fill govuk-!-margin-top-3">
+                    <div class="govuk-grid-row tl-row-fill">
+                        <div class="tl-column--half">
+                            <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.homepage_employers_image2}}" />
+                        </div>
+                        <div class="tl-column--half tl-flex--column">
+                            <h4 class="govuk-heading-s">Are your T Level details up to date?</h4>
+                            <p class="govuk-body-s">Make sure your organisation and course details are up to date so students and employers can find your T Level courses.</p>
+                            <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="/hc/en-gb/articles/{{settings.article_id_updatedetails}}">Update your details</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="tl-home--information">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
@@ -353,42 +385,50 @@
 
 
                 <!-- More information -->
-                <div class="govuk-grid-column-two-thirds-from-desktop govuk-grid-column-full">
+                <div class="govuk-grid-column-full">
                     <h2 class="govuk-heading-m tl-heading--bar">More about T Levels</h2>
                     <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half tl-overflow--auto">
-                            {{#each categories}}
-                            {{#is name "Case studies"}}
-                            <span class="tl-home--category--image tl-home--category--image--5"></span>
-                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link tl-home--categorylink" GTMname="{{name}}">{{name}}</a></h3>
-                            <p class="govuk-body-s">{{excerpt description}}</p>
-                            {{/is}}
-                            {{/each}}
+                        <div class="govuk-grid-column-one-half tl-row-fill">
+
+
+                            <div class="govuk-grid-row tl-row-fill">
+                                <div class="tl-column--half">
+                                    <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.home_image_5}}" />
+                                </div>
+                                {{#each categories}}
+                                {{#is name "Case studies"}}
+                                <div class="tl-column--half tl-flex--column">
+                                    <h4 class="govuk-heading-s">{{name}}</h4>
+                                    <p class="govuk-body-s">{{excerpt description}}</p>
+                                    <p class="govuk-body govuk-!-margin-bottom-0"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">See T Level case studies</a></p>
+                                </div>
+                                {{/is}}
+                                {{/each}}
+                            </div>
+
+
                         </div>
-                        <div class="govuk-grid-column-one-half tl-overflow--auto">
-                            {{#each categories}}
-                            {{#is name "T Level Transition Programme"}}
-                            <span class="tl-home--category--image tl-home--category--image--6"></span>
-                            <h3 class="govuk-heading-s"><a href="{{url}}" class="govuk-link tl-home--categorylink" GTMname="{{name}}">{{name}}</a></h3>
-                            <p class="govuk-body-s">{{excerpt description}}</p>
-                            {{/is}}
-                            {{/each}}
+                        <div class="govuk-grid-column-one-half">
+
+                            <div class="govuk-grid-row tl-row-fill">
+                                <div class="tl-column--half">
+                                    <img class="tl-image--cover tl-home--banner--column--image" src="{{settings.home_image_6}}" />
+                                </div>
+                                {{#each categories}}
+                                {{#is name "T Level Transition Programme"}}
+                                <div class="tl-column--half tl-flex--column">
+                                    <h4 class="govuk-heading-s">{{name}}</h4>
+                                    <p class="govuk-body-s">{{excerpt description}}</p>
+                                    <p class="govuk-body govuk-!-margin-bottom-0"><a href="{{url}}" class="govuk-link" GTMname="{{name}}">Discover the programme</a></p>
+                                </div>
+                                {{/is}}
+                                {{/each}}
+                            </div>                            
+
                         </div>
                     </div>
                 </div>
-                <!-- Help employers find -->
-                <div class="govuk-grid-column-one-third-from-desktop govuk-grid-column-full">
-                    <h2 class="govuk-heading-m tl-heading--bar">Help employers find you</h2>
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full tl-overflow--auto">
-                            <span class="tl-home--category--image tl-home--category--image--7"></span>
-                            <h3 class="govuk-heading-s"><a href="https://support.tlevels.gov.uk/hc/en-gb/articles/360020077859-How-to-update-T-Level-course-information" id="tl-coursedirectory--link" class="govuk-link" GTMname="Update your information">Update your information</a></h3>
-                            <p class="govuk-body-s">
-                                Have you updated your T Levels course information so students and employers can find you?
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
                     </div>
 
                 </div>
