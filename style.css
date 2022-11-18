@@ -6364,6 +6364,13 @@ x:-moz-any-link {
   border-bottom: 2px solid #b1b4b6;
 }
 
+.tl-column--half {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
 .tl-search {
   display: flex;
 }

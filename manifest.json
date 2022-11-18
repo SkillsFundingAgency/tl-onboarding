@@ -1,7 +1,7 @@
 {
-  "name": "GDS Style - Course Info 2023 Removed",
+  "name": "GDS Style - Find Employers",
   "author": "Ash Anderton",
-  "version": "2.6.72",
+  "version": "2.6.95",
   "api_version": 2,
   "default_locale": "en-gb",
   "settings": [
@@ -78,6 +78,18 @@
           "type": "file",
           "description": "Home Page News Image",
           "label": "News Image"
+        },
+        {
+          "identifier": "homepage_employers_image1",
+          "type": "file",
+          "description": "Home Find Employers Image 1",
+          "label": "Home Find Employers Image 1"
+        },
+        {
+          "identifier": "homepage_employers_image2",
+          "type": "file",
+          "description": "Home Find Employers Image 2",
+          "label": "Home Find Employers Image 2"
         }
       ]
     },
@@ -355,6 +367,13 @@
           "value": "https://www.smartsurvey.co.uk/s/VXHHIQ/"
         },
         {
+          "identifier": "connect_link",
+          "type": "text",
+          "description": "Connect service URL",
+          "label": "Connect service URL",
+          "value": "https://connect.tlevels.gov.uk/"
+        },
+        {
           "identifier": "section_id_newsletters",
           "type": "text",
           "description": "Sitewide",
@@ -374,6 +393,13 @@
           "description": "Sitewide",
           "label": "Events Section ID",
           "value": "6493403059218"
+        },
+        {
+          "identifier": "article_id_updatedetails",
+          "type": "text",
+          "description": "Sitewide",
+          "label": "How to update your details article ID",
+          "value": "360020077859"
         },
         {
           "identifier": "subdomain",
