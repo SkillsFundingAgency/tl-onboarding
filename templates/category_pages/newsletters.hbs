@@ -1,7 +1,6 @@
 <!-- Main content -->
 <main id="main-content" role="main">
 
-
     <div class="govuk-width-container">
         <div id="tl-breadcrumbs--category">
             <div class="tl-breadcrumbs">
@@ -10,25 +9,44 @@
         </div>
     </div>
 
-
-
-
-
     <!-- Article Content -->
     <div class="govuk-width-container govuk-main-wrapper">
 
         <div class="govuk-grid-row">
+            <h1 class="govuk-heading-xl">{{category.name}}</h1>
+        </div>
+
+        <div class="govuk-grid-row">
+
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">{{category.name}}</h1>
+                <h2 class="govuk-heading-l">Featured news</h2>
             </div>
 
+            <div class="govuk-grid-column-one-third tl-text--right">
+
+                {{#if signed_in}}
+                <div class="article-subscribe tl-article--subscribe--signedin tl-js-visible" id="tl-newsletter--subscribe">
+                    <a tabindex="0" id="follow-btn" class="govuk-button tl-hidden">Follow </a>
+                    <script type="text/javascript">
+            const section_id_newsletters = {{settings.section_id_newsletters}}
+                    </script>
+                </div>
+                {{else}}
+                <div class="article-subscribe tl-article--subscribe">
+                    <a tabindex="0" data-auth-action="signin" data-selected="false" aria-expanded="false" aria-haspopup="menu" class="govuk-button">
+                        Sign in to subscribe
+                    </a>
+                </div>
+                {{/if}}
+
+            </div>
         </div>
+
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <section class="govuk-!-margin-bottom-8">
                     {{#each sections}}
                     {{#is name "Featured news"}}
-                    <h2 class="govuk-heading-l">{{name}}</h2>
 
                     {{#if articles}}
                     <div class="govuk-grid-row">
@@ -53,7 +71,6 @@
                         <div class="govuk-grid-column-two-thirds">
                             <h2 class="govuk-heading-m govuk-!-margin-top-8">Past news stories</h2>
 
-
                             <ul class="govuk-list tl-newsletter--list">
                                 {{#each articles}}
                                 {{#is @index 0}}
@@ -66,7 +83,6 @@
                                 {{/is}}
                                 {{/is}}
                                 {{/each}}
-
 
                             </ul>
                             {{#if more_articles}}
@@ -92,8 +108,6 @@
                     <h2 class="govuk-heading-l">Newsletters</h2>
                 </div>
 
-
-
                 <div class="govuk-grid-column-one-third tl-text--right">
 
                     {{#if signed_in}}
@@ -114,14 +128,11 @@
                 </div>
             </div>
 
-
-
             <section class="govuk-!-margin-top-3">
                 {{#each sections}}
                 {{#is name "Newsletters"}}
 
                 {{#if articles}}
-
 
                 <div class="govuk-grid-row ">
                     {{#each articles}}
@@ -171,10 +182,7 @@
             </section>
         </div>
     </div>
-
 </main>
-
-
 
 {{#if settings.answerbot_enabled}}
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key={{settings.answerbot_key}}"></script>
