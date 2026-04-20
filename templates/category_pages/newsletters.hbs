@@ -55,10 +55,10 @@
                         <div class="govuk-grid-column-one-half">
                             <h3 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-news--featured">{{title}}</a></h3>
                             <p class="govuk-body-s">
-                                {{#is article.created_at article.edited_at}}
-                                {{date article.created_at class='metadata' format='medium'}}
+                                {{#is created_at edited_at}}
+                                {{date created_at class='metadata' format='medium'}}
                                 {{else}}
-                                {{date article.edited_at class='metadata' format='medium'}}
+                                {{date edited_at class='metadata' format='medium'}}
                                 {{/is}}
                             </p>
                             <p class="govuk-body">{{excerpt body characters=90}}</p>
@@ -68,10 +68,10 @@
                         <div class="govuk-grid-column-one-half">
                             <h3 class="govuk-heading-m govuk-!-margin-bottom-2"><a href="{{url}}" class="govuk-link tl-news--featured">{{title}}</a></h3>
                             <p class="govuk-body-s">
-                                {{#is article.created_at article.edited_at}}
-                                {{date article.created_at class='metadata' format='medium'}}
+                                {{#is created_at edited_at}}
+                                {{date created_at class='metadata' format='medium'}}
                                 {{else}}
-                                {{date article.edited_at class='metadata' format='medium'}}
+                                {{date edited_at class='metadata' format='medium'}}
                                 {{/is}}
                             </p>
                             <p class="govuk-body">{{excerpt body characters=90}}</p>
