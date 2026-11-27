@@ -415,24 +415,7 @@
         <div class="govuk-width-container govuk-main-wrapper">
             <div class="govuk-grid-row tl-row-fill">
 
-                {{#if settings.answerbot_enabled}}
-                <div class="govuk-grid-column-one-half tl-row-fill">
-                    <div class="tl-card--black">
-                        <h3 class="govuk-heading-m">Have a T Levels question?</h3>
-                        <p class="govuk-body">
-                            Our T Levels support bot is here to help you find the answers.
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-0">
-                            <a href="#" id="tl-home--answerbot" class="govuk-link">Ask a question</a>
-
-                        </p>
-
-                    </div>
-                </div>
-
-                {{/if}}
-
-                <div class="{{#if settings.answerbot_enabled}}govuk-grid-column-one-half tl-row-fill{{else}}govuk-grid-column-full{{/if}}">
+                <div class="govuk-grid-column-full">
                     <div class="tl-card--black tl-js-hidden" id="tl-home--ticket">
                         <h3 class="govuk-heading-m">Contact us</h3>
                         <p class="govuk-body">
